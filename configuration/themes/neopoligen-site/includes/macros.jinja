@@ -1,0 +1,269 @@
+{%- macro domain(page_id, payload = {}) -%}
+{{- site.domain(page_id, payload) -}}
+{%- endmacro -%}
+
+{%- macro domain_no_https(page_id, payload = {}) -%}
+{{- site.domain_no_https(page_id, payload) -}}
+{%- endmacro -%}
+
+{%- macro folder(page_id, folder_number, payload = {}) -%}
+{{- site.folder_for_page(page_id, folder_number, payload) -}}
+{%- endmacro -%}
+
+{%- macro href_for_page(page_id, payload = {}) -%}
+{{- site.href_for_page(page_id, payload) -}}
+{%- endmacro -%}
+
+{%- macro include_section_from_page(page_id, target_page, section_id, payload = {}) -%}
+{%- for section in site.include_section_from_page(page_id, target_page, section_id, payload) -%}
+{{- output_payload(page_id, section, payload) -}}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro link_or_title(current_page, target_page, exclude_tags = [], title_override = "", comment = "") -%}
+{%- if current_page == none -%}
+{#- TODO: Log error here -#}
+~e~
+{%- elif target_page == none -%}
+{#- TODO Log error here -#}
+~e~
+{%- else -%}
+{{- site.link_or_title(current_page, target_page, exclude_tags, title_override) -}}
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro list_filtered_pages_alpha(current_page, include_tags, exclude_tags) -%}
+{%- for target_page in site.filtered_pages_alpha(include_tags, exclude_tags) -%}
+<li>{{- site.link_or_title(current_page, target_page, [], "") -}}</li>
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro log(payload = {}) -%}
+{{- site.log_from_template(payload|tojson) -}}
+{%- endmacro -%}
+
+{%- macro main_body(page_id, payload = {}) -%}
+{%- for section in site.main_body_for_page(page_id, payload) -%}
+{{- output_payload(page_id, section, payload) -}}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro main_body_examples(page_id, payload = {}) -%}
+{%- for section in site.main_body_for_page(page_id, payload) -%}
+<div>TODO: main_body_examples</div>
+{{- output_payload(page_id, section, payload) -}}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro menu(current_page, items) -%}
+DEPREACTE macros.menu
+{%- endmacro -%}
+
+{%- macro menu_items(current_page, items) -%}
+DEPREACTE macros.menu
+{%- endmacro -%}
+
+{%- macro menu_items2(current_page, items) -%}
+DEPREACTE macros.menu
+{%- endmacro -%}
+
+
+{%- macro folder_menu(current_page, folders) -%}
+<h4>FOLDER MENU</h4>
+<ol>
+{%- for item in site.folder_menu(current_page, folders) -%}
+{{ folder_menu_item(current_page, item) }}
+{%- endfor -%}
+</ol>
+{%- endmacro -%}
+
+
+{%- macro folder_menu_item(current_page, item) -%}
+<li>
+{{- site.link_or_title(current_page, item.page_id, [], "") -}}
+{%- if item.children -%}
+<ol>
+{%- for child in item.children -%}
+{{ folder_menu_item(current_page, child) }}
+{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
+
+
+
+{%- macro page_menu_internal(current_page, items) -%}
+<ol>
+{%- for item in site.page_menu_internal(current_page, items) -%}
+<li>
+{{- site.link_or_title(current_page, item.page_id, [], "") -}}
+{{- page_menu_internal(current_page, item.children) -}}
+</li>
+{%- endfor -%}
+</ol>
+{%- endmacro -%}
+
+{%- macro page_menu(current_page, pages) -%}
+{# {{ site.page_menu_top_level(current_page, pages) }} #}
+<ol>
+{%- for page_data in site.page_menu_top_level(current_page, pages) -%}
+{{ page_menu_item(current_page, page_data) }}
+{%- endfor -%} 
+</ol>
+{%- endmacro -%}
+
+{%- macro page_menu_item(current_page, page_data) -%}
+<li>{{- site.link_or_title(current_page, page_data.page_id, [], "") -}}
+{%- if page_data.children -%}
+<ol>
+{%- for menu_item in page_data.children -%}
+{{ page_menu_item(current_page, menu_item) }}
+{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
+
+
+
+
+
+
+
+
+
+
+{%- macro page_menu_xxx(current_page, pages) -%}
+<nav class="page-menu-nav">
+<ol>
+{%- for page in site.page_menu_top_level(current_page, pages) -%}
+<li>
+{{- site.link_or_title(current_page, page.page_id, [], "") -}}
+{{ page }}
+{{- page_menu_internal(current_page, page.children) -}}
+</li>
+{%- endfor -%} 
+</ol>
+</nav>
+{# {{ items }}
+{%- for item in site.menu_items(current_page, items) -%}
+<li>{{ item.page_id }}
+<ol>
+{%- if item.children -%}
+{{ item.children }}
+{%- endif -%}
+</ol>
+</li>
+{%- endfor -%} #}
+{%- endmacro -%}
+
+
+
+{%- macro menu_items3(current_page, items) -%}
+{# {{ items }}
+{%- for item in site.menu_items(current_page, items) -%}
+<li>{{ item.page_id }}
+<ol>
+{%- if item.children -%}
+{{ item.children }}
+{{ menu_items2(current_page, item.children) }}
+{%- endif -%}
+</ol>
+</li>
+{%- endfor -%} #}
+{%- endmacro -%}
+
+
+{%- macro output_list(page_id, section, extra = {}) -%}
+{%- include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -%}
+{%- endmacro -%}
+
+{%- macro output_payload(page_id, section, extras = {}) -%}
+{%- if section.type == "section" -%}
+{{- output_section(page_id, section.content, extras) -}}
+{%- elif section.type == "block" -%}
+{%- for block_content in section.content -%}
+{{- output_spans(page_id, block_content, extras) -}}
+{%- endfor -%}
+{%- elif section.type == "list" -%}
+{{- output_list(page_id, section.content, extras) -}}
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro output_section(page_id, section, extra = {}) -%}
+{%- include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -%}
+{%- endmacro -%}
+
+{%- macro output_spans(page_id, span, extras = {}) -%}
+{%- if span.content.template -%}
+{%- include span.content.template -%}
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro page_ast(page_id, extras = {}) -%}
+<section class="page_ast">{{- '' -}}
+<h2>Page AST</h2>{{- '' -}}
+<pre><code>{{- '' -}}
+{{- site.page_ast(page_id, extras)|tojson(true) -}}
+</code></pre>{{- '' -}}
+</section>{{- '' -}}
+{%- endmacro -%}
+
+{%- macro place_everything(page_id) -%}
+TODO: build place_everything
+{%- endmacro -%}
+
+{%- macro place_everything_except(page_id, filters) -%}
+TODO: build place_everything_excep
+{%- endmacro -%}
+
+{%- macro page_source(page_id, payload = {}) -%}
+<section class="page_source">{{- '' -}}
+<h2>Page AST</h2>{{- '' -}}
+<pre><code>{{- '' -}}
+{{ site.page_source(page_id, payload)|trim }}
+</code></pre>{{- '' -}}
+</section>{{- '' -}}
+{%- endmacro -%}
+
+{%- macro place_section(page_id, section_name, extras = {}) -%}
+{%- for section in site.place_section(page_id, section_name, extras) -%}
+{{- output_payload(page_id, section, extras) -}}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro place_sections(page_id, payload = {}) -%}
+TODO: make: place_these_sections
+{%- endmacro -%}
+
+{%- macro section_attributes(page_id, payload = {}) -%}
+{%- if payload.section.key_value_attributes.class or payload.classes -%}
+{{- ' ' -}}class="{{- payload.classes -}}
+{%- if payload.section.key_value_attributes.class and payload.classes -%}
+{{- ' ' -}}{%- endif -%}
+{{- payload.section.key_value_attributes.class -}}"{%- endif -%}
+{%- for key in payload.section.key_value_attributes -%}
+{%- if key != "class" and key not in section_attribute_excludes -%}{{- ' ' -}}
+{{- key -}}="{{- payload.section.key_value_attributes[key] -}}"
+{%- endif -%}{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro section_has_flag(page_id, section, target, extras = {}) -%}
+{%- if target in section.flag_attributes -%}
+{{- true -}}{%- else -%}{{- false -}}
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro span_attributes(page_id, span, extras = {}) -%}
+{%- for attribute in span.key_value_attributes -%}{{- ' ' -}}
+{{- attribute -}}="{{- span.key_value_attributes[attribute] -}}"
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro title_for_page(page_id, extras = {}) -%}
+{{- site.title_for_page(page_id, extras) -}}
+{%- endmacro -%}
+

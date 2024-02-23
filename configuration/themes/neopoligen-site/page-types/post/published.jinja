@@ -1,0 +1,19 @@
+{%- import "includes/macros.jinja" as macros -%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include "includes/head.jinja" -%}</head>
+<body>
+  <div class="page_wrapper">{{- '' -}}
+    <div class="sidebar_article_group">
+      {%- include "includes/sidebar.jinja" -%}
+      <article class="flow">
+        {{- macros.place_section(page_id, "forward") -}} 
+        {{- macros.place_section(page_id, "title") -}}
+        {{- macros.main_body(page_id) -}}
+      </article>{{- '' -}}
+    </div>
+    {%- include "includes/footer.jinja" -%}
+  </div>{{- '' -}}
+</body>
+</html>

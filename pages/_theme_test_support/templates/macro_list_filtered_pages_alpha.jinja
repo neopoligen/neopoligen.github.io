@@ -1,0 +1,11 @@
+{%- import "includes/macros.jinja" as macros -%}
+
+<ul>
+    {{- macros.list_filtered_pages_alpha(
+        current_page = page_id,  
+        include_tags = [["theme-test"]], 
+        exclude_tags = ["id0bravo"]
+        ) 
+    -}}
+</ul>
+

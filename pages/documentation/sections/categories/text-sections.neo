@@ -1,0 +1,33 @@
+-- title
+
+Text Sections
+
+-- code
+
+This is some code
+with a few lines
+
+
+-- code
+-- example_flag
+-- title: Example Preformatted
+-- subtitle: With a subtitle
+-- class: green
+-- forward: This is froward text that goes
+-- forward: above the title in this theme
+-- preface: This is a preface that
+-- preface: goes below the title/subtitle
+-- afterword: This is some short text that
+-- afterword: follows the checklist
+
+This is some code
+with a few lines
+
+
+
+-- metadata
+-- date: 2024-02-02 18:44:52
+-- updated: 2024-02-02 18:44:52
+-- id: 2bpgzvuz
+-- status: published
+
