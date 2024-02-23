@@ -1,0 +1,40 @@
+{# type: key-value #}
+{%- import "includes/macros.jinja" as macros -%}
+
+<span class="{{ span.content.value }}"
+{{- macros.span_attributes(span.content) -}}>
+{% for span in span.content.spans %}
+{{- macros.output_spans(page_id, span, {}) -}}
+{% endfor %}
+</span>
+
+
+~~~~~~~~~~
+
+-- title
+
+Span Example: c (custom type example)
+
+-- subtitle
+
+The Custom Class (c) Spans
+
+-- p
+
+Basic Example:  c: green|Lorem ipsum
+
+
+-- todo
+
+[] Get attributes working like: 
+
+`c: green PIPEHERE Lorem ipsum PIPEHERE id: some_id``
+
+See: <<tlink|2bs9rh6c>>
+
+
+
+-- metadata
+-- date: 2024-02-03 03:13:57
+-- id: 2bs4epga
+-- status: published
