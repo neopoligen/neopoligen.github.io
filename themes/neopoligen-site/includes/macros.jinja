@@ -10,6 +10,27 @@
 {{- site.folder_for_page(page_id, folder_number, payload) -}}
 {%- endmacro -%}
 
+{%- macro folder_menu(current_page, folders) -%}
+<ol>
+{%- for item in site.folder_menu(current_page, folders) -%}
+{{ folder_menu_item(current_page, item) }}
+{%- endfor -%}
+</ol>
+{%- endmacro -%}
+
+{%- macro folder_menu_item(current_page, item) -%}
+<li>
+{{- site.link_or_title(current_page, item.page_id, [], "") -}}
+{%- if item.children -%}
+<ol>
+{%- for child in item.children -%}
+{{ folder_menu_item(current_page, child) }}
+{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
 {%- macro href_for_page(page_id, payload = {}) -%}
 {{- site.href_for_page(page_id, payload) -}}
 {%- endmacro -%}
@@ -65,30 +86,6 @@ DEPREACTE macros.menu
 
 {%- macro menu_items2(current_page, items) -%}
 DEPREACTE macros.menu
-{%- endmacro -%}
-
-
-{%- macro folder_menu(current_page, folders) -%}
-<h4>FOLDER MENU</h4>
-<ol>
-{%- for item in site.folder_menu(current_page, folders) -%}
-{{ folder_menu_item(current_page, item) }}
-{%- endfor -%}
-</ol>
-{%- endmacro -%}
-
-
-{%- macro folder_menu_item(current_page, item) -%}
-<li>
-{{- site.link_or_title(current_page, item.page_id, [], "") -}}
-{%- if item.children -%}
-<ol>
-{%- for child in item.children -%}
-{{ folder_menu_item(current_page, child) }}
-{%- endfor -%}
-</ol>
-{%- endif -%}
-</li>
 {%- endmacro -%}
 
 
