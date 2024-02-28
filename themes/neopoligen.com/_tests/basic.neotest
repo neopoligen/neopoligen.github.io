@@ -1,0 +1,43 @@
+### DESCRIPTION ###
+
+This is a basic test
+
+### TEMPLATE ###
+
+pages/testing/published.jinja
+~~~
+{%- import "includes/macros.jinja" as macros -%}
+This is the output content stub
+{{- macros.place_section(page_id, "forward") -}}
+{{- macros.place_section(page_id, "title") -}}
+{{- macros.main_body(page_id) -}}
+
+
+### SUPPORT_PAGE ###
+
+-- title
+
+This is a support page
+
+-- metadata
+-- id: support-page-1
+-- data: 2024-01-01 01:01:01
+
+
+### INPUT ###
+
+-- title 
+
+This is a title
+
+-- metadata
+-- id: file-under-test
+-- data: 2024-01-01 01:01:01
+-- type: testing
+-- status: published
+
+
+### OUTPUT ###
+
+<h1>This is the testing template</h1>
+
