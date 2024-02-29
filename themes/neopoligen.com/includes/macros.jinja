@@ -227,7 +227,7 @@ TODO: build place_everything_excep
 {%- endmacro -%}
 
 {%- macro place_section(page_id, section_name, extras = {}) -%}
-{%- for section in site.place_section(page_id, section_name, extras) -%}
+{%- for section in site.page_place_section(page_id, section_name, extras) -%}
 {{- output_payload(page_id, section, extras) -}}
 {%- endfor -%}
 {%- endmacro -%}

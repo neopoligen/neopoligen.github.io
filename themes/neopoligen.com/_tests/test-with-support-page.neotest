@@ -1,15 +1,10 @@
-### DESCRIPTION ###
-
-This is a basic test
-
 ### TEMPLATE ###
 
 pages/testing/published.jinja
 ~~~
 {%- import "includes/macros.jinja" as macros -%}
-This is the output content stub
-{{- macros.place_section(page_id, "forward") -}}
 {{- macros.place_section(page_id, "title") -}}
+{{- macros.place_section(page_id, "forward") -}}
 {{- macros.main_body(page_id) -}}
 
 
@@ -30,6 +25,10 @@ This is a support page
 
 This is a title
 
+-- p
+
+This is some content
+
 -- metadata
 -- id: file-under-test
 -- data: 2024-01-01 01:01:01
@@ -39,5 +38,8 @@ This is a title
 
 ### OUTPUT ###
 
-<h1>This is the testing template</h1>
-
+<section class="p_section flow">
+    <div class="content">
+        <p>This is some content</p>
+    </div>
+</section>
