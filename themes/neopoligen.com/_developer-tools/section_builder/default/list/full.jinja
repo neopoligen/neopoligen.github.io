@@ -1,79 +1,73 @@
-{#-
-    DO NOTE EDIT THIS FILE DIRECTLY: 
-    Use THEME/developer-tools/section_builder/customized...
--#}
-
 {%- import "includes/macros.jinja" as macros -%}
 
-<div {{- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -}}>
-
-
+<section {{- section_attributes(page_id, {"section": section, "classes": section.type ~ "_section flow" } ) -}}>
     {#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#}
-    {% if extra.example == true %}
-    <div class="{{- section.type }}_section_source_wrapper section_source_wrapper section_example_source">
-        <div class="{{- section.type }}_section_source_title section_source_title">Source</div>
-        <pre
-            class="{{- section.type }}_section_source_text section_source_text"><code>
-            {%- autoescape true -%}{{- section.source | trim -}}{%- endautoescape -%}
+    {%- if extra.example == true -%}
+        <div class="neopolitan_source_wrapper">
+            <h3>Source</h3>
+            <pre><code>
+                {%- autoescape true -%}{{- section.source | trim -}}{%- endautoescape -%}
             </code></pre>
-    </div>
-    <div class="{{- section.type }}_section_example_output_title section_example_output_title">Output</div>
-    {%- if section_has_flag(section, "example_flag") == "true" -%}
-    <div>(Found '--example_flag' section attribute flag)</div>
-    {% endif %}
-    {% endif %}
-    {#- END_NEOPOLIGEN_SOURCE_EXAMPLE -#}
-
-    {%- if section.key_value_attributes.forward -%}
-        <div class="{{ section.type }}_section_forward_wrapper section_forward_wrapper">
-            {{ section.key_value_attributes.forward }}
+            <h3 class="source_output_header">Output</h3>
+            {%- if section_has_flag(section, "example_flag") == "true" -%}
+                <div class="example_flag_note">(Found '--example_flag' section attribute flag)</div>
+            {%- endif -%}
         </div>
     {%- endif -%}
+    {#- END_NEOPOLIGEN_SOURCE_EXAMPLE -#}
 
-    {%- if section.key_value_attributes.title or section.key_value_attributes.subtitle -%}
-    <div class="{{ section.type }}_section_attribute_title_wrapper section_attribute_title_wrapper">
-        {%- endif -%}
+    THIS IS  A LIST
 
-        {%- if section.key_value_attributes.title -%}
-        <h3 class="{{ section.type }}_section_attribute_title_text section_attribute_title_text">
+    {#
+
+
+    {% if section.key_value_attributes.forward -%}
+        <div class="forward">
+            {{- section.key_value_attributes.forward -}}
+        </div>
+    {% endif -%}
+
+    {% if section.key_value_attributes.title or section.key_value_attributes.subtitle -%}
+    <div class="section_title_subtitle_group">
+    {% endif -%}
+        {% if section.key_value_attributes.title -%}
+        <h3 class="section_title">
             {{ section.key_value_attributes.title }}
         </h3>
-        {%- endif -%}
-
-        {%- if section.key_value_attributes.subtitle -%}
-        <h4 class="{{ section.type }}_section_attribute_subtitle_text section_attribute_subtitle_text">
+        {% endif -%}
+        {% if section.key_value_attributes.subtitle -%}
+        <h4 class="section_subtitle">
             {{ section.key_value_attributes.subtitle }}
         </h4>
-        {%- endif -%}
-
-        {%- if section.key_value_attributes.title or section.key_value_attributes.subtitle -%}
+        {% endif -%}
+    {% if section.key_value_attributes.title or section.key_value_attributes.subtitle -%}
     </div>
-    {%- endif -%}
+    {% endif -%}
 
-    {%- if section.key_value_attributes.preface -%}
-    <div class="{{ section.type }}_section_preface_wrapper section_preface_wrapper">
-        {{ section.key_value_attributes.preface }}
+    {% if section.key_value_attributes.preface -%}
+        <div class="preface">
+            {{- section.key_value_attributes.preface -}}
+        </div>
+    {% endif -%}
+
+    {% if section.category.content.containers[0] -%}
+    <div class="content">
+    {% endif -%}
+        {%- for content in section.category.content.containers -%}
+            <p>{{- output_payload(page_id, content, extras) -}}</p>
+        {%- endfor -%}
+    {% if section.category.content.containers[0] -%}
     </div>
-    {%- endif -%}
+    {% endif -%}
 
-    <div class="{{- section.type }}_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="{{- section.type }}_section_checklist -}} section_checklist flow">
-            {% for item in section.items %}
-            <li class="{{- section.type }}_section_checklist_item -}} section_checklist_item flow">
-                {%- for container in item.content.containers -%}
-                <p class="{{- section.type }}_section_checklist_item_p -}} section_checklist_item_p">
-                    {{- output_payload(page_id, container, extras) -}}
-                </p>
-                {%- endfor -%}
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    {% if section.key_value_attributes.afterword -%}
+        <div class="afterword">
+            {{- section.key_value_attributes.afterword -}}
+        </div>
+    {% endif -%}
 
-    {%- if section.key_value_attributes.afterword -%}
-    <div class="{{ section.type }}_section_afterword_wrapper section_afterword_wrapper">
-        {{- section.key_value_attributes.afterword -}}
-    </div>
-    {%- endif -%}
 
-</div>
+#}
+</section>
+
+{{- '' -}}

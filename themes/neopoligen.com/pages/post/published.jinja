@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>{% include "includes/head.jinja" -%}</head>
+{# <head>{% include "includes/head.jinja" -%}</head> #}
 <body>
   <div class="page_wrapper">{{- '' -}}
     
@@ -14,10 +14,10 @@
     </div>
 
     <div class="sidebar_article_group">
-      {%- include "includes/sidebar.jinja" -%}
+      {# {%- include "includes/sidebar.jinja" -%} #}
       <article class="flow">
-        {{- macros.place_section(page_id, "forward") -}} 
-        {{- macros.place_section(page_id, "title") -}}
+        {# {{- macros.place_section(page_id, "forward") -}}  #}
+        {# {{- macros.place_section(page_id, "title") -}} #}
         {{- macros.main_body(page_id) -}}
       </article>{{- '' -}}
     </div>
@@ -25,3 +25,4 @@
   </div>{{- '' -}}
 </body>
 </html>
+
