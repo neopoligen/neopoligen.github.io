@@ -1,7 +1,3 @@
-{%- macro folder_menu(current_page, folders) -%}
-
-{%- endmacro -%}
-
 {%- macro link_or_title(current_page, target_page) -%}
 LINK_OR_TITLE_MACRO
 {%- endmacro -%}
@@ -10,6 +6,7 @@ LINK_OR_TITLE_MACRO
 {%- macro log(payload = {}) -%}
 {{- site.log_from_template(payload|tojson) -}}
 {%- endmacro -%}
+
 
 {%- macro main_body(page_id, payload = {}) -%}
 {%- for section in site.page_main_body(page_id, payload) -%}
@@ -78,6 +75,45 @@ LINK_OR_TITLE_MACRO
 
 
 
+{%- macro folder_menu(current_page, folders) -%}
+<nav class="folder_menu">
+<ol>
+{%- for item in site.folder_menu(current_page, folders) -%}
+{{ folder_menu_item(current_page, item) }}
+{%- endfor -%}
+</ol>
+</nav>
+{%- endmacro -%}
+
+{%- macro folder_menu_item(current_page, item) -%}
+<li>
+{%- if item.item_type == "OpenDirectory" and item.children -%}
+    <button id="menu_folder_button_{{item.page_id}}" class="menu_folder_button menu_folder_opened" data-page_id="{{ item.page_id }}">
+        {{- site.page_title(item.page_id) -}}
+    </button>
+    {{- '' -}}
+    <ol id="menu_folder_children_{{item.page_id}}" class="menu_folder_children_visible">
+    {%- for child in item.children -%}
+        {{- folder_menu_item(current_page, child) -}}
+    {%- endfor -%}
+    </ol>
+{%- elif item.item_type == "ClosedDirectory" and item.children -%}
+    <button id="menu_button_{{item.page_id}}" class="menu_folder_button menu_folder_closed" data-page_id="{{ item.page_id }}">
+        {{- site.page_title(item.page_id) -}}
+    </button>
+    {{- '' -}}
+    <ol id="menu_folder_children_{{item.page_id}}" class="menu_folder_children_hidden">
+    {%- for child in item.children -%}
+    {{ folder_menu_item(current_page, child) }}
+    {%- endfor -%}
+    </ol>
+{%- else -%}
+    {{- site.link_or_title(current_page, item.page_id, [], "") -}}
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
+
 
 {# {%- macro domain(page_id, payload = {}) -%}
 {{- site.domain(page_id, payload) -}}
@@ -88,38 +124,10 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%} #}
 
 
-
-
 {# {%- macro folder(page_id, folder_number, payload = {}) -%}
 {{- site.folder_for_page(page_id, folder_number, payload) -}}
 {%- endmacro -%} #}
 
-{%- macro folder_menu(current_page, folders) -%}
-<ol>
-{%- for item in site.folder_menu(current_page, folders) -%}
-{{ folder_menu_item(current_page, item) }}
-{%- endfor -%}
-</ol>
-{%- endmacro -%}
-
-{%- macro folder_menu_item(current_page, item) -%}
-<li>
-{%- if item.item_type == "OpenDirectory" -%}
-OPEN: {{- site.page_title(item.page_id) -}}
-{%- elif item.item_type == "ClosedDirectory" -%}
-CLOSED: {{- site.page_title(item.page_id) -}}
-{%- else -%}
-{{- site.link_or_title(current_page, item.page_id, [], "") -}}
-{%- endif -%}
-{%- if item.children -%}
-<ol>
-{%- for child in item.children -%}
-{{ folder_menu_item(current_page, child) }}
-{%- endfor -%}
-</ol>
-{%- endif -%}
-</li>
-{%- endmacro -%}
 
 {# {%- macro href_for_page(page_id, payload = {}) -%}
 {{- site.href_for_page(page_id, payload) -}}

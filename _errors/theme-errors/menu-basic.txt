@@ -5,4 +5,6 @@ EXPECTED:
 
 GOT:
 
+<nav class="folder_menu">
 <ol></ol>
+</nav>
