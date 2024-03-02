@@ -51,12 +51,12 @@
   --radius-5-inside: 0.8rem;
   --radius-6: 1.2rem;
   --radius-6-inside: 1.1rem;
-  --size-1: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.52rem);
-  --size-2: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.14rem);
-  --size-3: clamp(1.62rem, calc(1.5rem + 0.58vw), 1.85rem);
-  --size-4: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
-  --size-5: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
-  --size-6: clamp(0.68rem, calc(0.67rem + 0.03vw), 0.7rem);
+  --size-6: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.52rem);
+  --size-5: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.14rem);
+  --size-4: clamp(1.62rem, calc(1.5rem + 0.58vw), 1.85rem);
+  --size-3: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
+  --size-2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
+  --size-1: clamp(0.68rem, calc(0.67rem + 0.03vw), 0.7rem);
   --width-1: 18ch;
   --width-2: 27ch;
   --width-3: 48ch;
@@ -111,7 +111,7 @@ body {
   color: var(--color-1);
   line-height: 1.4;
   font-family: var(--regular);
-  font-size: var(--size-4);
+  font-size: var(--size-3);
 }
 
 .folder_menu button {
@@ -120,35 +120,65 @@ body {
   font-family: var(--heavy);
 }
 
-.folder_menu_button.folder_menu_opened::before {
-  content: "v ";
-  font-family: monospace;
-  color: var(--color-3);
+
+.folder_menu_opened_directory_item {
+  list-style-type: disclosure-open;
 }
 
-.folder_menu_button.folder_menu_closed::before {
-  content: "> ";
-  font-family: monospace;
-  color: var(--color-3);
+.folder_menu_opened_directory_item::marker {
+  color: var(--color-1);
 }
+
+.folder_menu_closed_directory_item {
+  list-style-type: disclosure-closed;
+}
+
+.folder_menu_closed_directory_item::marker {
+  color: var(--color-5);
+}
+
+
+.folder_menu_file_item {
+  list-style-type: disc;
+}
+
+.folder_menu_file_item::marker {
+  color: var(--color-5);
+}
+
+
+/*
 
 .folder_menu ol {
   padding-left: var(--padding-4);
 }
 
-.folder_menu > ol {
-  padding: 0;
+*/
+.folder_menu {
+  padding: 1rem;
 }
 
-.folder_menu ol li {
+/*
+.folder_menu li {
   list-style-type: none;
 }
 
+
+.folder_menu > li {
+  font-family: var(--heavy);
+  list-style-type: none;
+}
+*/
+
+/*
 .folder_menu_link:before {
   content: "• ";
+  font-size: var(--size-1);
   font-family: monospace;
-  color: var(--color-3);
+  color: var(--color-5);
 }
+*/
+
 
 .folder_menu_children_closed {
   display: none;
@@ -170,32 +200,32 @@ h6 {
 
 h1 {
   margin-top: 1em;
-  font-size: var(--size-1);
+  font-size: var(--size-6);
 }
 
 h2 {
   --flow-space: 1.3em;
-  font-size: var(--size-2);
+  font-size: var(--size-5);
 }
 
 h3 {
   --flow-space: 1.3em;
-  font-size: var(--size-3);
+  font-size: var(--size-4);
 }
 
 h4 {
   --flow-space: 1.3em;
-  font-size: var(--size-4);
+  font-size: var(--size-3);
 }
 
 h5 {
   --flow-space: 1.3em;
-  font-size: var(--size-5);
+  font-size: var(--size-2);
 }
 
 h6 {
   --flow-space: 1.3em;
-  font-size: var(--size-6);
+  font-size: var(--size-1);
 }
 
 html {
@@ -220,7 +250,7 @@ li::marker {
 }
 
 pre {
-  font-size: var(--size-5);
+  font-size: var(--size-3);
 }
 
 strong {

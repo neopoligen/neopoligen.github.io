@@ -5,4 +5,7 @@ EXPECTED:
 
 GOT:
 
-<nav class="folder_menu"><ol></ol></nav>
+<ol class="folder_menu"><li id="folder_menu_item_title-support-page-dir-1" class="folder_menu_closed_directory_item">
+<button class="folder_menu_button" data-page_id="title-support-page-dir-1" data-status="closed">DIR1</button><ol id="folder_menu_children_title-support-page-dir-1" class="folder_menu_children_closed"><li id="folder_menu_item_alfa-support-page" class="folder_menu_file_item">
+<span class="folder_menu_link_item"><a href="/en/alfa-support-page/?this-is-page-alfa">This is page Alfa</a></span>
+</li></ol></li></ol>

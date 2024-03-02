@@ -78,20 +78,29 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%}
 
 
-
 {%- macro folder_menu(current_page, folders) -%}
-<nav class="folder_menu"><ol>
+<ol class="folder_menu">
 {%- for item in site.folder_menu(current_page, folders) -%}
 {{ folder_menu_item(current_page, item) }}
 {%- endfor -%}
-</ol></nav>
+</ol>
 {%- endmacro -%}
 
 
 {%- macro folder_menu_item(current_page, item) -%}
-<li>
 {%- if item.item_type == "OpenDirectory" and item.children -%}
-<button id="folder_menu_button_{{item.page_id}}" class="folder_menu_button folder_menu_opened" data-page_id="{{ item.page_id }}" data-status="open">
+{{- folder_menu_opened_directory_item(current_page, item) -}}
+{%- elif item.item_type == "ClosedDirectory" and item.children -%}
+{{- folder_menu_closed_directory_item(current_page, item) -}}
+{%- else -%}
+{{- folder_menu_file_item(current_page, item) -}}
+{%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro folder_menu_opened_directory_item(current_page, item) -%}
+<li id="folder_menu_item_{{item.page_id}}" class="folder_menu_opened_directory_item">
+<button class="folder_menu_button" data-page_id="{{ item.page_id }}" data-status="open">
 {{- site.page_title(item.page_id) -}}
 </button>
 {{- '' -}}
@@ -100,8 +109,13 @@ LINK_OR_TITLE_MACRO
 {{- folder_menu_item(current_page, child) -}}
 {%- endfor -%}
 </ol>
-{%- elif item.item_type == "ClosedDirectory" and item.children -%}
-<button id="menu_button_{{item.page_id}}" class="folder_menu_button folder_menu_closed" data-page_id="{{ item.page_id }}" data-status="closed">
+</li>
+{%- endmacro -%}
+
+
+{%- macro folder_menu_closed_directory_item(current_page, item) -%}
+<li id="folder_menu_item_{{item.page_id}}" class="folder_menu_closed_directory_item">
+<button class="folder_menu_button" data-page_id="{{ item.page_id }}" data-status="closed">
 {{- site.page_title(item.page_id) -}}
 </button>
 {{- '' -}}
@@ -109,12 +123,21 @@ LINK_OR_TITLE_MACRO
 {%- for child in item.children -%}
 {{ folder_menu_item(current_page, child) }}
 {%- endfor -%}
-</ol>
-{%- else -%}
-<span class="folder_menu_link">{{- site.link_or_title(current_page, item.page_id, [], "") -}}</span>
-{%- endif -%}
+</ol></li>
+{%- endmacro -%}
+
+
+{%- macro folder_menu_file_item(current_page, item) -%}
+<li id="folder_menu_item_{{item.page_id}}" class="folder_menu_file_item">
+<span class="folder_menu_link_item">{{- site.link_or_title(current_page, item.page_id, [], "") -}}</span>
 </li>
 {%- endmacro -%}
+
+
+
+
+
+
 
 
 
