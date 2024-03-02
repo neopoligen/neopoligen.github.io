@@ -114,6 +114,51 @@ body {
   font-size: var(--size-4);
 }
 
+.folder_menu button {
+  all: unset;
+  color: var(--color-2);
+  font-family: var(--heavy);
+}
+
+.folder_menu_button.folder_menu_opened::before {
+  content: "v ";
+  font-family: monospace;
+  color: var(--color-3);
+}
+
+.folder_menu_button.folder_menu_closed::before {
+  content: "> ";
+  font-family: monospace;
+  color: var(--color-3);
+}
+
+.folder_menu ol {
+  padding-left: var(--padding-4);
+}
+
+.folder_menu > ol {
+  padding: 0;
+}
+
+.folder_menu ol li {
+  list-style-type: none;
+}
+
+.folder_menu_link:before {
+  content: "• ";
+  font-family: monospace;
+  color: var(--color-3);
+}
+
+.folder_menu_children_closed {
+  display: none;
+}
+
+.folder_menu_children_open {
+  display: block;
+}
+
+
 h1,
 h2,
 h3,
@@ -172,14 +217,6 @@ kbd {
 
 li::marker {
   color: var(--color-1);
-}
-
-.menu_folder_children_hidden {
-  display: none;
-}
-
-.menu_folder_children_visible {
-  display: block;
 }
 
 pre {
