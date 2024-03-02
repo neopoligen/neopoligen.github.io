@@ -29,27 +29,18 @@ LINK_OR_TITLE_MACRO
 
 
 {%- macro nav_tree_item(item) -%}
-{#
-{{ site.log("AAAAAAAAAAAA") }}
-{{ site.log(item|tojson) }}
-{{ site.show(item) }}
-
-{%- if item.item_type == "ClosedFolderIndex" and item.children -%}
+{%- if item.item_type == "ClosedFolderIndex"-%}
 {{- nav_tree_closed_folder_index(item) -}}
-#}
-
-{%- if item.item_type == "ClosedFolderTitle" and item.children -%}
+{%- elif item.item_type == "ClosedFolderTitle" -%}
 {{- nav_tree_closed_folder_title(item) -}}
-{#
-{%- elif item.item_type == "CurrentFile" and item.children -%}
+{%- elif item.item_type == "CurrentFile" -%}
 {{- nav_tree_current_file(item) -}}
-{%- elif item.item_type == "OpenedFolderIndex" and item.children -%}
+{%- elif item.item_type == "OpenedFolderIndex" -%}
 {{- nav_tree_opened_folder_index(item) -}}
-{%- elif item.item_type == "OpenedFolderTitle" and item.children -%}
+{%- elif item.item_type == "OpenedFolderTitle" -%}
 {{- nav_tree_opened_folder_title(item) -}}
-{%- elif item.item_type == "NotCurrentFile" and item.children -%}
+{%- elif item.item_type == "NotCurrentFile" -%}
 {{- nav_tree_not_current_file(item) -}} 
-#}
 {%- endif -%}
 {%- endmacro -%}
 
@@ -81,21 +72,18 @@ LINK_OR_TITLE_MACRO
 {{ item.title }}
 </button>{{- '' -}}
 <ol id="nav_tree_children_{{item.page_id}}">
-{%- for child in item.children -%}
-{{- macros.nav_tree_item(current_page, child) -}}
-{%- endfor -%}
+{%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
 
 {%- macro nav_tree_current_file(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_current_file">
-{{- site.link_or_title(current_page, item.page_id, [], "") -}}
-</li>
+<li class="nav_tree_current_file">{{ item.title_link_or_text }}</li>
 {%- endmacro -%}
 
 
 {%- macro nav_tree_not_current_file(item) -%}
+<li class="nav_tree_not_current_file">{{ item.title_link_or_text }}</li>
 {%- endmacro -%}
 
 
