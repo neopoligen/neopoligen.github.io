@@ -399,3 +399,7 @@ ul > :where(:not(:first-child)) {
 .strike {
   text-decoration: line-through;
 }
+
+.template_data_object {
+  font-size: var(--size-1);
+}

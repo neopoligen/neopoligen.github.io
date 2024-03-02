@@ -1,5 +1,9 @@
+{%- import "includes/macros.jinja" as macros -%}
 <div class="sidebar">
-<nav>
+
+{{ macros.nav_tree(page_id, nav_links) }}
+{#
+
 {{ macros.folder_menu(current_page = page_id, folders = [
     ["2auhjdnh"],
     ["2cizgxp9"],
@@ -11,6 +15,7 @@
     ["miscelaneous"]
     ])}}
     
+    #}
 
 {# <div>{{ macros.link_or_title( current_page = page_id, target_page = "2auhjdnh" )}}</div> #}
 {# {{ macros.page_menu(current_page = page_id, pages = [ "2cizgxp9", "2cjwvi2l" ])}} #}
@@ -27,5 +32,4 @@
     ["miscelaneous"]
     ])}} #}
 
-</nav>
 </div>
