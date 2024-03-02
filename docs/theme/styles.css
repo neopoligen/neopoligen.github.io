@@ -114,13 +114,13 @@ body {
   font-size: var(--size-3);
 }
 
-.folder_menu button {
+.nav_tree_button {
   all: unset;
   color: var(--color-2);
   font-family: var(--heavy);
 }
 
-
+/*
 .folder_menu_opened_directory_item {
   list-style-type: disclosure-open;
 }
@@ -137,7 +137,6 @@ body {
   color: var(--color-5);
 }
 
-
 .folder_menu_file_item {
   list-style-type: disc;
 }
@@ -145,7 +144,7 @@ body {
 .folder_menu_file_item::marker {
   color: var(--color-5);
 }
-
+*/
 
 /*
 
@@ -153,10 +152,10 @@ body {
   padding-left: var(--padding-4);
 }
 
-*/
 .folder_menu {
   padding: 1rem;
 }
+*/
 
 /*
 .folder_menu li {

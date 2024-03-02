@@ -1,10 +1,22 @@
 {%- import "includes/macros.jinja" as macros -%}
 
+{%- set nav_links = site.nav_from_files_and_folders(page_id, [["tmp"]]) -%}
+
+
+{#
 {%- set nav_links = site.nav_from_files_and_folders(page_id, [
     ["2auhjdnh"],
     ["2cizgxp9"],
-    ["examples"]
+    ["examples"],
+    ["release-notes"],
+    ["documentation"],
+    ["roadmap"],
+    ["philosophy"],
+    ["miscelaneous"]
 ]) -%}
+
+
+#}
 
 <!DOCTYPE html>
 
