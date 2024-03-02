@@ -1,3 +1,7 @@
+{# NOTE: Keeping all the macros in the same file vastly
+simplifies dev. Otherwise things have to be imported 
+repeatedly #}
+
 {%- macro link_or_title(current_page, target_page) -%}
 LINK_OR_TITLE_MACRO
 {%- endmacro -%}
@@ -15,9 +19,9 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%}
 
 
-{%- macro nav_tree(page_id, nav, extras = {}) -%}
+{%- macro nav_tree(page_id, nav_links, extras = {}) -%}
 <nav class="nav_tree"><ol class="folder_menu">
-{%- for item in nav.items -%}
+{%- for item in nav_links.items -%}
 {{- macros.nav_tree_item(item) -}}
 {%- endfor -%}
 </ol></nav>
@@ -31,23 +35,21 @@ LINK_OR_TITLE_MACRO
 {{ site.show(item) }}
 
 {%- if item.item_type == "ClosedFolderIndex" and item.children -%}
-{{- macros.nav_tree_closed_folder_index(item) -}}
+{{- nav_tree_closed_folder_index(item) -}}
 #}
 
 {%- if item.item_type == "ClosedFolderTitle" and item.children -%}
-{{- macros.nav_tree_closed_folder_title(item) -}}
+{{- nav_tree_closed_folder_title(item) -}}
 {#
 {%- elif item.item_type == "CurrentFile" and item.children -%}
-{{- macros.nav_tree_current_file(item) -}}
+{{- nav_tree_current_file(item) -}}
 {%- elif item.item_type == "OpenedFolderIndex" and item.children -%}
-{{- macros.nav_tree_opened_folder_index(item) -}}
+{{- nav_tree_opened_folder_index(item) -}}
 {%- elif item.item_type == "OpenedFolderTitle" and item.children -%}
-{{- macros.nav_tree_opened_folder_title(item) -}}
-#}
+{{- nav_tree_opened_folder_title(item) -}}
 {%- elif item.item_type == "NotCurrentFile" and item.children -%}
-{#{{- macros.nav_tree_not_current_file(item) -}} #}
-{%- else -%}
-{#{{- macros.nav_tree_not_current_file(item) -}} #}
+{{- nav_tree_not_current_file(item) -}} 
+#}
 {%- endif -%}
 {%- endmacro -%}
 
@@ -61,32 +63,19 @@ LINK_OR_TITLE_MACRO
 
 
 {%- macro nav_tree_closed_folder_title(item) -%}
-xxxxxxxxxxxxxxx
-<div>
-
-{{ site.show(item) }}
-</div>
-
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_closed_folder_title">
 <button class="folder_menu_button" data-page_id="{{ item.page_id }}" data-status="closed">
 {{ item.title }}
 </button>{{- '' -}}
 <ol id="nav_tree_children_{{item.page_id}}">
 {%- for child in item.children -%}
---
-
-<div>
-{{ site.show(child) }}
-</div>
-
---
 {{- nav_tree_item(child) -}}
 {%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_opened_folder_title(current_page, item) -%}
+{%- macro nav_tree_opened_folder_title(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_opened_folder_title">
 <button class="nav_tree_button" data-page_id="{{ item.page_id }}" data-status="open">
 {{ item.title }}
@@ -99,14 +88,14 @@ xxxxxxxxxxxxxxx
 {%- endmacro -%}
 
 
-{%- macro nav_tree_current_file(current_page, item) -%}
+{%- macro nav_tree_current_file(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_current_file">
 {{- site.link_or_title(current_page, item.page_id, [], "") -}}
 </li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_not_current_file(page_id, item) -%}
+{%- macro nav_tree_not_current_file(item) -%}
 {%- endmacro -%}
 
 
