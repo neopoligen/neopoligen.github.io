@@ -1,0 +1,69 @@
+###
+DESCRIPTION
+
+This is a basic menu test
+
+###
+TEMPLATE
+PATH: pages/testing/published.jinja
+CONTENT:
+
+{%- import "includes/macros.jinja" as macros -%}
+{{- macros.folder_menu(
+    current_page="file-under-test", 
+    folders=[["dir1"]]
+) -}}
+
+###
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/dir1/_title.neo
+CONTENT: 
+
+-- title
+
+DIR1
+
+-- metadata
+-- id: title-support-page-dir-1
+
+
+###
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/dir1/alfa.neo
+CONTENT: 
+
+-- title
+
+This is page Alfa
+
+-- metadata
+-- id: alfa-support-page
+
+
+
+
+###
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/index.neo
+CONTENT:
+
+-- title
+
+Menu test page
+
+
+
+
+-- metadata
+-- id: file-under-test
+-- data: 2024-01-01 01:01:01
+-- type: testing
+-- status: published
+
+
+###
+OUTPUT
+CONTENT:
+
+
+<section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">Menu test page</h1></div></section>

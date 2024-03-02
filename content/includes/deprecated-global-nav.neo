@@ -7,40 +7,7 @@ so doesn't break things
 -- json
 -- id: global-nav
 
-[
-    {
-        "target_page": "2auhjdnh",
-        "exclude_tags": []
-    },
-    {
-        "target_page": "2cizgxp9",
-        "exclude_tags": ["quick-start"] 
-    },
-    {
-        "target_page": "2cgceffj",
-        "exclude_tags": ["sections"]
-    },
-    {
-        "target_page": "2ch7uk0v",
-        "exclude_tags": ["spans"]
-    },
-    {
-        "target_page": "2ciwn06a",
-        "exclude_tags": ["page-examples"]
-    },
-    {
-        "target_page": "2ciz8la4",
-        "exclude_tags": ["philosophy"]
-    },
-    {
-        "target_page": "2ciyvimp",
-        "exclude_tags": ["documentation"]
-    },
-    {
-        "target_page": "2cfuahxq",
-        "exclude_tags": ["roadmap"]
-    }
-]
+[]
 
 
 -- metadata

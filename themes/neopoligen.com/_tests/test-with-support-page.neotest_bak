@@ -1,3 +1,14 @@
+### DESCRIPTION ###
+
+This is just a stub to show how 
+to add extra files into the site for
+testing things like links. It can 
+be removed when real tests that have
+that are in place and the docs are
+written
+
+
+
 ### TEMPLATE ###
 
 pages/testing/published.jinja
@@ -38,8 +49,6 @@ This is some content
 
 ### OUTPUT ###
 
-<section class="p_section flow">
-    <div class="content">
-        <p>This is some content</p>
-    </div>
-</section>
+<section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">This is a title</h1></div></section><section class="p_section flow"><div class="content">
+    <p>This is some content</p></div>
+    </section>

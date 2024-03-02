@@ -26,6 +26,8 @@ How It Works
 Neopoligen sites are made from text files that look
 like this:
 
+
+
 -- pre/
 -- neo
 
@@ -48,6 +50,10 @@ anywhere that offers static site hosting.
 
 
 
+-- image
+-- train-1
+
+
 
 -- h2
 
@@ -67,4 +73,5 @@ You can <<ilink: 2ch7uk0v|learn more about spans here>>
 -- date: 2024-01-13 14:35:03
 -- id: 2auhjdnh
 -- path: /
+
 

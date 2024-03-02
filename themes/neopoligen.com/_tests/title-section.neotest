@@ -1,13 +1,18 @@
-### TEMPLATE ###
+###
+TEMPLATE
+PATH: pages/testing/published.jinja
+CONTENT:
 
-pages/testing/published.jinja
-~~~
 {%- import "includes/macros.jinja" as macros -%}
 {{- macros.place_section(page_id, "title") -}}
 {{- macros.place_section(page_id, "forward") -}}
 {{- macros.main_body(page_id) -}}
 
-### INPUT ###
+
+###
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/index.neo
+CONTENT:
 
 -- title
 
@@ -22,8 +27,9 @@ with some paragraphs after it
 -- status: published
 
 
-
-### OUTPUT ###
+###
+OUTPUT
+CONTENT:
 
 <section class="title_section flow">
     <div class="page_title_subtitle_group">

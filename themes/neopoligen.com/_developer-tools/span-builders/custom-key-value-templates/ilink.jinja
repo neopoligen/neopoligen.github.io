@@ -1,7 +1,7 @@
 {# type: key-value #}
 {%- import "includes/macros.jinja" as macros -%}
 
-<a href="{{ site.href_for_page(span.content.value) }}" 
+<a href="{{ site.page_href(span.content.value) }}" 
 {%- for attribute in span.content.key_value_attributes -%}
 {{- ' ' -}}
 {{- attribute -}}="{{- span.content.key_value_attributes[attribute] -}}"
