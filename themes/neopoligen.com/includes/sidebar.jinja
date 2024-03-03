@@ -1,36 +1,3 @@
 {%- import "includes/macros.jinja" as macros -%}
-<div class="sidebar">
+<div class="sidebar">{{ macros.nav_tree(page_id, nav_links) }}</div>
 
-
-{{ macros.nav_tree(page_id, nav_links) }}
-{#
-
-{{ macros.folder_menu(current_page = page_id, folders = [
-    ["2auhjdnh"],
-    ["2cizgxp9"],
-    ["examples"],
-    ["release-notes"],
-    ["documentation"],
-    ["roadmap"],
-    ["philosophy"],
-    ["miscelaneous"]
-    ])}}
-    
-    #}
-
-{# <div>{{ macros.link_or_title( current_page = page_id, target_page = "2auhjdnh" )}}</div> #}
-{# {{ macros.page_menu(current_page = page_id, pages = [ "2cizgxp9", "2cjwvi2l" ])}} #}
-
-{# {{ macros.page_menu(current_page = page_id, pages = [ "2cjeea0x", "2ck4i0ix" ])}} #}
-
-{# {{ macros.folder_menu(current_page = page_id, folders = [
-    ["quick-start"],
-    ["release-notes"],
-    ["documentation"],
-    ["roadmap"],
-    ["examples"],
-    ["philosophy"],
-    ["miscelaneous"]
-    ])}} #}
-
-</div>

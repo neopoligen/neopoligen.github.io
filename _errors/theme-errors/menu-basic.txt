@@ -5,6 +5,4 @@ EXPECTED:
 
 GOT:
 
-<ol class="folder_menu"><li id="folder_menu_item_title-support-page-dir-1" class="folder_menu_file_item">
-<span class="folder_menu_link_item"><a href="/en/title-support-page-dir-1/?dir1">DIR1</a></span>
-</li></ol>
+DEPCREATED FOLDER_MENU - switch to nav_menu

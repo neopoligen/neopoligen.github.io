@@ -114,11 +114,61 @@ body {
   font-size: var(--size-3);
 }
 
+.nav_tree ::marker {
+  color: var(--color-5);
+}
+
 .nav_tree_button {
   all: unset;
   color: var(--color-2);
   font-family: var(--heavy);
 }
+
+.nav_tree_active_path::marker {
+  color: var(--color-1);
+}
+
+.nav_tree_active_folder_index {
+  list-style-type: disc;
+}
+
+.nav_tree_closed_folder_index {
+  list-style-type: disc;
+}
+
+.nav_tree_closed_folder_title {
+  list-style-type: disclosure-closed;
+}
+
+.nav_tree_closed_folder_title > ol {
+  display: none;
+}
+
+.nav_tree_opened_folder_index {
+  list-style-type: disclosure-open;
+}
+
+.nav_tree_opened_folder_title {
+  list-style-type: disclosure-open;
+}
+
+.nav_tree_current_file {
+  list-style-type: disc;
+}
+
+.nav_tree_current_file::marker {
+  color: var(--color-1);
+}
+
+
+.nav_tree_not_current_file {
+  color: var(--color-5);
+  list-style-type: disc;
+}
+
+
+
+
 
 /*
 .folder_menu_opened_directory_item {
@@ -127,10 +177,6 @@ body {
 
 .folder_menu_opened_directory_item::marker {
   color: var(--color-1);
-}
-
-.folder_menu_closed_directory_item {
-  list-style-type: disclosure-closed;
 }
 
 .folder_menu_closed_directory_item::marker {
