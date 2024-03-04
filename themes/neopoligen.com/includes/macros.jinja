@@ -48,9 +48,12 @@ LINK_OR_TITLE_MACRO
 {%- macro nav_menu_active_folder_index(item) -%}
 <li id="nav_menu_item_{{item.page_id}}" class="nav_menu_active_folder_index nav_menu_active_path">
 {{ item.title }} 
+{%- if item.children|length > 0 -%}
 <ol id="nav_menu_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
-</ol></li>
+</ol>
+{%- endif -%}
+</li>
 {%- endmacro -%}
 
 {%- macro nav_menu_closed_folder_index(item) -%}

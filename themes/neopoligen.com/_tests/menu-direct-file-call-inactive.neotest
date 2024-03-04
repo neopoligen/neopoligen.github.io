@@ -50,7 +50,7 @@ EXPECTED_OUTPUT
 <nav class="nav_menu">
     <ol class="nav_menu_root">
         <li class="nav_menu_not_current_file">
-            <a href="/en/file-alfa/?file-alfa">file-alfa</a>
+            <a href="/en/file-alfa/?support-page">Support Page</a> 
         </li>
     </ol>
 </nav>

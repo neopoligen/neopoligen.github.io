@@ -1,0 +1,48 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test an _index file that's the current file
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["active-folder"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_index.neo
+##################################################################################
+
+-- title
+
+Active Folder Index
+
+
+-- metadata
+-- id: file-under-test
+-- type: testing
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+<nav class="nav_menu">
+    <ol class="nav_menu_root">
+        <li id="nav_menu_item_file-under-test" class="nav_menu_active_folder_index nav_menu_active_path">
+            Active Folder Index
+        </li>
+    </ol>
+</nav>
