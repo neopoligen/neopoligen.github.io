@@ -30,7 +30,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/
 Closed Title Folder
 
 -- metadata
--- id: 0002
+-- id: aabbcc02
 -- type: testing
 
 
@@ -45,7 +45,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/
 Secondary Page
 
 -- metadata
--- id: 0003
+-- id: aabbcc03
 
 
 
@@ -59,7 +59,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-t
 File Under Test
 
 -- metadata
--- id: 0001
+-- id: aabbcc01
 -- type: testing
 
 
@@ -69,19 +69,20 @@ File Under Test
 EXPECTED_OUTPUT
 ##################################################################################
 
+
 <nav class="nav_menu">
     <ol>
-    <li id="nav_menu_item_0002" class="nav_menu_closed_title_folder">
+    <li id="nav_menu_item_aabbcc02" class="nav_menu_closed_title_folder">
         <button
         class="nav_menu_button"
-        data-page_id="0002"
+        data-page_id="aabbcc02"
         data-status="closed"
         >
         Closed Title Folder
         </button>
-        <ol id="nav_menu_children_0002">
-        <li class="nav_menu_not_current_file">
-            <a href="/en/0003/?secondary-page">Secondary Page</a>
+        <ol id="nav_menu_children_aabbcc02">
+        <li id="nav_menu_item_aabbcc03" class="nav_menu_not_current_file">
+            <a href="/en/aabbcc03/?secondary-page">Secondary Page</a>
         </li>
         </ol>
     </li>

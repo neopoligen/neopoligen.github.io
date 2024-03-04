@@ -31,7 +31,7 @@ Opened Index Folder With Children
 
 
 -- metadata
--- id: 0002
+-- id: aabbcc02
 -- type: testing
 
 
@@ -45,7 +45,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/
 File Under Test
 
 -- metadata
--- id: 0001
+-- id: aabbcc01
 -- type: testing
 
 
@@ -57,14 +57,16 @@ EXPECTED_OUTPUT
 <nav class="nav_menu">
     <ol>
     <li
-        id="nav_menu_item_0002"
+        id="nav_menu_item_aabbcc02"
         class="nav_menu_opened_index_folder nav_menu_active_path"
     >
-        <a href="/en/0002/?opened-index-folder-with-children"
+        <a href="/en/aabbcc02/?opened-index-folder-with-children"
         >Opened Index Folder With Children</a
         >
-        <ol id="nav_menu_children_0002">
-        <li class="nav_menu_current_file">File Under Test</li>
+        <ol id="nav_menu_children_aabbcc02">
+        <li id="nav_menu_item_aabbcc01" class="nav_menu_current_file">
+            File Under Test
+        </li>
         </ol>
     </li>
     </ol>

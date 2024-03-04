@@ -24,6 +24,10 @@
         {{- macros.place_section(page_id, "forward") -}} 
         {{- macros.place_section(page_id, "title") -}}
         {{- macros.main_body(page_id) -}}
+        <div>
+        <div>{%- if nav_links.prev_item -%}Previous: {{ nav_links.prev_item.title_link_or_text }}{%- endif -%}</div>
+        <div>{%- if nav_links.next_item -%}Next: {{ nav_links.next_item.title_link_or_text }}{%- endif -%}</div>
+        </div>
       </article>
     </div>
     {%- include "includes/footer.jinja" -%}

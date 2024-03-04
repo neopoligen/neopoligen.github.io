@@ -13,7 +13,7 @@ PATH: pages/testing/published.jinja
 
 {%- import "includes/macros.jinja" as macros -%}
 {%- set nav_links = site.nav_from_files_and_folders(page_id, [
-    ["0002"]
+    ["aabbcc02"]
 ]) -%}
 {{- macros.nav_menu(nav_links) -}}
 
@@ -29,7 +29,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/support-page
 Support Page
 
 -- metadata
--- id: 0002
+-- id: aabbcc02
 -- type: testing
 
 
@@ -44,7 +44,7 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-t
 Main Test Page
 
 -- metadata
--- id: 0001
+-- id: aabbcc01
 -- type: testing
 
 
@@ -55,8 +55,8 @@ EXPECTED_OUTPUT
 
 <nav class="nav_menu">
     <ol>
-    <li class="nav_menu_not_current_file">
-        <a href="/en/0002/?support-page">Support Page</a>
+    <li id="nav_menu_item_aabbcc02" class="nav_menu_not_current_file">
+        <a href="/en/aabbcc02/?support-page">Support Page</a>
     </li>
     </ol>
 </nav>
