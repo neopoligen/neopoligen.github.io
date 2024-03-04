@@ -29,24 +29,24 @@ LINK_OR_TITLE_MACRO
 
 {%- macro nav_menu_item(item) -%}
 {%- if item.item_type == "ActiveFolderIndex"-%}
-{{- nav_menu_active_folder_index(item) -}}
+{{- nav_menu_active_index_folder(item) -}}
 {%- elif item.item_type == "ClosedFolderIndex"-%}
-{{- nav_menu_closed_folder_index(item) -}}
+{{- nav_menu_closed_index_folder(item) -}}
 {%- elif item.item_type == "ClosedFolderTitle" -%}
-{{- nav_menu_closed_folder_title(item) -}}
+{{- nav_menu_closed_title_folder(item) -}}
 {%- elif item.item_type == "CurrentFile" -%}
 {{- nav_menu_current_file(item) -}}
 {%- elif item.item_type == "OpenedFolderIndex" -%}
-{{- nav_menu_opened_folder_index(item) -}}
+{{- nav_menu_opened_index_folder(item) -}}
 {%- elif item.item_type == "OpenedFolderTitle" -%}
-{{- nav_menu_opened_folder_title(item) -}}
+{{- nav_menu_opened_title_folder(item) -}}
 {%- elif item.item_type == "NotCurrentFile" -%}
 {{- nav_menu_not_current_file(item) -}}
 {%- endif -%}
 {%- endmacro -%}
 
-{%- macro nav_menu_active_folder_index(item) -%}
-<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_active_folder_index nav_menu_active_path">
+{%- macro nav_menu_active_index_folder(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_active_index_folder nav_menu_active_path">
 {{ item.title }} 
 {%- if item.children|length > 0 -%}
 <ol id="nav_menu_children_{{item.page_id}}">
@@ -56,15 +56,15 @@ LINK_OR_TITLE_MACRO
 </li>
 {%- endmacro -%}
 
-{%- macro nav_menu_closed_folder_index(item) -%}
-<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_folder_index">
+{%- macro nav_menu_closed_index_folder(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_index_folder">
 <a href="{{ item.href }}">{{ item.title }}</a> 
 </li>
 {%- endmacro -%}
 
 
-{%- macro nav_menu_closed_folder_title(item) -%}
-<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_folder_title">
+{%- macro nav_menu_closed_title_folder(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_title_folder">
 <button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="closed"> 
 {{ item.title }} 
 </button>{{- '' -}}
@@ -77,8 +77,8 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%}
 
 
-{%- macro nav_menu_opened_folder_title(item) -%}
-<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_folder_title nav_menu_active_path">
+{%- macro nav_menu_opened_title_folder(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_title_folder nav_menu_active_path">
 <button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="open"> 
 {{ item.title }} 
 </button>{{- '' -}}
@@ -88,8 +88,8 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%}
 
 
-{%- macro nav_menu_opened_folder_index(item) -%}
-<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_folder_index nav_menu_active_path">
+{%- macro nav_menu_opened_index_folder(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_index_folder nav_menu_active_path">
 {{ item.menu_title_link_or_text }} 
 <ol id="nav_menu_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}

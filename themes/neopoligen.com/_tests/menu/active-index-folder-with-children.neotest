@@ -58,7 +58,7 @@ EXPECTED_OUTPUT
     <ol>
     <li
         id="nav_menu_item_0001"
-        class="nav_menu_active_folder_index nav_menu_active_path"
+        class="nav_menu_active_index_folder nav_menu_active_path"
     >
         Active Folder Index
         <ol id="nav_menu_children_0001">

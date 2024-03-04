@@ -70,7 +70,7 @@ EXPECTED_OUTPUT
 
 <nav class="nav_menu">
     <ol>
-    <li id="nav_menu_item_0002" class="nav_menu_closed_folder_title">
+    <li id="nav_menu_item_0002" class="nav_menu_closed_title_folder">
         <button
         class="nav_menu_button"
         data-page_id="0002"

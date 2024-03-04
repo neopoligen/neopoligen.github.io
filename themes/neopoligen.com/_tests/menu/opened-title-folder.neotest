@@ -57,7 +57,7 @@ EXPECTED_OUTPUT
     <ol>
     <li
         id="nav_menu_item_0002"
-        class="nav_menu_opened_folder_title nav_menu_active_path"
+        class="nav_menu_opened_title_folder nav_menu_active_path"
     >
         <button
         class="nav_menu_button"
