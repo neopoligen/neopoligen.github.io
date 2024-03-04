@@ -12,25 +12,11 @@ PATH: pages/testing/published.jinja
 
 
 {%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.nav_from_files_and_folders_dev(
-    page_id, 
-    [["active-folder"]]
-) -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["active-folder"]
+]) -%}
 {{- macros.nav_menu(nav_links) -}}
 
-
-
-##################################################################################
-SUPPORT_PAGE
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/other-page.neo
-##################################################################################
-
--- title
-
-Another Page
-
--- metadata
--- id: 0002
 
 
 ##################################################################################
@@ -44,9 +30,8 @@ Active Folder Index
 
 
 -- metadata
--- id: 0001
+-- id: file-under-test
 -- type: testing
-
 
 
 
@@ -55,17 +40,9 @@ EXPECTED_OUTPUT
 ##################################################################################
 
 <nav class="nav_menu">
-    <ol class="nav_menu_root">
-    <li
-        id="nav_menu_item_0001"
-        class="nav_menu_active_folder_index nav_menu_active_path"
-    >
-        Active Folder Index
-        <ol id="nav_menu_children_0001">
-        <li class="nav_menu_not_current_file">
-            <a href="/en/0002/?another-page">Another Page</a>
+    <ol>
+        <li id="nav_menu_item_file-under-test" class="nav_menu_active_folder_index nav_menu_active_path">
+            Active Folder Index
         </li>
-        </ol>
-    </li>
     </ol>
 </nav>

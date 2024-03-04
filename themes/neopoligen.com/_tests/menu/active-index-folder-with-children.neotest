@@ -1,8 +1,8 @@
-##################################################################################
+#####################################################################
 DESCRIPTION
 ##################################################################################
 
-A direct call to a file that's not the active file
+Test an _index file that's the current file
 
 
 ##################################################################################
@@ -12,40 +12,41 @@ PATH: pages/testing/published.jinja
 
 
 {%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
-    ["0002"]
-]) -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(
+    page_id, 
+    [["active-folder"]]
+) -%}
 {{- macros.nav_menu(nav_links) -}}
 
 
 
 ##################################################################################
 SUPPORT_PAGE
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/support-page.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/other-page.neo
 ##################################################################################
 
 -- title
 
-Support Page
+Another Page
 
 -- metadata
 -- id: 0002
--- type: testing
-
 
 
 ##################################################################################
 INPUT
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-test.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_index.neo
 ##################################################################################
 
 -- title
 
-Main Test Page
+Active Folder Index
+
 
 -- metadata
 -- id: 0001
 -- type: testing
+
 
 
 
@@ -55,8 +56,16 @@ EXPECTED_OUTPUT
 
 <nav class="nav_menu">
     <ol>
-    <li class="nav_menu_not_current_file">
-        <a href="/en/0002/?support-page">Support Page</a>
+    <li
+        id="nav_menu_item_0001"
+        class="nav_menu_active_folder_index nav_menu_active_path"
+    >
+        Active Folder Index
+        <ol id="nav_menu_children_0001">
+        <li class="nav_menu_not_current_file">
+            <a href="/en/0002/?another-page">Another Page</a>
+        </li>
+        </ol>
     </li>
     </ol>
 </nav>

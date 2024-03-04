@@ -19,7 +19,7 @@ LINK_OR_TITLE_MACRO
 
 
 {%- macro nav_menu(nav_links, extras = {}) -%}
-<nav class="nav_menu"><ol class="nav_menu_root">
+<nav class="nav_menu"><ol>
 {%- for item in nav_links.tree -%}
 {{- macros.nav_menu_item(item) -}}
 {%- endfor -%}
@@ -68,11 +68,12 @@ LINK_OR_TITLE_MACRO
 <button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="closed"> 
 {{ item.title }} 
 </button>{{- '' -}}
+{%- if item.children|length > 0 -%}
 <ol id="nav_menu_children_{{item.page_id}}">
-{%- for child in item.children -%}
-{{- nav_menu_item(child) -}}
-{%- endfor -%}
-</ol></li>
+{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
 {%- endmacro -%}
 
 

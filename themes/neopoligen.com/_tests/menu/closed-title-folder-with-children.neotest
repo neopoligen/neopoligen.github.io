@@ -1,8 +1,8 @@
-##################################################################################
+#####################################################################
 DESCRIPTION
 ##################################################################################
 
-A direct call to a file that's not the active file
+Test an _title.neo that's not the current file and had children
 
 
 ##################################################################################
@@ -12,25 +12,39 @@ PATH: pages/testing/published.jinja
 
 
 {%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
-    ["0002"]
-]) -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(
+    page_id, 
+    [["test-folder"]]
+) -%}
 {{- macros.nav_menu(nav_links) -}}
 
 
 
 ##################################################################################
 SUPPORT_PAGE
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/support-page.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/_title.neo
 ##################################################################################
 
 -- title
 
-Support Page
+Closed Title Folder
 
 -- metadata
 -- id: 0002
--- type: testing
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/secondary-page.neo
+##################################################################################
+
+-- title
+
+Secondary Page
+
+-- metadata
+-- id: 0003
 
 
 
@@ -41,11 +55,12 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-t
 
 -- title
 
-Main Test Page
+File Under Test
 
 -- metadata
 -- id: 0001
 -- type: testing
+
 
 
 
@@ -55,8 +70,19 @@ EXPECTED_OUTPUT
 
 <nav class="nav_menu">
     <ol>
-    <li class="nav_menu_not_current_file">
-        <a href="/en/0002/?support-page">Support Page</a>
+    <li id="nav_menu_item_0002" class="nav_menu_closed_folder_title">
+        <button
+        class="nav_menu_button"
+        data-page_id="0002"
+        data-status="closed"
+        >
+        Closed Title Folder
+        </button>
+        <ol id="nav_menu_children_0002">
+        <li class="nav_menu_not_current_file">
+            <a href="/en/0003/?secondary-page">Secondary Page</a>
+        </li>
+        </ol>
     </li>
     </ol>
 </nav>

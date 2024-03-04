@@ -2,7 +2,9 @@
 DESCRIPTION
 ##################################################################################
 
-Test an _index file that's the current file
+Test an _index that's not the current file. Note that this
+is a link so there is no need to make different versions
+for instances with and without children
 
 
 ##################################################################################
@@ -13,24 +15,36 @@ PATH: pages/testing/published.jinja
 
 {%- import "includes/macros.jinja" as macros -%}
 {%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
-    ["active-folder"]
+    ["test-folder"]
 ]) -%}
 {{- macros.nav_menu(nav_links) -}}
 
 
-
 ##################################################################################
-INPUT
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_index.neo
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/_index.neo
 ##################################################################################
 
 -- title
 
-Active Folder Index
+Closed Folder Index With No Children
 
 
 -- metadata
--- id: file-under-test
+-- id: 0002
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-test.neo
+##################################################################################
+
+-- title
+
+File Under Test
+
+-- metadata
+-- id: 0001
 -- type: testing
 
 
@@ -40,9 +54,11 @@ EXPECTED_OUTPUT
 ##################################################################################
 
 <nav class="nav_menu">
-    <ol class="nav_menu_root">
-        <li id="nav_menu_item_file-under-test" class="nav_menu_active_folder_index nav_menu_active_path">
-            Active Folder Index
-        </li>
+    <ol>
+    <li id="nav_menu_item_0002" class="nav_menu_closed_folder_index">
+        <a href="/en/0002/?closed-folder-index-with-no-children"
+        >Closed Folder Index With No Children</a
+        >
+    </li>
     </ol>
 </nav>
