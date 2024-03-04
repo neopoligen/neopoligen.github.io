@@ -1,0 +1,70 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test an _index that's open above the current file. Note that this
+will always have children ender it since an _index without
+children would be the direct link to that file
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["test-folder"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/_index.neo
+##################################################################################
+
+-- title
+
+Opened Index Folder With Children
+
+
+-- metadata
+-- id: 0002
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/file-under-test.neo
+##################################################################################
+
+-- title
+
+File Under Test
+
+-- metadata
+-- id: 0001
+-- type: testing
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+<nav class="nav_menu">
+    <ol>
+    <li
+        id="nav_menu_item_0002"
+        class="nav_menu_opened_folder_index nav_menu_active_path"
+    >
+        <a href="/en/0002/?opened-index-folder-with-children"
+        >Opened Index Folder With Children</a
+        >
+        <ol id="nav_menu_children_0002">
+        <li class="nav_menu_current_file">File Under Test</li>
+        </ol>
+    </li>
+    </ol>
+</nav>

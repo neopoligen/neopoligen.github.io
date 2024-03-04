@@ -1,0 +1,74 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test a _title that's open above the current file. Note that
+you can't have an open folder that doesn't also have 
+children since it can't be open without something under it
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["test-folder"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/_title.neo
+##################################################################################
+
+-- title
+
+Opened Title Folder
+
+
+-- metadata
+-- id: 0002
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/file-under-test.neo
+##################################################################################
+
+-- title
+
+File Under Test
+
+-- metadata
+-- id: 0001
+-- type: testing
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+<nav class="nav_menu">
+    <ol>
+    <li
+        id="nav_menu_item_0002"
+        class="nav_menu_opened_folder_title nav_menu_active_path"
+    >
+        <button
+        class="nav_menu_button"
+        data-page_id="0002"
+        data-status="open"
+        >
+        Opened Title Folder
+        </button>
+        <ol id="nav_menu_children_0002">
+        <li class="nav_menu_current_file">File Under Test</li>
+        </ol>
+    </li>
+    </ol>
+</nav>
