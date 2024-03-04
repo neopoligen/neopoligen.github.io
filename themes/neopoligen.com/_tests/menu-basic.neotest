@@ -9,53 +9,70 @@ PATH: pages/testing/published.jinja
 CONTENT:
 
 {%- import "includes/macros.jinja" as macros -%}
-{{- macros.folder_menu(
-    current_page="file-under-test", 
-    folders=[["dir1"]]
-) -}}
-
-###
-SUPPORT_PAGE
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/dir1/_title.neo
-CONTENT: 
-
--- title
-
-DIR1
-
--- metadata
--- id: title-support-page-dir-1
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["top-level-page"],
+    ["folder-with-closed-title"],
+    ["folder-with-opened-title"],
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
 
 
 ###
 SUPPORT_PAGE
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/dir1/alfa.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/top-level-page.neo
+CONTENT:
+
+-- title 
+
+Top Level Page
+
+-- metadata
+-- id: top-level-page
+
+
+
+###
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-closed-title/_title.neo
 CONTENT: 
 
 -- title
 
-This is page Alfa
+Folder With Closed Title
 
 -- metadata
--- id: alfa-support-page
+-- id: folder-with-closed-title-page
+
+
+
+
+###
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-opened-title/_title.neo
+CONTENT: 
+
+-- title
+
+Folder With Opened Title
+
+-- metadata
+-- id: folder-with-opened-title-page
 
 
 
 
 ###
 INPUT
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/index.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-opened-title/active-file.neo
 CONTENT:
 
 -- title
 
-Menu test page
-
-
+Active File
 
 
 -- metadata
--- id: file-under-test
+-- id: active-file
 -- data: 2024-01-01 01:01:01
 -- type: testing
 -- status: published

@@ -11,7 +11,6 @@ LINK_OR_TITLE_MACRO
 {{- site.log_from_template(payload|tojson) -}}
 {%- endmacro -%}
 
-
 {%- macro main_body(page_id, payload = {}) -%}
 {%- for section in site.page_main_body(page_id, payload) -%}
 {{- output_payload(page_id, section, payload) -}}
@@ -19,9 +18,9 @@ LINK_OR_TITLE_MACRO
 {%- endmacro -%}
 
 
-{%- macro nav_tree(page_id, nav_links, extras = {}) -%}
+{%- macro nav_menu(nav_links, extras = {}) -%}
 <nav class="nav_tree"><ol class="nav_tree_root">
-{%- for item in nav_links.items -%}
+{%- for item in nav_links.tree -%}
 {{- macros.nav_tree_item(item) -}}
 {%- endfor -%}
 </ol></nav>
@@ -48,7 +47,7 @@ LINK_OR_TITLE_MACRO
 
 {%- macro nav_tree_active_folder_index(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_active_folder_index nav_tree_active_path">
-{{ item.title }} (afi)
+{{ item.title }} 
 <ol id="nav_tree_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
 </ol></li>
@@ -56,7 +55,7 @@ LINK_OR_TITLE_MACRO
 
 {%- macro nav_tree_closed_folder_index(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_closed_folder_index">
-<a href="{{ item.href }}">{{ item.title }}</a> (cfi)
+<a href="{{ item.href }}">{{ item.title }}</a> 
 </li>
 {%- endmacro -%}
 
@@ -64,7 +63,7 @@ LINK_OR_TITLE_MACRO
 {%- macro nav_tree_closed_folder_title(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_closed_folder_title">
 <button class="nav_tree_button" data-page_id="{{ item.page_id }}" data-status="closed"> 
-{{ item.title }} (cft)
+{{ item.title }} 
 </button>{{- '' -}}
 <ol id="nav_tree_children_{{item.page_id}}">
 {%- for child in item.children -%}
@@ -77,7 +76,7 @@ LINK_OR_TITLE_MACRO
 {%- macro nav_tree_opened_folder_title(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_opened_folder_title nav_tree_active_path">
 <button class="nav_tree_button" data-page_id="{{ item.page_id }}" data-status="open"> 
-{{ item.title }} (oft)
+{{ item.title }} 
 </button>{{- '' -}}
 <ol id="nav_tree_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
@@ -87,7 +86,7 @@ LINK_OR_TITLE_MACRO
 
 {%- macro nav_tree_opened_folder_index(item) -%}
 <li id="nav_tree_item_{{item.page_id}}" class="nav_tree_opened_folder_index nav_tree_active_path">
-{{ item.menu_title_link_or_text }} (ofi)
+{{ item.menu_title_link_or_text }} 
 <ol id="nav_tree_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
 </ol></li>
@@ -96,16 +95,17 @@ LINK_OR_TITLE_MACRO
 
 {%- macro nav_tree_current_file(item) -%}
 <li class="nav_tree_current_file">
-{{ item.title_link_or_text }} (cf)
+{{ item.title_link_or_text }} 
 </li> 
 {%- endmacro -%}
 
 
 {%- macro nav_tree_not_current_file(item) -%}
 <li class="nav_tree_not_current_file">
-{{ item.title_link_or_text }} (ncf)
+{{ item.title_link_or_text }} 
 </li>
 {%- endmacro -%}
+
 
 
 {%- macro output_list(page_id, section, extra = {}) -%}

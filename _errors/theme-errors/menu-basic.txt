@@ -5,4 +5,14 @@ EXPECTED:
 
 GOT:
 
-DEPCREATED FOLDER_MENU - switch to nav_menu
+<nav class="nav_tree"><ol class="nav_tree_root"><li class="nav_tree_not_current_file">
+<a href="/en/top-level-page/?top-level-page">Top Level Page</a> 
+</li><li id="nav_tree_item_folder-with-closed-title-page" class="nav_tree_closed_folder_title">
+<button class="nav_tree_button" data-page_id="folder-with-closed-title-page" data-status="closed"> 
+Folder With Closed Title 
+</button><ol id="nav_tree_children_folder-with-closed-title-page"></ol></li><li id="nav_tree_item_folder-with-opened-title-page" class="nav_tree_opened_folder_title nav_tree_active_path">
+<button class="nav_tree_button" data-page_id="folder-with-opened-title-page" data-status="open"> 
+Folder With Opened Title 
+</button><ol id="nav_tree_children_folder-with-opened-title-page"><li class="nav_tree_current_file">
+Active File 
+</li></ol></li></ol></nav>
