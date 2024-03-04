@@ -114,58 +114,58 @@ body {
   font-size: var(--size-3);
 }
 
-.nav_tree ::marker {
+.nav_menu ::marker {
   color: var(--color-5);
 }
 
-.nav_tree ol {
+.nav_menu ol {
   padding-left: 1rem;
 }
 
-.nav_tree_button {
+.nav_menu_button {
   all: unset;
   color: var(--color-2);
   font-family: var(--heavy);
 }
 
-.nav_tree_active_path::marker {
+.nav_menu_active_path::marker {
   color: var(--color-1);
 }
 
-.nav_tree_active_folder_index {
+.nav_menu_active_index_folder {
   list-style-type: disc;
 }
 
-.nav_tree_closed_folder_index {
+.nav_menu_closed_index_folder {
   list-style-type: disc;
 }
 
-.nav_tree_closed_folder_title {
+.nav_menu_closed_title_folder {
   list-style-type: disclosure-closed;
 }
 
-.nav_tree_closed_folder_title > ol {
+.nav_menu_closed_title_folder > ol {
   display: none;
 }
 
-.nav_tree_opened_folder_index {
+.nav_menu_opened_index_folder {
   list-style-type: disclosure-open;
 }
 
-.nav_tree_opened_folder_title {
+.nav_menu_opened_title_folder {
   list-style-type: disclosure-open;
 }
 
-.nav_tree_current_file {
+.nav_menu_current_file {
   list-style-type: disc;
 }
 
-.nav_tree_current_file::marker {
+.nav_menu_current_file::marker {
   color: var(--color-1);
 }
 
 
-.nav_tree_not_current_file {
+.nav_menu_not_current_file {
   color: var(--color-5);
   list-style-type: disc;
 }

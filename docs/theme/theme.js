@@ -1,16 +1,16 @@
-function toggle_nav_tree_item(event) {
+function toggle_nav_menu_item(event) {
   console.log("got click")
   let el = event.target
   let ds = el.dataset
-  let li = document.getElementById(`nav_tree_item_${ds.page_id}`)
+  let li = document.getElementById(`nav_menu_item_${ds.page_id}`)
    if (ds.status == "closed") {
-    li.classList.remove("nav_tree_closed_folder_title")
-    li.classList.add("nav_tree_opened_folder_title")
+    li.classList.remove("nav_menu_closed_title_folder")
+    li.classList.add("nav_menu_opened_title_folder")
     ds.status = "open"
   } else {
     console.log(".")
-    li.classList.remove("nav_tree_opened_folder_title")
-    li.classList.add("nav_tree_closed_folder_title")
+    li.classList.remove("nav_menu_opened_title_folder")
+    li.classList.add("nav_menu_closed_title_folder")
     ds.status = "closed"
   }
 
@@ -39,9 +39,9 @@ function toggle_nav_tree_item(event) {
 }
 
 function add_folder_menu_button_listeners() {
-  const buttons = document.getElementsByClassName("nav_tree_button")
+  const buttons = document.getElementsByClassName("nav_menu_button")
   for (let button of buttons) {
-    button.addEventListener("click", toggle_nav_tree_item)
+    button.addEventListener("click", toggle_nav_menu_item)
   }
 }
 
