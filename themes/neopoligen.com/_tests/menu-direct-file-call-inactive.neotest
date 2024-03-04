@@ -1,0 +1,56 @@
+#####################################################################
+DESCRIPTION
+#####################################################################
+
+A direct call to a file that's not the active file
+
+#####################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+#####################################################################
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["file-alfa"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+#####################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-alfa.neo
+#####################################################################
+
+-- title
+
+Support Page
+
+-- metadata
+-- id: file-alfa
+-- data: 2024-01-01 01:01:01
+-- type: testing
+
+
+
+#####################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-test.neo
+#####################################################################
+
+-- metadata
+-- id: file-under-test
+-- data: 2024-01-01 01:01:01
+-- type: testing
+
+
+#####################################################################
+EXPECTED_OUTPUT
+#####################################################################
+
+<nav class="nav_menu">
+    <ol class="nav_menu_root">
+        <li class="nav_menu_not_current_file">
+            <a href="/en/file-alfa/?file-alfa">file-alfa</a>
+        </li>
+    </ol>
+</nav>

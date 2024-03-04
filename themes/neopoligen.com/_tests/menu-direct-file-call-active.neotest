@@ -1,27 +1,36 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+A direct call to a file that's the active file
+
+
 ##################################################################################
 TEMPLATE
 PATH: pages/testing/published.jinja
 ##################################################################################
 
+
 {%- import "includes/macros.jinja" as macros -%}
-{{- macros.place_section(page_id, "title") -}}
-{{- macros.place_section(page_id, "forward") -}}
-{{- macros.main_body(page_id) -}}
+{%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
+    ["active-file"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
 
 
 ##################################################################################
 INPUT
-PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/index.neo
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/page-to-test.neo
 ##################################################################################
 
 -- title
 
-This is a basic title
+Top Level Page Active
 
-with some paragraphs after it
 
 -- metadata
--- id: file-under-test
+-- id: active-file
 -- data: 2024-01-01 01:01:01
 -- type: testing
 -- status: published
@@ -32,11 +41,10 @@ with some paragraphs after it
 EXPECTED_OUTPUT
 ##################################################################################
 
-<section class="title_section flow">
-    <div class="page_title_subtitle_group">
-        <h1 class="page_title">This is a basic title</h1>
-    </div>
-    <div class="content">
-        <p>with some paragraphs after it</p>
-    </div>
-</section>
+<nav class="nav_menu">
+    <ol class="nav_menu_root">
+        <li class="nav_menu_current_file">
+            Top Level Page Active 
+        </li>
+    </ol>
+</nav>

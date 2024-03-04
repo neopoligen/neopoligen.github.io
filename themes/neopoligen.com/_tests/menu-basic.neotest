@@ -1,12 +1,13 @@
-###
+##################################################################################
 DESCRIPTION
+##################################################################################
 
 This is a basic menu test
 
-###
+##################################################################################
 TEMPLATE
 PATH: pages/testing/published.jinja
-CONTENT:
+##################################################################################
 
 {%- import "includes/macros.jinja" as macros -%}
 {%- set nav_links = site.nav_from_files_and_folders_dev(page_id, [
@@ -17,10 +18,10 @@ CONTENT:
 {{- macros.nav_menu(nav_links) -}}
 
 
-###
+##################################################################################
 SUPPORT_PAGE
 PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/top-level-page.neo
-CONTENT:
+##################################################################################
 
 -- title 
 
@@ -31,10 +32,10 @@ Top Level Page
 
 
 
-###
+##################################################################################
 SUPPORT_PAGE
 PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-closed-title/_title.neo
-CONTENT: 
+##################################################################################
 
 -- title
 
@@ -46,10 +47,24 @@ Folder With Closed Title
 
 
 
-###
+##################################################################################
 SUPPORT_PAGE
 PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-opened-title/_title.neo
-CONTENT: 
+##################################################################################
+
+-- title
+
+Folder With Opened Title
+
+-- metadata
+-- id: folder-with-opened-title-page
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-closed-index/_title.neo
+##################################################################################
 
 -- title
 
@@ -61,10 +76,11 @@ Folder With Opened Title
 
 
 
-###
+
+##################################################################################
 INPUT
 PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/folder-with-opened-title/active-file.neo
-CONTENT:
+##################################################################################
 
 -- title
 
@@ -78,9 +94,10 @@ Active File
 -- status: published
 
 
-###
-OUTPUT
-CONTENT:
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
 
 
 <section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">Menu test page</h1></div></section>

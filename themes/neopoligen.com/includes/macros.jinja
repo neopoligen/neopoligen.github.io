@@ -19,89 +19,89 @@ LINK_OR_TITLE_MACRO
 
 
 {%- macro nav_menu(nav_links, extras = {}) -%}
-<nav class="nav_tree"><ol class="nav_tree_root">
+<nav class="nav_menu"><ol class="nav_menu_root">
 {%- for item in nav_links.tree -%}
-{{- macros.nav_tree_item(item) -}}
+{{- macros.nav_menu_item(item) -}}
 {%- endfor -%}
 </ol></nav>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_item(item) -%}
+{%- macro nav_menu_item(item) -%}
 {%- if item.item_type == "ActiveFolderIndex"-%}
-{{- nav_tree_active_folder_index(item) -}}
+{{- nav_menu_active_folder_index(item) -}}
 {%- elif item.item_type == "ClosedFolderIndex"-%}
-{{- nav_tree_closed_folder_index(item) -}}
+{{- nav_menu_closed_folder_index(item) -}}
 {%- elif item.item_type == "ClosedFolderTitle" -%}
-{{- nav_tree_closed_folder_title(item) -}}
+{{- nav_menu_closed_folder_title(item) -}}
 {%- elif item.item_type == "CurrentFile" -%}
-{{- nav_tree_current_file(item) -}}
+{{- nav_menu_current_file(item) -}}
 {%- elif item.item_type == "OpenedFolderIndex" -%}
-{{- nav_tree_opened_folder_index(item) -}}
+{{- nav_menu_opened_folder_index(item) -}}
 {%- elif item.item_type == "OpenedFolderTitle" -%}
-{{- nav_tree_opened_folder_title(item) -}}
+{{- nav_menu_opened_folder_title(item) -}}
 {%- elif item.item_type == "NotCurrentFile" -%}
-{{- nav_tree_not_current_file(item) -}}
+{{- nav_menu_not_current_file(item) -}}
 {%- endif -%}
 {%- endmacro -%}
 
-{%- macro nav_tree_active_folder_index(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_active_folder_index nav_tree_active_path">
+{%- macro nav_menu_active_folder_index(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_active_folder_index nav_menu_active_path">
 {{ item.title }} 
-<ol id="nav_tree_children_{{item.page_id}}">
-{%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
+<ol id="nav_menu_children_{{item.page_id}}">
+{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
-{%- macro nav_tree_closed_folder_index(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_closed_folder_index">
+{%- macro nav_menu_closed_folder_index(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_folder_index">
 <a href="{{ item.href }}">{{ item.title }}</a> 
 </li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_closed_folder_title(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_closed_folder_title">
-<button class="nav_tree_button" data-page_id="{{ item.page_id }}" data-status="closed"> 
+{%- macro nav_menu_closed_folder_title(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_folder_title">
+<button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="closed"> 
 {{ item.title }} 
 </button>{{- '' -}}
-<ol id="nav_tree_children_{{item.page_id}}">
+<ol id="nav_menu_children_{{item.page_id}}">
 {%- for child in item.children -%}
-{{- nav_tree_item(child) -}}
+{{- nav_menu_item(child) -}}
 {%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_opened_folder_title(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_opened_folder_title nav_tree_active_path">
-<button class="nav_tree_button" data-page_id="{{ item.page_id }}" data-status="open"> 
+{%- macro nav_menu_opened_folder_title(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_folder_title nav_menu_active_path">
+<button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="open"> 
 {{ item.title }} 
 </button>{{- '' -}}
-<ol id="nav_tree_children_{{item.page_id}}">
-{%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
+<ol id="nav_menu_children_{{item.page_id}}">
+{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_opened_folder_index(item) -%}
-<li id="nav_tree_item_{{item.page_id}}" class="nav_tree_opened_folder_index nav_tree_active_path">
+{%- macro nav_menu_opened_folder_index(item) -%}
+<li id="nav_menu_item_{{item.page_id}}" class="nav_menu_opened_folder_index nav_menu_active_path">
 {{ item.menu_title_link_or_text }} 
-<ol id="nav_tree_children_{{item.page_id}}">
-{%- for child in item.children -%}{{- nav_tree_item(child) -}}{%- endfor -%}
+<ol id="nav_menu_children_{{item.page_id}}">
+{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
 </ol></li>
 {%- endmacro -%}
 
 
-{%- macro nav_tree_current_file(item) -%}
-<li class="nav_tree_current_file">
+{%- macro nav_menu_current_file(item) -%}
+<li class="nav_menu_current_file">
 {{ item.title_link_or_text }} 
 </li> 
 {%- endmacro -%}
 
 
-{%- macro nav_tree_not_current_file(item) -%}
-<li class="nav_tree_not_current_file">
+{%- macro nav_menu_not_current_file(item) -%}
+<li class="nav_menu_not_current_file">
 {{ item.title_link_or_text }} 
 </li>
 {%- endmacro -%}
