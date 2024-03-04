@@ -12,7 +12,7 @@ PATH: pages/testing/published.jinja
 
 
 {%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.nav_from_files_and_folders_dev(
+{%- set nav_links = site.nav_from_files_and_folders(
     page_id, 
     [["test-folder"]]
 ) -%}
