@@ -12,10 +12,10 @@ PATH: pages/testing/published.jinja
 
 
 {%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.nav_from_files_and_folders(page_id, [
+{%- set links = site.collection_from_files_and_folders(page_id, [
     ["aabbcc01"]
 ]) -%}
-{{- macros.nav_menu(nav_links) -}}
+{{- macros.collection_menu(links) -}}
 
 
 
@@ -39,9 +39,12 @@ Top Level Page Active
 EXPECTED_OUTPUT
 ##################################################################################
 
-<nav class="nav_menu">
+<nav class="collection_menu">
     <ol>
-    <li id="nav_menu_item_aabbcc01" class="nav_menu_current_file">
+    <li
+        id="collection_menu_item_page_aabbcc01"
+        class="collection_menu_item_page_active"
+    >
         Top Level Page Active
     </li>
     </ol>
