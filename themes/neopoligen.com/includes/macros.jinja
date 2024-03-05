@@ -52,9 +52,12 @@ LINK_OR_TITLE_MACRO
 <button class="nav_menu_button" data-page_id="{{ item.page_id }}" data-status="open"> 
 {{- item.title -}} 
 </button>{{- '' -}}
+{%- if item.children|length > 0 -%}
 <ol id="nav_menu_children_{{item.page_id}}">
 {%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
-</ol></li>
+</ol>
+{%- endif -%}
+</li>
 {%- endmacro -%}
 
 
@@ -127,9 +130,6 @@ LINK_OR_TITLE_MACRO
 {%- macro nav_toc(page_id, nav_links) -%}
 TODO: NAV TOC
 {%- endmacro -%}
-
-
-
 
 
 

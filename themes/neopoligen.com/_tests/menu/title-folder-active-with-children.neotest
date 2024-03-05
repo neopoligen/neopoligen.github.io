@@ -1,0 +1,79 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test an _title that's active with children
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders(
+    page_id, 
+    [["active-folder"]]
+) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/child-page.neo
+##################################################################################
+
+-- title
+
+Child Page
+
+-- metadata
+-- id: aabb0002
+-- type: testing
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_title.neo
+##################################################################################
+
+-- title
+
+Title Folder Active
+
+
+-- metadata
+-- id: aabb0001
+-- type: testing
+
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+
+<nav class="nav_menu">
+    <ol>
+    <li
+        id="nav_menu_item_aabb0001"
+        class="nav_menu_active_title_folder nav_menu_active_path"
+    >
+        <button
+        class="nav_menu_button"
+        data-page_id="aabb0001"
+        data-status="open"
+        >
+        Title Folder Active
+        </button>
+        <ol id="nav_menu_children_aabb0001">
+        <li id="nav_menu_item_aabb0002" class="nav_menu_not_current_file">
+            <a href="/en/aabb0002/?child-page">Child Page</a>
+        </li>
+        </ol>
+    </li>
+    </ol>
+</nav>
