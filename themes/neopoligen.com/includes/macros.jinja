@@ -16,6 +16,10 @@ repeatedly #}
 {{- collection_menu_item_page_active(item) -}}
 {%- elif item.status == "PageInactive" -%}
 {{- collection_menu_item_page_inactive(item) -}}
+{%- elif item.status == "IndexFolderActive" -%}
+{{- collection_menu_item_index_folder_active(item) -}}
+{%- elif item.status == "IndexFolderClosed" -%}
+{{- collection_menu_item_index_folder_closed(item) -}}
 {%- endif -%}
 {%- endmacro -%}
 
@@ -30,6 +34,19 @@ repeatedly #}
     class="collection_menu_item_page_inactive"
     >{{- site.page_html_link(item.id) -}}</li>
 {%- endmacro -%}
+
+{%- macro collection_menu_item_index_folder_active(item) -%}
+<li id="collection_menu_item_index_folder_{{- item.id}}"
+    class="collection_menu_item_index_folder_active"
+    >TODO - collection_menu_item_index_folder_active</li>
+{%- endmacro -%}
+
+{%- macro collection_menu_item_index_folder_closed(item) -%}
+<li id="collection_menu_item_index_folder_{{- item.id}}"
+    class="collection_menu_item_index_folder_closed"
+    >{{- site.page_html_link(item.id) -}}</li>
+{%- endmacro -%}
+
 
 
 
