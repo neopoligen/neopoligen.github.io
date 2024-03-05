@@ -156,6 +156,10 @@ body {
   list-style-type: disclosure-open;
 }
 
+.nav_menu_active_title_folder {
+  list-style-type: disclosure-open;
+}
+
 .nav_menu_current_file {
   list-style-type: disc;
 }
