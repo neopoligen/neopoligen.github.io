@@ -2,6 +2,82 @@
 simplifies dev. Otherwise things have to be imported 
 repeatedly #}
 
+
+{%- macro collection_menu(page_id, collection, extras = {}) -%}
+<nav class="nav_menu"><ol>
+{%- for item in collection.items  -%}
+{{- macros.collection_menu_item(page_id, item) -}}
+{%- endfor -%}
+</ol></nav>
+{%- endmacro -%}
+
+{%- macro collection_menu_item(page_id, item) -%}
+{%- if item.base_type == "File" -%}
+{{- collection_menu_item_file(page_id, item) -}}
+{%- endif -%}
+
+{# <li>{{ page_id }}</li> #}
+{# {%- if item.item_type == "FileCurrent" -%}
+{{- nav_menu_current_file(item) -}}
+{%- elif item.item_type == "FileNotCurrent" -%}
+{{- nav_menu_not_current_file(item) -}}
+{%- elif item.item_type == "IndexFolderActive"-%}
+{{- nav_menu_active_index_folder(item) -}}
+{%- elif item.item_type == "IndexFolderClosed"-%}
+{{- nav_menu_closed_index_folder(item) -}}
+{%- elif item.item_type == "IndexFolderOpened" -%}
+{{- nav_menu_opened_index_folder(item) -}}
+{%- elif item.item_type == "TitleFolderActive" -%}
+{{- nav_menu_active_title_folder(item) -}}
+{%- elif item.item_type == "TitleFolderClosed" -%}
+{{- nav_menu_closed_title_folder(item) -}}
+{%- elif item.item_type == "TitleFolderOpened" -%}
+{{- nav_menu_opened_title_folder(item) -}}
+{%- endif -%} #}
+{%- endmacro -%}
+
+
+{%- macro collection_menu_item_file(page_id, item) -%}
+{%- if page_id == item.page_id -%}
+{{- collection_menu_item_file_current(page_id, item) -}}
+{%- else -%}
+{{- collection_menu_item_file_not_current(page_id, item) -}}
+{%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro collection_menu_item_file_current(page_id, item) -%}
+<li id="collection_menu_item_file_{{- item.page_id}}"
+    class="collection_menu_item_file_current"
+    >Curent file</li>
+{%- endmacro -%}
+
+{%- macro collection_menu_item_file_not_current(page_id, item) -%}
+<li id="collection_menu_item_file_{{- item.page_id}}"
+    class="collection_menu_item_file_not_current"
+    >Other file</li>
+{%- endmacro -%}
+
+
+
+{# {%- macro nav_menu_current_file(item) -%}
+<li id="nav_menu_item_{{item.page_id}}"  class="nav_menu_current_file">
+{{- item.title_link_or_text -}} 
+</li> 
+{%- endmacro -%}
+
+
+{%- macro nav_menu_not_current_file(item) -%}
+<li id="nav_menu_item_{{item.page_id}}"  class="nav_menu_not_current_file">
+{{- item.title_link_or_text -}} 
+</li>
+{%- endmacro -%} #}
+
+
+
+
+
+
 {%- macro link_or_title(current_page, target_page) -%}
 LINK_OR_TITLE_MACRO
 {%- endmacro -%}

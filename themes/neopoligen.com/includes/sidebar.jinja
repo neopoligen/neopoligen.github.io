@@ -1,2 +1,14 @@
 {%- import "includes/macros.jinja" as macros -%}
-<div class="sidebar">{{ macros.nav_menu(nav_links) }}</div>
+
+
+<div class="sidebar">
+
+
+{{ macros.collection_menu(page_id, links) }}
+
+{{ site.show(links) }}
+
+<hr />
+{# {{ macros.nav_menu(nav_links) }} #}
+
+</div>
