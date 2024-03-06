@@ -38,9 +38,14 @@ So, here's those lists:
 -- todo
 -- title: Do Before Launch
 
+[] Remove timezone offset from config and use the local time
+from the server for the internals
+
 [] Convert date to remove timestamps
 
 [] Blog posts work
+
+[] Button to neo content show source on every page
 
 [] Images work with just their filename
 
@@ -56,6 +61,8 @@ Windows and Macs
 [] Button to make a new website
 
 [] Guide to deploying on GitHub
+
+[] Convert format to "neojinja"
 
 [x] Content files parse and render properly
 
@@ -117,5 +124,3 @@ official version of the app>>
 -- metadata
 -- date: 2024-03-06 09:32:34
 -- id: 2djou38z
--- type: blog
-
