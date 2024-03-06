@@ -104,18 +104,11 @@ one collection_menu can but put on a page #}
 <button class="collection_menu_button" data-page_id="{{ item.id }}" data-status="closed">
 {{- site.page_title(item.id) -}}
 </button>
-
-{# <li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_title_folder">
-
-{{- item.title -}} 
-</button>{{- '' -}}
 {%- if item.children|length > 0 -%}
-<ol id="nav_menu_children_{{item.page_id}}">
-{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
+<ol id="{{- menu_name -}}_children_{{item.id}}">
+{%- for child in item.children -%}{{- collection_menu_item(menu_name, child) -}}{%- endfor -%}
 </ol>
 {%- endif -%}
-</li> #}
-
 </li>
 {%- endmacro -%}
 
