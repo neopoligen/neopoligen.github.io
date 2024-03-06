@@ -12,11 +12,6 @@
         {{- macros.breadcrumbs(links) -}}
         {{- macros.place_section(page_id, "title") -}}
         {{- macros.toc_subtree(page_id, links) -}}
-        
-        <div>
-          {# <div>{%- if nav_links.prev_item -%}Previous: {{ nav_links.prev_item.title_link_or_text }}{%- endif -%}</div>
-          <div>{%- if nav_links.next_item -%}Next: {{ nav_links.next_item.title_link_or_text }}{%- endif -%}</div> #}
-        </div>
       </article>
     </div>
     {%- include "includes/footer.jinja" -%}

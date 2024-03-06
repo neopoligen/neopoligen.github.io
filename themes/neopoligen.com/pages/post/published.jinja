@@ -1,7 +1,6 @@
 {%- import "includes/macros.jinja" as macros -%}
 {%- include "includes/globals.jinja" -%}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>{% include "includes/head.jinja" -%}</head>
@@ -14,10 +13,7 @@
         {{- macros.place_section(page_id, "title") -}}
         {{- macros.place_section(page_id, "forward") -}}
         {{- macros.main_body(page_id) -}}
-        <div>
-          {# <div>{%- if nav_links.prev_item -%}Previous: {{ nav_links.prev_item.title_link_or_text }}{%- endif -%}</div>
-          <div>{%- if nav_links.next_item -%}Next: {{ nav_links.next_item.title_link_or_text }}{%- endif -%}</div> #}
-        </div>
+        {{ macros.prev_next(links) }}
       </article>
     </div>
     {%- include "includes/footer.jinja" -%}
