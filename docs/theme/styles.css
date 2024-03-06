@@ -99,6 +99,10 @@ a:hover, a:focus {
   padding: var(--padding-3);
 }
 
+.blue {
+  color: blue;
+}
+
 body {
   background-color: var(--color-0);
   color: var(--color-1);
@@ -120,6 +124,16 @@ body {
 
 .breadcrumbs > ol > li {
   list-style-type: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.code_section_content_pre {
+  border: var(--border-1);
+  border-radius: var(--radius-3);
+  padding: var(--padding-3);
 }
 
 .collection_menu ::marker {
@@ -175,12 +189,27 @@ body {
   list-style-type: disclosure-open;
 }
 
+/* TODO: Move these to inline CSS, probably */
+.example_nested_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.example_nested_grid > .flow {
+  margin-top: 0;
+}
+
+.example_pre_content {
+  color: var(--color-1);
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-family: var(--heavy);
 }
 
 h1 {
+  line-height: 1.1;
   font-size: var(--size-6);
 }
 
@@ -238,6 +267,19 @@ pre {
   font-size: var(--size-3);
 }
 
+.prev_next {
+  padding-top: var(--padding-6);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prev_next > div {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-3);
+}
+
 strong {
   font-family: var(--heavy);
 }
@@ -248,34 +290,6 @@ ul {
 
 ul > :where(:not(:first-child)) {
   margin-top: 1em;
-}
-
-.blue {
-  color: blue;
-}
-
-.centered {
-  text-align: center;
-}
-
-.code_section_content_pre {
-  border: var(--border-1);
-  border-radius: var(--radius-3);
-  padding: var(--padding-3);
-}
-
-/* TODO: Move these to inline CSS, probably */
-.example_nested_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.example_nested_grid > .flow {
-  margin-top: 0;
-}
-
-.example_pre_content {
-  color: var(--color-1);
 }
 
 .flow > :where(:not(:first-child)) {

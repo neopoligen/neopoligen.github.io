@@ -74,7 +74,7 @@ EXPECTED_OUTPUT
 ##################################################################################
 
 <nav class="prev_next">
-    <div class="prev_item">Prev: <a href="/en/aabb0001/?previous-file">Previous File</a></div>
-    <div class="next_item">Next: <a href="/en/aabb0003/?next-file">Next File</a></div>
+    <div>Previous:<br /> <a href="/en/aabb0001/?previous-file">Previous File</a></div>
+    <div>Next:<br /> <a href="/en/aabb0003/?next-file">Next File</a></div>
 </nav>
 

@@ -209,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  line-height: 1.1;
   font-size: var(--size-6);
 }
 
@@ -264,6 +265,19 @@ li::marker {
 
 pre {
   font-size: var(--size-3);
+}
+
+.prev_next {
+  padding-top: var(--padding-6);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prev_next > div {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-3);
 }
 
 strong {

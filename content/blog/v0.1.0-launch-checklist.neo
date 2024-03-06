@@ -38,6 +38,8 @@ So, here's those lists:
 -- todo
 -- title: Do Before Launch
 
+[] Move _errors under _status
+
 [] Remove timezone offset from config and use the local time
 from the server for the internals
 
@@ -94,6 +96,19 @@ in the approach.
 that does the actual site build. If you use linux there's
 a good chance you can <<link|dig into the repo|https://github.com/neopoligen/neopoligen>>
 to compile and run it yourself. 
+
+[] Integrated Editor - Okay, there wasn't a big danger of
+waiting for this to launch, but it still tickles my brain
+so I'm putting it on the don't do list. Eventually, 
+you'll be able to edit the website content files directly
+in the app, but that's for a future version.
+
+[] Sitemap - Like feeds, this is something I want to get 
+in place quickly, but the initial set of content loaders have to
+be built first
+
+[] The Roadmap - All the stuff on <<ilink: 2cfuahxq|The Roadmap>>
+
 
 
 
