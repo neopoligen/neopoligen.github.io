@@ -7,7 +7,9 @@ repeatedly #}
 
 {#############################################################################}
 {%- macro collection_menu(collection) -%}
-{%- set menu_name = "main_menu" -%}
+{%- set menu_name = "collection_menu" -%}
+{# TODO: Setup the menu_name to accept a parameter so more than
+one collection_menu can but put on a page #}
 <nav id="{{ menu_name }}" class="collection_menu"><ol>
 {%- for item in collection.tree  -%}
 {{- macros.collection_menu_item(menu_name, item) -}}
@@ -26,6 +28,8 @@ repeatedly #}
 {{- collection_menu_item_index_folder_active(menu_name, item) -}}
 {%- elif item.status == "IndexFolderClosed" -%}
 {{- collection_menu_item_index_folder_closed(menu_name, item) -}} 
+{%- elif item.status == "IndexFolderOpened" -%}
+{{- collection_menu_item_index_folder_opened(menu_name, item) -}} 
 {%- endif -%}
 {%- endmacro -%}
 
@@ -65,6 +69,22 @@ repeatedly #}
 {{- site.page_html_link(item.id) -}}
 </li>
 {%- endmacro -%}
+
+
+
+{#############################################################################}
+{%- macro collection_menu_item_index_folder_opened(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="index_folder_opened">
+{{- site.page_html_link(item.id) -}}
+{%- if item.children|length > 0 -%}
+<ol id="{{- menu_name -}}_children_{{item.id}}">
+{%- for child in item.children -%}{{- collection_menu_item(menu_name, child) -}}{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
+
 
 
 
