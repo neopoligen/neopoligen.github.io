@@ -6,6 +6,7 @@
 <head>{% include "includes/head.jinja" -%}</head>
 <body>
   <div class="page_wrapper">
+    {% include "includes/prelude.jinja" %}
     <div class="sidebar_article_group">
       {%- include "includes/sidebar.jinja" -%}
       <article class="flow">
@@ -14,6 +15,7 @@
         {{- macros.main_body(page_id) -}}
         {%- include "includes/prev-next.jinja" -%}
         {%- include "includes/neo-source.jinja" %}
+        {%- include "includes/debugging.jinja" -%}
       </article>
     </div>
     {%- include "includes/footer.jinja" -%}

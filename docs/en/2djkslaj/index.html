@@ -26,6 +26,15 @@
 </head>
 <body>
   <div class="page_wrapper">
+    <section class="prelude">
+<h4>Head's up</h4>
+<p>The site is public, but it's still very much 
+a work in progress and in migration. You can 
+play with the builder if you want to install
+it from source code but probably you're better
+waiting until the middle of March when the full
+first iteration is ready</p>
+</section>
     <div class="sidebar_article_group"><div class="sidebar">
 <h4>Sections</h4>
 
@@ -56,19 +65,11 @@
 
 <h4>Blog</h4>
 <ul>
-<li><a href="/en/2dj6mp6e/?hello%2C-world">Hello, World</a></li>
-
 <li>The Database Idea</li>
 
 <li><a href="/en/2djou38z/?v0.1.0-launch-checklist">v0.1.0 Launch Checklist</a></li>
 </ul>
-</div><article class="flow">
-<nav class="breadcrumbs"><ol>
-<li><a href="/">Neopoligen</a></li>
-
-</ol>
-</nav>
-<section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">The Database Idea</h1></div><div class="content"><p>I had what feels like an interesting idea last night: A database.</p><p>Sure, not that novel, but maybe not what you'd initially think of. The thought isn't to integrate database software. Instead, it's to make a new  folder called "database" and throw files in there. </p><p>Files in the "database" folder wouldn't output to the site directly as pages. Instead, you'd pull their content in from other pages. For example,  you could make some files with `-- book`` sections  in them. Using something like this on a page would  output all the books from your database:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+</div><article class="flow"><section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">The Database Idea</h1></div><div class="content"><p>I had what feels like an interesting idea last night: A database.</p><p>Sure, not that novel, but maybe not what you'd initially think of. The thought isn't to integrate database software. Instead, it's to make a new  folder called "database" and throw files in there. </p><p>Files in the "database" folder wouldn't output to the site directly as pages. Instead, you'd pull their content in from other pages. For example,  you could make some files with `-- book`` sections  in them. Using something like this on a page would  output all the books from your database:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">[! for book in db.get(&quot;book&quot;) !]
 [[ book ]] 
 [! endfor !]</code></pre>
@@ -82,90 +83,15 @@
 [[ book ]]
 [! endfor !]</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The goal here is not to replicate a full set of database software features. You can always call out to an actual database if you need to do that. Instead, the goal is to be able to do  basic database collections from inside content  files.</p></div>
-<nav class="prev_next">
+<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The goal here is not to replicate a full set of database software features. You can always call out to an actual database if you need to do that. Instead, the goal is to be able to do  basic database collections from inside content  files.</p></div><section class="debugging">
+<h3>Debugging</h3>
+<ul>
+<li>Status: published</li>
+<li>Template: pages/blog/published.jinja</li>
+<li>Type: blog</li>
 
-    <div></div>
-
-
-    <div></div>
-
-</nav>
-<section class="original_content flow">
-<div class="original_content_toggle_wrapper">
-    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
-</div>
-<div id="original_content_display" class="hidden flow">
-<h3>Original Content File</h3>
-<p>This is the file that produced this page</p>
-<pre ><code>-- title
-
-The Database Idea
-
-I had what feels like an interesting idea last night:
-A database.
-
-Sure, not that novel, but maybe not what you&#x27;d
-initially think of. The thought isn&#x27;t to integrate
-database software. Instead, it&#x27;s to make a new 
-folder called &quot;database&quot; and throw files in there. 
-
-Files in the &quot;database&quot; folder wouldn&#x27;t output
-to the site directly as pages. Instead, you&#x27;d
-pull their content in from other pages. For example, 
-you could make some files with `-- book`` sections 
-in them. Using something like this on a page would 
-output all the books from your database:
-
--- code&#x2f;
--- neojinja
- 
-[! for book in db.get(&quot;book&quot;) !]
-[[ book ]] 
-[! endfor !]
-
--- &#x2f;code
-
-Of course, you&#x27;re probably want some control over
-the sorting. Assuming each book has a `-- title``
-attribute like:
-
--- code&#x2f;
--- neo
-
--- book
--- title: Stranger In A Strange Land
-
--- &#x2f;code
-
-you could do something like:
-
--- code&#x2f;
--- neojinja
-
-[! for book in db.get_sort(&quot;book&quot;, &quot;title&quot;) !]
-[[ book ]]
-[! endfor !]
-
--- &#x2f;code
-
-The goal here is not to replicate a full set
-of database software features. You can always
-call out to an actual database if you need to do
-that. Instead, the goal is to be able to do 
-basic database collections from inside content 
-files.
-
--- metadata
--- date: 2024-03-06 09:02:57
--- id: 2djkslaj
-</pre></code>
-<div class="original_content_toggle_wrapper">
-    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
-</div>
-</div>
-</section>
-      </article>
+</ul>
+</section></article>
     </div><footer></footer></div>
 </body>
 </html>

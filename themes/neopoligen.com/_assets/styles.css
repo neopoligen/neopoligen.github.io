@@ -57,7 +57,8 @@
   --size-3: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
   --size-2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
   --size-1: clamp(0.68rem, calc(0.67rem + 0.03vw), 0.7rem);
-  /* only doing one width for now */
+  --width-1: min(100% - 3rem, 48ch);
+  --width-2: min(100% - 3rem, 82ch);
   --width-3: min(100% - 3rem, 96ch);
 }
 
@@ -189,6 +190,12 @@ body {
   list-style-type: disclosure-open;
 }
 
+.debugging {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-4);
+}
+
 /* TODO: Move these to inline CSS, probably */
 .example_nested_grid {
   display: grid;
@@ -262,36 +269,6 @@ kbd {
 li::marker {
   color: var(--color-1);
 }
-
-pre {
-  font-size: var(--size-3);
-}
-
-.prev_next {
-  padding-top: var(--padding-6);
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr 1fr;
-}
-
-.prev_next > div {
-  padding: var(--padding-4);
-  border: var(--border-5);
-  border-radius: var(--radius-3);
-}
-
-strong {
-  font-family: var(--heavy);
-}
-
-ul {
-  padding-left: var(--padding-7);
-}
-
-ul > :where(:not(:first-child)) {
-  margin-top: 1em;
-}
-
 .flow > :where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -330,6 +307,32 @@ footer {
   max-width: var(--width-3);
   margin-top: 0;
   margin-inline: auto;
+}
+
+pre {
+  font-size: var(--size-3);
+}
+
+.prelude {
+  border: var(--border-4);
+  width: var(--width-1);
+  border-radius: var(--radius-3);
+  margin-inline: auto;
+  padding: var(--padding-4);
+  margin-block: 2rem;
+}
+
+.prev_next {
+  padding-top: var(--padding-6);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prev_next > div {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-3);
 }
 
 .pre_section_content_pre {
@@ -425,6 +428,19 @@ footer {
 .strike {
   text-decoration: line-through;
 }
+
+strong {
+  font-family: var(--heavy);
+}
+
+ul {
+  padding-left: var(--padding-7);
+}
+
+ul > :where(:not(:first-child)) {
+  margin-top: 1em;
+}
+
 
 .template_data_object {
   font-size: var(--size-1);
