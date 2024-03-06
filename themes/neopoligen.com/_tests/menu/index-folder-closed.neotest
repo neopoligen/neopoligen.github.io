@@ -54,12 +54,9 @@ File Under Test
 EXPECTED_OUTPUT
 ##################################################################################
 
-<nav class="collection_menu">
+<nav id="main_menu" class="collection_menu">
     <ol>
-    <li
-        id="collection_menu_item_index_folder_0002"
-        class="collection_menu_item_index_folder_closed"
-    >
+    <li id="main_menu_0002" class="index_folder_closed">
         <a href="/en/0002/?closed-folder-index">Closed Folder Index</a>
     </li>
     </ol>

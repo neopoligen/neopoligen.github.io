@@ -3,48 +3,67 @@ simplifies dev. Otherwise things have to be imported
 repeatedly #}
 
 
+
+
+{#############################################################################}
 {%- macro collection_menu(collection) -%}
-<nav class="collection_menu"><ol>
+{%- set menu_name = "main_menu" -%}
+<nav id="{{ menu_name }}" class="collection_menu"><ol>
 {%- for item in collection.tree  -%}
-{{- macros.collection_menu_item(item) -}}
+{{- macros.collection_menu_item(menu_name, item) -}}
 {%- endfor -%}
 </ol></nav>
 {%- endmacro -%}
 
-{%- macro collection_menu_item(item) -%}
+
+{#############################################################################}
+{%- macro collection_menu_item(menu_name, item) -%}
 {%- if item.status == "PageActive" -%}
-{{- collection_menu_item_page_active(item) -}}
+{{- collection_menu_item_page_active(menu_name, item) -}}
 {%- elif item.status == "PageInactive" -%}
-{{- collection_menu_item_page_inactive(item) -}}
+{{- collection_menu_item_page_inactive(menu_name, item) -}}
 {%- elif item.status == "IndexFolderActive" -%}
-{{- collection_menu_item_index_folder_active(item) -}}
+{{- collection_menu_item_index_folder_active(menu_name, item) -}}
 {%- elif item.status == "IndexFolderClosed" -%}
-{{- collection_menu_item_index_folder_closed(item) -}}
+{{- collection_menu_item_index_folder_closed(menu_name, item) -}} 
 {%- endif -%}
 {%- endmacro -%}
 
-{%- macro collection_menu_item_page_active(item) -%}
-<li id="collection_menu_item_page_{{- item.id}}"
-    class="collection_menu_item_page_active"
-    >{{- site.page_title(item.id) -}}</li>
+
+{#############################################################################}
+{%- macro collection_menu_item_page_active(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="page_active">
+{{- site.page_title(item.id) -}}
+</li>
 {%- endmacro -%}
 
-{%- macro collection_menu_item_page_inactive(item) -%}
-<li id="collection_menu_item_page_{{- item.id}}"
-    class="collection_menu_item_page_inactive"
-    >{{- site.page_html_link(item.id) -}}</li>
+
+{#############################################################################}
+{%- macro collection_menu_item_page_inactive(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="page_inactive">
+{{- site.page_html_link(item.id) -}}
+</li>
 {%- endmacro -%}
 
-{%- macro collection_menu_item_index_folder_active(item) -%}
-<li id="collection_menu_item_index_folder_{{- item.id}}"
-    class="collection_menu_item_index_folder_active"
-    >TODO - collection_menu_item_index_folder_active</li>
+
+{#############################################################################}
+{%- macro collection_menu_item_index_folder_active(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="index_folder_active">
+{{- site.page_title(item.id) -}}
+{%- if item.children|length > 0 -%}
+<ol id="{{- menu_name -}}_children_{{item.id}}">
+{%- for child in item.children -%}{{- collection_menu_item(menu_name, child) -}}{%- endfor -%}
+</ol>
+{%- endif -%}
+</li>
 {%- endmacro -%}
 
-{%- macro collection_menu_item_index_folder_closed(item) -%}
-<li id="collection_menu_item_index_folder_{{- item.id}}"
-    class="collection_menu_item_index_folder_closed"
-    >{{- site.page_html_link(item.id) -}}</li>
+
+{#############################################################################}
+{%- macro collection_menu_item_index_folder_closed(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="index_folder_closed">
+{{- site.page_html_link(item.id) -}}
+</li>
 {%- endmacro -%}
 
 

@@ -39,12 +39,9 @@ Top Level Page Active
 EXPECTED_OUTPUT
 ##################################################################################
 
-<nav class="collection_menu">
+<nav id="main_menu" class="collection_menu">
     <ol>
-    <li
-        id="collection_menu_item_page_aabbcc01"
-        class="collection_menu_item_page_active"
-    >
+    <li id="main_menu_aabbcc01" class="page_active">
         Top Level Page Active
     </li>
     </ol>
