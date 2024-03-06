@@ -99,6 +99,10 @@ a:hover, a:focus {
   padding: var(--padding-3);
 }
 
+.blue {
+  color: blue;
+}
+
 body {
   background-color: var(--color-0);
   color: var(--color-1);
@@ -120,6 +124,16 @@ body {
 
 .breadcrumbs > ol > li {
   list-style-type: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.code_section_content_pre {
+  border: var(--border-1);
+  border-radius: var(--radius-3);
+  padding: var(--padding-3);
 }
 
 .collection_menu ::marker {
@@ -173,6 +187,20 @@ body {
 
 .collection_menu .title_folder_opened {
   list-style-type: disclosure-open;
+}
+
+/* TODO: Move these to inline CSS, probably */
+.example_nested_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.example_nested_grid > .flow {
+  margin-top: 0;
+}
+
+.example_pre_content {
+  color: var(--color-1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -248,34 +276,6 @@ ul {
 
 ul > :where(:not(:first-child)) {
   margin-top: 1em;
-}
-
-.blue {
-  color: blue;
-}
-
-.centered {
-  text-align: center;
-}
-
-.code_section_content_pre {
-  border: var(--border-1);
-  border-radius: var(--radius-3);
-  padding: var(--padding-3);
-}
-
-/* TODO: Move these to inline CSS, probably */
-.example_nested_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.example_nested_grid > .flow {
-  margin-top: 0;
-}
-
-.example_pre_content {
-  color: var(--color-1);
 }
 
 .flow > :where(:not(:first-child)) {
