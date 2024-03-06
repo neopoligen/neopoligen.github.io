@@ -81,7 +81,44 @@
     <div class="next_item">Next: <a href="/en/2aygxfkb/?title-section---title-only-">Title Section - Title Only </a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Title Section - Paragraphs 
+
+All the paragraphs after the title so they can 
+be output separately from the title
+
+-- code
+
+{%- for block in page.title_section.blocks  -%}
+    {% if not loop.first %}
+    &lt;p&gt;
+    {%- for span in block.spans -%}
+    {%- include &quot;spans&#x2f;spans.jinja&quot; -%}
+    {%- endfor -%}
+    &lt;&#x2f;p&gt;
+    {% endif %}
+{%- endfor -%}
+
+-- metadata
+-- date: 2024-01-15 00:25:42
+-- id: 2ayggkm1
+-- status: published
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

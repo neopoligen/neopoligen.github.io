@@ -96,7 +96,87 @@
     <div class="next_item">Next: <a href="/en/2cgqohce/?link-or-title-text-with-filters-">Link Or Title Text With Filters </a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Inline Key Value Spans
+
+-- h2
+
+Overview
+
+This feature lets you create inline
+spans that start with a key&#x2f;value
+pair. 
+
+The initial use case is for a single 
+letter span tag to send css style
+classes for the span
+
+-- code
+-- neo
+
+&lt;&lt;c: alfa bravo|Lorem ipsum&gt;&gt;
+
+-- p
+
+Templates can use that to apply
+the classes to output something like
+
+-- code
+-- html
+
+&lt;span class=&quot;alfa bravo&gt;Lorem ipsum&lt;&#x2f;span&gt;
+
+
+-- todo
+
+[x] Inline Key&#x2f;Value Spans work without
+extra attributes
+
+-- code&#x2f;
+
+&lt;&lt;c: green|Lorem Ipsum&gt;&gt;
+
+-- &#x2f;code
+
+[x] Inline Key&#x2f;Value Spans work with 
+extra attributes:
+
+-- code&#x2f;
+
+&lt;&lt;c: green|Lorem Ipsum|id: alfa&gt;&gt;
+
+-- &#x2f;code
+
+-- notes
+-- title: Notes
+
+- flag style attributes (e.g. ones without a colon)
+are not added into the span by default. This is
+done since the primary use case for flag style
+attributes is to define URL and code languages
+for further processing
+
+
+
+-- metadata
+-- date: 2024-01-24 12:36:52
+-- id: 2bpxihiq
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

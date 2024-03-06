@@ -90,7 +90,86 @@
     <div class="next_item">Next: <a href="/en/2cis5ppk/?output-unknown-sections">Output Unknown Sections</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Output Testing
+
+-- aside
+
+This is current off during a refactor
+
+-- h2
+
+Overview
+
+Output testing is done by creating files
+in a &quot;tests&quot; folder. The name of each
+file is &quot;NAME-ID.txt&quot; where &quot;NAME&quot; is
+a name to help identify the tests the 
+file contains and &quot;ID&quot; is the
+page id of the content file to run
+the test against.
+
+For example, I put tests for the home 
+page of this site in:
+
+`home-page-2ck33evh.txt``
+
+Tests are defined by writing strings
+to look for. 
+
+Individual tests are separated by lines
+with five tildes (i.e. `~~~~~``)
+
+Spaces and line breaks aren&#x27;t taken into
+account during the matching. This prevents
+issues with tabs and spaces causing false
+errors
+
+Any errors are printed to the command
+line when the process runs
+
+-- todo
+-- title: Requirements
+
+[x] Load test files when process starts
+
+[x] Run each test when the page output
+is generated and before it&#x27;s written out
+(this makes it easier test pages that
+have custom paths via their IDs)
+
+[x] If a page fails a test still output
+it, but log the error
+
+
+-- notes
+
+- All tests for a given page must be
+in the same test file. If you make 
+multiple test files pointing to the
+same ID only one of them will get run
+
+
+-- metadata
+-- date: 2024-02-13 12:44:04
+-- id: 2ck33evh
+-- status: scratch
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

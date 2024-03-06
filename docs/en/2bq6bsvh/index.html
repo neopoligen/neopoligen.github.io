@@ -100,7 +100,82 @@
     <div class="next_item">Next: <a href="/en/2bp9r6uz/?plain-text-page-titles-for-links">Plain-Text Page Titles For Links</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Page Output File Path (Builder Side)
+
+-- h2
+
+Overview
+
+This feature implements `.output_file_path()``
+on builder `Page`` object get the output
+path to write the file to. 
+
+If a `-- path`` attribute exists in the
+`-- metadata`` section, it&#x27;s used directly. 
+
+If there is no `-- path`` the output location
+is built from the `-- id`` attribute in the
+`-- metadata`` section instead
+
+This value is not sent over to the templates
+
+-- todo
+
+[x] Create the output_file_path by combining the
+`.id()`` with the site&#x27;s local directory root
+and hard coded `pages`` and `index.html``
+
+[x] Get the site&#x27;s local root directory 
+from the `Config`` that gets passed in
+
+[x] The `pages`` directory name is hard
+coded intentionally for easier management
+
+[x] `.output_file_path()`` returns an 
+`Option&lt;PathBuf&gt;``
+
+[x] If the path can be made the value is:
+`Some(PathBuf)``
+
+[x] Otherwise it&#x27;s `None``
+
+[x] If a `-- path`` exist in `-- metadata``
+it overrides the ID based path.
+
+[x] Any `-- path`` is expected to be a directory
+and `index.html`` is appended to it
+
+See the &lt;&lt;tlink|2bqd8t9o&gt;&gt; feature for dealing
+with files instead of directories in the
+`-- path`` attribute
+
+
+-- tags
+
+
+
+-- metadata
+-- date: 2024-01-24 17:23:46
+-- updated: 2024-01-24 17:23:46
+-- id: 2bq6bsvh
+-- status: published
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

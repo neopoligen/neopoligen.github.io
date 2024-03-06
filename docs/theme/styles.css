@@ -57,13 +57,8 @@
   --size-3: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
   --size-2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
   --size-1: clamp(0.68rem, calc(0.67rem + 0.03vw), 0.7rem);
-  --width-1: 18ch;
-  --width-2: 27ch;
-  --width-3: 48ch;
-  --width-4: 56ch;
-  --width-5: 60ch;
-  --width-6: 68ch;
-  --width-6: 74ch;
+  /* only doing one width for now */
+  --width-3: min(100% - 3rem, 96ch);
 }
 
 /* 
@@ -127,8 +122,6 @@ body {
   list-style-type: none;
 }
 
-
-
 .collection_menu ::marker {
   color: var(--color-5);
 }
@@ -182,14 +175,7 @@ body {
   list-style-type: disclosure-open;
 }
 
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-family: var(--heavy);
 }
@@ -221,6 +207,10 @@ h5 {
 h6 {
   --flow-space: 1.3em;
   font-size: var(--size-1);
+}
+
+.hidden {
+  display: none;
 }
 
 html {
@@ -274,6 +264,7 @@ ul > :where(:not(:first-child)) {
   padding: var(--padding-3);
 }
 
+/* TODO: Move these to inline CSS, probably */
 .example_nested_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -291,8 +282,22 @@ ul > :where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
+footer {
+  min-height: 2.6rem;
+}
+
 .green {
   color: green;
+}
+
+.original_content {
+  border: var(--border-5);
+  padding: var(--padding-3);
+  border-radius: var(--radius-3);
+}
+
+.original_content_toggle_wrapper {
+  text-align: right;
 }
 
 .page_source_title {
@@ -308,9 +313,7 @@ ul > :where(:not(:first-child)) {
 }
 
 .page_wrapper {
-  /*
-  width: min(100% - 3rem, var(--width-4));
-  */
+  max-width: var(--width-3);
   margin-top: 0;
   margin-inline: auto;
 }

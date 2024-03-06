@@ -91,7 +91,62 @@
     <div class="next_item">Next: <a href="/en/2cvh1abs/?unpublished-status">Unpublished Status</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Titles For Pages Without Titles
+
+-- h2
+
+Overview
+
+Not all pages have title sections. This
+feature defines the cascade that&#x27;s
+used to determined a title string for things
+like `tlink`` links
+
+This is the return value from:
+
+-- code
+-- jinja
+
+{{ page.full_title() }}
+
+
+-- todo
+-- title: Priority Order
+
+[x] Title attribute from `-- metadata`` section
+
+[x] First line of title section (regardless of position on page)
+
+[x] Title attribute on first element that has a
+`-- title`` attribute
+
+[x] First few words of the first standard category 
+block
+
+[x] Page ID from `-- metadata`` prepended with `Page ``
+
+
+-- metadata
+-- date: 2024-01-21 19:13:01
+-- id: 2bhqwhuf
+-- status: draft
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

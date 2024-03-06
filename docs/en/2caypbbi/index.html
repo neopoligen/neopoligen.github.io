@@ -62,9 +62,7 @@
 
 </ol>
 </nav>
-<section class="title_section flow strike"><div class="page_title_subtitle_group"><h1 class="page_title">Theme Test Exclude Content In Test</h1></div></section><section class="forward_section flow"><div class="content">
-    <p>NOTE: This feature was rejected in favor of going with exact matches from start to finish every time which is easier to reason about.</p></div>
-    </section><section class="h2_section flow strike"><div class="content">
+<section class="title_section flow strike"><div class="page_title_subtitle_group"><h1 class="page_title">Theme Test Exclude Content In Test</h1></div></section><section class="h2_section flow strike"><div class="content">
     <p>Overview</p><p>The searches in theme tests can be negated. That is,  you put in a string that you want to make sure _does not__ show up in the output. This is done by added `exclude = true`` to the top of the  file before the "INPUT:" line.</p></div>
     </section><div class="todo_section_wrapper section_wrapper flow strike" title="Requirements"><div class="todo_section_attribute_title_wrapper section_attribute_title_wrapper"><h3 class="todo_section_attribute_title_text section_attribute_title_text">Requirements</h3></div><div class="todo_section_checklist_wrapper section_checklist_wrapper">
         <ul class="todo_section_checklist -}} section_checklist flow">
@@ -84,7 +82,72 @@
     <div class="next_item">Next: <a href="/en/2cmw2nwr/?automatic-images-galleries-from-folders">Automatic Images Galleries From Folders</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- forward
+
+NOTE: This feature was rejected in favor of going
+with exact matches from start to finish
+every time which is easier to reason about.
+
+-- title
+-- class: strike
+
+Theme Test Exclude Content In Test
+
+
+-- h2
+-- class: strike
+
+Overview
+
+The searches in theme tests can be negated. That is, 
+you put in a string that you want to make sure
+_does not__ show up in the output. This is done
+by added `exclude = true`` to the top of the 
+file before the &quot;INPUT:&quot; line.
+
+
+-- todo
+-- class: strike
+-- title: Requirements
+
+[] Adding `exclude = true`` to the top of a 
+theme test before the `INPUT:`` line negates the
+test so that if a `TARGET:`` _does not__ match
+the test passes (and if the `TARGET:`` _does__
+match, the test fails)
+
+
+-- notes
+-- class: strike
+
+- The `exclude`` setting affects all the `TARGET``
+matchers in the file. That is, you can&#x27;t have
+a single file that does both regular matches
+and excludes at the same time. Testing both
+ways is done by making two test files.
+
+
+
+-- metadata
+-- date: 2024-02-19 12:32:37
+-- id: 2caypbbi
+-- type: release-notes
+-- status: scratch
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

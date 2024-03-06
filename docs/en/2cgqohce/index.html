@@ -94,7 +94,62 @@
     <div class="next_item">Next: <a href="/en/2cglug42/?link-or-title-text-template-output">Link Or Title Text Template Output</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Link Or Title Text With Filters 
+
+
+-- h2
+
+Overview
+
+This feature is an expansion of &lt;&lt;tlink|2cglug42&gt;&gt;. 
+That feature shows a link to another page unless
+you&#x27;re already on that page. 
+
+This feature expands that with the ability to 
+add a filter to determine if the text should be 
+linked or not.
+
+Filtering is the same as in &lt;&lt;tlink|2cejgspr&gt;&gt;
+
+-- todo
+-- title: Requirements
+
+[x] The feature looks like this:
+
+-- code&#x2f;
+-- jinja
+
+{{ site.link_or_title_filtered(
+    &quot;2cgqohce&quot;, 
+    page.id(),
+    [&quot;v0.1.0&quot;]
+) }}
+
+-- &#x2f;code
+
+[x] Filtering is case-insensitive
+
+-- metadata
+-- date: 2024-02-12 05:56:41
+-- id: 2cgqohce
+-- status: draft
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

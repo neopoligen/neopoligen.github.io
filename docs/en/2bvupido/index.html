@@ -88,7 +88,75 @@
     <div class="next_item">Next: <a href="/en/2bpo9lwd/?html-tags-don%27t-break">HTML Tags Don't Break</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Default Page Type And Status
+
+-- h2
+
+Overview
+
+This feature defines the default page
+type as &quot;post&quot; and the default status
+as &quot;published&quot;
+
+That is, if the `-- metadata`` `-- type`` attribute 
+doesn&#x27;t match a template then the `post``
+template set gets used.
+
+The status is set to a default of &quot;published&quot;
+
+That is, if the `-- metadata`` `-- status`` attribute 
+doesn&#x27;t match a template then the `published``
+template gets used.
+
+This is done to make sure pages show up even
+if a specific template hasn&#x27;t been created
+for the type or status yet
+
+-- todo
+-- title: Details
+
+[x] If a page&#x27;s `-- metadata`` `-- type``
+attribute doesn&#x27;t match a template set
+use `post`` instead
+
+[x] If a page&#x27;s `-- metadata`` `-- status``
+attribute doesn&#x27;t match a template set
+use `published`` instead
+
+[x] The defaults are defined independently. 
+That is, they can either both be used, or
+the &quot;type&quot; can be used by itself, or the
+&quot;status&quot; can be used by itself, or they&#x27;ll
+both be used if neither is set
+
+-- notes
+-- title: Notes
+
+- Moving this values to a config was considered
+but decided against in favor of reducing
+the number of items require in the config. 
+
+
+
+-- metadata
+-- date: 2024-01-26 15:08:33
+-- id: 2bvupido
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

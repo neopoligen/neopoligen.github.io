@@ -97,7 +97,79 @@
     <div class="next_item">Next: <a href="/en/2ckwxkr5/?place-everything-except-template-macro">Place Everything Except Template Macro</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Place Everything Except
+
+-- h2
+
+Overview
+
+This feature creates a function that outputs
+every section on a page except for the
+ones defined in the request. The function is:
+
+
+-- code
+-- jinja
+
+page.place_everything_except()
+
+-- p
+
+It takes either single section name inside
+quotes. For example:
+
+-- code
+-- jinja
+
+page.place_everything_except(&quot;title&quot;)
+
+-- p
+
+Or multiple parameters in quotes separated
+by commas
+
+-- code
+-- jinja
+
+page.place_everything_except(&quot;title&quot;, &quot;p&quot;)
+
+
+-- todo
+
+[x] The `page.place_everything_except()`` 
+function exists
+
+[x] Passing a single section name as a string
+works (e.g. `page.place_everything_except(&quot;title&quot;)``)
+
+[x] Passing an array of section names
+works (e.g. `page.place_everything_except(&quot;title&quot;, &quot;p&quot;)``)
+
+[x] Everything except the defined sections
+is returned for output on the page
+
+-- metadata
+-- date: 2024-01-24 13:08:53
+-- updated: 2024-01-24 13:08:53
+-- id: 2bpbbeyb
+-- status: published
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

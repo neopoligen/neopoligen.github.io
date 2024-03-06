@@ -69,13 +69,11 @@ not
             
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Blog posts work</p></li>
             
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Button to neo content show source on every page</p></li>
-            
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Images work with just their filename</p></li>
             
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Create the Quick-Start tutorial and videos</p></li>
             
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Create some examples of basic usage</p></li>
+            <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Create some Cookbook recipes and videos</p></li>
             
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">You can download and run the app on  Windows and Macs</p></li>
             
@@ -86,6 +84,8 @@ not
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Guide to deploying on GitHub</p></li>
             
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Convert format to "neojinja"</p></li>
+            
+            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Button to neo content show source on every page</p></li>
             
             <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Content files parse and render properly</p></li>
             
@@ -111,7 +111,146 @@ not
 
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+v0.1.0 Launch Checklist
+
+I&#x27;ve been working on Neopoligen for a couple years. 
+I didn&#x27;t realize at the start that that&#x27;s 
+what I was doing. Originally, I thought I was
+designing a file format to replace the one^md^^ 
+I was using to make my website at the time.
+
+Of course, in order to use the format I needed 
+to make a site builder could understand it and
+covert it into web pages. The more I worked on 
+that, the more I thought other folks might be 
+interested in playing around with it too. 
+
+Neopoligen is free and open-source^foss^^. Anyone 
+can grab it and use it at any time, but I haven&#x27;t
+publicized it. The app works and is what&#x27;s
+building this site, but it&#x27;s not where I want it
+to be before showing it to other folks. I&#x27;ve got a 
+ton of ideas both on the drawing board and in-flight. 
+The trick is figuring out when to draw a line in 
+the sand and ship the first version. 
+
+That&#x27;s what this post is about. I&#x27;m using it
+to create the launch checklist. 
+
+Once everything
+is checked off, it&#x27;s go time. There&#x27;s also a second
+list. Stuff I&#x27;m explicitly &lt;&lt;em|not&gt;&gt; going to do
+for launch. This is stuff I&#x27;m tempted to wait
+for, but you gotta draw a line somewhere otherwise
+it&#x27;ll never get out the door. 
+
+So, here&#x27;s those lists:
+
+-- todo
+-- title: Do Before Launch
+
+[] Remove timezone offset from config and use the local time
+from the server for the internals
+
+[] Convert date to remove timestamps
+
+[] Blog posts work
+
+[] Images work with just their filename
+
+[] Create the Quick-Start tutorial and videos
+
+[] Create some Cookbook recipes and videos
+
+[] You can download and run the app on 
+Windows and Macs
+
+[] Auto-generate playground&#x2f;example site
+
+[] Button to make a new website
+
+[] Guide to deploying on GitHub
+
+[] Convert format to &quot;neojinja&quot;
+
+[x] Button to neo content show source on every page
+
+[x] Content files parse and render properly
+
+[x] Link collection menus work
+
+[x] Previous&#x2f;Next links work
+
+-- todo
+-- title: Don&#x27;t Do Before Launch
+
+[] RSS Feeds - As much as I&#x27;d like to have them
+for launch there&#x27;s still work on collections
+that needs to be done first
+
+[] Database Files - I really like &lt;&lt;ilink: 2djkslaj|this 
+idea I had last night&gt;&gt;. Basically, have files with
+content that doesn&#x27;t get published directly but 
+gets included on other pages. Something clicked when
+I had the idea. I think it&#x27;s gonna be super useful. 
+The temptation to wait until its ready to launch
+is strong, but we&#x27;re gonna let it show up in 
+a future version. 
+
+[] Plugins - The architecture foundation for plug-ins is set 
+up. There&#x27;s enough basic structure to have confidence 
+in the approach. 
+
+[] Linux Version - Part of the app is a command line tool
+that does the actual site build. If you use linux there&#x27;s
+a good chance you can &lt;&lt;link|dig into the repo|https:&#x2f;&#x2f;github.com&#x2f;neopoligen&#x2f;neopoligen&gt;&gt;
+to compile and run it yourself. 
+
+
+
+-- footnote
+-- id: md
+
+The format I&#x27;ve been using for my site and 
+my notes for the past couple decades is called
+Markdown. 
+
+-- footnote
+-- id: foss
+
+&quot;Free and open-source&quot; software has two key parts:
+
+- &quot;Free&quot;, as in you can download and run the app
+without having to pay for it, and,
+
+- &quot;Open-source&quot; which means you&#x27;re also free to
+download all the code files that are used to make
+the app itself. You can see exactly how everything
+is put together and even change things for yourself.
+Even better, if you make a change you think other
+folks would like, you can &lt;&lt;ilink: 2djscgxe|submit it to the 
+official version of the app&gt;&gt;
+
+
+-- metadata
+-- date: 2024-03-06 09:32:34
+-- id: 2djou38z
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

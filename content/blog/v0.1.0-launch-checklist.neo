@@ -45,13 +45,11 @@ from the server for the internals
 
 [] Blog posts work
 
-[] Button to neo content show source on every page
-
 [] Images work with just their filename
 
 [] Create the Quick-Start tutorial and videos
 
-[] Create some examples of basic usage
+[] Create some Cookbook recipes and videos
 
 [] You can download and run the app on 
 Windows and Macs
@@ -63,6 +61,8 @@ Windows and Macs
 [] Guide to deploying on GitHub
 
 [] Convert format to "neojinja"
+
+[x] Button to neo content show source on every page
 
 [x] Content files parse and render properly
 

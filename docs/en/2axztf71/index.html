@@ -71,7 +71,50 @@
     <div class="next_item">Next: <a href="/en/2bgewbbx/?todo%3A-move-things-around-by-id">TODO: Move Things Around By ID</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Menus 
+
+The `-- menu`` section takes JSON. You can use it to hand 
+craft menus. Including menus with multiple levels. 
+
+They aren&#x27;t show on the page by default. They get
+placed by including them if you need them in the 
+content or calling them on the page template itself
+via an include
+
+-- menu
+-- id: multi_level_menu_example
+
+[
+    { &quot;name&quot;: &quot;Alfa&quot;, &quot;link&quot;: &quot;&quot;, &quot;children&quot;: [ 
+        { &quot;name&quot;: &quot;Bravo&quot;, &quot;link&quot;: &quot;&quot;, &quot;children&quot;: [
+            { &quot;name&quot;: &quot;Charlie&quot;, &quot;link&quot;: &quot;&quot;, &quot;children&quot;: [] }
+            ]}
+        ] 
+    }
+]
+
+
+
+-- metadata
+-- date: 2024-01-14 14:56:39
+-- id: 2axztf71
+-- status: published
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

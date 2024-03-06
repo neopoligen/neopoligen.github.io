@@ -84,7 +84,51 @@
     <div class="next_item">Next: <a href="/en/2bp6vnhk/?initial-app-front-end">Initial App Front End</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Include Sections From Other Pages
+
+-- h2
+
+Overview
+
+Any section from any page that has an `-- id:`` attribute
+can be included in a template via:
+
+-- code&#x2f;
+-- jinja
+
+ macros.include_section_from_page(page_id, section_id) 
+
+-- &#x2f;code
+
+
+-- todo
+-- title: Requirements
+
+[] Calling ` macros.include_section_from_page(page_id, section_id) ``
+in a template includes the section from the page
+
+
+-- metadata
+-- date: 2024-02-17 15:43:03
+-- id: 2cvhjp4v
+-- status: draft
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

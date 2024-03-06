@@ -110,7 +110,80 @@ function draw() {
     <div class="next_item">Next: <a href="/en/2avondlp/?html-blocks-">HTML Blocks </a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Head Styles And Scripts 
+
+The `-- head`` tag allows for dropping anything
+into the head tag of the document. For example, 
+this page loads `p5`` and then uses an `-- html``
+section to render the example
+
+
+-- head
+
+&lt;script src=&quot;&#x2f;_assets&#x2f;p5&#x2f;p5.min.js&quot;&gt;&lt;&#x2f;script&gt;
+
+-- html
+
+&lt;div class=&quot;example center&quot;&gt;
+  &lt;div id=&quot;p5_output&quot;&gt;&lt;&#x2f;div&gt;
+&lt;&#x2f;div&gt;
+
+&lt;script&gt;
+let rad = 20
+let xpos, ypos
+let xspeed = 2.8
+let yspeed = 2.2
+let xdirection = 1
+let ydirection = 1
+
+function setup() {
+  var canvas = createCanvas(300, 100)
+  canvas.parent(&#x27;p5_output&#x27;)
+  noStroke()
+  frameRate(30)
+  ellipseMode(RADIUS)
+  xpos = width &#x2f; 2
+  ypos = height &#x2f; 2
+}
+
+function draw() {
+  background(101)
+  xpos = xpos + xspeed * xdirection
+  ypos = ypos + yspeed * ydirection
+  if (xpos &gt; width - rad || xpos &lt; rad) {
+    xdirection *= -1
+  }
+  if (ypos &gt; height - rad || ypos &lt; rad) {
+    ydirection *= -1
+  }
+  ellipse(xpos, ypos, rad, rad)
+}
+
+&lt;&#x2f;script&gt;
+
+
+
+-- metadata
+-- date: 2024-01-13 23:58:14
+-- id: 2avodbwt
+-- status: published
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

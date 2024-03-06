@@ -99,7 +99,84 @@
     <div class="next_item">Next: <a href="/en/2cfqtx9h/?access-page-metadata">Access Page metadata</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Theme Template Tests
+
+-- h2
+
+Overview
+
+Theme templates tests provide a way to verify the 
+expected output from a theme actually shows up. 
+
+-- todo
+-- title: Requirements
+
+
+[x] Test &quot;.neo&quot; files go in the &quot;tests&quot; dir for 
+the theme
+
+[x] Each file in the directory produces a site with 
+a page based on the &quot;INPUT:&quot; section of the file
+
+[x] The INPUT is run through the templates to produce
+an output string that&#x27;s used for comparison of
+&quot;TARGET&quot; strings. 
+
+[x] All spaces, tabs, and newlines are removed from
+the generated and target strings to avoid errors
+that are nothing but empty space
+
+[x] Once the spaces, tabs, and newlines are removed the
+output and the target must match exactly starting
+at the start and going all the way to the end (i.e.
+you can&#x27;t match just the middle part of content)
+
+[x] In addition to the page generated from the test file
+a few other pages are automatically included in the site
+as well. They can be used for testing links and 
+functionality on other pages. See &lt;&lt;tlink|2cyfahqv&gt;&gt; 
+for details
+
+[] Templates for tests can be added to a folder inside
+the themes directory so they can be run without having
+to put them in the content folder
+
+-- notes
+-- title: Notes
+
+- These tests ignore spaces, tabs, and newlines. 
+If something requires validating those another
+test method must be used.
+
+- To make the exact matching easier I created
+an &quot;empty&quot; page type template. The only thing
+it outputs is the title and main body of the 
+page. That way there&#x27;s not a of other things
+that might change floating around
+
+
+-- metadata
+-- date: 2024-02-18 13:03:29
+-- id: 2cyd2riz
+-- type: release-notes
+-- status: scratch
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

@@ -97,7 +97,88 @@ not into comics)</code></pre>
     <div class="next_item">Next: <a href="/en/2cblgdfu/?default-language">Default Language</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Customization
+
+Neopoligen is designed with customization at it&#x27;s core. The 
+ability to create new sections and spans is
+fundamental. In fact, there&#x27;s no difference between
+the sections and spans that come with Neopoligen
+and custom ones you create. They&#x27;re all built the same way.
+
+The sections and spans that come built-in 
+are there so you can make sites without having to build
+anything yourself. You can take them pretty far. 
+
+But, if you want to dig in, you can make custom sections 
+designed for anything you want. For example, 
+here&#x27;s a custom &quot;book&quot; section:
+
+-- code&#x2f;
+
+-- book
+-- title: Understanding Comics
+-- by: Scott McCloud
+-- subtitle: The Invisible Art
+-- image: understanding-comics-cover.jpg
+-- rating: 5
+
+The title says it&#x27;s about comics, but it&#x27;s way more
+than that. It&#x27;s about narrative, and story 
+telling, and art. I highly recommend it (even if you&#x27;re 
+not into comics)
+
+-- &#x2f;code
+
+By default, that `-- book`` section will output
+like a standard `-- p`` section with no real formatting. 
+Customizing the output is done by adding a template
+to the &quot;theme&quot;. This uses the &quot;welcome&quot; theme. So,
+the path to the new template file is:
+
+-- code&#x2f;
+
+themes&#x2f;welcome&#x2f;sections&#x2f;custom&#x2f;book&#x2f;full&#x2f;default.jinja
+
+-- &#x2f;code
+
+-- todo
+
+[] Set up the engine to automatically output unknown
+sections as part of the &quot;standard&quot; category
+
+[] Add details about the template path
+
+[] Make an example showing how to create a new section
+
+
+
+
+
+
+
+-- metadata
+-- date: 2024-02-02 20:40:05
+-- updated: 2024-02-02 20:40:05
+-- id: 2bpuadoq
+-- type: intro
+-- status: scratch
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

@@ -178,7 +178,171 @@ site.filter_page_links_alpha(
     <div class="next_item">Next: <a href="/en/2cfbbsai/?filters-section-for-pages-data">Filters Section For Pages Data</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Filter Page Links (Alphabetically)
+
+-- h2
+
+Overview
+
+This feature adds the ability to create
+lists of page links by filtering the page
+&quot;type&quot;, &quot;status&quot;, &quot;tags&quot;, &quot;filters&quot; and
+the pages &quot;folders&quot; components.
+
+The filters are created in `[]`` brackets
+with any number of items in each bracket
+
+-- todo
+-- title: Details
+
+[x] Requests for collections look like
+these examples (more details below):
+
+-- code&#x2f;
+-- jinja
+
+site.filter_page_links_alpha(
+    page.id(),
+    [&quot;post&quot;]
+)
+
+site.filter_page_links_alpha(
+    page.id(),
+    [&quot;post&quot;, &quot;published&quot;]
+)
+
+site.filter_page_links_alpha(
+    page.id(),
+    [&quot;post&quot;, &quot;published&quot;],
+    [&quot;post&quot;, &quot;draft&quot;]
+)
+
+site.filter_page_links_alpha(
+    page.id(),
+    [&quot;post&quot;, &quot;!draft&quot;]
+)
+
+-- &#x2f;code
+
+-- todo
+
+[x] Responses available in the template look like:
+
+[] The `page.id()`` that&#x27;s passed in powers the `link_or_title``
+part of the response. If it&#x27;s the current page, the value
+returned is just the title. Otherwise, it&#x27;s the full link. This
+means there&#x27;s no need to filter in the template.
+
+
+-- code&#x2f;
+-- json
+
+[
+    { 
+        &quot;full_title&quot;: &quot;Delta Oscar&quot;, 
+        &quot;id&quot;: &quot;id12345c&quot;, 
+        &quot;link&quot;: &quot;&lt;a href=\&quot;&#x2f;pages&#x2f;id12345c&#x2f;?delta-oscar\&quot;&gt;Delta Oscar&lt;&#x2f;a&gt;&quot;, 
+        &quot;link_title&quot;: &quot;Delta Oscar&quot;
+        &quot;link_or_title&quot;: &quot;&lt;a href=\&quot;&#x2f;pages&#x2f;id12345c&#x2f;?delta-oscar\&quot;&gt;Delta Oscar&lt;&#x2f;a&gt;&quot;, 
+    },
+    { 
+        &quot;full_title&quot;: &quot;Victor Papa&quot;, 
+        &quot;id&quot;: &quot;id003333&quot;, 
+        &quot;link&quot;: &quot;&lt;a href=\&quot;&#x2f;pages&#x2f;id003333&#x2f;?victor-papa\&quot;&gt;Victor Papa&lt;&#x2f;a&gt;&quot;, 
+        &quot;link_title&quot;: &quot;Victor Papa&quot;
+        &quot;link_or_title&quot;: &quot;Victor Papa&quot;
+    }
+]
+
+-- &#x2f;code
+
+-- todo
+
+[x] The results are sorted alphabetically by 
+&quot;link_title&quot;
+
+[x] The page&#x27;s &quot;type&quot; is included in the filter
+
+[x] The page&#x27;s &quot;status&quot; is included in the filter
+
+[x] The page&#x27;s &quot;id&quot; is included in the filter
+
+[x] The page&#x27;s &quot;tags&quot; are included in the filter
+
+[x] The page&#x27;s &quot;filters&quot; are included in the filter
+
+[x] The page&#x27;s &quot;folder&quot; components are included in the filter
+
+[x] Items inside a single pair of `[]`` braces are
+for &quot;and&quot; matches. That is `[&quot;alfa&quot;, &quot;bravo&quot;]`` must
+have both &quot;alfa&quot; and &quot;bravo&quot; in it&#x27;s collection of
+key words to filter on
+
+[x] Multiple sets of &quot;and&quot; filters can be passed
+in. Each one is treated as an &quot;or&quot;. For example this
+finds all pages with a type of &quot;post&quot; 
+that have a status of &quot;published&quot;. Or pages
+with a type of &quot;post&quot; that have a status of
+&quot;draft&quot;:
+
+-- code&#x2f;
+-- jinja
+
+site.filter_page_links_alpha(
+    [&quot;post&quot;, &quot;published&quot;], 
+    [&quot;post&quot;, &quot;draft&quot;]
+)
+
+-- &#x2f;code
+
+
+-- todo
+
+[x] A `!`` can be added in front of any filter
+keyword to find pages that _do not__ match
+it. For example, this will find an page
+with &quot;post&quot; that _does not__ have &quot;draft&quot;
+
+-- code&#x2f;
+-- jinja
+
+site.filter_page_links_alpha(
+    [&quot;post&quot;, &quot;!draft&quot;]
+)
+
+-- &#x2f;code
+
+-- todo
+
+[x] If a page matches multiple times it
+is only returned once
+
+[x] If no pages match the request an empty `[]``
+array is returned
+
+[x] Matches are case-insensitive
+
+
+-- metadata
+-- date: 2024-02-11 15:35:46
+-- id: 2cejgspr
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

@@ -94,7 +94,105 @@
     <div class="next_item">Next: <a href="/en/2bn4fdhe/?checklist-sections">Checklist Sections</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Overview
+
+-- notes
+-- title: Overview
+
+- Neopoligen files are made up of sections
+
+- Each section starts with a header that
+has two dashes and the name of the section 
+type. For example:
+
+-- code&#x2f;
+
+-- title
+
+-- &#x2f;code
+
+-- list
+
+- Each type of section belongs to one of seven
+different categories that determines the
+overall behavior of the section. (e.g. an
+`-- p`` section provides for basic paragraphs
+while a `-- list`` section provides list
+functionality)
+
+- Each section can have optional attributes
+associated with it
+
+- Attribute lines come immediately after
+the opening section type (i.e. there&#x27;s
+no empty lines between them). For example:
+
+-- code&#x2f;
+
+-- title
+-- class: green
+
+-- &#x2f;code
+
+-- list
+
+- Attributes can be &quot;key&#x2f;value&quot; attributes like the
+`-- class: green` example above that separates
+the &quot;key&quot; from the &quot;value&quot; with a &quot;:&quot;
+
+- Standard key&#x2f;value attributes available in
+Neopoligen sections are:
+
+afterword\n
+class\n
+forward\n
+id\n
+preface\n
+title\n
+
+- Attributes can also be &quot;flag&quot; attributes which don&#x27;t
+have a colon in them. For example, this is a `-- code``
+section with a `-- javascript`` flag attribute that can
+be used to highlight the code block as javascript
+
+-- code&#x2f;
+
+-- code
+-- javascript
+
+-- &#x2f;code
+
+-- list
+
+- The templates for each section determine what
+each attribute does for the section. For example, 
+`-- class: SOME_CLASS`` adds a CSS class to 
+the wrapper for a section and `-- id: SOME_ID``
+adds an &quot;id&quot; attribute to the wrapper&#x27;s HTML
+tag.
+
+
+-- metadata
+-- date: 2024-02-12 07:34:05
+-- id: 2cgceffj
+-- status: draft
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>

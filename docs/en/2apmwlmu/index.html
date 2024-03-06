@@ -71,7 +71,46 @@
     <div class="next_item">Next: <a href="/en/2apfooob/?strong-conventions">Strong Conventions</a></div>
 
 </div>
-</article>
+<section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+Separation From The File System
+
+Using the file system for routing is a
+standard approach in static site generators. 
+
+I&#x27;m doing something different. 
+
+In Neopoligen, every file is required to have
+a `-- metadata`` section that includes an
+`-- id`` attribute. It&#x27;s what&#x27;s used by 
+default to determine where the output
+goes and by default that&#x27;s always
+to a `pages`` directory. 
+
+Defining an explicit path is done with
+a `-- path`` attribute in `-- metadata``. 
+The primary use case for that is to 
+set the home page with `-- path: &#x2f;``
+
+
+-- metadata
+-- date: 2024-01-11 17:11:40
+-- id: 2apmwlmu
+
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section>
+      </article>
     </div><footer></footer></div>
 </body>
 </html>
