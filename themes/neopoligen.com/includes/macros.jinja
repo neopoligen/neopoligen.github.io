@@ -16,6 +16,23 @@ repeatedly #}
 {#############################################################################}
 
 
+
+{#############################################################################}
+{%- macro collection_links(collection) -%}
+<ul>
+{%- for item in collection.tree  -%}
+{% if item.status == "PageActive" %}
+<li>{{ site.page_title(item.id) }}</li>
+{% else %}
+<li>{{ site.page_html_link(item.id) }}</li>
+{% endif %}
+{%- endfor -%}
+</ul>
+{%- endmacro -%}
+{#############################################################################}
+
+
+
 {#############################################################################}
 {%- macro collection_menu(collection) -%}
 {%- set menu_name = "collection_menu" -%}
