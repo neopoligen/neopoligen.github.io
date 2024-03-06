@@ -30,8 +30,19 @@ one collection_menu can but put on a page #}
 {{- collection_menu_item_index_folder_closed(menu_name, item) -}} 
 {%- elif item.status == "IndexFolderOpened" -%}
 {{- collection_menu_item_index_folder_opened(menu_name, item) -}} 
+
+
+
+{# {%- elif item.status == "TitleFolderActive" -%}
+{{- collection_menu_item_title_folder_active(menu_name, item) -}} #}
+{%- elif item.status == "TitleFolderClosed" -%}
+{{- collection_menu_item_title_folder_closed(menu_name, item) -}} 
+{# {%- elif item.status == "TitleFolderOpened" -%}
+{{- collection_menu_item_title_folder_opened(menu_name, item) -}}  #}
+
 {%- endif -%}
 {%- endmacro -%}
+
 
 
 {#############################################################################}
@@ -83,6 +94,31 @@ one collection_menu can but put on a page #}
 {%- endif -%}
 </li>
 {%- endmacro -%}
+
+
+
+
+{#############################################################################}
+{%- macro collection_menu_item_title_folder_closed(menu_name, item) -%}
+<li id="{{- menu_name -}}_{{- item.id -}}" class="title_folder_closed">
+<button class="collection_menu_button" data-page_id="{{ item.id }}" data-status="closed">
+{{- site.page_title(item.id) -}}
+</button>
+
+{# <li id="nav_menu_item_{{item.page_id}}" class="nav_menu_closed_title_folder">
+
+{{- item.title -}} 
+</button>{{- '' -}}
+{%- if item.children|length > 0 -%}
+<ol id="nav_menu_children_{{item.page_id}}">
+{%- for child in item.children -%}{{- nav_menu_item(child) -}}{%- endfor -%}
+</ol>
+{%- endif -%}
+</li> #}
+
+</li>
+{%- endmacro -%}
+
 
 
 
