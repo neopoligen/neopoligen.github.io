@@ -53,7 +53,6 @@ one collection_menu can but put on a page #}
 {#############################################################################}
 
 
-
 {#############################################################################}
 {%- macro collection_menu_item_page_active(menu_name, item) -%}
 <li id="{{- menu_name -}}_{{- item.id -}}" class="page_active active_path">
@@ -93,7 +92,6 @@ one collection_menu can but put on a page #}
 </li>
 {%- endmacro -%}
 {#############################################################################}
-
 
 
 {#############################################################################}
@@ -142,8 +140,6 @@ one collection_menu can but put on a page #}
 {#############################################################################}
 
 
-
-
 {#############################################################################}
 {%- macro collection_menu_item_title_folder_active(menu_name, item) -%}
 <li id="{{- menu_name -}}_{{- item.id -}}" class="title_folder_active active_path">
@@ -158,6 +154,27 @@ one collection_menu can but put on a page #}
 </li>
 {%- endmacro -%}
 {#############################################################################}
+
+
+{#############################################################################}
+{% macro toc_subtree(page_id, collection) %}
+<ul class="table_of_contents">
+{% for item in site.get_subtree(page_id, collection) %}
+{{ toc_item(item) }}
+{% endfor %}
+</ul>
+{% endmacro %}
+{#############################################################################}
+
+
+{#############################################################################}
+{% macro toc_item(item) %}
+<li>
+{{ site.page_html_link(item.id) }}
+</li>
+{% endmacro %}
+{#############################################################################}
+
 
 
 
