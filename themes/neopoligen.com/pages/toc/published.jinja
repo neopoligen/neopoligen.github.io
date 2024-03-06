@@ -9,12 +9,12 @@
     <div class="sidebar_article_group">
       {%- include "includes/sidebar.jinja" -%}
       <article class="flow">
-        {{- macros.breadcrumbs(links) -}}
+        {%- include "includes/breadcrumbs.jinja" -%}
         {{- macros.place_section(page_id, "title") -}}
-        {{- macros.toc_subtree(page_id, links) -}}
+        {{- macros.toc_subtree(page_id, menu) -}}
       </article>
     </div>
-    {%- include "includes/footer.jinja" -%}
+    {%- include "includes/prev-next.jinja" -%}
   </div>
 </body>
 </html>

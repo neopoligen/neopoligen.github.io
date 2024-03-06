@@ -9,11 +9,11 @@
     <div class="sidebar_article_group">
       {%- include "includes/sidebar.jinja" -%}
       <article class="flow">
-        {{- macros.breadcrumbs(links) -}}
+        {%- include "includes/breadcrumbs.jinja" -%}
         {{- macros.place_section(page_id, "title") -}}
         {{- macros.place_section(page_id, "forward") -}}
         {{- macros.main_body(page_id) -}}
-        {{ macros.prev_next(links) }}
+        {%- include "includes/prev-next.jinja" -%}
       </article>
     </div>
     {%- include "includes/footer.jinja" -%}
