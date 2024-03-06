@@ -64,6 +64,7 @@ Windows and Macs
 
 [] Convert format to "neojinja"
 
+
 [x] Button to neo content show source on every page
 
 [x] Content files parse and render properly
@@ -74,6 +75,7 @@ Windows and Macs
 
 -- todo
 -- title: Don't Do Before Launch
+
 
 [] RSS Feeds - As much as I'd like to have them
 for launch there's still work on collections
@@ -109,6 +111,14 @@ be built first
 
 [] The Roadmap - All the stuff on <<ilink: 2cfuahxq|The Roadmap>>
 
+[] Turn unknown sections into standard sections -
+This one is going to cause some frustration. If 
+you try to add a section to a file and that section
+doesn't exist the page won't render. I'm still going
+back and forth on how I want to handle that. One 
+way would be to just make things a standard section which
+I think is what I'm going to do. That's going to take a decent
+amount of work (I think) so probably won't make initial launch
 
 
 
