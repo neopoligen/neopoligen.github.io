@@ -75,7 +75,8 @@ EXPECTED_OUTPUT
     <li id="collection_menu_aabbcc02" class="title_folder_closed">
         <button
         class="collection_menu_button"
-        data-page_id="aabbcc02"
+        data-menu="collection_menu"
+        data-id="aabbcc02"
         data-status="closed"
         >
         Closed Title Folder With Children

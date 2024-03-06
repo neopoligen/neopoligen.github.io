@@ -6,7 +6,7 @@ This test checks that the default soft by
 file/folder name works for all nested children
 items (but doesn't override the top level order
 requested). Nested directories are in included
-for theit title/index name
+for their title/index name
 
 
 ##################################################################################

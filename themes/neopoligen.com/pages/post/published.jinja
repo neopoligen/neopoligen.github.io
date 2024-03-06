@@ -2,13 +2,15 @@
 
 
 
+
 {# THESE ARE TEST VALUES #}
-{%- set links = site.collection_from_files_and_folders(page_id, [
+
+{# {%- set links = site.collection_from_files_and_folders(page_id, [
 ["2auhjdnh"],
 ["2cizgxp9"],
 ["_test_index_folder"],
 ["_test_title_folder"],
-]) -%}
+]) -%} #}
 
 
 
@@ -16,7 +18,7 @@
 ["2auhjdnh"],
 ]) -%} #}
 
-{# {%- set links = site.collection_from_files_and_folders([
+{%- set links = site.collection_from_files_and_folders(page_id, [
 ["2auhjdnh"],
 ["2cizgxp9"],
 ["examples"],
@@ -25,7 +27,7 @@
 ["roadmap"],
 ["philosophy"],
 ["miscelaneous"]
-]) -%} #}
+]) -%}
 
 
 

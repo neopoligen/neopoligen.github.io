@@ -114,6 +114,71 @@ body {
   font-size: var(--size-3);
 }
 
+
+
+.collection_menu ::marker {
+  color: var(--color-5);
+}
+
+.collection_menu ol {
+  padding-left: 1rem;
+}
+
+.collection_menu_button {
+  all: unset;
+  color: var(--color-2);
+}
+
+.collection_menu .active_path::marker {
+  color: var(--color-1);
+}
+
+.collection_menu .index_folder_active {
+  list-style-type: disclosure-closed;
+}
+
+.collection_menu .index_folder_closed {
+  list-style-type: disc;
+}
+
+.collection_menu .index_folder_opened {
+  list-style-type: disclosure-open;
+}
+
+.collection_menu .page_active {
+  list-style-type: disc;
+}
+
+.collection_menu .page_inactive {
+  list-style-type: disc;
+}
+
+.collection_menu .title_folder_active {
+  list-style-type: disclosure-open;
+}
+
+.collection_menu .title_folder_closed {
+  list-style-type: disclosure-closed;
+}
+
+.collection_menu .title_folder_closed > ol {
+  display: none;
+}
+
+.collection_menu .title_folder_opened {
+  list-style-type: disclosure-open;
+}
+
+
+
+
+
+
+
+
+
+/* 
+
 .nav_menu ::marker {
   color: var(--color-5);
 }
@@ -174,7 +239,7 @@ body {
   list-style-type: disc;
 }
 
-
+ */
 
 
 
