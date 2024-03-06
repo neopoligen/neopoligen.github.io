@@ -159,14 +159,14 @@ one collection_menu can but put on a page #}
 
 {#############################################################################}
 {% macro prev_next(collection) %}
-<div class="prev_next">
+<nav class="prev_next">
 {% if collection.prev_item %}
     <div class="prev_item">Prev: {{ site.page_html_link(collection.prev_item.id) }}</div>
 {% endif %}
 {% if collection.next_item %}
     <div class="next_item">Next: {{ site.page_html_link(collection.next_item.id) }}</div>
 {% endif %}
-</div>
+</nav>
 {% endmacro %}
 {#############################################################################}
 
