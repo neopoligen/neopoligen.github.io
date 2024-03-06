@@ -1,0 +1,85 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test an _index file that's the current file
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders(
+    page_id, 
+    [["active-folder"]]
+) -%}
+
+
+{%- if nav_links.current_item and nav_links.current_item.parent_ids|length > 0 -%}
+<ol class="breadcrumbs">
+{%- for breadcrumb_id in nav_links.current_item.parent_ids -%}
+    <li>{{- site.page_html_link(breadcrumb_id) -}}</li>
+{%- endfor -%}
+</ol>
+{%- endif -%}
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_title.neo
+##################################################################################
+
+
+-- title
+
+Breadcrumb Item
+
+-- metadata
+-- id: aabb0002
+-- type: testing
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/another-level/_title.neo
+##################################################################################
+
+
+-- title
+
+Another Level
+
+-- metadata
+-- id: aabb0003
+-- type: testing
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/another-level/file-under-test.neo
+##################################################################################
+
+
+-- title
+
+File Under Test
+
+-- metadata
+-- id: aabb0001
+-- type: testing
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+
+<ol class="breadcrumbs">
+    <li><a href="/en/aabb0002/?breadcrumb-item">Breadcrumb Item</a></li>
+    <li><a href="/en/aabb0003/?another-level">Another Level</a></li>
+</ol>

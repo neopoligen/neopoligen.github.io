@@ -1,0 +1,60 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+Test a _title that's active without children
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set links = site.collection_from_files_and_folders(
+    page_id, 
+    [["active-folder"]]
+) -%}
+{{- macros.collection_menu(links) -}}
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/active-folder/_title.neo
+##################################################################################
+
+-- title
+
+Title Folder Active
+
+
+-- metadata
+-- id: aabb0001
+-- type: testing
+
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+
+<nav id="collection_menu" class="collection_menu">
+  <ol>
+    <li
+      id="collection_menu_aabb0001"
+      class="title_folder_active active_path"
+    >
+      <button
+        class="collection_menu_button"
+        data-menu="collection_menu"
+        data-id="aabb0001"
+        data-status="active"
+      >
+        Title Folder Active
+      </button>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,41 @@
+{%- import "includes/macros.jinja" as macros -%}
+
+{%- set nav_links = site.nav_from_files_and_folders(page_id, [
+["2auhjdnh"],
+["2cizgxp9"],
+["examples"],
+["release-notes"],
+["documentation"],
+["roadmap"],
+["philosophy"],
+["miscelaneous"]
+]) -%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include "includes/head.jinja" -%}</head>
+<body>
+  <div class="page_wrapper">
+    <div class="sidebar_article_group">
+      {%- include "includes/sidebar.jinja" -%}
+      <article class="flow">
+        {%- if nav_links.current_item and nav_links.current_item.parent_ids|length > 0 -%}
+        <ol class="breadcrumbs">
+        {%- for breadcrumb_id in nav_links.current_item.parent_ids -%}
+          <li>{{- site.page_html_link(breadcrumb_id) -}}</li>
+        {%- endfor -%}
+        </ol>
+        {%- endif -%}
+        {{- macros.place_section(page_id, "title") -}}
+        {{- macros.nav_toc(page_id, nav_links) -}}
+        <div>
+          <div>{%- if nav_links.prev_item -%}Previous: {{ nav_links.prev_item.title_link_or_text }}{%- endif -%}</div>
+          <div>{%- if nav_links.next_item -%}Next: {{ nav_links.next_item.title_link_or_text }}{%- endif -%}</div>
+        </div>
+      </article>
+    </div>
+    {%- include "includes/footer.jinja" -%}
+  </div>
+</body>
+</html>

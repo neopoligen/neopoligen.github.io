@@ -1,0 +1,164 @@
+#####################################################################
+DESCRIPTION
+##################################################################################
+
+This test checks that the default soft by 
+file/folder name works for all nested children
+items (but doesn't override the top level order
+requested). Nested directories are in included
+for their title/index name
+
+
+##################################################################################
+TEMPLATE
+PATH: pages/testing/published.jinja
+##################################################################################
+
+{%- import "includes/macros.jinja" as macros -%}
+{%- set nav_links = site.nav_from_files_and_folders(page_id, [
+    ["test-folder"]
+]) -%}
+{{- macros.nav_menu(nav_links) -}}
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/_title.neo
+##################################################################################
+
+-- title
+
+Content Folder
+
+
+-- metadata
+-- id: aabbcc05
+-- type: testing
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/004-another-file.neo
+##################################################################################
+
+-- title
+
+Another File
+
+-- metadata
+-- id: aabbcc04
+-- type: testing
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/002/_title.neo
+##################################################################################
+
+-- title
+
+Closed Title Folder
+
+-- metadata
+-- id: aabbcc02
+-- type: testing
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/003/_index.neo
+##################################################################################
+
+-- title
+
+Closed Index Folder
+
+-- metadata
+-- id: aabbcc03
+-- type: testing
+
+
+
+##################################################################################
+SUPPORT_PAGE
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/004-another-file.neo
+##################################################################################
+
+-- title
+
+Another File
+
+-- metadata
+-- id: aabbcc04
+-- type: testing
+
+
+
+
+##################################################################################
+INPUT
+PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/test-folder/001-file-under-test.neo
+##################################################################################
+
+-- title
+
+File Under Test
+
+-- metadata
+-- id: aabbcc01
+-- type: testing
+
+
+
+##################################################################################
+EXPECTED_OUTPUT
+##################################################################################
+
+
+<nav class="nav_menu">
+    <ol>
+    <li
+        id="nav_menu_item_aabbcc05"
+        class="nav_menu_opened_title_folder nav_menu_active_path"
+    >
+        <button
+        class="nav_menu_button"
+        data-page_id="aabbcc05"
+        data-status="open"
+        >
+        Content Folder
+        </button>
+        <ol id="nav_menu_children_aabbcc05">
+        <li id="nav_menu_item_aabbcc01" class="nav_menu_current_file">
+            File Under Test
+        </li>
+        <li
+            id="nav_menu_item_aabbcc02"
+            class="nav_menu_closed_title_folder"
+        >
+            <button
+            class="nav_menu_button"
+            data-page_id="aabbcc02"
+            data-status="closed"
+            >
+            Closed Title Folder
+            </button>
+        </li>
+        <li
+            id="nav_menu_item_aabbcc03"
+            class="nav_menu_closed_index_folder"
+        >
+            <a href="/en/aabbcc03/?closed-index-folder"
+            >Closed Index Folder</a
+            >
+        </li>
+        <li id="nav_menu_item_aabbcc04" class="nav_menu_not_current_file">
+            <a href="/en/aabbcc04/?another-file">Another File</a>
+        </li>
+        </ol>
+    </li>
+    </ol>
+</nav>
