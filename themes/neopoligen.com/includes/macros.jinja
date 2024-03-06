@@ -4,6 +4,19 @@ repeatedly #}
 
 
 {#############################################################################}
+{% macro breadcrumbs(collection) %}
+<nav class="breadcrumbs"><ol>
+<li><a href="/">Neopoligen</a></li>
+{% for id in collection.active_ancestors %}
+<li>{{- site.page_html_link(id) }}</li>
+{% endfor %}
+</ol>
+</nav>
+{% endmacro %}
+{#############################################################################}
+
+
+{#############################################################################}
 {%- macro collection_menu(collection) -%}
 {%- set menu_name = "collection_menu" -%}
 {# TODO: Setup the menu_name to accept a parameter so more than

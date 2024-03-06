@@ -81,11 +81,10 @@
   }
   */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
 }
@@ -95,8 +94,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: var(--color-3);
 }
 
@@ -112,6 +110,21 @@ body {
   line-height: 1.4;
   font-family: var(--regular);
   font-size: var(--size-3);
+}
+
+.breadcrumbs {
+  min-height: 1.2rem;
+}
+
+.breadcrumbs > ol {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.3rem;
+}
+
+.breadcrumbs > ol > li {
+  list-style-type: none;
 }
 
 
@@ -177,11 +190,11 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 0;
   font-family: var(--heavy);
 }
 
 h1 {
-  margin-top: 1em;
   font-size: var(--size-6);
 }
 

@@ -1,67 +1,16 @@
 {%- import "includes/macros.jinja" as macros -%}
-
-
-
-
-{# THESE ARE TEST VALUES #}
-
-{# {%- set links = site.collection_from_files_and_folders(page_id, [
-["2auhjdnh"],
-["2cizgxp9"],
-["_test_index_folder"],
-["_test_title_folder"],
-]) -%} #}
-
-
-
-{# {%- set nav_links2 = site.nav_from_files_and_folders2(page_id, [
-["2auhjdnh"],
-]) -%} #}
-
-{%- set links = site.collection_from_files_and_folders(page_id, [
-["2auhjdnh"],
-["2cizgxp9"],
-["examples"],
-["release-notes"],
-["documentation"],
-["roadmap"],
-["philosophy"],
-["miscelaneous"]
-]) -%}
-
-
-
-{# {%- set nav_links = site.nav_from_files_and_folders(page_id, [
-["2auhjdnh"],
-["2cizgxp9"],
-["examples"],
-["release-notes"],
-["documentation"],
-["roadmap"],
-["philosophy"],
-["miscelaneous"]
-]) -%} #}
+{%- include "includes/globals.jinja" -%}
 
 
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>{% include "includes/head.jinja" -%}</head>
-
 <body>
-
   <div class="page_wrapper">
     <div class="sidebar_article_group">
       {%- include "includes/sidebar.jinja" -%}
       <article class="flow">
-        {# {%- if nav_links.current_item and nav_links.current_item.parent_ids|length > 0 -%}
-        <ol class="breadcrumbs">
-        {%- for breadcrumb_id in nav_links.current_item.parent_ids -%}
-          <li>{{- site.page_html_link(breadcrumb_id) -}}</li>
-        {%- endfor -%}
-        </ol>
-        {%- endif -%} #}
+        {{- macros.breadcrumbs(links) -}}
         {{- macros.place_section(page_id, "title") -}}
         {{- macros.place_section(page_id, "forward") -}}
         {{- macros.main_body(page_id) -}}
@@ -74,5 +23,4 @@
     {%- include "includes/footer.jinja" -%}
   </div>
 </body>
-
 </html>
