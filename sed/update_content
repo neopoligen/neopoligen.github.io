@@ -1,0 +1,5 @@
+#!/bin/bash
+
+find ../content/ -type f -name "*.neo" -print0 \
+| xargs -0 sed -i "" \
+'s@xxxxxxxxxxxx@yyyyyyyyyyyyyyyyyy@g'
