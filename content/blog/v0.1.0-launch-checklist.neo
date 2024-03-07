@@ -36,22 +36,24 @@ it'll never get out the door.
 So, here's those lists:
 
 -- todo
--- title: Do Before Launch
-
-[] Move _errors under _status
-
-[] Remove timezone offset from config and use the local time
-from the server for the internals
-
-[] Convert date to remove timestamps
-
-[] Blog posts work
-
-[] Images work with just their filename
+-- title: Docs Before Launch
 
 [] Create the Quick-Start tutorial and videos
 
 [] Create some Cookbook recipes and videos
+
+[] Guide to deploying on GitHub
+
+-- todo
+-- title: Do Before Launch
+
+[] Convert format to "neojinja"
+
+[] Convert date to remove timestamps
+
+[] Images work with just their filename
+
+[] Images work from template site.image calls
 
 [] You can download and run the app on 
 Windows and Macs
@@ -60,10 +62,7 @@ Windows and Macs
 
 [] Button to make a new website
 
-[] Guide to deploying on GitHub
-
-[] Convert format to "neojinja"
-
+[x] Blog posts work
 
 [x] Button to neo content show source on every page
 
