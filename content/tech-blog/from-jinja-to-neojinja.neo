@@ -1,6 +1,6 @@
 -- title
 
-From Jinja To MiniJinja To NeoJinja
+From Jinja To MiniJinja To NeoJinja With Pre-Attentive Processing
 
 -- h2
 
@@ -8,25 +8,24 @@ Introduction
 
 Neopoligen combines your content with templates
 to make websites. The templates are called "NeoJinja"
-files. They look lik this one which shows every title 
+files. They look like this one which shows every title 
 for a set of blog links:
 
 -- code/
 -- neoj
 -- subtitle: blog-links.neoj
 
-[! set blog_links = site.collection_from_tags(page_id, [["blog"]]) !]
+[!- set blog_links = site.collection_from_tags(page_id, [["blog"]]) -!]
 
-[! for link in blog_links.tree  !]
-[@ site.page_title(link.id) @]
-[! endfor !]
+[!- for link in blog_links.tree  -!]
+  [@- site.page_title(link.id) -@]
+[!- endfor -!]
 
 -- /code
 
-The `[! ... !]`` snippets are instructions that set up
-the `blog_links`` variable with the data then tell 
-the template to do a `for ... endfor`` loop over the 
-`[@ ... @]`` snippet that outputs each title in turn. 
+The `[! ... !]`` snippets are template instructions that set up
+the `blog_links`` variable and tell it to do a `for ... endfor`` 
+loop over the `[@ ... @]`` snippet that outputs each title in turn. 
 
 You can read more about the functionality in the
 <<ilink: 2dmzomyo|template documentation>>. For this
@@ -34,19 +33,127 @@ post, I want to talk about the format itself.
 
 -- h2
 
-The Original Jinja
+The Origin Format
+
+NeoJinja is based off (and powered by) a template
+engine called MiniJinja^mjinja^^ which is, in turn, based
+off one called Jinja^jinja^^. The Jinja engine is used
+with the Python^python^^ programming language. MiniJinja
+mimics its behavior, but in a language called Rust^rust^^.
+Neopoligen is written mainly in Rust and I would have 
+used MiniJinja directly except for one thing, it
+was really hard for me to read. 
+
+Here's the same NeoJinja template followed by the 
+MiniJinja version. Both do exactly the same thing. The
+only difference is the characters used to mark the
+start and end points of the template instruction and
+output snippets. 
+
+-- code
+-- neoj
+-- subtitle: NeoJinja
+
+[!- set blog_links = site.collection_from_tags(page_id, [["blog"]]) -!]
+
+[!- for link in blog_links.tree  -!]
+  [@- site.page_title(link.id) -@]
+[!- endfor -!]
+
+-- code/
+-- neoj
+-- subtitle: MiniJinja
+
+{%- set blog_links = site.collection_from_tags(page_id, [["blog"]]) -%}
+
+{%- for link in blog_links.tree  -%}
+  {{- site.page_title(link.id) -}}
+{%- endfor -%}
+
+-- /code
+
+-- h2
+
+The Differences
+
+So, `{%- ... -%}`` becomes `[!- ... -!]``
+
+And, `{{- ... -}}`` becomes `[@- ... -@]``
+
+Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``
+
+There are two reasons I like this. First and foremost I 
+find it a lot easier to scan for the sharp corners of the
+`[]`` brackets compared to `{}``. My guess is this is
+a pre-attentive processing thing^pap^^. I first learned
+about that idea from Stephen Few's book Information
+Dashboard Design^idd^^. Basically, our brains process
+some visual information before we're consciously aware
+of it. 
+
+Here's an example straight from the book to demonstrate. 
+Start by counting the number of 5's in this block of
+numbers:
+
+
+-- div
+-- id: number_block
+-- class: not_highlighted
+
+9BBLL5Z4H59LJS1FK7CW6XLQ4JYE0J620NTY0DMN
+A6RNBR1F2TE2JMV0X7UIRG0O55LKHC9M5M6ZPALT
+9OIRBM13ASKX92CA8L8SHSBSVHDFL792VW13XYE8
+HS1N86EWEL1YY7BDSLE45SGEA19GBOUWKDVZRID2
+86GO25UDW033UMF729P1B0Y82YBQ706Y14MYRFLR
+
+
+-- css
+
+not_highlighted {
+    
+
+}
 
 
 
 
 
 -- footnote
+-- id: idd
+-- title: Information Dashboard Design: Displaying Data for At-a-Glance Monitoring
+-- url: https://www.amazon.com/dp/1938377001/
+
+This is the second version of the book. I read the first
+edition (subtitled "The Effective Visual Communication Of Data"). 
+but I expect it's still just as good. Highly recommended if
+you're at all interested in the topic or even just design
+in general.
+
+
+-- footnote
+-- id: mjinja
+-- title: The MiniJinja Template Engine
+-- url: https://docs.rs/minijinja/latest/minijinja/
+
+-- footnote
 -- id: jinja
--- title: The Original Jinja Template Engine
+-- title: The Jinja2 Template Engine
 -- url: https://jinja.palletsprojects.com/en/3.1.x/
 
+-- footnote
+-- id: python
+-- title: The Python Programming Language
+-- url: https://www.python.org/
 
+-- footnote
+-- id: rust
+-- title: The Rust Programming Language
+-- url: https://www.rust-lang.org/
 
+-- footnote
+-- id: pap
+-- title: Pre-attentive processing
+-- url: https://en.wikipedia.org/wiki/Pre-attentive_processing
 
 
 -- metadata

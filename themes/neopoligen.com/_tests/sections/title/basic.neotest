@@ -32,12 +32,7 @@ with some paragraphs after it
 EXPECTED_OUTPUT
 ##################################################################################
 
-    <section class="title_section flow">
-      <div class="page_title_subtitle_group">
-        <h1 class="page_title">This is a basic title</h1>
-      </div>
-
-      <div class="content flow">
-        <p>with some paragraphs after it</p>
-      </div>
-    </section>
+<section class="title_section flow">
+  <div class="title_heading_group"><h1>This is a basic title</h1></div>
+  <div class="content flow"><p>with some paragraphs after it</p></div>
+</section>

@@ -3,6 +3,12 @@
 
 Templates
 
+-- note
+
+This is an early scratch document, it's
+not at all complete
+
+
 -- h2
 
 Introducing NeoJinja
@@ -32,3 +38,4 @@ Neopoligen takes those snippets and converts
 -- metadata
 -- date: 2024-03-07 12:31:45
 -- id: 2dmzomyo
+-- type: scratch

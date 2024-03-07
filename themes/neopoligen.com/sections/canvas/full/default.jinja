@@ -23,17 +23,17 @@
     [!- endif -!]
 
     [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
-    <div class="section_title_subtitle_group">
+    <div class="[@- section.type -@]_heading_group">
     [!- endif -!]
         [!- if section.key_value_attributes.title -!]
-        <h3 class="section_title">
+        <h2>
             [@- section.key_value_attributes.title -@]
-        </h3>
+        </h2>
         [!- endif -!]
         [!- if section.key_value_attributes.subtitle -!]
-        <h4 class="section_subtitle">
+        <div class="heading_subtitle">
             [@- section.key_value_attributes.subtitle -@]
-        </h4>
+        </div>
         [!- endif -!]
     [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
     </div>

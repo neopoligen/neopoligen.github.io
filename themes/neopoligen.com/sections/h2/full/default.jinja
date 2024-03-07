@@ -1,6 +1,6 @@
 [!- import "includes/macros.jinja" as macros -!]
 
-<section [@- section_attributes(page_id, { "section": section, "classes": "title_section flow" } ) -@]>
+<section [@- section_attributes(page_id, { "section": section, "classes": section.type ~ "_section flow" } ) -@]>
 
     [#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#]
     [!- if extra.example == true -!]
@@ -25,18 +25,19 @@
 
     [!- for content in section.category.content.containers -!]
         [!- if loop.first -!]
-            <div class="page_title_subtitle_group">[@- '' -@]
-                <h1 class="page_title">
+            <div class="[@- section.type -@]_heading_group">[@- '' -@]
+                <[@- section.type -@]>
                     [@- output_payload(page_id, content, extras) -@]
-                </h1>
+                </[@- section.type -@]>
                 [!- if section.key_value_attributes.subtitle -!]
-                    <div class="page_subtitle">
+                    <div class="heading_subtitle">
                         [@- section.key_value_attributes.subtitle -@]
                     </div>
                 [!- endif -!]
             </div>
         [!- endif -!]
     [!- endfor -!]
+
 
     [!- if section.key_value_attributes.preface -!]
         <div class="preface">
