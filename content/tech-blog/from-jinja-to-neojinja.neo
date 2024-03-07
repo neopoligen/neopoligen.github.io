@@ -1,0 +1,55 @@
+-- title
+
+From Jinja To MiniJinja To NeoJinja
+
+-- h2
+
+Introduction
+
+Neopoligen combines your content with templates
+to make websites. The templates are called "NeoJinja"
+files. They look lik this one which shows every title 
+for a set of blog links:
+
+-- code/
+-- neoj
+-- subtitle: blog-links.neoj
+
+[! set blog_links = site.collection_from_tags(page_id, [["blog"]]) !]
+
+[! for link in blog_links.tree  !]
+[@ site.page_title(link.id) @]
+[! endfor !]
+
+-- /code
+
+The `[! ... !]`` snippets are instructions that set up
+the `blog_links`` variable with the data then tell 
+the template to do a `for ... endfor`` loop over the 
+`[@ ... @]`` snippet that outputs each title in turn. 
+
+You can read more about the functionality in the
+<<ilink: 2dmzomyo|template documentation>>. For this
+post, I want to talk about the format itself. 
+
+-- h2
+
+The Original Jinja
+
+
+
+
+
+-- footnote
+-- id: jinja
+-- title: The Original Jinja Template Engine
+-- url: https://jinja.palletsprojects.com/en/3.1.x/
+
+
+
+
+
+-- metadata
+-- date: 2024-03-07
+-- id: 2dn38hs5
+-- status: draft
