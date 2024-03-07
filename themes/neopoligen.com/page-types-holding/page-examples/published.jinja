@@ -1,18 +1,18 @@
-[! extends "wrappers/default.jinja" !]
+[!- extends "wrappers/default.jinja" -!]
 
-[! block title !]
-[@ macros.place_only("title") @]
-[! endblock !]
+[!- block title -!]
+[@- macros.place_only("title") -@]
+[!- endblock -!]
 
-[! block body !]
+[!- block body -!]
 <div class="page-examples flow">
-[@ macros.main_body() @]
+[@- macros.main_body() -@]
 </div>
 
 <div class="page_source_wrapper">
 <h3 class="page_source_title">Page Source</h3>
-<pre class="page_source_text"><code>[@ payload.source() @]</code></pre>
+<pre class="page_source_text"><code>[@- payload.source() -@]</code></pre>
 </div>
 
-[! endblock !]
+[!- endblock -!]
 

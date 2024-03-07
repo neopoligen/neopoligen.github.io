@@ -1,9 +1,9 @@
-[# <title>[@ macros.title_for_page(page_id) @]</title> #]
+[#- <title>[@- macros.title_for_page(page_id) -@]</title> -#]
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-[# <meta property="og:title" content="[@ macros.title_for_page(page_id) @] - [@ macros.domain_no_https() @]" /> #]
+[#- <meta property="og:title" content="[@- macros.title_for_page(page_id) -@] - [@- macros.domain_no_https() -@]" /> -#]
 <meta property="og:type" content="article" />
-[# <meta property="og:url" content="[@ macros.domain() @][@ macros.href_for_page(page_id) @]" /> #]
+[#- <meta property="og:url" content="[@- macros.domain() -@][@- macros.href_for_page(page_id) -@]" /> -#]
 <link rel="stylesheet" href="/theme/styles.css" />
 <link rel="stylesheet" href="/theme/highlighting/code-solarized-dark.css" />
 <link rel="apple-touch-icon" sizes="180x180" href="/theme/favicons/apple-touch-icon.png">

@@ -1,8 +1,8 @@
-[! import "includes/macros.jinja" as macros !]
+[!- import "includes/macros.jinja" as macros -!]
 <div class="sidebar">
 <h4>Details</h4>
-[@ macros.collection_menu(menu) @]
+[@- macros.collection_menu(menu) -@]
 
 <h4>Tech Blog</h4>
-[@ macros.collection_links(tech_blog_links) @]
+[@- macros.collection_links(tech_blog_links) -@]
 </div>

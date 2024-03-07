@@ -1,5 +1,5 @@
 #!/bin/bash
 
-find ../themes/neopoligen.com/ -type f -name "*.neotest" -print0 \
+find ../themes/neopoligen.com/ -type f -name "*.jinja" -print0 \
 | xargs -0 \
-sed -i "" 's|{{-|[@|g;s|{{|[@|g;s|-}}|@]|g;s|}}|@]|g;s|{%-|[!|g;s|{%|[!|g;s|-%}|!]|g;s|%}|!]|g;s|{#-|[#|g;s|{#|[#|g;s|-#}|#]|g;s|#}|#]|g'
+sed -i '' 's|\[! |[!- |g;s| !\]| -!]|g;s|\[@ |[@- |g;s| @\]| -@]|g;s|\[# |[#- |g;s| #\]| -#]|g'

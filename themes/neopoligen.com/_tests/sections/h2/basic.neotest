@@ -3,8 +3,8 @@ TEMPLATE
 PATH: pages/testing/published.jinja
 ##################################################################################
 
-[! import "includes/macros.jinja" as macros !]
-[@ macros.main_body(page_id) @]
+[!- import "includes/macros.jinja" as macros -!]
+[@- macros.main_body(page_id) -@]
 
 
 ##################################################################################

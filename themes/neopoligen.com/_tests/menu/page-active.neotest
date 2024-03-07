@@ -11,11 +11,11 @@ PATH: pages/testing/published.jinja
 ##################################################################################
 
 
-[! import "includes/macros.jinja" as macros !]
-[! set links = site.collection_from_files_and_folders(page_id, [
+[!- import "includes/macros.jinja" as macros -!]
+[!- set links = site.collection_from_files_and_folders(page_id, [
     ["aabbcc01"]
-]) !]
-[@ macros.collection_menu(links) @]
+]) -!]
+[@- macros.collection_menu(links) -@]
 
 
 

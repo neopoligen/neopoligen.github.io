@@ -3,64 +3,64 @@
     Use THEME/developer-tools/section_builder/customized...
 #]
 
-[! import "includes/macros.jinja" as macros !]
+[!- import "includes/macros.jinja" as macros -!]
 
-<div [@ macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) @]>
+<div [@- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -@]>
 
 
-    [# START_NEOPOLIGEN_SOURCE_EXAMPLE #]
-    [! if extra.example == true !]
-    <div class="[@ section.type @]_section_source_wrapper section_source_wrapper section_example_source">
-        <div class="[@ section.type @]_section_source_title section_source_title">Source</div>
+    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#]
+    [!- if extra.example == true -!]
+    <div class="[@- section.type -@]_section_source_wrapper section_source_wrapper section_example_source">
+        <div class="[@- section.type -@]_section_source_title section_source_title">Source</div>
         <pre
-            class="[@ section.type @]_section_source_text section_source_text"><code>
-            [!- autoescape true !][@- section.source | trim -@][! endautoescape -!]
+            class="[@- section.type -@]_section_source_text section_source_text"><code>
+            [!- autoescape true -!][@- section.source | trim -@][!- endautoescape -!]
             </code></pre>
     </div>
 
-    <div class="[@ section.type @]_section_example_output_title section_example_output_title">Output</div>
-    [! if section_has_flag(section, "example_flag") == "true" !]
+    <div class="[@- section.type -@]_section_example_output_title section_example_output_title">Output</div>
+    [!- if section_has_flag(section, "example_flag") == "true" -!]
     <div>(Found '--example_flag' section attribute flag)</div>
-    [! endif !]
-    [! endif !]
-    [# END_NEOPOLIGEN_SOURCE_EXAMPLE #]
+    [!- endif -!]
+    [!- endif -!]
+    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE -#]
 
-    [! if section.key_value_attributes.forward !]
-    <div class="[@ section.type @]_section_forward_wrapper section_forward_wrapper">
-        [@ section.key_value_attributes.forward @]
+    [!- if section.key_value_attributes.forward -!]
+    <div class="[@- section.type -@]_section_forward_wrapper section_forward_wrapper">
+        [@- section.key_value_attributes.forward -@]
     </div>
-    [! endif !]
+    [!- endif -!]
 
-    [! if section.key_value_attributes.title or section.key_value_attributes.subtitle !]
-    <div class="[@ section.type @]_section_attribute_title_wrapper section_attribute_title_wrapper">
-        [! endif !]
+    [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
+    <div class="[@- section.type -@]_section_attribute_title_wrapper section_attribute_title_wrapper">
+        [!- endif -!]
 
-        [! if section.key_value_attributes.title !]
-        <h3 class="[@ section.type @]_section_attribute_title_text section_attribute_title_text">
-            [@ section.key_value_attributes.title @]
+        [!- if section.key_value_attributes.title -!]
+        <h3 class="[@- section.type -@]_section_attribute_title_text section_attribute_title_text">
+            [@- section.key_value_attributes.title -@]
         </h3>
-        [! endif !]
+        [!- endif -!]
 
-        [! if section.key_value_attributes.subtitle !]
-        <h4 class="[@ section.type @]_section_attribute_subtitle_text section_attribute_subtitle_text">
-            [@ section.key_value_attributes.subtitle @]
+        [!- if section.key_value_attributes.subtitle -!]
+        <h4 class="[@- section.type -@]_section_attribute_subtitle_text section_attribute_subtitle_text">
+            [@- section.key_value_attributes.subtitle -@]
         </h4>
-        [! endif !]
+        [!- endif -!]
 
-        [! if section.key_value_attributes.title or section.key_value_attributes.subtitle !]
+        [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
     </div>
-    [! endif !]
+    [!- endif -!]
 
-    [! if section.key_value_attributes.preface !]
-    <div class="[@ section.type @]_section_preface_wrapper section_preface_wrapper">
-        [@ section.key_value_attributes.preface @]
+    [!- if section.key_value_attributes.preface -!]
+    <div class="[@- section.type -@]_section_preface_wrapper section_preface_wrapper">
+        [@- section.key_value_attributes.preface -@]
     </div>
-    [! endif !]
+    [!- endif -!]
 
-    <div class="[@ section.type @]_section_content_wrapper section_content_wrapper">
-        <pre class="[@ section.type @]_section_content_pre section_content_pre">
+    <div class="[@- section.type -@]_section_content_wrapper section_content_wrapper">
+        <pre class="[@- section.type -@]_section_content_pre section_content_pre">
         [#- This comment makes sure the pre and code tags connect in the output HTML -#]
-        <code class="[@ section.type @]_section_content_code section_content_code">
+        <code class="[@- section.type -@]_section_content_code section_content_code">
         [!- autoescape true -!]
         [@- section.category.content.text -@]
         [!- endautoescape -!]
@@ -70,10 +70,10 @@
     </div>
 
 
-    [! if section.key_value_attributes.afterword !]
-    <div class="[@ section.type @]_section_afterword_wrapper section_afterword_wrapper">
-        [@ section.key_value_attributes.afterword @]
+    [!- if section.key_value_attributes.afterword -!]
+    <div class="[@- section.type -@]_section_afterword_wrapper section_afterword_wrapper">
+        [@- section.key_value_attributes.afterword -@]
     </div>
-    [! endif !]
+    [!- endif -!]
 
 </div>

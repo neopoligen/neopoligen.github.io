@@ -9,10 +9,10 @@ TEMPLATE
 PATH: pages/testing/published.jinja
 CONTENT:
 
-[! import "includes/macros.jinja" as macros !]
-[@ macros.place_section(page_id, "title") @]
-[@ macros.place_section(page_id, "forward") @]
-[@ macros.main_body(page_id) @]
+[!- import "includes/macros.jinja" as macros -!]
+[@- macros.place_section(page_id, "title") -@]
+[@- macros.place_section(page_id, "forward") -@]
+[@- macros.main_body(page_id) -@]
 
 
 ##################################################################################
