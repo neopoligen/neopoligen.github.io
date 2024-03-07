@@ -10,9 +10,16 @@
     format('opentype');
 }
 
+@font-face {
+  font-family: 'IntelOneMono-Regular';
+  src: url('/theme/fonts/IntelOneMono-Regular.woff2')
+    format('opentype');
+}
+
 :root {
   --regular: 'Atkinson-Hyperlegible', sans-serif;
   --heavy: 'Atkinson-Hyperlegible-Bold', sans-serif;
+  --mono: 'IntelOneMono-Regular';
 }
 
 :root {
@@ -129,6 +136,11 @@ body {
 
 .centered {
   text-align: center;
+}
+
+code {
+  font-size: var(--size-3);
+  font-family: var(--mono);
 }
 
 .code_section_content_pre {
@@ -311,6 +323,7 @@ footer {
 
 pre {
   font-size: var(--size-3);
+  font-family: var(--mono);
 }
 
 .prelude {
@@ -440,7 +453,6 @@ ul {
 ul > :where(:not(:first-child)) {
   margin-top: 1em;
 }
-
 
 .template_data_object {
   font-size: var(--size-1);
