@@ -1,6 +1,6 @@
 -- title
 
-v0.1.0 Launch Checklist
+v0.1 Launch Checklist
 
 -- image
 -- under-construction-2024
@@ -54,16 +54,16 @@ So, here's those lists:
 
 [] Convert format to "neojinja"
 
-[] Images work with just their filename
-
-[] Images work from template site.image calls
-
 [] You can download and run the app on 
 Windows and Macs
 
 [] Auto-generate playground/example site
 
 [] Button to make a new website
+
+[x] Images work with just their filename
+
+[x] Images work from template site.image calls
 
 [x] Blog posts work
 

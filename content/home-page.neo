@@ -48,13 +48,6 @@ static site that can be viewed locally and deployed
 anywhere that offers static site hosting.
 
 
-
--- image
--- train-1
--- alt: A black and white photo of the front of a
--- alt: train
-
-
 -- h2
 
 Sections And Spans
@@ -66,6 +59,19 @@ example. Spans looks like this `<<span|some text>>``
 You can <<ilink: 2cgceffj|learn more about sections here>> 
 
 You can <<ilink: 2ch7uk0v|learn more about spans here>> 
+
+-- h4
+
+Image Test
+
+
+
+-- image
+-- train-1
+-- alt: A black and white photo of the front of a
+-- alt: train
+
+
 
 
 
