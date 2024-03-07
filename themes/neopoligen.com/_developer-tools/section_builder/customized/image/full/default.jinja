@@ -46,7 +46,9 @@
     {% endif -%}
 
     {% if section.flag_attributes[0] %}
-    <img src="{{ site.image(section.flag_attributes[0]).raw_href }}" alt="">
+    <img src="{{ site.image(section.flag_attributes[0]).raw_href }}" alt="
+    {%- if section.key_value_attributes.alt %}{{ section.key_value_attributes.alt }}{% endif -%}
+    ">
     {% endif %}
 
 
