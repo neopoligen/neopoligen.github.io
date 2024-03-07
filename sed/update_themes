@@ -1,5 +1,5 @@
 #!/bin/bash
 
-find ../configuration/themes/neopoligen-site/ -type f -name "*.jinja" -print0 \
-| xargs -0 sed -i "" \
-'s@list_filtered_pages_alpha_dev@list_filtered_pages_alpha@g'
+find ../themes/neopoligen.com/ -type f -name "*.neotest" -print0 \
+| xargs -0 \
+sed -i "" 's|{{-|[@|g;s|{{|[@|g;s|-}}|@]|g;s|}}|@]|g;s|{%-|[!|g;s|{%|[!|g;s|-%}|!]|g;s|%}|!]|g;s|{#-|[#|g;s|{#|[#|g;s|-#}|#]|g;s|#}|#]|g'

@@ -138,11 +138,6 @@ body {
   text-align: center;
 }
 
-code {
-  font-size: var(--size-3);
-  font-family: var(--mono);
-}
-
 .code_section_content_pre {
   border: var(--border-1);
   border-radius: var(--radius-3);

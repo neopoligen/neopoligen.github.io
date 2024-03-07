@@ -1,9 +1,9 @@
-{# type: key-value #}
-{%- import "includes/macros.jinja" as macros -%}
+[# type: key-value #]
+[! import "includes/macros.jinja" as macros !]
 
-<span class="{{ span.content.value }}"
-{{- macros.span_attributes(span.content) -}}>
-{% for span in span.content.spans %}
-{{- macros.output_spans(page_id, span, {}) -}}
-{% endfor %}
+<span class="[@ span.content.value @]"
+[@ macros.span_attributes(span.content) @]>
+[! for span in span.content.spans !]
+[@ macros.output_spans(page_id, span, {}) @]
+[! endfor !]
 </span>

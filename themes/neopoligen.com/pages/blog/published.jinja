@@ -1,21 +1,21 @@
-{%- import "includes/macros.jinja" as macros -%}
-{%- include "includes/globals.jinja" -%}
+[! import "includes/macros.jinja" as macros !]
+[! include "includes/globals.jinja" !]
 
 <!DOCTYPE html>
 <html lang="en">
-<head>{% include "includes/head.jinja" -%}</head>
+<head>[! include "includes/head.jinja" !]</head>
 <body>
   <div class="page_wrapper">
-    {% include "includes/prelude.jinja" %}
+    [! include "includes/prelude.jinja" !]
     <div class="sidebar_article_group">
-      {%- include "includes/sidebar.jinja" -%}
+      [! include "includes/sidebar.jinja" !]
       <article class="flow">
-        {{- macros.place_section(page_id, "title") -}}
-        {{- macros.main_body(page_id) -}}
-        {%- include "includes/debugging.jinja" -%}
+        [@ macros.place_section(page_id, "title") @]
+        [@ macros.main_body(page_id) @]
+        [! include "includes/debugging.jinja" !]
       </article>
     </div>
-    {%- include "includes/footer.jinja" -%}
+    [! include "includes/footer.jinja" !]
   </div>
 </body>
 </html>

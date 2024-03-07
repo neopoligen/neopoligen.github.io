@@ -1,9 +1,9 @@
-{%- import "includes/macros.jinja" as macros -%}
-{%- include "global_vars" -%}
-{%- for page_id in site.page_ids() -%}
-{# {{ macros.log(page_id, "") }} #}
-{{ site.output_path_for_page(page_id) }}
+[! import "includes/macros.jinja" as macros !]
+[! include "global_vars" !]
+[! for page_id in site.page_ids() !]
+[# [@ macros.log(page_id, "") @] #]
+[@ site.output_path_for_page(page_id) @]
 --- PAGE_DATA_SPLIT ---
-{% include site.template_for_page(page_id) %}
+[! include site.template_for_page(page_id) !]
 --- PAGE_SEPERATOR ---
-{% endfor -%}
+[! endfor !]
