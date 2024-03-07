@@ -109,12 +109,9 @@ HS1N86EWEL1YY7BDSLE45SGEA19GBOUWKDVZRID2
 
 -- css
 
-not_highlighted {
-    
-
+body {
+    color: goldenrod;
 }
-
-
 
 
 
