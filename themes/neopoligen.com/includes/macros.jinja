@@ -175,6 +175,45 @@ one collection_menu can but put on a page #]
 
 
 [#############################################################################]
+[!- macro output_list(page_id, section, extra = {}) -!]
+[!- include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro output_payload(page_id, section, extras = {}) -!]
+[!- if section.type == "section" -!]
+[@- output_section(page_id, section.content, extras) -@]
+[!- elif section.type == "block" -!]
+[!- for block_content in section.content -!]
+[@- output_spans(page_id, block_content, extras) -@]
+[!- endfor -!]
+[!- elif section.type == "list" -!]
+[@- output_list(page_id, section.content, extras) -@]
+[!- endif -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro output_section(page_id, section, extra = {}) -!]
+[!- include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro output_spans(page_id, span, extras = {}) -!]
+[!- if span.content.template -!]
+[!- include span.content.template -!]
+[!- endif -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+
+[#############################################################################]
 [! macro prev_next(collection) !]
 <nav class="prev_next">
 [! if collection.prev_item !]
@@ -191,6 +230,39 @@ one collection_menu can but put on a page #]
 [! endmacro !]
 [#############################################################################]
 
+
+
+[#############################################################################]
+[!- macro section_attributes(page_id, payload = {}) -!]
+[!- if payload.section.key_value_attributes.class or payload.classes -!]
+[@- ' ' @]class="[@ payload.classes -@]
+[!- if payload.section.key_value_attributes.class and payload.classes -!]
+[@- ' ' @][! endif -!]
+[@- payload.section.key_value_attributes.class @]"[! endif -!]
+[!- for key in payload.section.key_value_attributes -!]
+[!- if key != "class" and key not in section_attribute_excludes !][@ ' ' -@]
+[@- key @]="[@ payload.section.key_value_attributes[key] -@]"
+[!- endif !][! endfor -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro section_has_flag(page_id, section, target, extras = {}) -!]
+[!- if target in section.flag_attributes -!]
+[@- true @][! else !][@ false -@]
+[!- endif -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro span_attributes(page_id, span, extras = {}) -!]
+[!- for attribute in span.key_value_attributes !][@ ' ' -@]
+[@- attribute @]="[@ span.key_value_attributes[attribute] @]"
+[!- endfor -!]
+[!- endmacro -!]
+[#############################################################################]
 
 
 
@@ -429,35 +501,6 @@ TODO: NAV TOC
 
 
 
-[! macro output_list(page_id, section, extra = {}) !]
-[! include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" !]
-[! endmacro !]
-
-
-[! macro output_payload(page_id, section, extras = {}) !]
-[! if section.type == "section" !]
-[@ output_section(page_id, section.content, extras) @]
-[! elif section.type == "block" !]
-[! for block_content in section.content !]
-[@ output_spans(page_id, block_content, extras) @]
-[! endfor !]
-[! elif section.type == "list" !]
-[@ output_list(page_id, section.content, extras) @]
-[! endif !]
-[! endmacro !]
-
-
-[! macro output_section(page_id, section, extra = {}) !]
-[! include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" !]
-[! endmacro !]
-
-
-[! macro output_spans(page_id, span, extras = {}) !]
-[! if span.content.template !]
-[! include span.content.template !]
-[! endif !]
-[! endmacro !]
-
 
 [! macro place_section(page_id, section_name, extras = {}) !]
 [! for section in site.page_place_section(page_id, section_name, extras) !]
@@ -465,32 +508,6 @@ TODO: NAV TOC
 [! endfor !]
 [! endmacro !]
 
-
-[! macro section_attributes(page_id, payload = {}) !]
-[! if payload.section.key_value_attributes.class or payload.classes !]
-[@ ' ' @]class="[@ payload.classes @]
-[! if payload.section.key_value_attributes.class and payload.classes !]
-[@ ' ' @][! endif !]
-[@ payload.section.key_value_attributes.class @]"[! endif !]
-[! for key in payload.section.key_value_attributes !]
-[! if key != "class" and key not in section_attribute_excludes !][@ ' ' @]
-[@ key @]="[@ payload.section.key_value_attributes[key] @]"
-[! endif !][! endfor !]
-[! endmacro !]
-
-
-[! macro span_attributes(page_id, span, extras = {}) !]
-[! for attribute in span.key_value_attributes !][@ ' ' @]
-[@ attribute @]="[@ span.key_value_attributes[attribute] @]"
-[! endfor !]
-[! endmacro !]
-
-
-[! macro section_has_flag(page_id, section, target, extras = {}) !]
-[! if target in section.flag_attributes !]
-[@ true @][! else !][@ false @]
-[! endif !]
-[! endmacro !]
 
 
 

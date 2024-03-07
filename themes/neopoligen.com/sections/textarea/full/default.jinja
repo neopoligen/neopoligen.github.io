@@ -14,7 +14,7 @@
         <div class="[@ section.type @]_section_source_title section_source_title">Source</div>
         <pre
             class="[@ section.type @]_section_source_text section_source_text"><code>
-            [! autoescape true !][@ section.source | trim @][! endautoescape !]
+            [!- autoescape true !][@- section.source | trim -@][! endautoescape -!]
             </code></pre>
     </div>
 
@@ -59,13 +59,13 @@
 
     <div class="[@ section.type @]_section_content_wrapper section_content_wrapper">
         <pre class="[@ section.type @]_section_content_pre section_content_pre">
-        [# This comment makes sure the code and pre tags connetct #]
+        [#- This comment makes sure the pre and code tags connect in the output HTML -#]
         <code class="[@ section.type @]_section_content_code section_content_code">
-        [! autoescape true !]
-        [@ section.category.content.text @]
-        [! endautoescape !]
+        [!- autoescape true -!]
+        [@- section.category.content.text -@]
+        [!- endautoescape -!]
         </code>
-        [# This comment makes sure the code and pre tags connetct #]
+        [#- This comment makes sure the code and pre tags connect in the output HTML -#]
         </pre>
     </div>
 
