@@ -27,7 +27,7 @@
 <body>
   <div class="page_wrapper">
     <section class="prelude">
-<img src="/images/site-graphics/under-construction-2024.png" alt="An Under construction banner" />
+<img src="/images/site-graphics/under-construction-2024.png" alt="An Under Construction Banner" /> 
 <h4>Head's up</h4>
 <p>The site is public, but it's still very much 
 a work in progress and in migration. You can 
@@ -70,7 +70,7 @@ first iteration is ready</p>
 
 <li><a href="/en/2djou38z/?v0.1-launch-checklist">v0.1 Launch Checklist</a></li>
 </ul>
-</div><article class="flow"><section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">The Database Idea</h1></div><div class="content"><p>I had what feels like an interesting idea last night: A database.</p><p>Sure, not that novel, but maybe not what you'd initially think of. The thought isn't to integrate database software. Instead, it's to make a new  folder called "database" and throw files in there. </p><p>Files in the "database" folder wouldn't output to the site directly as pages. Instead, you'd pull their content in from other pages. For example,  you could make some files with `-- book`` sections  in them. Using something like this on a page would  output all the books from your database:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+</div><article class="flow"><section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">The Database Idea</h1></div><div class="content flow"><p>I had what feels like an interesting idea last night: A database.</p><p>Sure, not that novel, but maybe not what you'd initially think of. The thought isn't to integrate database software. Instead, it's to make a new  folder called "database" and throw files in there. </p><p>Files in the "database" folder wouldn't output to the site directly as pages. Instead, you'd pull their content in from other pages. For example,  you could make some files with `-- book`` sections  in them. Using something like this on a page would  output all the books from your database:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">[! for book in db.get(&quot;book&quot;) !]
 [[ book ]] 
 [! endfor !]</code></pre>

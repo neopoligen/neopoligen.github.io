@@ -2,9 +2,6 @@
 
 v0.1 Launch Checklist
 
--- image
--- under-construction-2024
-
 -- p
 
 I've been working on Neopoligen for a couple years. 
@@ -119,6 +116,15 @@ back and forth on how I want to handle that. One
 way would be to just make things a standard section which
 I think is what I'm going to do. That's going to take a decent
 amount of work (I think) so probably won't make initial launch
+
+[] Automatic Alt Text Ingestion From Image Metadata - I'm writing
+a post about this one. This is one of those things where I should
+have just been able to install a package and have it work,
+but that's far from the case. Photoshop doesn't appear to 
+support Alt Text metadata attribute that were added to 
+the official standard (IPTC) two years ago. If Neopoligen 
+gets funded creating an app and let yous read/write/edit
+alt text in metadata is gonna happen
 
 [] The Roadmap - All the stuff on <<ilink: 2cfuahxq|The Roadmap>>
 
