@@ -1,40 +1,45 @@
+{#-
+    DO NOTE EDIT THIS FILE DIRECTLY: 
+    Use THEME/developer-tools/section_builder/customized...
+-#}
+
 {%- import "includes/macros.jinja" as macros -%}
 
 <div {{- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -}}>
 
     {#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#}
     {% if extra.example == true %}
-    <div class="end_section_source_wrapper">
-        <div class="end_section_source_title">Source</div>
+    <div class="{{- section.type }}_section_source_wrapper section_source_wrapper">
+        <div class="{{- section.type }}_section_source_title section_source_title">Source</div>
         <pre
-            class="end_{{- section.type }}_section_source_text section_source_text"><code>{{- section.source | trim -}}</pre>
+            class="{{- section.type }}_section_source_text section_source_text"><code>{{- section.source | trim -}}</pre>
         </code>
     </div>
-    <div class="end_section_output_title">Output</div>
-    {%- if macros.section_has_flag(section, "example_flag") == "true" -%}
+    <div class="{{- section.type }}_section_output_title section_output_title">Output</div>
+    {%- if section_has_flag(section, "example_flag") == "true" -%}
     <div>(Found '--example_flag' section attribute flag)</div>
     {% endif %}
     {% endif %}
     {#- END_NEOPOLIGEN_SOURCE_EXAMPLE -#}
 
-    {%- if section.key_value_attributes.preface -%}
-    <div class="end_section_preface_wrapper">
-        {{ section.key_value_attributes.preface }}
+    {%- if section.key_value_attributes.forward -%}
+    <div class="{{ section.type }}_section_forward_wrapper section_forward_wrapper">
+        {{ section.key_value_attributes.forward }}
     </div>
     {%- endif -%}
 
     {%- if section.key_value_attributes.title or section.key_value_attributes.subtitle -%}
-    <div class="end_section_attribute_title_wrapper">
+    <div class="{{ section.type }}_section_attribute_title_wrapper section_attribute_title_wrapper">
         {%- endif -%}
 
         {%- if section.key_value_attributes.title -%}
-        <h3 class="end_section_attribute_title_text">
+        <h3 class="{{ section.type }}_section_attribute_title_text section_attribute_title_text">
             {{ section.key_value_attributes.title }}
         </h3>
         {%- endif -%}
 
         {%- if section.key_value_attributes.subtitle -%}
-        <h4 class="end_section_attribute_subtitle_text">
+        <h4 class="{{ section.type }}_section_attribute_subtitle_text section_attribute_subtitle_text">
             {{ section.key_value_attributes.subtitle }}
         </h4>
         {%- endif -%}
@@ -43,17 +48,21 @@
     </div>
     {%- endif -%}
 
+    {%- if section.key_value_attributes.preface -%}
+    <div class="{{ section.type }}_section_preface_wrapper section_preface_wrapper">
+        {{ section.key_value_attributes.preface }}
+    </div>
+    {%- endif -%}
 
     {%- for content in section.category.content.containers -%}
-    <p class="end_section_paragraph">
-        {{- macros.output_payload(page_id, content, extras) -}}
+    <p class="{{ section.type }}_section_paragraph section_paragraph">
+        {{- output_payload(page_id, content, extras) -}}
     </p>
     {%- endfor -%}
 
-
     {%- if section.key_value_attributes.afterword -%}
-    <div class="end_section_afterword_wrapper">
-        {{ section.key_value_attributes.afterword }}
+    <div class="{{ section.type }}_section_afterword_wrapper section_afterword_wrapper">
+        {{- section.key_value_attributes.afterword -}}
     </div>
     {%- endif -%}
 

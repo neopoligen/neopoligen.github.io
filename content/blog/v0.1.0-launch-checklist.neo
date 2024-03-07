@@ -2,6 +2,11 @@
 
 v0.1.0 Launch Checklist
 
+-- image
+-- under-construction-2024
+
+-- p
+
 I've been working on Neopoligen for a couple years. 
 I didn't realize at the start that that's 
 what I was doing. Originally, I thought I was
@@ -106,8 +111,6 @@ in the app, but that's for a future version.
 in place quickly, but the initial set of content loaders have to
 be built first
 
-[] The Roadmap - All the stuff on <<ilink: 2cfuahxq|The Roadmap>>
-
 [] Turn unknown sections into standard sections -
 This one is going to cause some frustration. If 
 you try to add a section to a file and that section
@@ -117,6 +120,7 @@ way would be to just make things a standard section which
 I think is what I'm going to do. That's going to take a decent
 amount of work (I think) so probably won't make initial launch
 
+[] The Roadmap - All the stuff on <<ilink: 2cfuahxq|The Roadmap>>
 
 
 -- footnote

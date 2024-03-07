@@ -9,7 +9,6 @@ It comes with lots of features built in. It's also
 very customizable. You can use it as-is or dig in 
 and customize it completely.
 
-
 -- aside
 
 NOTE: Neopoligen is a work in progress. There are rough
@@ -52,7 +51,8 @@ anywhere that offers static site hosting.
 
 -- image
 -- train-1
-
+-- alt: A black and white photo of the front of a
+-- alt: train
 
 
 -- h2

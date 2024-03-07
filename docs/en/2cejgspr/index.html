@@ -27,6 +27,7 @@
 <body>
   <div class="page_wrapper">
     <section class="prelude">
+<img src="/images/site-graphics/under-construction-2024.png" alt="An Under construction banner" />
 <h4>Head's up</h4>
 <p>The site is public, but it's still very much 
 a work in progress and in migration. You can 
@@ -83,13 +84,7 @@ first iteration is ready</p>
 </nav>
 <section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">Filter Page Links (Alphabetically)</h1></div></section><section class="h2_section flow"><div class="content">
     <p>Overview</p><p>This feature adds the ability to create lists of page links by filtering the page "type", "status", "tags", "filters" and the pages "folders" components.</p><p>The filters are created in `[]`` brackets with any number of items in each bracket</p></div>
-    </section><div class="todo_section_wrapper section_wrapper flow" title="Details"><div class="todo_section_attribute_title_wrapper section_attribute_title_wrapper"><h3 class="todo_section_attribute_title_text section_attribute_title_text">Details</h3></div><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Requests for collections look like these examples (more details below):</p></li>
-            
-        </ul>
-    </div></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+    </section>THIS IS A CHECKLIST<div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">site.filter_page_links_alpha(
     page.id(),
     [&quot;post&quot;]
@@ -111,15 +106,7 @@ site.filter_page_links_alpha(
     [&quot;post&quot;, &quot;!draft&quot;]
 )</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><div class="todo_section_wrapper section_wrapper flow"><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Responses available in the template look like:</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The `page.id()`` that's passed in powers the `link_or_title`` part of the response. If it's the current page, the value returned is just the title. Otherwise, it's the full link. This means there's no need to filter in the template.</p></li>
-            
-        </ul>
-    </div></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+<div class="code_section_wrapper section_wrapper flow"></div>THIS IS A CHECKLIST<div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">[
     { 
         &quot;full_title&quot;: &quot;Delta Oscar&quot;, 
@@ -137,56 +124,18 @@ site.filter_page_links_alpha(
     }
 ]</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><div class="todo_section_wrapper section_wrapper flow"><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The results are sorted alphabetically by  "link_title"</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "type" is included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "status" is included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "id" is included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "tags" are included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "filters" are included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The page's "folder" components are included in the filter</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Items inside a single pair of `[]`` braces are for "and" matches. That is `["alfa", "bravo"]`` must have both "alfa" and "bravo" in it's collection of key words to filter on</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Multiple sets of "and" filters can be passed in. Each one is treated as an "or". For example this finds all pages with a type of "post"  that have a status of "published". Or pages with a type of "post" that have a status of "draft":</p></li>
-            
-        </ul>
-    </div></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+<div class="code_section_wrapper section_wrapper flow"></div>THIS IS A CHECKLIST<div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">site.filter_page_links_alpha(
     [&quot;post&quot;, &quot;published&quot;], 
     [&quot;post&quot;, &quot;draft&quot;]
 )</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><div class="todo_section_wrapper section_wrapper flow"><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">A `!`` can be added in front of any filter keyword to find pages that _do not__ match it. For example, this will find an page with "post" that _does not__ have "draft"</p></li>
-            
-        </ul>
-    </div></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
+<div class="code_section_wrapper section_wrapper flow"></div>THIS IS A CHECKLIST<div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
         <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">site.filter_page_links_alpha(
     [&quot;post&quot;, &quot;!draft&quot;]
 )</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><div class="todo_section_wrapper section_wrapper flow"><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">If a page matches multiple times it is only returned once</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">If no pages match the request an empty `[]`` array is returned</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Matches are case-insensitive</p></li>
-            
-        </ul>
-    </div></div>
+<div class="code_section_wrapper section_wrapper flow"></div>THIS IS A CHECKLIST
 <nav class="prev_next">
 
     <div>Previous:<br /> <a href="/en/2clmjngb/?filter-page-links-alphabetically-into-list-items">Filter Page Links Alphabetically Into List Items</a></div>

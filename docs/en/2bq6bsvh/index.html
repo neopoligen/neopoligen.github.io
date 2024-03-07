@@ -27,6 +27,7 @@
 <body>
   <div class="page_wrapper">
     <section class="prelude">
+<img src="/images/site-graphics/under-construction-2024.png" alt="An Under construction banner" />
 <h4>Head's up</h4>
 <p>The site is public, but it's still very much 
 a work in progress and in migration. You can 
@@ -83,32 +84,7 @@ first iteration is ready</p>
 </nav>
 <section class="title_section flow"><div class="page_title_subtitle_group"><h1 class="page_title">Page Output File Path (Builder Side)</h1></div></section><section class="h2_section flow"><div class="content">
     <p>Overview</p><p>This feature implements `.output_file_path()`` on builder `Page`` object get the output path to write the file to. </p><p>If a `-- path`` attribute exists in the `-- metadata`` section, it's used directly. </p><p>If there is no `-- path`` the output location is built from the `-- id`` attribute in the `-- metadata`` section instead</p><p>This value is not sent over to the templates</p></div>
-    </section><div class="todo_section_wrapper section_wrapper flow"><div class="todo_section_checklist_wrapper section_checklist_wrapper">
-        <ul class="todo_section_checklist -}} section_checklist flow">
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Create the output_file_path by combining the `.id()`` with the site's local directory root and hard coded `pages`` and `index.html``</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Get the site's local root directory  from the `Config`` that gets passed in</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">The `pages`` directory name is hard coded intentionally for easier management</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">`.output_file_path()`` returns an  `Option
-<PathBuf
-<``</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">If the path can be made the value is: `Some(PathBuf)``</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Otherwise it's `None``</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">If a `-- path`` exist in `-- metadata`` it overrides the ID based path.</p></li>
-            
-            <li class="todo_section_checklist_item -}} section_checklist_item flow">[x]<p class="todo_section_checklist_item_p -}} section_checklist_item_p">Any `-- path`` is expected to be a directory and `index.html`` is appended to it</p><p class="todo_section_checklist_item_p -}} section_checklist_item_p">See the LINK_OR_TITLE_MACRO
-
-
- feature for dealing with files instead of directories in the `-- path`` attribute</p></li>
-            
-        </ul>
-    </div></div>
+    </section>THIS IS A CHECKLIST
 <nav class="prev_next">
 
     <div>Previous:<br /> <a href="/en/2bpznvln/?page-id-%28builder-side%29">Page ID (Builder Side)</a></div>
