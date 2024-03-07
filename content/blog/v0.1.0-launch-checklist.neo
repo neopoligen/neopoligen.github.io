@@ -49,8 +49,6 @@ So, here's those lists:
 
 [] Convert format to "neojinja"
 
-[] Convert date to remove timestamps
-
 [] Images work with just their filename
 
 [] Images work from template site.image calls
@@ -146,5 +144,5 @@ official version of the app>>
 
 
 -- metadata
--- date: 2024-03-06 09:32:34
+-- date: 2024-03-06
 -- id: 2djou38z

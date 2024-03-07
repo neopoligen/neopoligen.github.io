@@ -27,6 +27,6 @@ Attribute Example: <<link|Lorem ipsum|https://www.example.com/|class: green>>
 <<link|Lorem ipsum|https://www.example.com/|class: green|some_flag>>
 
 -- metadata
--- date: 2024-02-03 03:13:57
+-- date: 2024-02-03
 -- id: 2bsiloon
 -- status: published
