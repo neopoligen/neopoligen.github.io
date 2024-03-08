@@ -18,14 +18,11 @@
 <script type="module" src="/theme/theme.js"></script>
 
 [!- for stylesheet in site.page_stylesheets(page_id) -!]
-<style>
-[!- autoescape true !][@ stylesheet @][! endautoescape -!]
-</style>
+<style>[!- autoescape false !][@ stylesheet @][! endautoescape -!]</style>
 [!- endfor -!]
 
+[!- for script in site.page_scripts(page_id) -!]
+<script>[!- autoescape false !][@ script @][! endautoescape -!]</script>
+[!- endfor -!]
 
 <!-- TODO: Add page Head extras -->
-<!-- TODO: Add page CSS -->
-<!-- TODO: Add page Script -->
-
-

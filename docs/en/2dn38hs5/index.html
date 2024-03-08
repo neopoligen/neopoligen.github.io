@@ -15,11 +15,33 @@
 <script type="module" src="/theme/theme.js"></script><style>#number_block {
     font-family: var(--mono);
     color: var(--color-4);
-}</style><!-- TODO: Add page Head extras -->
-<!-- TODO: Add page CSS -->
-<!-- TODO: Add page Script -->
+}
 
-</head>
+.pre-attention-on > .c7 {
+    color: var(--color-1);
+}</style><script>function toggle_contract(event) {
+  const el = event.target
+  const ds = el.dataset
+  const number_block = document.getElementById("number_block")
+  if (ds.status === "off") {
+    event.target.dataset.status = "on"
+    number_block.classList.remove("pre-attention-off")
+    number_block.classList.add("pre-attention-on")
+  } else {
+    event.target.dataset.status = "off"
+    number_block.classList.add("pre-attention-off")
+    number_block.classList.remove("pre-attention-on")
+  }
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("toggle_contrast_button").addEventListener(
+    "click", toggle_contract
+  )
+})</script><!-- TODO: Add page Head extras --></head>
 <body>
   <div class="page_wrapper"><section class="prelude">
 <img src="/images/site-graphics/under-construction-2024.png" alt="An Under Construction Banner" /> 
@@ -78,19 +100,13 @@ first iteration is ready</p>
 {%- endfor -%}</code></pre>
     </div></section>
 
-<section class="p_section flow"></section><section class="h2_section flow"><div class="h2_heading_group"><h2>The Differences</h2></div><div class="content flow"><p>So, `{%- ... -%}`` becomes `[!- ... -!]``</p><p>And, `{{- ... -}}`` becomes `[@- ... -@]``</p><p>Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``</p><p>There are two reasons I like this. First and foremost I  find it a lot easier to scan for the sharp corners of the `[]`` brackets compared to `{}``. My guess is this is a pre-attentive processing thing^pap^^. I first learned about that idea from Stephen Few's book Information Dashboard Design^idd^^. Basically, our brains process some visual information before we're consciously aware of it. </p><p>Here's an example straight from the book to demonstrate.  Start by counting the number of 5's in this block of numbers:</p></div></section><section class="html_section flow"><div class="content"><div id="number_block">
-<span class="c4">4</span><span class="cD">D</span><span class="cP">P</span><span class="cT">T</span><span class="cD">D</span><span class="c7">7</span><span class="cK">K</span><span class="cW">W</span><span class="cL">L</span>
-<span class="cC">C</span><span class="cJ">J</span><span class="c5">5</span><span class="cF">F</span><span class="cD">D</span><span class="c5">5</span><span class="cC">C</span><span class="cY">Y</span><span class="cN">N</span>
-<span class="cD">D</span><span class="cI">I</span><span class="cP">P</span><span class="cU">U</span><span class="cC">C</span><span class="cU">U</span><span class="cJ">J</span><span class="c3">3</span><span class="cT">T</span>
-<span class="cT">T</span><span class="cQ">Q</span><span class="cZ">Z</span><span class="c1">1</span><span class="c6">6</span><span class="cO">O</span><span class="c1">1</span><span class="c6">6</span><span class="cL">L</span>
-<span class="c8">8</span><span class="cQ">Q</span><span class="cT">T</span><span class="c9">9</span><span class="c7">7</span><span class="cJ">J</span><span class="cT">T</span><span class="cA">A</span><span class="c9">9</span>
-<span class="cZ">Z</span><span class="cL">L</span><span class="cZ">Z</span><span class="cQ">Q</span><span class="cX">X</span><span class="cF">F</span><span class="cA">A</span><span class="cW">W</span><span class="cI">I</span>
-<span class="cX">X</span><span class="c5">5</span><span class="cF">F</span><span class="c1">1</span><span class="cT">T</span><span class="cI">I</span><span class="c3">3</span><span class="cJ">J</span><span class="cQ">Q</span>
-<span class="cE">E</span><span class="cR">R</span><span class="c5">5</span><span class="cL">L</span><span class="c2">2</span><span class="cU">U</span><span class="cO">O</span><span class="c6">6</span><span class="cH">H</span>
-<span class="cM">M</span><span class="cG">G</span><span class="cO">O</span><span class="c6">6</span><span class="cD">D</span><span class="cS">S</span><span class="c4">4</span><span class="cY">Y</span><span class="cZ">Z</span>
-<span class="cS">S</span><span class="c2">2</span><span class="c0">0</span><span class="cU">U</span><span class="c2">2</span><span class="cG">G</span><span class="cW">W</span><span class="cD">D</span><span class="cV">V</span>
-<span class="cN">N</span><span class="cW">W</span><span class="cU">U</span><span class="cJ">J</span><span class="cD">D</span><span class="c5">5</span><span class="cN">N</span><span class="cY">Y</span><span class="cI">I</span>
-</div></div></section><section class="original_content flow">
+<section class="p_section flow"></section><section class="h2_section flow"><div class="h2_heading_group"><h2>The Differences</h2></div><div class="content flow"><p>So, `{%- ... -%}`` becomes `[!- ... -!]``</p><p>And, `{{- ... -}}`` becomes `[@- ... -@]``</p><p>Not shown in the example are comments which go from  `{#- ... -#}`` to `[#- ... -#]``</p><p>There are two reasons I like this. First and foremost I  find it a lot easier to scan for the sharp corners of the `[]`` brackets compared to `{}``. My guess is this is a pre-attentive processing thing^pap^^. I first learned about that idea from Stephen Few's book Information Dashboard Design^idd^^. Basically, our brains process some visual information before we're consciously aware of it. </p><p>Here's an example straight from the book to demonstrate.  Start by counting the number of times <em>5</em> appears in this block as quick as you can:</p></div></section><section class="html_section flow"><div class="content"><pre id="number_block" class="pre-attention-off">
+<span class="c4">4</span><span class="cD">D</span><span class="cP">P</span><span class="cT">T</span><span class="cD">D</span><span class="c7">7</span><span class="cK">K</span><span class="cW">W</span><span class="cL">L</span><span class="cC">C</span><span class="cJ">J</span><span class="c5">5</span><span class="cF">F</span><span class="cD">D</span><span class="c5">5</span><span class="cC">C</span><span class="cY">Y</span><span class="cN">N</span><span class="c7">7</span><span class="cJ">J</span>
+<span class="cD">D</span><span class="cI">I</span><span class="cP">P</span><span class="cU">U</span><span class="cC">C</span><span class="cU">U</span><span class="cJ">J</span><span class="c3">3</span><span class="cT">T</span><span class="cT">T</span><span class="cQ">Q</span><span class="cZ">Z</span><span class="c1">1</span><span class="c6">6</span><span class="cO">O</span><span class="c1">1</span><span class="c6">6</span><span class="cL">L</span><span class="c8">8</span><span class="cQ">Q</span>
+<span class="cZ">Z</span><span class="cL">L</span><span class="cZ">Z</span><span class="cQ">Q</span><span class="cX">X</span><span class="cF">F</span><span class="cA">A</span><span class="cW">W</span><span class="cI">I</span><span class="cX">X</span><span class="c5">5</span><span class="cF">F</span><span class="c1">1</span><span class="cT">T</span><span class="cI">I</span><span class="c3">3</span><span class="cJ">J</span><span class="cQ">Q</span><span class="cE">E</span><span class="cR">R</span>
+<span class="cM">M</span><span class="cG">G</span><span class="cO">O</span><span class="c6">6</span><span class="cD">D</span><span class="cS">S</span><span class="c4">4</span><span class="cY">Y</span><span class="cZ">Z</span><span class="cS">S</span><span class="c2">2</span><span class="c0">0</span><span class="cU">U</span><span class="c2">2</span><span class="cG">G</span><span class="cW">W</span><span class="cD">D</span><span class="cV">V</span><span class="cN">N</span><span class="cW">W</span>
+<span class="c7">7</span><span class="cJ">J</span><span class="cT">T</span><span class="cA">A</span><span class="c9">9</span><span class="c2">2</span><span class="cU">U</span><span class="cO">O</span><span class="c6">6</span><span class="cH">H</span><span class="cD">D</span><span class="c5">5</span><span class="cN">N</span><span class="cY">Y</span><span class="cI">I</span><span class="cJ">J</span><span class="cL">L</span><span class="c9">9</span><span class="cA">A</span><span class="cU">U</span>
+</pre></div></section><section class="p_section flow"><div class="content flow"><p>Now, let's do the same thing but with the aid of some pre-attentive processing. Click the Toggle Example button and see how long it takes you to count the number of times <em>7</em> appears. </p></div></section><section class="html_section flow"><div class="content"><button id="toggle_contrast_button" data-status="off">Toggle Example</button></div></section><section class="p_section flow"><div class="content flow"><p>To quote the book:</p></div></section><section class="blockquote_section flow"><div class="content flow"><p>Much easier this time, wasn't it? The sevens could easily be distinguished from the other numbers due to their differing color intensity...</p><p>Why couldn't we easily distinguish the fives in the first set of numbers based purely on their unique shape? Because the complex shapes of the numbers are not attributes that we perceive pre-attentively. Simple shapes such as circles and squares are pre-attentively perceived, but the shapes of numbers are too elaborate.</p></div></section><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>
@@ -179,7 +195,8 @@ So, `{%- ... -%}`` becomes `[!- ... -!]``
 
 And, `{{- ... -}}`` becomes `[@- ... -@]``
 
-Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``
+Not shown in the example are comments which go from 
+`{#- ... -#}`` to `[#- ... -#]``
 
 There are two reasons I like this. First and foremost I 
 find it a lot easier to scan for the sharp corners of the
@@ -191,25 +208,55 @@ some visual information before we&#x27;re consciously aware
 of it. 
 
 Here&#x27;s an example straight from the book to demonstrate. 
-Start by counting the number of 5&#x27;s in this block of
-numbers:
-
+Start by counting the number of times &lt;&lt;em|5&gt;&gt; appears in this block
+as quick as you can:
 
 -- html
 
-&lt;div id=&quot;number_block&quot;&gt;
-&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cK&quot;&gt;K&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
-&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;
-&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;
-&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
-&lt;span class=&quot;c8&quot;&gt;8&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;
-&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
-&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;
-&lt;span class=&quot;cE&quot;&gt;E&lt;&#x2f;span&gt;&lt;span class=&quot;cR&quot;&gt;R&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cH&quot;&gt;H&lt;&#x2f;span&gt;
-&lt;span class=&quot;cM&quot;&gt;M&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;
-&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;c0&quot;&gt;0&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cV&quot;&gt;V&lt;&#x2f;span&gt;
-&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
-&lt;&#x2f;div&gt;
+&lt;pre id=&quot;number_block&quot; class=&quot;pre-attention-off&quot;&gt;
+&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cK&quot;&gt;K&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;
+&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;c8&quot;&gt;8&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;
+&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cE&quot;&gt;E&lt;&#x2f;span&gt;&lt;span class=&quot;cR&quot;&gt;R&lt;&#x2f;span&gt;
+&lt;span class=&quot;cM&quot;&gt;M&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;c0&quot;&gt;0&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cV&quot;&gt;V&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;
+&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cH&quot;&gt;H&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;
+&lt;&#x2f;pre&gt;
+
+-- p
+
+Now, let&#x27;s do the same thing but with the aid of some pre-attentive
+processing. Click the Toggle Example button and see how long it takes you to count
+the number of times &lt;&lt;em|7&gt;&gt; appears. 
+
+-- html
+
+&lt;button id=&quot;toggle_contrast_button&quot; data-status=&quot;off&quot;&gt;Toggle Example&lt;&#x2f;button&gt;
+
+
+-- script
+
+function toggle_contract(event) {
+  const el = event.target
+  const ds = el.dataset
+  const number_block = document.getElementById(&quot;number_block&quot;)
+  if (ds.status === &quot;off&quot;) {
+    event.target.dataset.status = &quot;on&quot;
+    number_block.classList.remove(&quot;pre-attention-off&quot;)
+    number_block.classList.add(&quot;pre-attention-on&quot;)
+  } else {
+    event.target.dataset.status = &quot;off&quot;
+    number_block.classList.add(&quot;pre-attention-off&quot;)
+    number_block.classList.remove(&quot;pre-attention-on&quot;)
+  }
+}
+
+
+
+
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+  document.getElementById(&quot;toggle_contrast_button&quot;).addEventListener(
+    &quot;click&quot;, toggle_contract
+  )
+})
 
 
 
@@ -220,8 +267,26 @@ numbers:
     color: var(--color-4);
 }
 
+.pre-attention-on &gt; .c7 {
+    color: var(--color-1);
+}
 
+-- p 
 
+To quote the book:
+
+-- blockquote
+
+Much easier this time, wasn&#x27;t it? The sevens could easily
+be distinguished from the other numbers due to their
+differing color intensity...
+
+Why couldn&#x27;t we easily distinguish the fives in the first
+set of numbers based purely on their unique shape? Because
+the  complex shapes of the numbers are not attributes that we
+perceive pre-attentively. Simple shapes such as circles and
+squares are pre-attentively perceived, but the shapes of numbers
+are too elaborate.
 
 
 

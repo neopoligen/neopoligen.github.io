@@ -12,11 +12,15 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/theme/favicons/browserconfig.xml">
 <meta name="theme-color" content="#000000">
-<script type="module" src="/theme/theme.js"></script><!-- TODO: Add page Head extras -->
-<!-- TODO: Add page CSS -->
-<!-- TODO: Add page Script -->
+<script type="module" src="/theme/theme.js"></script><script>const increment = () => {
+    let current_num = parseInt(event.target.innerHTML, 10)
+    event.target.innerHTML = current_num + 1
+}
 
-</head>
+document.addEventListener("DOMContentLoaded", () => {
+    const the_clicker = document.getElementById("clicker")
+    the_clicker.addEventListener("click", increment)
+})</script><!-- TODO: Add page Head extras --></head>
 <body>
   <div class="page_wrapper"><section class="prelude">
 <img src="/images/site-graphics/under-construction-2024.png" alt="An Under Construction Banner" /> 
@@ -57,17 +61,7 @@ first iteration is ready</p>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2ciwn06a/?cookbook">Cookbook</a></li><li><a href="/en/2cmzrexw/?prior-version-examples">Prior Version Examples</a></li></ol>
 </nav><section class="title_section flow"><div class="title_heading_group"><h1>JavaScript Blocks </h1></div><div class="content flow"><p>JavaScript can be added to the head of the document in  `script`` tags via the `-- script`` section. This example puts a button on the page in a `-- html`` section then uses the `-- script`` to add counting functionality to it.</p></div></section><section class="html_section flow"><div class="content"><div class="example center">
   Click me: <button id="clicker">0</button>
-</div></div></section><section class="script_section flow"><div class="content">
-        <pre><code>const increment = () =&gt; {
-    let current_num = parseInt(event.target.innerHTML, 10)
-    event.target.innerHTML = current_num + 1
-}
-
-document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
-    const the_clicker = document.getElementById(&quot;clicker&quot;)
-    the_clicker.addEventListener(&quot;click&quot;, increment)
-})</code></pre>
-    </div></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2avk93c0/?examples-home-page">Examples Home Page</a></div><div>Next:<br /><a href="/en/2avpakpj/?todo%3A-javascript-examples-">TODO: JavaScript Examples </a></div></nav><section class="original_content flow">
+</div></div></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2avk93c0/?examples-home-page">Examples Home Page</a></div><div>Next:<br /><a href="/en/2avpakpj/?todo%3A-javascript-examples-">TODO: JavaScript Examples </a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>
