@@ -21,7 +21,7 @@ made a site before.
 There's a lot of features built into the app. You can 
 start making content in the default theme as soon as 
 you install it. You can also customize everything.
-From changing colors to creating your own custom
+From changing font colors all the way to creating your own custom
 theme, Neopoligen provides the tools to make whatever 
 you want on the web. 
 
@@ -30,8 +30,8 @@ you want on the web.
 
 How It Works
 
-You make content for your site in files on 
-your computer that look like this: 
+You make content for your site with files on your 
+computer that look like this: 
 
 -- code/
 -- neo
@@ -48,7 +48,7 @@ made a site before.
 -- /code
 
 Neopoligen combines those files with 
-a theme to make a preview version of your site
+themes to make a preview version of your site
 on your computer. Once you have things the way
 you want them you can send it to a free
 service to share it with the world. 
@@ -57,104 +57,103 @@ service to share it with the world.
 
 Your Content, Your Site, Forever
 
-You can think about websites as being made up of two
+You can think about websites as being made up of three
 parts:
 
 -- list
 
-- The <<em|Content>> that makes up your site
+- The <<em|Content>> that makes up the site
 
-- The <<em|Host Service>> that browsers use to get the content from
+- The <<em|Domain Name>> used for the site's address (e.g. "neopoligen.com")
+
+- The <<em|Host Service>> that sends the site Content to your
+browser when you visit the site's Domain Name address
 
 -- p
 
 When you use TikTok, Instagram, Twitter/X, Facebook, etc...
-the distinction vanishes. Your content gets locked behind 
-their Host Service. Neopoligen doesn't work that way. The
-content and files that make up your site reside entirely on 
-your computer. You choose a Host Service independently.
-Neopoligen sends them a copy of your site that they then 
-make available to the world. 
+that distinction vanishes. Your Content gets locked behind 
+their company Domain Names and Host Services. Neopoligen doesn't work 
+that way. It generates the Content for your site on your 
+computer. You choose your Domain Name and Host Service independently. 
+When you're ready to make your site visible to the world, Neopoligen
+sends a copy of it to the Host Service which connects it to 
+your chosen Domain Name. The original always stays with you.
 
-By keeping Content and Host Service separate, you're
-free to change Host Service companies without losing 
-all your stuff.
+And, here's the key part: by keeping the parts separate you're 
+free to change your Host Services without losing all your stuff. 
 
+-- h3
 
-Your
-site and all its contents reside on your computer. 
-You send a copy to a Host Service.
+Domain Names
 
+Neopoligen sites work with a variety of Host Services.
+That includes free ones from companies like GitHub (which 
+you can learn how to use as your Host Service here: <<tlink|2dpxfosc>>)
 
-That leaves you free to pick and choose any Host Service
-you want. And, more importantly, to change them at any
-time without losing your content. 
+GitHub's Host Service and others like it start you
+off on a free Domain Name like:
 
-Neopoligen sites can use a variety of Host Services including
-free ones. It's specifically designed to work with a free
-service from a company called GitHub without any extra 
-configuration. (Details on how to 
+<<link|alanwsmith.github.io|https://alanwsmith.github.io/>>
 
+That's a great start, but it's important to point out
+that the Host Service owns those Domain Names which ties
+you back to them (e.g. I can't move "alanwsmith.github.io"
+to another Host Service besides GitHub).
 
-
-
-
-
-Neopoligen is designed to work with a free service from a
-company called GitHub
-
-
-
-
-
-
-Your content and your site reside on your 
-computer. You send a copy of it to whichever service you choose
-to make it available on the web. 
+That's not a problem as long as you're aware of it. The
+main thing to know is that if you decide to change Host 
+Services you'll lose the Domain Name and have to pick a 
+new one. You won't lose any content though. It'll still 
+all be on your computer ready for Neopoligen to send to 
+whoever you choose for your new Host Service.
 
 
 
+-- h3
 
-you send a copy to a service to make it available on
-the web. 
+Your Own Domain Name
 
+-- note
 
+This section is about setting up your own Domain Name. 
+Unfortunately, doing so is not free. I want to make it clear 
+that it's completely optional. If you have any 
+hesitation about spending the money skip it for now 
+and just go straight to the <<ilink: 2dqqynua|Quick Start Guide>>
+which will get you a completely free website up and 
+running in about TKTKTK minutes. You can come back
+and add your own Domain Name at any time.
 
+-- p
 
+If you can afford it, my recommendation is to purchase your 
+own Domain Name. This gives you complete control over your 
+site since you can change Host Services without changing the 
+Domain Name. More importantly, it protects your site from things like 
+the Host Service canceling the their service or going out 
+of business.
 
+For example, if GitHub ever decides to stop providing 
+Host Services I'd lose "alanwsmith.github.io" with no
+way to get it back. But, I use my own "alanwsmith.com"
+domain so if my current Host Service goes away for some
+reason I would just pick a new one and copy my site
+there. 
 
+The other nice thing about having your own Domain Name
+is branding. I'd much rather tell folks to visit:
 
+<<strong|alanwsmith.com>> 
 
+than 
 
+<<strong|alanwsmith.github.io>>
 
-Ownership of your content stays on your computer. 
-
-
-
-
-
-
-
-
-
-
-
-
-it behind their service where they 
-
-your content gets locked inside their company. The distinction 
-between Content and Service vanishes. 
-
-
-
-
-
-
-With businesses like Instagram, Twitter/X and Facebook, you
-put your content into
-
-
-
+Unfortunately, Domain Names are not free. How much they
+cost depends on the specific Domain Name. "neopoligen.com"
+cost me $18/year. (You can learn how to set up your own Domain
+Name are here: <<tlink|2dqn2gso>>)
 
 
 
