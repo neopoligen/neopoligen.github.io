@@ -128,7 +128,7 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 [!- macro collection_menu_item_title_folder_closed(menu_name, item) -!]
 <li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_closed">
-<button class="collection_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="closed">
+<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="closed">
 [@- site.page_title(item.id) -@]
 </button>
 [!- if item.children|length > 0 -!]
@@ -144,7 +144,7 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 [!- macro collection_menu_item_title_folder_opened(menu_name, item) -!]
 <li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_opened active_path">
-<button class="collection_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="opened">
+<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="opened">
 [@- site.page_title(item.id) -@]
 </button>
 [!- if item.children|length > 0 -!]
