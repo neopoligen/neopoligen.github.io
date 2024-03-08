@@ -10,9 +10,16 @@
     format('opentype');
 }
 
+@font-face {
+  font-family: 'IntelOneMono-Regular';
+  src: url('/theme/fonts/IntelOneMono-Regular.woff2')
+    format('opentype');
+}
+
 :root {
   --regular: 'Atkinson-Hyperlegible', sans-serif;
   --heavy: 'Atkinson-Hyperlegible-Bold', sans-serif;
+  --mono: 'IntelOneMono-Regular';
 }
 
 :root {
@@ -57,13 +64,9 @@
   --size-3: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
   --size-2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
   --size-1: clamp(0.68rem, calc(0.67rem + 0.03vw), 0.7rem);
-  --width-1: 18ch;
-  --width-2: 27ch;
-  --width-3: 48ch;
-  --width-4: 56ch;
-  --width-5: 60ch;
-  --width-6: 68ch;
-  --width-6: 74ch;
+  --width-1: min(100% - 3rem, 48ch);
+  --width-2: min(100% - 3rem, 82ch);
+  --width-3: min(100% - 3rem, 96ch);
 }
 
 /* 
@@ -81,11 +84,10 @@
   }
   */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
 }
@@ -95,15 +97,24 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: var(--color-3);
 }
 
-.aside_section_wrapper {
+.aside_section {
   border: var(--border-1);
   border-radius: var(--radius-3);
   padding: var(--padding-3);
+}
+
+.blue {
+  color: blue;
+}
+
+.blockquote_section {
+  border-left: 3px solid var(--color-5);
+  padding-left: var(--padding-6);
+  padding-block: var(--padding-3);
 }
 
 body {
@@ -114,7 +125,30 @@ body {
   font-size: var(--size-3);
 }
 
+.breadcrumbs {
+  min-height: 1.2rem;
+}
 
+.breadcrumbs > ol {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.3rem;
+}
+
+.breadcrumbs > ol > li {
+  list-style-type: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.code_section_content_pre {
+  border: var(--border-1);
+  border-radius: var(--radius-3);
+  padding: var(--padding-3);
+}
 
 .collection_menu ::marker {
   color: var(--color-5);
@@ -169,155 +203,33 @@ body {
   list-style-type: disclosure-open;
 }
 
-
-
-
-
-
-
-
-
-/* 
-
-.nav_menu ::marker {
-  color: var(--color-5);
+.debugging {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-4);
 }
 
-.nav_menu ol {
-  padding-left: 1rem;
+/* TODO: Move these to inline CSS, probably */
+.example_nested_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.nav_menu_button {
-  all: unset;
-  color: var(--color-2);
-  font-family: var(--heavy);
+.example_nested_grid > .flow {
+  margin-top: 0;
 }
 
-.nav_menu_active_path::marker {
+.example_pre_content {
   color: var(--color-1);
 }
 
-.nav_menu_active_index_folder {
-  list-style-type: disc;
-}
-
-.nav_menu_closed_index_folder {
-  list-style-type: disc;
-}
-
-.nav_menu_closed_title_folder {
-  list-style-type: disclosure-closed;
-}
-
-.nav_menu_closed_title_folder > ol {
-  display: none;
-}
-
-.nav_menu_opened_index_folder {
-  list-style-type: disclosure-open;
-}
-
-.nav_menu_opened_title_folder {
-  list-style-type: disclosure-open;
-}
-
-.nav_menu_active_title_folder {
-  list-style-type: disclosure-open;
-}
-
-.nav_menu_current_file {
-  list-style-type: disc;
-}
-
-.nav_menu_current_file::marker {
-  color: var(--color-1);
-}
-
-
-.nav_menu_not_current_file {
-  color: var(--color-5);
-  list-style-type: disc;
-}
-
- */
-
-
-
-/*
-.folder_menu_opened_directory_item {
-  list-style-type: disclosure-open;
-}
-
-.folder_menu_opened_directory_item::marker {
-  color: var(--color-1);
-}
-
-.folder_menu_closed_directory_item::marker {
-  color: var(--color-5);
-}
-
-.folder_menu_file_item {
-  list-style-type: disc;
-}
-
-.folder_menu_file_item::marker {
-  color: var(--color-5);
-}
-*/
-
-/*
-
-.folder_menu ol {
-  padding-left: var(--padding-4);
-}
-
-.folder_menu {
-  padding: 1rem;
-}
-*/
-
-/*
-.folder_menu li {
-  list-style-type: none;
-}
-
-
-.folder_menu > li {
-  font-family: var(--heavy);
-  list-style-type: none;
-}
-*/
-
-/*
-.folder_menu_link:before {
-  content: "• ";
-  font-size: var(--size-1);
-  font-family: monospace;
-  color: var(--color-5);
-}
-*/
-
-
-.folder_menu_children_closed {
-  display: none;
-}
-
-.folder_menu_children_open {
-  display: block;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
   font-family: var(--heavy);
 }
 
 h1 {
-  margin-top: 1em;
+  line-height: 1.1;
   font-size: var(--size-6);
 }
 
@@ -346,6 +258,10 @@ h6 {
   font-size: var(--size-1);
 }
 
+.hidden {
+  display: none;
+}
+
 html {
   color-scheme: dark light;
 }
@@ -366,56 +282,26 @@ kbd {
 li::marker {
   color: var(--color-1);
 }
-
-pre {
-  font-size: var(--size-3);
-}
-
-strong {
-  font-family: var(--heavy);
-}
-
-ul {
-  padding-left: var(--padding-7);
-}
-
-ul > :where(:not(:first-child)) {
-  margin-top: 1em;
-}
-
-.blue {
-  color: blue;
-}
-
-.centered {
-  text-align: center;
-}
-
-.code_section_content_pre {
-  border: var(--border-1);
-  border-radius: var(--radius-3);
-  padding: var(--padding-3);
-}
-
-.example_nested_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.example_nested_grid > .flow {
-  margin-top: 0;
-}
-
-.example_pre_content {
-  color: var(--color-1);
-}
-
 .flow > :where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
+footer {
+  min-height: 2.6rem;
+}
+
 .green {
   color: green;
+}
+
+.original_content {
+  border: var(--border-5);
+  padding: var(--padding-3);
+  border-radius: var(--radius-3);
+}
+
+.original_content_toggle_wrapper {
+  text-align: right;
 }
 
 .page_source_title {
@@ -431,11 +317,36 @@ ul > :where(:not(:first-child)) {
 }
 
 .page_wrapper {
-  /*
-  width: min(100% - 3rem, var(--width-4));
-  */
+  max-width: var(--width-3);
   margin-top: 0;
   margin-inline: auto;
+}
+
+pre {
+  font-size: var(--size-3);
+  font-family: var(--mono);
+}
+
+.prelude {
+  border: var(--border-4);
+  width: var(--width-1);
+  border-radius: var(--radius-3);
+  margin-inline: auto;
+  padding: var(--padding-4);
+  margin-block: 2rem;
+}
+
+.prev_next {
+  padding-top: var(--padding-6);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prev_next > div {
+  padding: var(--padding-4);
+  border: var(--border-5);
+  border-radius: var(--radius-3);
 }
 
 .pre_section_content_pre {
@@ -530,6 +441,18 @@ ul > :where(:not(:first-child)) {
 
 .strike {
   text-decoration: line-through;
+}
+
+strong {
+  font-family: var(--heavy);
+}
+
+ul {
+  padding-left: var(--padding-7);
+}
+
+ul > :where(:not(:first-child)) {
+  margin-top: 1em;
 }
 
 .template_data_object {

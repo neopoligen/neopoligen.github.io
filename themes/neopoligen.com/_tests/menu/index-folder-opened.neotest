@@ -13,11 +13,11 @@ PATH: pages/testing/published.jinja
 ##################################################################################
 
 
-{%- import "includes/macros.jinja" as macros -%}
-{%- set nav_links = site.collection_from_files_and_folders(page_id, [
+[!- import "includes/macros.jinja" as macros -!]
+[!- set nav_links = site.collection_from_files_and_folders(page_id, [
     ["test-folder"]
-]) -%}
-{{- macros.collection_menu(nav_links) -}}
+]) -!]
+[@- macros.collection_menu(nav_links) -@]
 
 
 ##################################################################################

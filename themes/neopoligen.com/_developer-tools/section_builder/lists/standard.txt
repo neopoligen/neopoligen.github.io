@@ -4,10 +4,8 @@ aside
 audio
 blockquote
 bookmark
-book
 blurb
 canvas
-categories
 div
 footnote
 forward
@@ -28,7 +26,8 @@ quote
 ref
 related
 section
-song
+short
+spotify
 subtitle
 title
 tldr

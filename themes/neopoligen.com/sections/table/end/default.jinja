@@ -1,12 +1,12 @@
-{#-
+[#
     DO NOTE EDIT THIS FILE DIRECTLY: 
     Use THEME/developer-tools/section_builder/customized...
--#}
+#]
 
-{%- import "includes/macros.jinja" as macros -%}
+[!- import "includes/macros.jinja" as macros -!]
 
 </div>
-<div {{- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -}}>
+<div [@- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -@]>
 
 
 

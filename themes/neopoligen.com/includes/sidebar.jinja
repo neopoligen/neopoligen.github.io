@@ -1,4 +1,11 @@
-{%- import "includes/macros.jinja" as macros -%}
+[!- import "includes/macros.jinja" as macros -!]
 <div class="sidebar">
-{{ macros.collection_menu(links) }}
+<h4>Details</h4>
+[@- macros.collection_menu(menu) -@]
+
+<h4>Tech Blog</h4>
+[@- macros.collection_links(tech_blog_links) -@]
+
+<h4>Shorts</h4>
+
 </div>
