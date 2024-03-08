@@ -12,18 +12,13 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/theme/favicons/browserconfig.xml">
 <meta name="theme-color" content="#000000">
-<script type="module" src="/theme/theme.js"></script>
-
-
-
-<!-- ["body {\n    color: goldenrod;\n}"] -->
-<!-- 2dn38hs5 --><style>
-body {
-    color: goldenrod;
-}
-</style><!-- TODO: Add page Head extras -->
+<script type="module" src="/theme/theme.js"></script><style>#number_block {
+    font-family: var(--mono);
+    color: var(--color-4);
+}</style><!-- TODO: Add page Head extras -->
 <!-- TODO: Add page CSS -->
 <!-- TODO: Add page Script -->
+
 </head>
 <body>
   <div class="page_wrapper"><section class="prelude">
@@ -81,7 +76,202 @@ first iteration is ready</p>
   {{- site.page_title(link.id) -}}
 {%- endfor -%}</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><section class="h2_section flow"><div class="h2_heading_group"><h2>The Differences</h2></div><div class="content flow"><p>So, `{%- ... -%}`` becomes `[!- ... -!]``</p><p>And, `{{- ... -}}`` becomes `[@- ... -@]``</p><p>Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``</p><p>There are two reasons I like this. First and foremost I  find it a lot easier to scan for the sharp corners of the `[]`` brackets compared to `{}``. My guess is this is a pre-attentive processing thing^pap^^. I first learned about that idea from Stephen Few's book Information Dashboard Design^idd^^. Basically, our brains process some visual information before we're consciously aware of it. </p><p>Here's an example straight from the book to demonstrate.  Start by counting the number of 5's in this block of numbers:</p></div></section><section class="div_section flow not_highlighted" id="number_block"><div class="content flow"><p>9BBLL5Z4H59LJS1FK7CW6XLQ4JYE0J620NTY0DMN A6RNBR1F2TE2JMV0X7UIRG0O55LKHC9M5M6ZPALT 9OIRBM13ASKX92CA8L8SHSBSVHDFL792VW13XYE8 HS1N86EWEL1YY7BDSLE45SGEA19GBOUWKDVZRID2 86GO25UDW033UMF729P1B0Y82YBQ706Y14MYRFLR</p></div></section><section class="debugging">
+<div class="code_section_wrapper section_wrapper flow"></div><section class="h2_section flow"><div class="h2_heading_group"><h2>The Differences</h2></div><div class="content flow"><p>So, `{%- ... -%}`` becomes `[!- ... -!]``</p><p>And, `{{- ... -}}`` becomes `[@- ... -@]``</p><p>Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``</p><p>There are two reasons I like this. First and foremost I  find it a lot easier to scan for the sharp corners of the `[]`` brackets compared to `{}``. My guess is this is a pre-attentive processing thing^pap^^. I first learned about that idea from Stephen Few's book Information Dashboard Design^idd^^. Basically, our brains process some visual information before we're consciously aware of it. </p><p>Here's an example straight from the book to demonstrate.  Start by counting the number of 5's in this block of numbers:</p></div></section><div class="html_section_wrapper section_wrapper flow"><div class="html_section_content_wrapper section_content_wrapper">
+        <pre class="html_section_content_pre section_content_pre"><code class="html_section_content_code section_content_code">&lt;div id=&quot;number_block&quot;&gt;
+&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cK&quot;&gt;K&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
+&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;
+&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;
+&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
+&lt;span class=&quot;c8&quot;&gt;8&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;
+&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
+&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;
+&lt;span class=&quot;cE&quot;&gt;E&lt;&#x2f;span&gt;&lt;span class=&quot;cR&quot;&gt;R&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cH&quot;&gt;H&lt;&#x2f;span&gt;
+&lt;span class=&quot;cM&quot;&gt;M&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;
+&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;c0&quot;&gt;0&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cV&quot;&gt;V&lt;&#x2f;span&gt;
+&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
+&lt;&#x2f;div&gt;</code></pre>
+    </div></div><section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+From Jinja To MiniJinja To NeoJinja With Pre-Attentive Processing
+
+-- h2
+
+Introduction
+
+Neopoligen combines your content with templates
+to make websites. The templates are called &quot;NeoJinja&quot;
+files. They look like this one which shows every title 
+for a set of blog links:
+
+-- code&#x2f;
+-- neoj
+-- subtitle: blog-links.neoj
+
+[!- set blog_links = site.collection_from_tags(page_id, [[&quot;blog&quot;]]) -!]
+
+[!- for link in blog_links.tree  -!]
+  [@- site.page_title(link.id) -@]
+[!- endfor -!]
+
+-- &#x2f;code
+
+The `[! ... !]`` snippets are template instructions that set up
+the `blog_links`` variable and tell it to do a `for ... endfor`` 
+loop over the `[@ ... @]`` snippet that outputs each title in turn. 
+
+You can read more about the functionality in the
+&lt;&lt;ilink: 2dmzomyo|template documentation&gt;&gt;. For this
+post, I want to talk about the format itself. 
+
+-- h2
+
+The Origin Format
+
+NeoJinja is based off (and powered by) a template
+engine called MiniJinja^mjinja^^ which is, in turn, based
+off one called Jinja^jinja^^. The Jinja engine is used
+with the Python^python^^ programming language. MiniJinja
+mimics its behavior, but in a language called Rust^rust^^.
+Neopoligen is written mainly in Rust and I would have 
+used MiniJinja directly except for one thing, it
+was really hard for me to read. 
+
+Here&#x27;s the same NeoJinja template followed by the 
+MiniJinja version. Both do exactly the same thing. The
+only difference is the characters used to mark the
+start and end points of the template instruction and
+output snippets. 
+
+-- code
+-- neoj
+-- subtitle: NeoJinja
+
+[!- set blog_links = site.collection_from_tags(page_id, [[&quot;blog&quot;]]) -!]
+
+[!- for link in blog_links.tree  -!]
+  [@- site.page_title(link.id) -@]
+[!- endfor -!]
+
+-- code&#x2f;
+-- neoj
+-- subtitle: MiniJinja
+
+{%- set blog_links = site.collection_from_tags(page_id, [[&quot;blog&quot;]]) -%}
+
+{%- for link in blog_links.tree  -%}
+  {{- site.page_title(link.id) -}}
+{%- endfor -%}
+
+-- &#x2f;code
+
+-- h2
+
+The Differences
+
+So, `{%- ... -%}`` becomes `[!- ... -!]``
+
+And, `{{- ... -}}`` becomes `[@- ... -@]``
+
+Not shown in the example are comments which go from `{#- ... -#}`` to `[#- ... -#]``
+
+There are two reasons I like this. First and foremost I 
+find it a lot easier to scan for the sharp corners of the
+`[]`` brackets compared to `{}``. My guess is this is
+a pre-attentive processing thing^pap^^. I first learned
+about that idea from Stephen Few&#x27;s book Information
+Dashboard Design^idd^^. Basically, our brains process
+some visual information before we&#x27;re consciously aware
+of it. 
+
+Here&#x27;s an example straight from the book to demonstrate. 
+Start by counting the number of 5&#x27;s in this block of
+numbers:
+
+
+-- html
+
+&lt;div id=&quot;number_block&quot;&gt;
+&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cK&quot;&gt;K&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
+&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;
+&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;cP&quot;&gt;P&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cC&quot;&gt;C&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;
+&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;
+&lt;span class=&quot;c8&quot;&gt;8&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;&lt;span class=&quot;c7&quot;&gt;7&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;c9&quot;&gt;9&lt;&#x2f;span&gt;
+&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;cA&quot;&gt;A&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
+&lt;span class=&quot;cX&quot;&gt;X&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cF&quot;&gt;F&lt;&#x2f;span&gt;&lt;span class=&quot;c1&quot;&gt;1&lt;&#x2f;span&gt;&lt;span class=&quot;cT&quot;&gt;T&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;&lt;span class=&quot;c3&quot;&gt;3&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cQ&quot;&gt;Q&lt;&#x2f;span&gt;
+&lt;span class=&quot;cE&quot;&gt;E&lt;&#x2f;span&gt;&lt;span class=&quot;cR&quot;&gt;R&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cL&quot;&gt;L&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cH&quot;&gt;H&lt;&#x2f;span&gt;
+&lt;span class=&quot;cM&quot;&gt;M&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cO&quot;&gt;O&lt;&#x2f;span&gt;&lt;span class=&quot;c6&quot;&gt;6&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c4&quot;&gt;4&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cZ&quot;&gt;Z&lt;&#x2f;span&gt;
+&lt;span class=&quot;cS&quot;&gt;S&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;c0&quot;&gt;0&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;c2&quot;&gt;2&lt;&#x2f;span&gt;&lt;span class=&quot;cG&quot;&gt;G&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;cV&quot;&gt;V&lt;&#x2f;span&gt;
+&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cW&quot;&gt;W&lt;&#x2f;span&gt;&lt;span class=&quot;cU&quot;&gt;U&lt;&#x2f;span&gt;&lt;span class=&quot;cJ&quot;&gt;J&lt;&#x2f;span&gt;&lt;span class=&quot;cD&quot;&gt;D&lt;&#x2f;span&gt;&lt;span class=&quot;c5&quot;&gt;5&lt;&#x2f;span&gt;&lt;span class=&quot;cN&quot;&gt;N&lt;&#x2f;span&gt;&lt;span class=&quot;cY&quot;&gt;Y&lt;&#x2f;span&gt;&lt;span class=&quot;cI&quot;&gt;I&lt;&#x2f;span&gt;
+&lt;&#x2f;div&gt;
+
+
+
+-- css
+
+#number_block {
+    font-family: var(--mono);
+    color: var(--color-4);
+}
+
+
+
+
+
+
+-- footnote
+-- id: idd
+-- title: Information Dashboard Design: Displaying Data for At-a-Glance Monitoring
+-- url: https:&#x2f;&#x2f;www.amazon.com&#x2f;dp&#x2f;1938377001&#x2f;
+
+This is the second version of the book. I read the first
+edition (subtitled &quot;The Effective Visual Communication Of Data&quot;). 
+but I expect it&#x27;s still just as good. Highly recommended if
+you&#x27;re at all interested in the topic or even just design
+in general.
+
+
+-- footnote
+-- id: mjinja
+-- title: The MiniJinja Template Engine
+-- url: https:&#x2f;&#x2f;docs.rs&#x2f;minijinja&#x2f;latest&#x2f;minijinja&#x2f;
+
+-- footnote
+-- id: jinja
+-- title: The Jinja2 Template Engine
+-- url: https:&#x2f;&#x2f;jinja.palletsprojects.com&#x2f;en&#x2f;3.1.x&#x2f;
+
+-- footnote
+-- id: python
+-- title: The Python Programming Language
+-- url: https:&#x2f;&#x2f;www.python.org&#x2f;
+
+-- footnote
+-- id: rust
+-- title: The Rust Programming Language
+-- url: https:&#x2f;&#x2f;www.rust-lang.org&#x2f;
+
+-- footnote
+-- id: pap
+-- title: Pre-attentive processing
+-- url: https:&#x2f;&#x2f;en.wikipedia.org&#x2f;wiki&#x2f;Pre-attentive_processing
+
+
+-- metadata
+-- date: 2024-03-07
+-- id: 2dn38hs5
+-- status: draft</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section><section class="debugging">
 <h3>Debugging</h3>
 <ul>
 <li>Status:draft</li>

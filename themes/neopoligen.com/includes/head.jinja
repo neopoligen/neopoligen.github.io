@@ -17,14 +17,9 @@
 <meta name="theme-color" content="#000000">
 <script type="module" src="/theme/theme.js"></script>
 
-
-
-<!-- [@ site.page_css_for_head(page_id) @] -->
-<!-- [@ page_id @] -->
-
-[!- for stylesheet in site.page_css_for_head(page_id) -!]
+[!- for stylesheet in site.page_stylesheets(page_id) -!]
 <style>
-[@ stylesheet @]
+[!- autoescape true !][@ stylesheet @][! endautoescape -!]
 </style>
 [!- endfor -!]
 
@@ -32,4 +27,5 @@
 <!-- TODO: Add page Head extras -->
 <!-- TODO: Add page CSS -->
 <!-- TODO: Add page Script -->
+
 

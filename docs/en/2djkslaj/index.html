@@ -12,14 +12,10 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/theme/favicons/browserconfig.xml">
 <meta name="theme-color" content="#000000">
-<script type="module" src="/theme/theme.js"></script>
-
-
-
-<!-- [] -->
-<!-- 2djkslaj --><!-- TODO: Add page Head extras -->
+<script type="module" src="/theme/theme.js"></script><!-- TODO: Add page Head extras -->
 <!-- TODO: Add page CSS -->
 <!-- TODO: Add page Script -->
+
 </head>
 <body>
   <div class="page_wrapper"><section class="prelude">
@@ -71,7 +67,80 @@ first iteration is ready</p>
 [[ book ]]
 [! endfor !]</code></pre>
     </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The goal here is not to replicate a full set of database software features. You can always call out to an actual database if you need to do that. Instead, the goal is to be able to do  basic database collections from inside content  files.</p></div><section class="debugging">
+<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The goal here is not to replicate a full set of database software features. You can always call out to an actual database if you need to do that. Instead, the goal is to be able to do  basic database collections from inside content  files.</p></div><section class="original_content flow">
+<div class="original_content_toggle_wrapper">
+    <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+<div id="original_content_display" class="hidden flow">
+<h3>Original Content File</h3>
+<p>This is the file that produced this page</p>
+<pre ><code>-- title
+
+The Database Idea
+
+I had what feels like an interesting idea last night:
+A database.
+
+Sure, not that novel, but maybe not what you&#x27;d
+initially think of. The thought isn&#x27;t to integrate
+database software. Instead, it&#x27;s to make a new 
+folder called &quot;database&quot; and throw files in there. 
+
+Files in the &quot;database&quot; folder wouldn&#x27;t output
+to the site directly as pages. Instead, you&#x27;d
+pull their content in from other pages. For example, 
+you could make some files with `-- book`` sections 
+in them. Using something like this on a page would 
+output all the books from your database:
+
+-- code&#x2f;
+-- neojinja
+ 
+[! for book in db.get(&quot;book&quot;) !]
+[[ book ]] 
+[! endfor !]
+
+-- &#x2f;code
+
+Of course, you&#x27;re probably want some control over
+the sorting. Assuming each book has a `-- title``
+attribute like:
+
+-- code&#x2f;
+-- neo
+
+-- book
+-- title: Stranger In A Strange Land
+
+-- &#x2f;code
+
+you could do something like:
+
+-- code&#x2f;
+-- neojinja
+
+[! for book in db.get_sort(&quot;book&quot;, &quot;title&quot;) !]
+[[ book ]]
+[! endfor !]
+
+-- &#x2f;code
+
+The goal here is not to replicate a full set
+of database software features. You can always
+call out to an actual database if you need to do
+that. Instead, the goal is to be able to do 
+basic database collections from inside content 
+files.
+
+-- metadata
+-- date: 2024-03-06
+-- id: 2djkslaj
+</pre></code>
+<div class="original_content_toggle_wrapper">
+    <button id="inner_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
+</div>
+</div>
+</section><section class="debugging">
 <h3>Debugging</h3>
 <ul>
 <li>Status:published</li>
