@@ -38,7 +38,105 @@
 <button class="nav_menu_button" data-menu="nav_menu" data-id="2cmz74be" data-status="opened">To Consider</button><ol id="nav_menu_children_2cmz74be"><li id="nav_menu_2cmw2nwr" class="page_inactive"><a href="/en/2cmw2nwr/?automatic-images-galleries-from-folders">Automatic Images Galleries From Folders</a></li><li id="nav_menu_2cc7hh12" class="page_inactive"><a href="/en/2cc7hh12/?missing-category-check-for-sections">Missing Category Check For Sections</a></li><li id="nav_menu_2cequ34f" class="page_inactive"><a href="/en/2cequ34f/?confirm-macros-exist">Confirm Macros Exist</a></li><li id="nav_menu_2cytk6hu" class="page_inactive"><a href="/en/2cytk6hu/?fixed-bug%3A-last-metadata-attribute-doesn%27t-work">Fixed Bug: Last metadata attribute doesn't work</a></li><li id="nav_menu_2ceyy8dt" class="page_inactive"><a href="/en/2ceyy8dt/?json-validation">JSON Validation</a></li><li id="nav_menu_2bp2nmpk" class="page_inactive"><a href="/en/2bp2nmpk/?this-file-is-deprecated-and-will-be-removed-once-all-the-items...">This file is deprecated and will be removed once all the items...</a></li><li id="nav_menu_2cmwp1gv" class="page_inactive"><a href="/en/2cmwp1gv/?read-alt-text-from-image-metadata">Read Alt Text From Image Metadata</a></li><li id="nav_menu_2cyfuy5j" class="page_inactive"><a href="/en/2cyfuy5j/?theme-testing-config-front-matter">Theme Testing Config Front Matter</a></li><li id="nav_menu_2bp3eyg9" class="page_active active_path">Under Consideration</li></ol></li></ol></li><li id="nav_menu_2dkewgai" class="title_folder_closed">
 <button class="nav_menu_button" data-menu="nav_menu" data-id="2dkewgai" data-status="closed">TODO</button><ol id="nav_menu_children_2dkewgai"><li id="nav_menu_2dkg8utq" class="page_inactive"><a href="/en/2dkg8utq/?load-an-extra-style-sheet">Load An Extra Style Sheet</a></li><li id="nav_menu_2dkf0sew" class="page_inactive"><a href="/en/2dkf0sew/?use-template-tests-to-make-sure-your-templates-work">Use Template Tests To Make Sure Your Templates Work</a></li><li id="nav_menu_2bepsi7p" class="page_inactive"><a href="/en/2bepsi7p/?nested-sections">Nested Sections</a></li><li id="nav_menu_2bbt1zdo" class="page_inactive"><a href="/en/2bbt1zdo/?section-examples%3A-p">Section Examples: p</a></li></ol></li></ol></li></ol></nav><h4>Tech Blog</h4><nav><ul><li><a href="/en/2cpwqhh7/?hello%2C-world">Hello, World</a></li><li><a href="/en/2djkslaj/?the-database-idea">The Database Idea</a></li><li><a href="/en/2djou38z/?v0.1-launch-checklist">v0.1 Launch Checklist</a></li><li><a href="/en/2dn38hs5/?from-jinja-to-minijinja-to-neojinja-with-pre-attentive-processing">From Jinja To MiniJinja To NeoJinja With Pre-Attentive Processing</a></li></ul></nav><h4><a href="/en/2dpcupti/?shorts">Shorts</a></h4><nav><ul><li><a href="/en/2dn1mxzh/?i-just-learned-you-can-string-multiple-find-and-replace-patterns-together...">I just learned you can string multiple find and replace patterns together...</a></li><li><a href="/en/2dpcg7fp/?instead-of-%22let-the-market-decide%22%2C-how-about-%22let-the-culture-decide%22...">Instead of "let the market decide", how about "let the culture decide"...</a></li><li><a href="/en/2dpcupti/?shorts">Shorts</a></li></ul></nav></div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Home</a></li><li><a href="/en/2dom5zxe/?under-construction">Under Construction</a></li><li><a href="/en/2cfuahxq/?roadmap">Roadmap</a></li><li><a href="/en/2cmz74be/?to-consider">To Consider</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Under Consideration</h1></div><div class="content flow"><p>This is the list of things that will probably  make it in at some point. They aren't in  a priority order. Closer to random.</p></div></section><section class="warning_section flow"><div class="content flow"><p>This file is deprecated and will be removed once all the items have been moved to proposal files</p></div></section>THIS IS A CHECKLIST<nav class="prev_next"><div>Previous:<br /><a href="/en/2cyfuy5j/?theme-testing-config-front-matter">Theme Testing Config Front Matter</a></div><div>Next:<br /><a href="/en/2dkg8utq/?load-an-extra-style-sheet">Load An Extra Style Sheet</a></div></nav><section class="original_content flow">
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Under Consideration</h1></div><div class="content flow"><p>This is the list of things that will probably  make it in at some point. They aren't in  a priority order. Closer to random.</p></div></section><section class="warning_section flow"><div class="content flow"><p>This file is deprecated and will be removed once all the items have been moved to proposal files</p></div></section><section class="todo_section flow"><ul>
+        
+        <li><p>Assemble external image processor URLs with proper escaping so images can be called from a  CDN automatically</p></li>
+        
+        <li><p>Publish button that commits the repo, tags it, sends it, etc... (get a happy path to get the repo published and probably rely on actions at the receiving end for more complicated stuff)</p></li>
+        
+        <li><p>Delete output files when it's source file is deleted.  (This will happen automatically ever time the engine is started once the clean sweep happens. This is for when the engine is running. That way you can just keep the engine running and not have to worry about restarting to do a clean up. you can just publish)</p></li>
+        
+        <li><p>Automatically create `#`` link for each section.  TODO: Figure out the naming convention, probably  kabob them</p></li>
+        
+        <li><p>Markdown style code fences in list items including  code name as the first thing and then arbitrary attributes separated by pipes after them</p></li>
+        
+        <li><p>A way to call a random element from a list of elements</p></li>
+        
+        <li><p>Table of contents for pages</p></li>
+        
+        <li><p>tables </p></li>
+        
+        <li><p>Ability to add shorthand span calls inside section arguments (e.g. `-- preface`` and `-- title``)</p></li>
+        
+        <li><p>`gref`` for global references where you  call a key and get the reference from some other central location page</p></li>
+        
+        <li><p>make CSV data type sections</p></li>
+        
+        <li><p>make toml data type sections </p></li>
+        
+        <li><p>look for other text data formats that are worth including as section types</p></li>
+        
+        <li><p>sidebar scrolling that doesn't blink</p></li>
+        
+        <li><p>footnotes with linking</p></li>
+        
+        <li><p>Call external commands from templates?</p></li>
+        
+        <li><p>Read alt text from image metadata directly</p></li>
+        
+        <li><p>Allow for an empty attribute (i.e. just `--``) for  visual spacing</p></li>
+        
+        <li><p>Auto generate different size images and provide automatic  building for the output to use them</p></li>
+        
+        <li><p>An alt image report that tell you which images are missing alt tags, it would need a way to since for ones that don't need them (see the web accessability guidelines for those)</p></li>
+        
+        <li><p>Reference links you can put in the footer and call inside the content (i.e. so you don't have to have the URL taking up space in the content itself)</p></li>
+        
+        <li><p>See about crating pages that don't get published but are used only as includes to be called by page and section IDs</p></li>
+        
+        <li><p>Build in HTML validation report. </p></li>
+        
+        <li><p>Only rebuild pages that use a specific template when that template changes</p></li>
+        
+        <li><p>Create a `functions.log`` function that logs output from the templates. Can be used to check to see which ones went and if any broke</p></li>
+        
+        <li><p>Add an updated timestamp to the sorting</p></li>
+        
+        <li><p>Provide a second website that's used for error message and page creation templates. Also searching and potentially editing</p></li>
+        
+        <li><p>custom collections based of ids? or maybe just use tags? yeah, probably tags</p></li>
+        
+        <li><p>`-- links`` for related links</p></li>
+        
+        <li><p>If a page doesn't render make an error page for it and  add some details about where it failed. Make an HTML page that's up a directory from the main site so that it can be examined without sending it to production. TBD if something else should be placed on the page. Probably a server error message makes sense (even though it's not exactly a server issue. There's probably a specific HTTP status code that makes sense)</p></li>
+        
+        <li><p>make last edit page link dynamic instead of a file on the file system so it doesn't get pushed out to prod</p></li>
+        
+        <li><p>Check the version number of the config to make sure its compatible</p></li>
+        
+        <li><p>Make a text_as_html that converts things as necessary</p></li>
+        
+        <li><p>Include template in site object so they can be displayed in the example output</p></li>
+        
+        <li><p>Includes</p></li>
+        
+        <li><p>Bibliographies</p></li>
+        
+        <li><p>Different template engines</p></li>
+        
+        <li><p>Tables</p></li>
+        
+        <li><p>Post launch link checking</p></li>
+        
+        <li><p>`-- title`` attribute in metadata to override title in links or when there is no title section available with a title</p></li>
+        
+        <li><p>Blurb page variable</p></li>
+        
+        <li><p>Figure out a way to deal with daylight saving time</p></li>
+        
+        <li><p>A settings page for the default site that lets you do things like toggle wether gifs or videos autoplay and light or dark mode and font sizes and color pallets and whatever</p></li>
+        
+        <li><p>Create a page that lists all the feeds automatically</p></li>
+        
+        <li><p>Maybe a way to add some type of higherachy from inside the content files where each one gets it's own number and is then assembed? That seems like it might be a pain to change things though. Probably better to have just a single menu place</p></li>
+        
+        <li><p>Add ability to change localhost port from default of 1989</p></li>
+        
+        <li><p>What about multiline attributes. Or the ability to put attributes inside the content? The seems interesting, but it adds to complexity of the mental model as well as the parsing. Maybe there's a key/value section type where you define all the keys up front so you know what's being searched for and then send the data back that way. Could also use that for plugins so you can send arbitrary data that way?</p></li>
+        
+        <li><p>There's probably not a way to enforce using env vars, but there should be something setup that makes it easy and the default way for folks to do it. Like a known storage pattern with credentials stored outside the repo</p></li>
+        
+    </ul></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2cyfuy5j/?theme-testing-config-front-matter">Theme Testing Config Front Matter</a></div><div>Next:<br /><a href="/en/2dkg8utq/?load-an-extra-style-sheet">Load An Extra Style Sheet</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>

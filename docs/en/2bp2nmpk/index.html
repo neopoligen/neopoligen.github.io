@@ -38,7 +38,75 @@
 <button class="nav_menu_button" data-menu="nav_menu" data-id="2cmz74be" data-status="opened">To Consider</button><ol id="nav_menu_children_2cmz74be"><li id="nav_menu_2cmw2nwr" class="page_inactive"><a href="/en/2cmw2nwr/?automatic-images-galleries-from-folders">Automatic Images Galleries From Folders</a></li><li id="nav_menu_2cc7hh12" class="page_inactive"><a href="/en/2cc7hh12/?missing-category-check-for-sections">Missing Category Check For Sections</a></li><li id="nav_menu_2cequ34f" class="page_inactive"><a href="/en/2cequ34f/?confirm-macros-exist">Confirm Macros Exist</a></li><li id="nav_menu_2cytk6hu" class="page_inactive"><a href="/en/2cytk6hu/?fixed-bug%3A-last-metadata-attribute-doesn%27t-work">Fixed Bug: Last metadata attribute doesn't work</a></li><li id="nav_menu_2ceyy8dt" class="page_inactive"><a href="/en/2ceyy8dt/?json-validation">JSON Validation</a></li><li id="nav_menu_2bp2nmpk" class="page_active active_path">This file is deprecated and will be removed once all the items...</li><li id="nav_menu_2cmwp1gv" class="page_inactive"><a href="/en/2cmwp1gv/?read-alt-text-from-image-metadata">Read Alt Text From Image Metadata</a></li><li id="nav_menu_2cyfuy5j" class="page_inactive"><a href="/en/2cyfuy5j/?theme-testing-config-front-matter">Theme Testing Config Front Matter</a></li><li id="nav_menu_2bp3eyg9" class="page_inactive"><a href="/en/2bp3eyg9/?under-consideration">Under Consideration</a></li></ol></li></ol></li><li id="nav_menu_2dkewgai" class="title_folder_closed">
 <button class="nav_menu_button" data-menu="nav_menu" data-id="2dkewgai" data-status="closed">TODO</button><ol id="nav_menu_children_2dkewgai"><li id="nav_menu_2dkg8utq" class="page_inactive"><a href="/en/2dkg8utq/?load-an-extra-style-sheet">Load An Extra Style Sheet</a></li><li id="nav_menu_2dkf0sew" class="page_inactive"><a href="/en/2dkf0sew/?use-template-tests-to-make-sure-your-templates-work">Use Template Tests To Make Sure Your Templates Work</a></li><li id="nav_menu_2bepsi7p" class="page_inactive"><a href="/en/2bepsi7p/?nested-sections">Nested Sections</a></li><li id="nav_menu_2bbt1zdo" class="page_inactive"><a href="/en/2bbt1zdo/?section-examples%3A-p">Section Examples: p</a></li></ol></li></ol></li></ol></nav><h4>Tech Blog</h4><nav><ul><li><a href="/en/2cpwqhh7/?hello%2C-world">Hello, World</a></li><li><a href="/en/2djkslaj/?the-database-idea">The Database Idea</a></li><li><a href="/en/2djou38z/?v0.1-launch-checklist">v0.1 Launch Checklist</a></li><li><a href="/en/2dn38hs5/?from-jinja-to-minijinja-to-neojinja-with-pre-attentive-processing">From Jinja To MiniJinja To NeoJinja With Pre-Attentive Processing</a></li></ul></nav><h4><a href="/en/2dpcupti/?shorts">Shorts</a></h4><nav><ul><li><a href="/en/2dn1mxzh/?i-just-learned-you-can-string-multiple-find-and-replace-patterns-together...">I just learned you can string multiple find and replace patterns together...</a></li><li><a href="/en/2dpcg7fp/?instead-of-%22let-the-market-decide%22%2C-how-about-%22let-the-culture-decide%22...">Instead of "let the market decide", how about "let the culture decide"...</a></li><li><a href="/en/2dpcupti/?shorts">Shorts</a></li></ul></nav></div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Home</a></li><li><a href="/en/2dom5zxe/?under-construction">Under Construction</a></li><li><a href="/en/2cfuahxq/?roadmap">Roadmap</a></li><li><a href="/en/2cmz74be/?to-consider">To Consider</a></li></ol>
-</nav><section class="warning_section flow"><div class="content flow"><p>This file is deprecated and will be removed once all the items have been moved to proposal files</p></div></section>THIS IS A CHECKLIST<nav class="prev_next"><div>Previous:<br /><a href="/en/2ceyy8dt/?json-validation">JSON Validation</a></div><div>Next:<br /><a href="/en/2cmwp1gv/?read-alt-text-from-image-metadata">Read Alt Text From Image Metadata</a></div></nav><section class="original_content flow">
+</nav><section class="warning_section flow"><div class="content flow"><p>This file is deprecated and will be removed once all the items have been moved to proposal files</p></div></section><section class="todo_section flow"><ul>
+        
+        <li><p>If a page can't be published remove it from the links (e.g. if a template can't be found. Hopefully this can be low priority if the fallbacks are strong enough)</p></li>
+        
+        <li><p>Tew pages show up when added without having to restart the engine</p></li>
+        
+        <li><p>Set up so that if a template isn't found for a section it's simply skipped instead of breaking the page (and print a note in the log about the problem)? (Not sure about this one.  With proper error message, I think it might be better to see immediately that the page is busted. That reduces the chance of shipping something broken in an unacceptable way)</p></li>
+        
+        <li><p>Make sure link lists update when files are deleted without restarting the engine</p></li>
+        
+        <li><p>Add new pages to the link list so they don't show up as "link no longer available" without restarting the engine</p></li>
+        
+        <li><p>Be able to edit templates and have the changes be picked up without having to reload the engine</p></li>
+        
+        <li><p>github build process for different environments</p></li>
+        
+        <li><p>move page status types into the config for deciding what to publish</p></li>
+        
+        <li><p>details sections</p></li>
+        
+        <li><p>create escape functions for things like alt tags for images</p></li>
+        
+        <li><p>Warn if the same tag is used in multiple categories</p></li>
+        
+        <li><p>logging</p></li>
+        
+        <li><p>Clear the site and rebuild from complete scratch each time to avoid surprises with cruft remainders from prior sites</p></li>
+        
+        <li><p>previous next pagination on pages of the same type</p></li>
+        
+        <li><p>URL plugin calls</p></li>
+        
+        <li><p>Create A report of missing section types and templates . The idea is that you don't have to populate content for everything, but every file must exist. Can throw as warnings instead of breaking</p></li>
+        
+        <li><p>Don't choke if a page can't be processed. Skip it,  remove it from any lists, and continue processing and watching for changes</p></li>
+        
+        <li><p>Add a `-- show_source`` attribute to show show the neopolitan source for the section for deme/example purposes</p></li>
+        
+        <li><p>RSS Feeds (config to create multiple where you filter by the  page types to output and then define the path to send them to, make sure you can add stuff via: type, category, status, tags, groups and and combination of those (additive, of subtractive))</p></li>
+        
+        <li><p>Pass body of text_plugin_section... and json_plugin_section... to plugins as STDIN</p></li>
+        
+        <li><p>Be able to call link lists from the content in the same ways you can from the templates</p></li>
+        
+        <li><p>add blurred out images feature to default image template with  reveals (e.g. for things like spoilers, trigger, or gifs with lots of motion)</p></li>
+        
+        <li><p>Paging Large Collections</p></li>
+        
+        <li><p>Add Start and End for all sections once all the Full sections are defined</p></li>
+        
+        <li><p>URL Based Title for cloudinary</p></li>
+        
+        <li><p>Call APIs</p></li>
+        
+        <li><p>Call External Processes</p></li>
+        
+        <li><p>Better Error Handling</p></li>
+        
+        <li><p>Category Pages and List links</p></li>
+        
+        <li><p>Tags and Tag Pages? Does Categories cover that? Should categories become tags?</p></li>
+        
+        <li><p>List pages that have been removed that have internal  links pointing to them</p></li>
+        
+        <li><p>Pagination Links Between Pages (individual previous/next)</p></li>
+        
+        <li><p>Related Links</p></li>
+        
+    </ul></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2ceyy8dt/?json-validation">JSON Validation</a></div><div>Next:<br /><a href="/en/2cmwp1gv/?read-alt-text-from-image-metadata">Read Alt Text From Image Metadata</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>
