@@ -55,20 +55,23 @@ first iteration is ready</p>
 
 </div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2cg5jl0p/?release-notes">Release Notes</a></li><li><a href="/en/2cftg2sa/?v0.0.1">v0.0.1</a></li><li><a href="/en/2cfupohp/?in-development">In Development</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Template Logging Convention</h1></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>Overview</h2></div><div class="content flow"><p>Every theme should be set up with a  logging macro that calls to the site.  Usage looks like this in the templates:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">{%- import &quot;includes&#x2f;macros.jinja&quot; as macros -%}
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Template Logging Convention</h1></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>Overview</h2></div><div class="content flow"><p>Every theme should be set up with a  logging macro that calls to the site.  Usage looks like this in the templates:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>{%- import &quot;includes&#x2f;macros.jinja&quot; as macros -%}
 
 {{ macros.log({&quot;msg&quot;: &quot;some message&quot;}) }}</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The value is always a `{}`` hashmap/dictionary. The `msg`` key will be displayed in the  error text in the output.</p><p class="code_section_paragraph section_paragraph">Other values can be send for other debugging as necessary. For example:</p></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">{{- macros.log({&quot;msg&quot;: &quot;some message&quot;, &quot;more_stuff&quot;: [&quot;a&quot;, &quot;b&quot;]}) -}}</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The macro it itself is set up in the `includes/macros.jinja`` file with:</p></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">{%- macro log(payload = {}) -%}
+    </div></section>
+
+<section class="p_section flow"><div class="content flow"><p>The value is always a `{}`` hashmap/dictionary. The `msg`` key will be displayed in the  error text in the output.</p><p>Other values can be send for other debugging as necessary. For example:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>{{- macros.log({&quot;msg&quot;: &quot;some message&quot;, &quot;more_stuff&quot;: [&quot;a&quot;, &quot;b&quot;]}) -}}</code></pre>
+    </div></section>
+
+<section class="p_section flow"><div class="content flow"><p>The macro it itself is set up in the `includes/macros.jinja`` file with:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>{%- macro log(payload = {}) -%}
 {{- site.log_from_template(payload|tojson) -}}
 {%- endmacro -%}</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><nav class="prev_next"><div>Previous:<br /><a href="/en/2dizphfo/?template-ilink">Template ilink</a></div><div>Next:<br /><a href="/en/2cyd2riz/?theme-template-tests">Theme Template Tests</a></div></nav><section class="original_content flow">
+    </div></section>
+
+<section class="p_section flow"></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2dizphfo/?template-ilink">Template ilink</a></div><div>Next:<br /><a href="/en/2cyd2riz/?theme-template-tests">Theme Template Tests</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>

@@ -1,71 +1,76 @@
-[#
-    DO NOTE EDIT THIS FILE DIRECTLY: 
-    Use THEME/developer-tools/section_builder/customized...
-#]
-
 [!- import "includes/macros.jinja" as macros -!]
-</div> 
-<div [@- macros.section_attributes(page_id, { "section": section, "classes": section.type ~ "_section_wrapper section_wrapper flow" } ) -@]>
 
+</section>
 
-    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#]
+<section [@- section_attributes(page_id, {"section": section, "classes": "p_section flow" } ) -@]>
+    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE_OPEN -#]
     [!- if extra.example == true -!]
-    <div class="[@- section.type -@]_section_source_wrapper section_source_wrapper">
-        <div class="[@- section.type -@]_section_source_title section_source_title">Source</div>
-        <pre
-            class="[@- section.type -@]_section_source_text section_source_text"><code>
-            [!- autoescape true -!][@- section.source | trim -@][!- endautoescape -!]
+        <div class="section_example_source">
+            <h3>Source</h3>
+            <pre><code>
+                [!- autoescape true -!][@- section.source | trim -@][!- endautoescape -!]
             </code></pre>
-    </div>
-    <div class="[@- section.type -@]_section_output_title section_output_title">Output</div>
-    [!- if section_has_flag(section, "example_flag") == "true" -!]
-    <div>(Found '--example_flag' section attribute flag)</div>
+        </div>
+        <div class="section_example_output">
+            <h3>Output</h3>
+            [!- if section_has_flag(section, "example_flag") == "true" -!]
+                <div class="example_flag_note">(Found '--example_flag' section attribute flag)</div>
+            [!- endif -!]
     [!- endif -!]
-    [!- endif -!]
-    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE -#]
+    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE_OPEN -#]
 
     [!- if section.key_value_attributes.forward -!]
-    <div class="[@- section.type -@]_section_forward_wrapper section_forward_wrapper">
-        [@- section.key_value_attributes.forward -@]
-    </div>
+        <div class="forward">
+            [@- section.key_value_attributes.forward -@]
+        </div>
     [!- endif -!]
 
     [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
-    <div class="[@- section.type -@]_section_attribute_title_wrapper section_attribute_title_wrapper">
-        [!- endif -!]
-
+    <div class="p_heading_group">
+    [!- endif -!]
         [!- if section.key_value_attributes.title -!]
-        <h3 class="[@- section.type -@]_section_attribute_title_text section_attribute_title_text">
+        <h2>
             [@- section.key_value_attributes.title -@]
-        </h3>
+        </h2>
         [!- endif -!]
-
         [!- if section.key_value_attributes.subtitle -!]
-        <h4 class="[@- section.type -@]_section_attribute_subtitle_text section_attribute_subtitle_text">
+        <div class="heading_subtitle">
             [@- section.key_value_attributes.subtitle -@]
-        </h4>
+        </div>
         [!- endif -!]
-
-        [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
+    [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
     </div>
     [!- endif -!]
 
     [!- if section.key_value_attributes.preface -!]
-    <div class="[@- section.type -@]_section_preface_wrapper section_preface_wrapper">
-        [@- section.key_value_attributes.preface -@]
-    </div>
+        <div class="preface">
+            [@- section.key_value_attributes.preface -@]
+        </div>
     [!- endif -!]
 
-    [!- for content in section.category.content.containers -!]
-    <p class="[@- section.type -@]_section_paragraph section_paragraph">
-        [@- output_payload(page_id, content, extras) -@]
-    </p>
-    [!- endfor -!]
+    [!- if section.category.content.containers[0] -!]
+    <div class="content flow">
+    [!- endif -!]
+        [!- for content in section.category.content.containers -!]
+            <p>[@- output_payload(page_id, content, extras) -@]</p>
+        [!- endfor -!]
+    [!- if section.category.content.containers[0] -!]
+    </div>
+    [!- endif -!]
 
     [!- if section.key_value_attributes.afterword -!]
-    <div class="[@- section.type -@]_section_afterword_wrapper section_afterword_wrapper">
-        [@- section.key_value_attributes.afterword -@]
-    </div>
+        <div class="afterword">
+            [@- section.key_value_attributes.afterword -@]
+        </div>
     [!- endif -!]
 
-</div>
+
+    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE_CLOSE -#]
+    [!- if extra.example == true -!]
+        </div>
+    [!- endif -!]
+    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE_CLOSE -#]
+
+</section>
+
+[@- '' -@]

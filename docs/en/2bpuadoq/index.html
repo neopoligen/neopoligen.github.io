@@ -55,8 +55,8 @@ first iteration is ready</p>
 
 </div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2ciyvimp/?documentation">Documentation</a></li><li><a href="/en/2cmytofj/?to-review">To Review</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Customization</h1></div><div class="content flow"><p>Neopoligen is designed with customization at it's core. The  ability to create new sections and spans is fundamental. In fact, there's no difference between the sections and spans that come with Neopoligen and custom ones you create. They're all built the same way.</p><p>The sections and spans that come built-in  are there so you can make sites without having to build anything yourself. You can take them pretty far. </p><p>But, if you want to dig in, you can make custom sections  designed for anything you want. For example,  here's a custom "book" section:</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">-- book
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Customization</h1></div><div class="content flow"><p>Neopoligen is designed with customization at it's core. The  ability to create new sections and spans is fundamental. In fact, there's no difference between the sections and spans that come with Neopoligen and custom ones you create. They're all built the same way.</p><p>The sections and spans that come built-in  are there so you can make sites without having to build anything yourself. You can take them pretty far. </p><p>But, if you want to dig in, you can make custom sections  designed for anything you want. For example,  here's a custom "book" section:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>-- book
 -- title: Understanding Comics
 -- by: Scott McCloud
 -- subtitle: The Invisible Art
@@ -67,11 +67,13 @@ The title says it&#x27;s about comics, but it&#x27;s way more
 than that. It&#x27;s about narrative, and story 
 telling, and art. I highly recommend it (even if you&#x27;re 
 not into comics)</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">By default, that `-- book`` section will output like a standard `-- p`` section with no real formatting.  Customizing the output is done by adding a template to the "theme". This uses the "welcome" theme. So, the path to the new template file is:</p></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">themes&#x2f;welcome&#x2f;sections&#x2f;custom&#x2f;book&#x2f;full&#x2f;default.jinja</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div>THIS IS A CHECKLIST<nav class="prev_next"><div>Previous:<br /><a href="/en/2bpdha4g/?custom-section-types">Custom Section Types</a></div><div>Next:<br /><a href="/en/2cblgdfu/?default-language">Default Language</a></div></nav><section class="original_content flow">
+    </div></section>
+
+<section class="p_section flow"><div class="content flow"><p>By default, that `-- book`` section will output like a standard `-- p`` section with no real formatting.  Customizing the output is done by adding a template to the "theme". This uses the "welcome" theme. So, the path to the new template file is:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>themes&#x2f;welcome&#x2f;sections&#x2f;custom&#x2f;book&#x2f;full&#x2f;default.jinja</code></pre>
+    </div></section>
+
+<section class="p_section flow"></section>THIS IS A CHECKLIST<nav class="prev_next"><div>Previous:<br /><a href="/en/2bpdha4g/?custom-section-types">Custom Section Types</a></div><div>Next:<br /><a href="/en/2cblgdfu/?default-language">Default Language</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>

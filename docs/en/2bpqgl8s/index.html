@@ -55,21 +55,24 @@ first iteration is ready</p>
 
 </div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2cfuahxq/?roadmap">Roadmap</a></li><li><a href="/en/2cmzh8hm/?long-term">Long Term</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Environmental Variable Access For Plugins</h1></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>Overview</h2></div></section>THIS IS A CHECKLIST<section class="h2_section flow"><div class="h2_heading_group"><h2>Examples</h2></div></section><section class="h3_section flow"><div class="content flow"><p>Config File Example</p></div></section><div class="code_section_wrapper section_wrapper flow" title="~/.config/neopoligen/env.toml"><div class="code_section_attribute_title_wrapper section_attribute_title_wrapper"><h3 class="code_section_attribute_title_text section_attribute_title_text">~/.config/neopoligen/env.toml</h3></div><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">[env_var_name_goes_here]
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Environmental Variable Access For Plugins</h1></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>Overview</h2></div></section>THIS IS A CHECKLIST<section class="h2_section flow"><div class="h2_heading_group"><h2>Examples</h2></div></section><section class="h3_section flow"><div class="content flow"><p>Config File Example</p></div></section><section class="code_section flow" title="~/.config/neopoligen/env.toml"><div class="code_heading_group"><h2>~/.config/neopoligen/env.toml</h2></div><div class="content">
+        <pre><code>[env_var_name_goes_here]
 token = &quot;the_value_itself&quot;
 plugins = [&quot;list&quot;, &quot;of&quot;, &quot;allowed&quot;, &quot;plugin&quot;, &quot;names&quot;]</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><section class="h3_section flow"><div class="content flow"><p>Content File Examples</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">-- some-plugin
+    </div></section>
+
+<section class="p_section flow"></section><section class="h3_section flow"><div class="content flow"><p>Content File Examples</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>-- some-plugin
 -- arg: $$$MY_LOGIN_TOKEN$$$</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">-- some-other-plugin
+    </div></section>
+
+<section class="p_section flow"></section><section class="code_section flow"><div class="content">
+        <pre><code>-- some-other-plugin
 -- arg: --auth-token
 -- arg: $$$lowercase_is_fine$$$</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"></div><nav class="prev_next"><div>Previous:<br /><a href="/en/2bp2zavs/?preview-site">Preview Site</a></div><div>Next:<br /><a href="/en/2bbdmwkc/?generate-a-secondary-preview-site">Generate A Secondary Preview Site</a></div></nav><section class="original_content flow">
+    </div></section>
+
+<section class="p_section flow"></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2bp2zavs/?preview-site">Preview Site</a></div><div>Next:<br /><a href="/en/2bbdmwkc/?generate-a-secondary-preview-site">Generate A Secondary Preview Site</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>

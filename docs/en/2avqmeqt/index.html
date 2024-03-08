@@ -67,19 +67,20 @@ first iteration is ready</p>
 
 </div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2ciwn06a/?cookbook">Cookbook</a></li><li><a href="/en/2cmzrexw/?prior-version-examples">Prior Version Examples</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Syntax Highlighting</h1></div><div class="content flow"><p>TODO: Set up so that if there is no language things don't crash</p></div></section><section class="hr_section flow"><div class="content flow"><p>Syntax highlight is applied to code blocks when the first attribute is the name of a language. For example</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">-- code
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Syntax Highlighting</h1></div><div class="content flow"><p>TODO: Set up so that if there is no language things don't crash</p></div></section><section class="hr_section flow"><div class="content flow"><p>Syntax highlight is applied to code blocks when the first attribute is the name of a language. For example</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>-- code
 -- rust</code></pre>
-    </div></div> 
-<div class="code_section_wrapper section_wrapper flow"><p class="code_section_paragraph section_paragraph">The output looks like this:</p></div><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">const helloWorld = () =&gt; {
+    </div></section>
+
+<section class="p_section flow"><div class="content flow"><p>The output looks like this:</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>const helloWorld = () =&gt; {
     console.log(&quot;Hello, World&quot;)
 }
 
 document.addEventListener(
     &quot;DOMContentLoaded&quot;, helloWorld
 )</code></pre>
-    </div></div><section class="p_section flow"><div class="content flow"><p>Each line is wrapped with a span tag  that has the class `code_line``. That's  how the line numbers are applied with  this CSS:</p></div></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2b1harkx/?syntax-highlighting-themes">Syntax Highlighting Themes</a></div><div>Next:<br /><a href="/en/2bgjz4ep/?text-plugins">Text Plugins</a></div></nav><section class="original_content flow">
+    </div></section><section class="p_section flow"><div class="content flow"><p>Each line is wrapped with a span tag  that has the class `code_line``. That's  how the line numbers are applied with  this CSS:</p></div></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2b1harkx/?syntax-highlighting-themes">Syntax Highlighting Themes</a></div><div>Next:<br /><a href="/en/2bgjz4ep/?text-plugins">Text Plugins</a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>

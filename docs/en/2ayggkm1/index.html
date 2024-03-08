@@ -55,8 +55,8 @@ first iteration is ready</p>
 
 </div><article class="flow"><nav class="breadcrumbs"><ol>
 <li><a href="/">Neopoligen</a></li><li><a href="/en/2ciwn06a/?cookbook">Cookbook</a></li><li><a href="/en/2cmzrexw/?prior-version-examples">Prior Version Examples</a></li></ol>
-</nav><section class="title_section flow"><div class="title_heading_group"><h1>Title Section - Paragraphs </h1></div><div class="content flow"><p>All the paragraphs after the title so they can  be output separately from the title</p></div></section><div class="code_section_wrapper section_wrapper flow"><div class="code_section_content_wrapper section_content_wrapper">
-        <pre class="code_section_content_pre section_content_pre"><code class="code_section_content_code section_content_code">{%- for block in page.title_section.blocks  -%}
+</nav><section class="title_section flow"><div class="title_heading_group"><h1>Title Section - Paragraphs </h1></div><div class="content flow"><p>All the paragraphs after the title so they can  be output separately from the title</p></div></section><section class="code_section flow"><div class="content">
+        <pre><code>{%- for block in page.title_section.blocks  -%}
     {% if not loop.first %}
     &lt;p&gt;
     {%- for span in block.spans -%}
@@ -65,7 +65,7 @@ first iteration is ready</p>
     &lt;&#x2f;p&gt;
     {% endif %}
 {%- endfor -%}</code></pre>
-    </div></div><nav class="prev_next"><div>Previous:<br /><a href="/en/2b1fbry8/?todo%3A-title-links">TODO: Title Links</a></div><div>Next:<br /><a href="/en/2aygxfkb/?title-section---title-only-">Title Section - Title Only </a></div></nav><section class="original_content flow">
+    </div></section><nav class="prev_next"><div>Previous:<br /><a href="/en/2b1fbry8/?todo%3A-title-links">TODO: Title Links</a></div><div>Next:<br /><a href="/en/2aygxfkb/?title-section---title-only-">Title Section - Title Only </a></div></nav><section class="original_content flow">
 <div class="original_content_toggle_wrapper">
     <button id="outer_original_content_toggle" class="original_content_toggle" data-status="hidden">Show original content file</button>
 </div>
