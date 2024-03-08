@@ -144,8 +144,8 @@ body {
   text-align: center;
 }
 
-.code_section_content_pre {
-  border: var(--border-1);
+.code_section {
+  border: var(--border-5);
   border-radius: var(--radius-3);
   padding: var(--padding-3);
 }
@@ -451,3 +451,15 @@ ul {
 .template_data_object {
   font-size: var(--size-1);
 }
+
+.warning_section {
+  border: var(--border-4);
+  border-radius: var(--radius-4);
+  padding: var(--padding-4);
+}
+
+.warning_section h2 {
+  font-size: var(--size-3);
+}
+
+
