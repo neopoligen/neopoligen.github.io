@@ -7,8 +7,9 @@ A database.
 
 Sure, not that novel, but maybe not what you'd
 initially think of. The thought isn't to integrate
-database software. Instead, it's to make a new 
-folder called "database" and throw files in there. 
+database software. That's already gonna happen. Instead, 
+it's to make a new folder called "database" and throw 
+files in there. 
 
 Files in the "database" folder wouldn't output
 to the site directly as pages. Instead, you'd
