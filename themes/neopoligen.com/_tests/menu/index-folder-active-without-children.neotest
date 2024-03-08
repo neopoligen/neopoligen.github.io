@@ -39,13 +39,13 @@ Active Folder Index Without Children
 EXPECTED_OUTPUT
 ##################################################################################
 
-<nav id="collection_menu" class="collection_menu">
-    <ol>
-    <li
-        id="collection_menu_file-under-test"
-        class="index_folder_active active_path"
-    >
-        Active Folder Index Without Children
-    </li>
-    </ol>
-</nav>
+    <nav id="nav_menu">
+      <ol>
+        <li
+          id="nav_menu_file-under-test"
+          class="index_folder_active active_path"
+        >
+          Active Folder Index Without Children
+        </li>
+      </ol>
+    </nav>

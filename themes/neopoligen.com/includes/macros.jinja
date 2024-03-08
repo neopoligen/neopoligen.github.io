@@ -6,7 +6,7 @@ repeatedly -#]
 [#############################################################################]
 [!- macro breadcrumbs(collection) -!]
 <nav class="breadcrumbs"><ol>
-<li>[@- site.ilink(page_id, "2auhjdnh", "Neopoligen") -@]</li>
+<li>[@- site.ilink(page_id, "2auhjdnh", "Home") -@]</li>
 [!- for id in collection.active_ancestors -!]
 <li>[@- site.page_html_link(id) -@]</li>
 [!- endfor -!]
@@ -19,7 +19,7 @@ repeatedly -#]
 
 [#############################################################################]
 [!- macro collection_links(collection) -!]
-<ul>
+<nav><ul>
 [!- for item in collection.tree  -!]
 [!- if item.status == "PageActive" -!]
 <li>[@- site.page_title(item.id) -@]</li>
@@ -27,7 +27,7 @@ repeatedly -#]
 <li>[@- site.page_html_link(item.id) -@]</li>
 [!- endif -!]
 [!- endfor -!]
-</ul>
+</ul></nav>
 [!- endmacro -!]
 [#############################################################################]
 
@@ -35,10 +35,10 @@ repeatedly -#]
 
 [#############################################################################]
 [!- macro collection_menu(collection) -!]
-[!- set menu_name = "collection_menu" -!]
+[!- set menu_name = "nav_menu" -!]
 [#- TODO: Setup the menu_name to accept a parameter so more than
 one collection_menu can but put on a page -#]
-<nav id="[@- menu_name -@]" class="collection_menu"><ol>
+<nav id="[@- menu_name -@]"><ol>
 [!- for item in collection.tree  -!]
 [@- macros.collection_menu_item(menu_name, item) -@]
 [!- endfor -!]

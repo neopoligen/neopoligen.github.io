@@ -1,9 +1,19 @@
 -- title
--- subtitle: An app for making websites
+-- subtitle: Websites For Everyone
 
 Neopoligen
 
-Neopoligen is a website builder.
+Neopoligen is a website building app. It's designed 
+to make it easy to get started even if you've never
+made one before. 
+
+
+makeit easy to get started even if you've 
+never 
+
+
+make it easy to build a site even if you've never 
+
 
 It comes with lots of features built in. It's also 
 very customizable. You can use it as-is or dig in 
@@ -15,7 +25,6 @@ How It Works
 
 Neopoligen sites are made from text files that look
 like this:
-
 
 
 -- pre/
@@ -34,33 +43,22 @@ and customize it completely.
 
 -- /pre
 
-Those files get combined with templates to build a
+Those files get combined with built-in templates to 
+build a version of your website on your computer
+that only you can see. Once you get things the way
+you like them you can send it to a free service
+to share it with the world. 
+
+
+
+
+
+
+a website directly on your computer.
+
+
 static site that can be viewed locally and deployed
 anywhere that offers static site hosting.
-
-
--- h2
-
-Sections And Spans
-
-Files are made up of "Sections" and "Spans". 
-Sections are things like `-- title`` in the above
-example. Spans looks like this `<<span|some text>>``
-
-You can <<ilink: 2cgceffj|learn more about sections here>> 
-
-You can <<ilink: 2ch7uk0v|learn more about spans here>> 
-
--- h4
-
-Image Test
-
-
-
--- image
--- train-1
--- alt: A black and white photo of the front of a
--- alt: train
 
 
 
