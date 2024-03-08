@@ -101,7 +101,7 @@ a:hover, a:focus {
   color: var(--color-3);
 }
 
-.aside_section_wrapper {
+.aside_section {
   border: var(--border-1);
   border-radius: var(--radius-3);
   padding: var(--padding-3);
@@ -109,6 +109,12 @@ a:hover, a:focus {
 
 .blue {
   color: blue;
+}
+
+.blockquote_section {
+  border-left: 3px solid var(--color-5);
+  padding-left: var(--padding-6);
+  padding-block: var(--padding-3);
 }
 
 body {

@@ -35,14 +35,14 @@ post, I want to talk about the format itself.
 
 The Origin Format
 
-NeoJinja is based off (and powered by) a template
-engine called MiniJinja^mjinja^^ which is, in turn, based
-off one called Jinja^jinja^^. The Jinja engine is used
+NeoJinja is based off (and powered by) template processing
+software called MiniJinja^mjinja^^ which is, in turn, based
+off another one called Jinja^jinja^^. The Jinja software is used
 with the Python^python^^ programming language. MiniJinja
-mimics its behavior, but in a language called Rust^rust^^.
+mimics its behavior, but in the Rust^rust^^ language.
 Neopoligen is written mainly in Rust and I would have 
 used MiniJinja directly except for one thing, it
-was really hard for me to read. 
+was hard for me to read the templates. 
 
 Here's the same NeoJinja template followed by the 
 MiniJinja version. Both do exactly the same thing. The
@@ -108,7 +108,8 @@ as quick as you can:
 
 -- p
 
-Now, let's do the same thing but with the aid of some pre-attentive
+There are four of them, but finding them all isn't what's interesting
+here. Let's do the same thing but with the aid of some pre-attentive
 processing. Click the Toggle Example button and see how long it takes you to count
 the number of times <<em|7>> appears. 
 
@@ -134,15 +135,11 @@ function toggle_contract(event) {
   }
 }
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("toggle_contrast_button").addEventListener(
     "click", toggle_contract
   )
 })
-
 
 
 -- css
@@ -172,6 +169,20 @@ the  complex shapes of the numbers are not attributes that we
 perceive pre-attentively. Simple shapes such as circles and
 squares are pre-attentively perceived, but the shapes of numbers
 are too elaborate.
+
+-- p
+
+I expect the effect is different for everyone, but switching 
+to the shaper corner `[]`` brackets feels like it's catching
+some of that pre-attentive processing for me. It doesn't 
+make a big difference in smaller examples like the ones
+that opened this post, but the more there is the nicer it feels.
+
+It would be even better is to add some more/stronger
+pre-attentive power. For example, using syntax highlighting^sh^^
+highlight different parts with color. That's not done 
+yet, but it's <<ilink: 2dnvbi5w|on the roadmap>>.
+
 
 
 
