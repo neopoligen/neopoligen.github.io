@@ -422,6 +422,20 @@ pre {
   border-bottom: var(--border-4);
 }
 
+.sidebar {
+  padding-top: 3rem;
+}
+
+.sidebar h4 {
+  color: var(--color-5);
+  padding-bottom: var(--padding-2);
+}
+
+.sidebar > h4:where(:not(:first-child)) {
+  padding-top: 3rem;
+}
+
+
 .sidebar_article_group {
   align-items: start; 
   display: flex;
