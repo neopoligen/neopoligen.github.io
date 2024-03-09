@@ -164,11 +164,15 @@ body {
   padding: var(--padding-3);
 }
 
+.code_example .heading_group {
+  border-bottom: var(--border-4);
+}
+
 .code_example .heading_group .title {
   font-family: var(--heavy);
   font-size: var(--size-3);
-  border-bottom: var(--border-4);
 }
+
 
 .code_example pre {
   font-size: var(--size-2);

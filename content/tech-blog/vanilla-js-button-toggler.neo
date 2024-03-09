@@ -48,7 +48,7 @@ Here's the HTML code and demo buttons
         data-toggle_text="Bravo On"
         >Bravo Off</button>
 
-    <div id="status_demo">No button clicks yet</div>
+    <div class="demo_status">No button clicks yet</div>
 
 </div>
 
@@ -63,7 +63,7 @@ The first step is to set up the on/off functions
 -- template: show
 
 function on_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked on`
 }
 
@@ -72,7 +72,7 @@ function on_demo_function(element) {
 -- template: show
 
 function off_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked off`
 }
 

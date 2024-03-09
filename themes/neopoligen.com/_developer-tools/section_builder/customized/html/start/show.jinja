@@ -2,18 +2,14 @@
 
 <section [@- section_attributes(page_id, {"section": section, "classes": "html_code_example_section code_example flow" } ) -@]>
 
-    [!- if section.key_value_attributes.forward -!]
-        <div class="forward flow">
-            [@- section.key_value_attributes.forward -@]
-        </div>
-    [!- endif -!]
+    [!- include "section-parts/forward.jinja" -!]
 
     <div class="heading_group">
         <div class="title">
         [!- if section.key_value_attributes.title -!]
             [@- section.key_value_attributes.title -@]
         [!- else -!]
-            HTML
+            HTML Source
         [!- endif -!]
         </div>
         [!- if section.key_value_attributes.subtitle -!]
@@ -23,24 +19,20 @@
         [!- endif -!]
     </div>
 
-    [!- if section.key_value_attributes.preface -!]
-        <div class="preface flow">
-            [@- section.key_value_attributes.preface -@]
-        </div>
-    [!- endif -!]
+    [!- include "section-parts/preface.jinja" -!]
 
-    <pre><code>[!- autoescape true -!]
-        [@- section.category.content.text|trim -@]
-        [!- endautoescape -!]</pre></code>
-
-    <div class="content flow">
-        [!- autoescape false -!]
-        [@- section.category.content.text -@]
+    <pre><code>
+        [!- autoescape true -!]
+            [@- section.category.content.text|trim -@]
         [!- endautoescape -!]
+    </code></pre>
+
+    <div class="heading_group">
+        <div class="title">Output</div>
+    </div>
+    
+    <div class="content">
+        [!- autoescape false -!][@- section.category.content.text -@][!- endautoescape -!]
     </div>
 
-    [!- if section.key_value_attributes.afterword -!]
-        <div class="afterword flow">
-            [@- section.key_value_attributes.afterword -@]
-        </div>
-    [!- endif -!]
+    [!- include "section-parts/afterword.jinja" -!]

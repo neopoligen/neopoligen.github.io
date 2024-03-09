@@ -20,10 +20,10 @@
 .demo_area button {
     margin-bottom: var(--padding-4);
 }</style><script>function on_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked on`
 }</script><script>function off_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked off`
 }</script><script>function add_toggle_function_to_button_selector_demo(on_function, off_function, selector) {
   let elements = document.querySelectorAll(selector)
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </nav><section class="title_section flow"><div class="title_heading_group"><h1>Vanilla JavaScript Button Toggler</h1></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>Introduction</h2></div><div class="content flow"><p>This is a prototype I'm working on to simplify setting up button functionality. The goals are:</p></div></section>
 <section class="list_section section_category_list flow"><ul class="flow"><li class="list_item flow"><p>Define two functions for each button type. One for "on" clicks and one for "off" clicks</p></li><li class="list_item flow"><p>Use a query selector to define what buttons get the functionality </p></li><li class="list_item flow"><p>Automatically swap on/off text for the button</p></li><li class="list_item flow"><p>If multiple buttons are assigned, update them all when any one of them is clicked</p></li><li class="list_item flow"><p>Make sure the functions have access to the  element for the button that was clicked</p></li></ul></section><section class="h2_section flow"><div class="h2_heading_group"><h2>The Demo</h2></div><div class="content flow"><p>Here's the HTML code and demo buttons</p></div></section>
 <section class="html_code_example_section code_example flow" template="show"><div class="heading_group">
-        <div class="title">HTML</div></div><pre><code>&lt;div class=&quot;demo_area&quot;&gt;
+        <div class="title">HTML Source</div></div><pre><code>&lt;div class=&quot;demo_area&quot;&gt;
 
     &lt;button 
         class=&quot;demo_button&quot; 
@@ -76,11 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
         data-toggle_text=&quot;Bravo On&quot;
         &gt;Bravo Off&lt;&#x2f;button&gt;
 
-    &lt;div id=&quot;status_demo&quot;&gt;No button clicks yet&lt;&#x2f;div&gt;
+    &lt;div class=&quot;demo_status&quot;&gt;No button clicks yet&lt;&#x2f;div&gt;
 
-&lt;&#x2f;div&gt;</pre></code>
+&lt;&#x2f;div&gt;</code></pre>
 
-    <div class="content flow"><div class="demo_area">
+    <div class="heading_group">
+        <div class="title">Output</div>
+    </div>
+    
+    <div class="content"><div class="demo_area">
 
     <button 
         class="demo_button" 
@@ -94,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
         data-toggle_text="Bravo On"
         >Bravo Off</button>
 
-    <div id="status_demo">No button clicks yet</div>
+    <div class="demo_status">No button clicks yet</div>
 
 </div></div></section><section class="h2_section flow"><div class="h2_heading_group"><h2>The Code</h2></div><div class="content flow"><p>The first step is to set up the on/off functions</p></div></section>
 <section class="script_section code_example flow" template="show"><div class="code_header">JavaScript</div><pre class="content flow">function on_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked on`
 }</pre></section><section class="script_section code_example flow" template="show"><div class="code_header">JavaScript</div><pre class="content flow">function off_demo_function(element) {
-    const status_element = document.querySelector("#status_demo")
+    const status_element = document.querySelector(".demo_status")
     status_element.innerHTML = `${element.dataset.name} clicked off`
 }</pre></section><section class="script_section code_example flow" template="show"><div class="code_header">JavaScript</div><pre class="content flow">function add_toggle_function_to_button_selector_demo(on_function, off_function, selector) {
   let elements = document.querySelectorAll(selector)
@@ -188,7 +192,7 @@ Here&#x27;s the HTML code and demo buttons
         data-toggle_text=&quot;Bravo On&quot;
         &gt;Bravo Off&lt;&#x2f;button&gt;
 
-    &lt;div id=&quot;status_demo&quot;&gt;No button clicks yet&lt;&#x2f;div&gt;
+    &lt;div class=&quot;demo_status&quot;&gt;No button clicks yet&lt;&#x2f;div&gt;
 
 &lt;&#x2f;div&gt;
 
@@ -203,7 +207,7 @@ The first step is to set up the on&#x2f;off functions
 -- template: show
 
 function on_demo_function(element) {
-    const status_element = document.querySelector(&quot;#status_demo&quot;)
+    const status_element = document.querySelector(&quot;.demo_status&quot;)
     status_element.innerHTML = `${element.dataset.name} clicked on`
 }
 
@@ -212,7 +216,7 @@ function on_demo_function(element) {
 -- template: show
 
 function off_demo_function(element) {
-    const status_element = document.querySelector(&quot;#status_demo&quot;)
+    const status_element = document.querySelector(&quot;.demo_status&quot;)
     status_element.innerHTML = `${element.dataset.name} clicked off`
 }
 
