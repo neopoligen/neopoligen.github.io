@@ -1,45 +1,29 @@
 [!- import "includes/macros.jinja" as macros -!]
 
-<section [@- section_attributes(page_id, {"section": section, "classes": "script_section flow" } ) -@]>
+<section [@- section_attributes(page_id, {"section": section, "classes": "script_code_example_section code_example flow" } ) -@]>
+    [!- include "section-parts/forward.jinja" -!]
 
-    [!- if section.key_value_attributes.forward -!]
-        <div class="forward flow">
-            [@- section.key_value_attributes.forward -@]
-        </div>
-    [!- endif -!]
-
-    [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
     <div class="heading_group">
-    [!- endif -!]
+        <h3>
         [!- if section.key_value_attributes.title -!]
-        <h2>
             [@- section.key_value_attributes.title -@]
-        </h2>
+        [!- else -!]
+            JavaScript
         [!- endif -!]
+        </h3>
         [!- if section.key_value_attributes.subtitle -!]
-        <div>
+        <div class="subtitle">
             [@- section.key_value_attributes.subtitle -@]
         </div>
         [!- endif -!]
-    [!- if section.key_value_attributes.title or section.key_value_attributes.subtitle -!]
     </div>
-    [!- endif -!]
 
-    [!- if section.key_value_attributes.preface -!]
-        <div class="preface flow">
-            [@- section.key_value_attributes.preface -@]
-        </div>
-    [!- endif -!]
+    [!- include "section-parts/preface.jinja" -!]
 
-    <div class="content flow">
+    <pre><code>
         [!- autoescape false -!]
         [@- section.category.content.text -@]
         [!- endautoescape -!]
-    </div>
+    </code></pre>
 
-    [!- if section.key_value_attributes.afterword -!]
-        <div class="afterword flow">
-            [@- section.key_value_attributes.afterword -@]
-        </div>
-    [!- endif -!]
-
+    [!- include "section-parts/afterword.jinja" -!]

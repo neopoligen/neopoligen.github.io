@@ -5,13 +5,13 @@
     [!- include "section-parts/forward.jinja" -!]
 
     <div class="heading_group">
-        <div class="title">
+        <h3>
         [!- if section.key_value_attributes.title -!]
             [@- section.key_value_attributes.title -@]
         [!- else -!]
             HTML Source
         [!- endif -!]
-        </div>
+        </h3>
         [!- if section.key_value_attributes.subtitle -!]
         <div class="subtitle">
             [@- section.key_value_attributes.subtitle -@]
@@ -27,9 +27,7 @@
         [!- endautoescape -!]
     </code></pre>
 
-    <div class="heading_group">
-        <div class="title">Output</div>
-    </div>
+    <div class="output_header">Output</div>
     
     <div class="content">
         [!- autoescape false -!][@- section.category.content.text -@][!- endautoescape -!]
