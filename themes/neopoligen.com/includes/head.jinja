@@ -18,13 +18,13 @@
 <script type="module" src="/theme/theme.js"></script>
 
 [!- for head_tag in site.page_head(page_id) -!]
-[!- autoescape false !][@ head_tag @][! endautoescape -!]
+[!- autoescape false -!][@- head_tag -@][!- endautoescape -!]
 [!- endfor -!]
 
 [!- for stylesheet in site.page_stylesheets(page_id) -!]
-<style>[!- autoescape false !][@ stylesheet @][! endautoescape -!]</style>
+<style>[!- autoescape false -!][@- stylesheet -@][!- endautoescape -!]</style>
 [!- endfor -!]
 
 [!- for script in site.page_scripts(page_id) -!]
-<script>[!- autoescape false !][@ script @][! endautoescape -!]</script>
+<script>[!- autoescape false -!][@- script -@][!- endautoescape -!]</script>
 [!- endfor -!]

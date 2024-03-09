@@ -18,13 +18,7 @@
 <li><a href="/">Home</a></li></ol>
 </nav><section class="title_section flow"><div class="title_heading_group"><h1>Check Section </h1></div><div class="content flow"><p>Used the check if a section exists</p></div></section><section class="code_section section_category_raw flow example"><div class="content">
         <pre><code>{{ check_section(page, &quot;SECTION_NAME&quot;) }}</code></pre>
-    </div></section><section class="list_section section_category_list flow" title="Use Case"><div class="list_heading_group"><h2>Use Case</h3></div><ul class="flow">
-        
-        <li class="list_item flow"><p>Check if refernces exist and output a header if they do before using `place_section(page, "ref")`` to output them</p></li>
-        
-        <li class="list_item flow"><p>I use this for my references like:</p></li>
-        
-    </ul></section><section class="code_section section_category_raw flow example"><div class="content">
+    </div></section><section class="list_section section_category_list flow" title="Use Case"><div class="list_heading_group"><h2>Use Case</h3></div><ul class="flow"><li class="list_item flow"><p>Check if refernces exist and output a header if they do before using `place_section(page, "ref")`` to output them</p></li><li class="list_item flow"><p>I use this for my references like:</p></li></ul></section><section class="code_section section_category_raw flow example"><div class="content">
         <pre><code>{% from &quot;macros&#x2f;check_section.jinja&quot; import check_section %}
 {% if check_section(page, &quot;ref&quot;) %}
 &lt;h2 class=&quot;references_title&quot;&gt;References&lt;&#x2f;h2&gt;

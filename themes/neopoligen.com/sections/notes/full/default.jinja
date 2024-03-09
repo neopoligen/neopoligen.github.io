@@ -47,7 +47,7 @@
     [!- endif -!]
 
     <ul class="flow">
-        [! for item in section.items !]
+        [!- for item in section.items -!]
         <li class="list_item flow">
             [!- for container in item.content.containers -!]
             <p>
@@ -55,7 +55,7 @@
             </p>
             [!- endfor -!]
         </li>
-        [! endfor !]
+        [!- endfor -!]
     </ul>
 
     [!- if section.key_value_attributes.afterword -!]
