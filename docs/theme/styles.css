@@ -149,10 +149,6 @@ body {
   grid-template-columns: 20px 1fr;
 }
 
-.checklist_section ul {
-  padding-left: 0;
-}
-
 .code_section {
   border: var(--border-5);
   border-radius: var(--radius-3);
@@ -367,6 +363,10 @@ pre {
 
 .red {
   color: red;
+}
+
+.section_category_checklist ul {
+  padding-left: 0;
 }
 
 .section_example {
