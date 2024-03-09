@@ -10,16 +10,9 @@
     format('opentype');
 }
 
-@font-face {
-  font-family: 'IntelOneMono-Regular';
-  src: url('/theme/fonts/IntelOneMono-Regular.woff2')
-    format('opentype');
-}
-
 :root {
   --regular: 'Atkinson-Hyperlegible', sans-serif;
   --heavy: 'Atkinson-Hyperlegible-Bold', sans-serif;
-  --mono: 'IntelOneMono-Regular';
 }
 
 :root {
@@ -125,6 +118,10 @@ body {
   font-size: var(--size-3);
 }
 
+.border-bottom-4 {
+  border-bottom: var(--border-4);
+}
+
 .breadcrumbs {
   min-height: 1.2rem;
 }
@@ -149,11 +146,34 @@ body {
   grid-template-columns: 20px 1fr;
 }
 
+.code_header {
+  font-family: var(--heavy);
+  font-size: var(--size-4);
+  border-bottom: var(--border-4);
+}
+
 .code_section {
   border: var(--border-5);
   border-radius: var(--radius-3);
   padding: var(--padding-3);
 }
+
+.code_example {
+  border: var(--border-5);
+  border-radius: var(--radius-3);
+  padding: var(--padding-3);
+}
+
+.code_example .heading_group .title {
+  font-family: var(--heavy);
+  font-size: var(--size-3);
+  border-bottom: var(--border-4);
+}
+
+.code_example pre {
+  font-size: var(--size-2);
+}
+
 
 nav ol ::marker, nav ul ::marker {
   color: var(--color-5);
@@ -324,9 +344,12 @@ main > :last-child{
 }
 
 .original_content {
-  border: var(--border-5);
   padding: var(--padding-3);
   border-radius: var(--radius-3);
+}
+
+.original_content.on {
+  border: var(--border-5);
 }
 
 .original_content_toggle_wrapper {
@@ -347,7 +370,6 @@ main > :last-child{
 
 pre {
   font-size: var(--size-3);
-  font-family: var(--mono);
 }
 
 .prelude {

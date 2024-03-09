@@ -4,17 +4,17 @@ v0.1 Launch Checklist
 
 -- p
 
-I've been working on Neopoligen for a couple years. 
-I didn't realize at the start that that's 
-what I was doing. Originally, I thought I was
-designing a file format to replace the one^md^^ 
-I was using to make my website at the time.
+I've been working on Neopoligen for a couple years. I 
+didn't realize at the start that that's what I was 
+doing. Originally, I thought I was designing a file 
+format to replace the one^md^^ I was using to make my 
+website at the time.
 
-Of course, in order to use the format I needed 
-to make a site builder could understand it and
-covert it into web pages. The more I worked on 
-that, the more I thought other folks might be 
-interested in playing around with it too. 
+Of course, in order to use the format I needed to make 
+a site builder could understand it and covert it into 
+web pages. The more I worked on that, the more I thought 
+other folks might be interested in playing around with it 
+too. 
 
 Neopoligen is free and open-source^foss^^. Anyone 
 can grab it and use it at any time, but I haven't
@@ -28,35 +28,31 @@ the sand and ship the first version.
 That's what this post is about. I'm using it
 to create the launch checklist. 
 
-Once everything
-is checked off, it's go time. There's also a second
-list. Stuff I'm explicitly <<em|not>> going to do
-for launch. This is stuff I'm tempted to wait
+Once everything is checked off, it's go time. There's 
+also a second list. Stuff I'm explicitly <<em|not>> going 
+to do for launch. This is stuff I'm tempted to wait
 for, but you gotta draw a line somewhere otherwise
 it'll never get out the door. 
 
 So, here's those lists:
 
 -- todo
--- title: Docs Before Launch
-
-[] Create the Quick-Start tutorial and videos
-
-[] Create some Cookbook recipes and videos
-
-[] Guide to deploying on GitHub
-
--- todo
 -- title: Do Before Launch
 
-[] Convert format to "neojinja"
-
-[] You can download and run the app on 
-Windows and Macs
+[] You can download and run the app on Windows 
+and Macs
 
 [] Auto-generate playground/example site
 
 [] Button to make a new website
+
+[] Create the Quick-Start tutorial and videos
+
+[] Guide to deploying on GitHub
+
+[] Guide to registering a domain name on Hover
+
+[x] Convert format to "neojinja"
 
 [x] Images work with just their filename
 
@@ -72,9 +68,9 @@ Windows and Macs
 
 [x] Previous/Next links work
 
+
 -- todo
 -- title: Don't Do Before Launch
-
 
 [] RSS Feeds - As much as I'd like to have them
 for launch there's still work on collections
@@ -132,14 +128,15 @@ alt text in metadata is gonna happen
 -- footnote
 -- id: md
 
-The format I've been using for my site and 
+<<link|Markdown|https://en.wikipedia.org/wiki/Markdown>> - 
+This is the format I've been using for my site and 
 my notes for the past couple decades is called
 Markdown. 
 
 -- footnote
 -- id: foss
 
-"Free and open-source" software has two key parts:
+link|Free and open-source|https://en.wikipedia.org/wiki/Free_and_open-source_software>> software has two key parts:
 
 - "Free", as in you can download and run the app
 without having to pay for it, and,

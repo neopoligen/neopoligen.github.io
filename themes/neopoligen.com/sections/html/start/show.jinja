@@ -1,0 +1,46 @@
+[!- import "includes/macros.jinja" as macros -!]
+
+<section [@- section_attributes(page_id, {"section": section, "classes": "html_code_example_section code_example flow" } ) -@]>
+
+    [!- if section.key_value_attributes.forward -!]
+        <div class="forward flow">
+            [@- section.key_value_attributes.forward -@]
+        </div>
+    [!- endif -!]
+
+    <div class="heading_group">
+        <div class="title">
+        [!- if section.key_value_attributes.title -!]
+            [@- section.key_value_attributes.title -@]
+        [!- else -!]
+            HTML
+        [!- endif -!]
+        </div>
+        [!- if section.key_value_attributes.subtitle -!]
+        <div class="subtitle">
+            [@- section.key_value_attributes.subtitle -@]
+        </div>
+        [!- endif -!]
+    </div>
+
+    [!- if section.key_value_attributes.preface -!]
+        <div class="preface flow">
+            [@- section.key_value_attributes.preface -@]
+        </div>
+    [!- endif -!]
+
+    <pre><code>[!- autoescape true -!]
+        [@- section.category.content.text|trim -@]
+        [!- endautoescape -!]</pre></code>
+
+    <div class="content flow">
+        [!- autoescape false -!]
+        [@- section.category.content.text -@]
+        [!- endautoescape -!]
+    </div>
+
+    [!- if section.key_value_attributes.afterword -!]
+        <div class="afterword flow">
+            [@- section.key_value_attributes.afterword -@]
+        </div>
+    [!- endif -!]

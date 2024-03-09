@@ -1,0 +1,129 @@
+-- title
+
+Vanilla JavaScript Button Toggler
+
+-- h2
+
+Introduction
+
+This is a prototype I'm working on to simplify setting
+up button functionality. The goals are:
+
+-- list
+
+- Define two functions for each button type. One
+for "on" clicks and one for "off" clicks
+
+- Use a query selector to define what buttons
+get the functionality 
+
+- Automatically swap on/off text for the button
+
+- If multiple buttons are assigned, update them
+all when any one of them is clicked
+
+- Make sure the functions have access to the 
+element for the button that was clicked
+
+-- h2
+
+The Demo
+
+Here's the HTML code and demo buttons
+
+-- html
+-- template: show
+
+<div class="demo_area">
+
+    <button 
+        class="demo_button" 
+        data-name="Alfa"
+        data-toggle_text="Alfa On"
+        >Alfa Off</button>
+
+    <button 
+        class="demo_button" 
+        data-name="Bravo"
+        data-toggle_text="Bravo On"
+        >Bravo Off</button>
+
+    <div id="status_demo">No button clicks yet</div>
+
+</div>
+
+
+-- h2
+
+The Code
+
+The first step is to set up the on/off functions
+
+-- script
+-- template: show
+
+function on_demo_function(element) {
+    const status_element = document.querySelector("#status_demo")
+    status_element.innerHTML = `${element.dataset.name} clicked on`
+}
+
+
+-- script
+-- template: show
+
+function off_demo_function(element) {
+    const status_element = document.querySelector("#status_demo")
+    status_element.innerHTML = `${element.dataset.name} clicked off`
+}
+
+
+-- css
+
+.demo_area {
+    border: var(--border-4);
+    padding: var(--padding-4);
+}
+
+.demo_area button {
+    margin-bottom: var(--padding-4);
+}
+
+
+-- script
+-- template: show
+
+
+function add_toggle_function_to_button_selector_demo(on_function, off_function, selector) {
+  let elements = document.querySelectorAll(selector)
+  elements.forEach((element) => {
+    element.addEventListener("click", (event) => { 
+        elements.forEach((update_element) => {
+            update_element.classList.toggle("on")
+            update_element.classList.toggle("off")
+            const text_buffer = update_element.innerHTML
+            update_element.innerHTML = update_element.dataset.toggle_text
+            update_element.dataset.toggle_text = text_buffer
+        })
+      const element = event.target
+      if (element.classList.contains("on")) {
+        on_function.call(undefined, element)
+      } else {
+        off_function.call(undefined, element)
+      }
+    })
+  })
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  add_toggle_function_to_button_selector_demo(
+    on_demo_function, 
+    off_demo_function, 
+    ".demo_button"
+  )
+})
+
+
+-- metadata
+-- date: 2024-03-09 14:23:49
+-- id: 2dsrh9bo

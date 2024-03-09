@@ -14,7 +14,7 @@
         [!- if section.key_value_attributes.title -!]
         <h2>
             [@- section.key_value_attributes.title -@]
-        </h3>
+        </h2>
         [!- endif -!]
         [!- if section.key_value_attributes.subtitle -!]
         <div>
@@ -40,7 +40,7 @@
                 [@- " " -@]
                 checked
                 [!- endif -!]
-                >
+                />
             </div>
             <div class="flow">
                 [!- for container in item.content.containers -!]

@@ -237,7 +237,12 @@ one nav_menu can but put on a page -#]
 
 [#############################################################################]
 [!- macro output_section(page_id, section, extra = {}) -!]
-[!- include "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -!]
+[!- set requested_template = "sections/" + section.type + "/" + section.bounds + "/" + section.template + ".jinja" -!]
+[!- if site.does_template_exist(requested_template) == "yes" -!]
+[!- include requested_template -!]
+[!- else -!]
+[@- site.error("ERROR: Tried to use this template that does not exist: " ~ requested_template) -@]
+[!- endif -!]
 [!- endmacro -!]
 [#############################################################################]
 
