@@ -16,163 +16,6 @@ repeatedly -#]
 [#############################################################################]
 
 
-
-[#############################################################################]
-[!- macro nav_links(collection) -!]
-<nav><ul>
-[!- for item in collection.tree  -!]
-[!- if item.status == "PageActive" -!]
-<li>[@- site.page_title(item.id) -@]</li>
-[!- else -!]
-<li>[@- site.page_html_link(item.id) -@]</li>
-[!- endif -!]
-[!- endfor -!]
-</ul></nav>
-[!- endmacro -!]
-[#############################################################################]
-
-
-
-[#############################################################################]
-[!- macro nav_menu(collection) -!]
-[!- set menu_name = "nav_menu" -!]
-[#- TODO: Setup the menu_name to accept a parameter so more than
-one collection_menu can but put on a page -#]
-<nav id="[@- menu_name -@]"><ol>
-[!- for item in collection.tree  -!]
-[@- macros.collection_menu_item(menu_name, item) -@]
-[!- endfor -!]
-</ol></nav>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item(menu_name, item) -!]
-[!- if item.status == "PageActive" -!]
-[@- collection_menu_item_page_active(menu_name, item) -@]
-[!- elif item.status == "PageInactive" -!]
-[@- collection_menu_item_page_inactive(menu_name, item) -@]
-[!- elif item.status == "IndexFolderActive" -!]
-[@- collection_menu_item_index_folder_active(menu_name, item) -@]
-[!- elif item.status == "IndexFolderClosed" -!]
-[@- collection_menu_item_index_folder_closed(menu_name, item) -@] 
-[!- elif item.status == "IndexFolderOpened" -!]
-[@- collection_menu_item_index_folder_opened(menu_name, item) -@] 
-[!- elif item.status == "TitleFolderActive" -!]
-[@- collection_menu_item_title_folder_active(menu_name, item) -@]
-[!- elif item.status == "TitleFolderClosed" -!]
-[@- collection_menu_item_title_folder_closed(menu_name, item) -@] 
-[!- elif item.status == "TitleFolderOpened" -!]
-[@- collection_menu_item_title_folder_opened(menu_name, item) -@] 
-[!- endif -!]
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_page_active(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="page_active active_path">
-[@- site.page_title(item.id) -@]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_page_inactive(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="page_inactive">
-[@- site.page_html_link(item.id) -@]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_index_folder_active(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_active active_path">
-[@- site.page_title(item.id) -@]
-[!- if item.children|length > 0 -!]
-<ol id="[@- menu_name -@]_children_[@item.id@]">
-[!- for child in item.children -!][@- collection_menu_item(menu_name, child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_index_folder_closed(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_closed">
-[@- site.page_html_link(item.id) -@]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_index_folder_opened(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_opened active_path">
-[@- site.page_html_link(item.id) -@]
-[!- if item.children|length > 0 -!]
-<ol id="[@- menu_name -@]_children_[@item.id@]">
-[!- for child in item.children -!][@- collection_menu_item(menu_name, child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_title_folder_closed(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_closed">
-<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="closed">
-[@- site.page_title(item.id) -@]
-</button>
-[!- if item.children|length > 0 -!]
-<ol id="[@- menu_name -@]_children_[@item.id@]">
-[!- for child in item.children -!][@- collection_menu_item(menu_name, child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_title_folder_opened(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_opened active_path">
-<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="opened">
-[@- site.page_title(item.id) -@]
-</button>
-[!- if item.children|length > 0 -!]
-<ol id="[@- menu_name -@]_children_[@item.id@]">
-[!- for child in item.children -!][@- collection_menu_item(menu_name, child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro collection_menu_item_title_folder_active(menu_name, item) -!]
-<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_active active_path">
-<button class="collection_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="active">
-[@- site.page_title(item.id) -@]
-</button>
-[!- if item.children|length > 0 -!]
-<ol id="[@- menu_name -@]_children_[@item.id@]">
-[!- for child in item.children -!][@- collection_menu_item(menu_name, child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-[#############################################################################]
-
-
 [#############################################################################]
 [!- macro link_or_title(current_page, target_page) -!]
 [@- site.link_or_title(current_page, target_page) -@]
@@ -192,6 +35,161 @@ one collection_menu can but put on a page -#]
 [!- for section in site.page_main_body(page_id, payload) -!]
 [@- output_payload(page_id, section, payload) -@]
 [!- endfor -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_links(collection) -!]
+<nav><ul>
+[!- for item in collection.tree  -!]
+[!- if item.status == "PageActive" -!]
+<li>[@- site.page_title(item.id) -@]</li>
+[!- else -!]
+<li>[@- site.page_html_link(item.id) -@]</li>
+[!- endif -!]
+[!- endfor -!]
+</ul></nav>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu(collection) -!]
+[!- set menu_name = "nav_menu" -!]
+[#- TODO: Setup the menu_name to accept a parameter so more than
+one nav_menu can but put on a page -#]
+<nav id="[@- menu_name -@]"><ol>
+[!- for item in collection.tree  -!]
+[@- macros.nav_menu_item(menu_name, item) -@]
+[!- endfor -!]
+</ol></nav>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item(menu_name, item) -!]
+[!- if item.status == "PageActive" -!]
+[@- nav_menu_item_page_active(menu_name, item) -@]
+[!- elif item.status == "PageInactive" -!]
+[@- nav_menu_item_page_inactive(menu_name, item) -@]
+[!- elif item.status == "IndexFolderActive" -!]
+[@- nav_menu_item_index_folder_active(menu_name, item) -@]
+[!- elif item.status == "IndexFolderClosed" -!]
+[@- nav_menu_item_index_folder_closed(menu_name, item) -@] 
+[!- elif item.status == "IndexFolderOpened" -!]
+[@- nav_menu_item_index_folder_opened(menu_name, item) -@] 
+[!- elif item.status == "TitleFolderActive" -!]
+[@- nav_menu_item_title_folder_active(menu_name, item) -@]
+[!- elif item.status == "TitleFolderClosed" -!]
+[@- nav_menu_item_title_folder_closed(menu_name, item) -@] 
+[!- elif item.status == "TitleFolderOpened" -!]
+[@- nav_menu_item_title_folder_opened(menu_name, item) -@] 
+[!- endif -!]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_page_active(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="page_active active_path">
+[@- site.page_title(item.id) -@]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_page_inactive(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="page_inactive">
+[@- site.page_html_link(item.id) -@]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_index_folder_active(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_active active_path">
+[@- site.page_title(item.id) -@]
+[!- if item.children|length > 0 -!]
+<ol id="[@- menu_name -@]_children_[@item.id@]">
+[!- for child in item.children -!][@- nav_menu_item(menu_name, child) -@][!- endfor -!]
+</ol>
+[!- endif -!]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_index_folder_closed(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_closed">
+[@- site.page_html_link(item.id) -@]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_index_folder_opened(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="index_folder_opened active_path">
+[@- site.page_html_link(item.id) -@]
+[!- if item.children|length > 0 -!]
+<ol id="[@- menu_name -@]_children_[@item.id@]">
+[!- for child in item.children -!][@- nav_menu_item(menu_name, child) -@][!- endfor -!]
+</ol>
+[!- endif -!]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_title_folder_closed(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_closed">
+<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="closed">
+[@- site.page_title(item.id) -@]
+</button>
+[!- if item.children|length > 0 -!]
+<ol id="[@- menu_name -@]_children_[@item.id@]">
+[!- for child in item.children -!][@- nav_menu_item(menu_name, child) -@][!- endfor -!]
+</ol>
+[!- endif -!]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_title_folder_opened(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_opened active_path">
+<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="opened">
+[@- site.page_title(item.id) -@]
+</button>
+[!- if item.children|length > 0 -!]
+<ol id="[@- menu_name -@]_children_[@item.id@]">
+[!- for child in item.children -!][@- nav_menu_item(menu_name, child) -@][!- endfor -!]
+</ol>
+[!- endif -!]
+</li>
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro nav_menu_item_title_folder_active(menu_name, item) -!]
+<li id="[@- menu_name -@]_[@- item.id -@]" class="title_folder_active active_path">
+<button class="nav_menu_button" data-menu="[@- menu_name -@]" data-id="[@- item.id -@]" data-status="active">
+[@- site.page_title(item.id) -@]
+</button>
+[!- if item.children|length > 0 -!]
+<ol id="[@- menu_name -@]_children_[@item.id@]">
+[!- for child in item.children -!][@- nav_menu_item(menu_name, child) -@][!- endfor -!]
+</ol>
+[!- endif -!]
+</li>
 [!- endmacro -!]
 [#############################################################################]
 
