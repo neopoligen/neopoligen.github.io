@@ -173,6 +173,28 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 
 
+[#############################################################################]
+[!- macro link_or_title(current_page, target_page) -!]
+[@- site.link_or_title(current_page, target_page) -@]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro log(payload = {}) -!]
+[@- site.log_from_template(payload|tojson) -@]
+[!- endmacro -!]
+[#############################################################################]
+
+
+[#############################################################################]
+[!- macro main_body(page_id, payload = {}) -!]
+[!- for section in site.page_main_body(page_id, payload) -!]
+[@- output_payload(page_id, section, payload) -@]
+[!- endfor -!]
+[!- endmacro -!]
+[#############################################################################]
+
 
 [#############################################################################]
 [!- macro output_list(page_id, section, extra = {}) -!]
@@ -212,7 +234,6 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 
 
-
 [#############################################################################]
 [!- macro place_section(page_id, section_name, extras = {}) -!]
 [!- for section in site.page_place_section(page_id, section_name, extras) -!]
@@ -220,7 +241,6 @@ one collection_menu can but put on a page -#]
 [!- endfor -!]
 [!- endmacro -!]
 [#############################################################################]
-
 
 
 [#############################################################################]
@@ -239,7 +259,6 @@ one collection_menu can but put on a page -#]
 </nav>
 [!- endmacro -!]
 [#############################################################################]
-
 
 
 [#############################################################################]
@@ -275,23 +294,10 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 
 
-
-
 [#############################################################################]
 [!- macro toc(collection) -!]
 <ul class="table_of_contents">
 <li>TODO: macro.toc</li>
-</ul>
-[!- endmacro -!]
-[#############################################################################]
-
-
-[#############################################################################]
-[!- macro toc_subtree(page_id, collection) -!]
-<ul class="table_of_contents">
-[!- for item in site.get_subtree(page_id, collection) -!]
-[@- toc_item(item) -@]
-[!- endfor -!]
 </ul>
 [!- endmacro -!]
 [#############################################################################]
@@ -306,40 +312,12 @@ one collection_menu can but put on a page -#]
 [#############################################################################]
 
 
-
-
-
-
-[!- macro collection_menu_item_page(page_id, item) -!]
-[!- if page_id == item.page_id -!]
-[@- collection_menu_item_page_current(page_id, item) -@]
-[!- else -!]
-[@- collection_menu_item_page_not_current(page_id, item) -@]
-[!- endif -!]
-[!- endmacro -!]
-
-
-
-
-
-[!- macro collection_menu_item_page_not_current(page_id, item) -!]
-<li id="collection_menu_item_page_[@- item.page_id@]"
-    class="collection_menu_item_page_not_current"
-    >Other file</li>
-[!- endmacro -!]
-
-
-
-[!- macro link_or_title(current_page, target_page) -!]
-LINK_OR_TITLE_MACRO
-[!- endmacro -!]
-
-[!- macro log(payload = {}) -!]
-[@- site.log_from_template(payload|tojson) -@]
-[!- endmacro -!]
-
-[!- macro main_body(page_id, payload = {}) -!]
-[!- for section in site.page_main_body(page_id, payload) -!]
-[@- output_payload(page_id, section, payload) -@]
+[#############################################################################]
+[!- macro toc_subtree(page_id, collection) -!]
+<ul class="table_of_contents">
+[!- for item in site.get_subtree(page_id, collection) -!]
+[@- toc_item(item) -@]
 [!- endfor -!]
+</ul>
 [!- endmacro -!]
+[#############################################################################]
