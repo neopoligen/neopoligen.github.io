@@ -9,7 +9,11 @@ for me to read
 
 Looks like a cat stepped on the keyboard:
 
-`sed -i "" 's|{{-|[@|g;s|{{|[@|g;s|-}}|@]|g;s|}}|@]|g;s|{%-|[!|g;s|{%|[!|g;s|-%}|!]|g;s|%}|!]|g;s|{#-|[#|g;s|{#|[#|g;s|-#}|#]|g;s|#}|#]|g'``
+-- code
+
+sed -i "" 's|{{-|[@|g;s|{{|[@|g;s|-}}|@]|g;s|}}|@]|g;s|{%-|[!|g;s|{%|[!|g;s|-%}|!]|g;s|%}|!]|g;s|{#-|[#|g;s|{#|[#|g;s|-#}|#]|g;s|#}|#]|g'
+
+
 
 -- metadata
 -- date: 2024-03-07

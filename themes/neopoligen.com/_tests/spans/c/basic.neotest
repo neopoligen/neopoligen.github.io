@@ -34,12 +34,12 @@ PATH: /Users/alan/Documents/Neopoligen/neopoligen.github.io/content/file-under-t
 EXPECTED_OUTPUT
 ##################################################################################
 
-<section class="p_section flow">
+<section class="p_section section_category_standard flow">
     <div class="content flow">
     <p><span class="alfa bravo">lorem ipsum</span></p>
     </div>
 </section>
-<section class="p_section flow">
+<section class="p_section section_category_standard flow">
     <div class="content flow">
     <p><span class="charlie delta" id="echo" foxtrot>random words</span></p>
     </div>

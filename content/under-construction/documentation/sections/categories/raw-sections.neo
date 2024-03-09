@@ -1,21 +1,16 @@
 -- title
 
-Checklist Sections
+Raw Sections
 
--- checklist
+-- code
 
-[x] alfa
-
-delta
-
-[x] bravo
-
-[] charlie
+This is some code
+with a few lines
 
 
--- checklist
+-- code
 -- example_flag
--- title: Example Checklist
+-- title: Example Preformatted
 -- subtitle: With a subtitle
 -- class: green
 -- forward: This is froward text that goes
@@ -25,19 +20,12 @@ delta
 -- afterword: This is some short text that
 -- afterword: follows the checklist
 
-[x] sierra
-
-tango
-
-[x] uniform
-
-[] victor
+This is some code
+with a few lines
 
 
 
 -- metadata
--- date: 2024-02-01
--- updated: 2024-02-01 20:30:06
--- id: 2bn4fdhe
--- status: published
+-- date: 2024-02-02
+-- id: 2bpgzvuz
 

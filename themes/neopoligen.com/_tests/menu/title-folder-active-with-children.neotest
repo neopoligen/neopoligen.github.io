@@ -16,7 +16,7 @@ PATH: pages/testing/published.jinja
     page_id, 
     [["active-folder"]]
 ) -!]
-[@- macros.collection_menu(links) -@]
+[@- macros.nav_menu(links) -@]
 
 
 
@@ -56,25 +56,22 @@ EXPECTED_OUTPUT
 ##################################################################################
 
 
-<nav id="collection_menu" class="collection_menu">
-    <ol>
-    <li
-        id="collection_menu_aabb0001"
-        class="title_folder_active active_path"
-    >
-        <button
-        class="collection_menu_button"
-        data-menu="collection_menu"
-        data-id="aabb0001"
-        data-status="active"
-        >
-        Title Folder Active
-        </button>
-        <ol id="collection_menu_children_aabb0001">
-        <li id="collection_menu_aabb0002" class="page_inactive">
-            <a href="/en/aabb0002/?child-page">Child Page</a>
+    <nav id="nav_menu">
+      <ol>
+        <li id="nav_menu_aabb0001" class="title_folder_active active_path">
+          <button
+            class="collection_menu_button"
+            data-menu="nav_menu"
+            data-id="aabb0001"
+            data-status="active"
+          >
+            Title Folder Active
+          </button>
+          <ol id="nav_menu_children_aabb0001">
+            <li id="nav_menu_aabb0002" class="page_inactive">
+              <a href="/en/aabb0002/?child-page">Child Page</a>
+            </li>
+          </ol>
         </li>
-        </ol>
-    </li>
-    </ol>
-</nav>
+      </ol>
+    </nav>

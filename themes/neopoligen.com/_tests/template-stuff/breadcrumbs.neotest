@@ -83,9 +83,8 @@ EXPECTED_OUTPUT
 
 <nav class="breadcrumbs">
     <ol>
-        <li><a href="/">Neopoligen</a></li>
-        <li><a href="/en/aabb0002/?breadcrumb-item">Breadcrumb Item</a></li>
-        <li><a href="/en/aabb0003/?another-level">Another Level</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/en/aabb0002/?breadcrumb-item">Breadcrumb Item</a></li>
+    <li><a href="/en/aabb0003/?another-level">Another Level</a></li>
     </ol>
 </nav>
-

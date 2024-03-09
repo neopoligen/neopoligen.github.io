@@ -34,8 +34,8 @@ fn copy_customized_files() {
         let mut out_path = output_dir.clone();
         out_path.push(in_path.strip_prefix(&input_dir).unwrap());
         let _ = make_parent_dir_for_file(&out_path);
-        dbg!(&in_path);
-        dbg!(&out_path);
+        // dbg!(&in_path);
+        // dbg!(&out_path);
         let _ = fs::copy(&in_path, &out_path);
     });
 
@@ -46,8 +46,8 @@ fn copy_customized_files() {
         let mut out_path = output_dir.clone();
         out_path.push(in_path.strip_prefix(&input_dir).unwrap());
         let _ = make_parent_dir_for_file(&out_path);
-        dbg!(&in_path);
-        dbg!(&out_path);
+        // dbg!(&in_path);
+        // dbg!(&out_path);
         let _ = fs::copy(&in_path, &out_path);
     });
 }
@@ -61,7 +61,7 @@ fn make_section_dirs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>
             bounds.iter().for_each(|bound| {
                 let out_path =
                     PathBuf::from(format!("../../sections/{}/{}/default.jinja", line, bound));
-                dbg!(&out_path);
+                // dbg!(&out_path);
                 if let Some(parent_dir) = out_path.parent() {
                     match fs::create_dir_all(parent_dir) {
                         Ok(_) => (),
@@ -89,9 +89,14 @@ fn make_stubs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
                     "../../sections/{}/{}/default.jinja",
                     section_type, bound
                 ));
-                dbg!(&input_path);
-                dbg!(&output_path);
-                let _ = fs::copy(input_path, output_path);
+                let mut input_data = fs::read_to_string(&input_path).unwrap();
+                // dbg!(&input_data);
+                let updated_data = input_data.replace("SECTIONTYPE", section_type);
+                let _ = fs::write(output_path, updated_data);
+
+                // dbg!(&input_path);
+                // dbg!(&output_path);
+                // let _ = fs::copy(input_path, output_path);
             })
         });
     });
@@ -106,7 +111,7 @@ fn make_category_txt_files(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<Pa
         section_types.iter().for_each(|section_type| {
             let output_path =
                 PathBuf::from(format!("../../sections/{}/category.txt", section_type));
-            dbg!(&output_path);
+            // dbg!(&output_path);
             let _ = fs::write(output_path, section_category.to_str().unwrap());
         });
     });
