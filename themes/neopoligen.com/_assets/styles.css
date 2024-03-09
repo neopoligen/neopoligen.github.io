@@ -306,6 +306,23 @@ main > :last-child{
   flex-grow: 9999;
 }
 
+.neopoligen_source_example {
+  border: var(--border-2);
+  border-radius: var(--radius-4);
+  padding: var(--padding-4);
+}
+
+
+.neopoligen_source_example > pre {
+  font-size: var(--size-2);
+}
+
+
+.neopoligen_source_header {
+  font-family: var(--heavy);
+  border-bottom: var(--border-5);
+}
+
 .original_content {
   border: var(--border-5);
   padding: var(--padding-3);

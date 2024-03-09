@@ -33,7 +33,26 @@ repeatedly -#]
 [#############################################################################]
 [!- macro main_body(page_id, payload = {}) -!]
 [!- for section in site.page_main_body(page_id, payload) -!]
+[#- Do this first to prevent showing the template section itself -#]
+[!- if section.content.key_value_attributes.show_source == "off" -!]
+[!- set show_source = "off" -!]
+[!- endif -!]
+[!- if show_source == "on" -!]
+<div class="neopoligen_source_example flow">
+<div class="neopoligen_source_header">Source</div>
+<pre><code>
+    [!- autoescape true -!][@- section.content.source | trim -@][!- endautoescape -!]
+</code></pre>
+<div class="neopoligen_source_header">Output</div>
+[!- endif -!]
 [@- output_payload(page_id, section, payload) -@]
+[!- if show_source == "on" -!]
+</div>
+[!- endif -!]
+[#- Do this last to prevent showing the template section itself -#]
+[!- if section.content.key_value_attributes.show_source == "on" -!]
+[!- set show_source = "on" -!]
+[!- endif -!]
 [!- endfor -!]
 [!- endmacro -!]
 [#############################################################################]
