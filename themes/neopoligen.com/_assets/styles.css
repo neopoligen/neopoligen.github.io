@@ -144,6 +144,15 @@ body {
   text-align: center;
 }
 
+.checklist_item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+}
+
+.checklist_section ul {
+  padding-left: 0;
+}
+
 .code_section {
   border: var(--border-5);
   border-radius: var(--radius-3);

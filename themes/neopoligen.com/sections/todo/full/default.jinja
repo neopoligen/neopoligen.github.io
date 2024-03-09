@@ -1,6 +1,6 @@
 [!- import "includes/macros.jinja" as macros -!]
 
-<section [@- section_attributes(page_id, {"section": section, "classes": "todo_section flow" } ) -@]>
+<section [@- section_attributes(page_id, {"section": section, "classes": "todo_section section_category_checklist flow" } ) -@]>
     [#- START_NEOPOLIGEN_SOURCE_EXAMPLE_OPEN -#]
     [!- if extra.example == true -!]
         <div class="neopoligen_example_header">
@@ -46,16 +46,26 @@
         </div>
     [!- endif -!]
 
-    <ul>
-        [! for item in section.items !]
-        <li>
-            [!- for container in item.content.containers -!]
-            <p>
-                [@- output_payload(page_id, container, extras) -@]
-            </p>
-            [!- endfor -!]
+    <ul class="flow">
+        [!- for item in section.items -!]
+        <li class="checklist_item">
+            <div>
+                <input type="checkbox" disabled
+                [!- if item.content.status != none -!]
+                [@- " " -@]
+                checked
+                [!- endif -!]
+                >
+            </div>
+            <div class="flow">
+                [!- for container in item.content.containers -!]
+                <p>
+                    [@- output_payload(page_id, container, extras) -@]
+                </p>
+                [!- endfor -!]
+            </div>
         </li>
-        [! endfor !]
+        [!- endfor -!]
     </ul>
 
     [!- if section.key_value_attributes.afterword -!]

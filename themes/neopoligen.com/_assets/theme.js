@@ -1,7 +1,7 @@
-function add_collection_menu_button_listeners() {
-  const buttons = document.getElementsByClassName("collection_menu_button")
+function add_nav_menu_button_listeners() {
+  const buttons = document.getElementsByClassName("nav_menu_button")
   for (let button of buttons) {
-    button.addEventListener("click", toggle_collection_menu_item)
+    button.addEventListener("click", toggle_nav_menu_item)
   }
 }
 
@@ -12,7 +12,7 @@ function add_original_content_toggle_listeners() {
   }
 }
 
-function toggle_collection_menu_item(event) {
+function toggle_nav_menu_item(event) {
   let el = event.target
   let ds = el.dataset
   let li = document.getElementById(`${ds.menu}_${ds.id}`)
@@ -51,6 +51,6 @@ function toggle_original_content(event) {
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Content loaded")
-  add_collection_menu_button_listeners()
+  add_nav_menu_button_listeners()
   add_original_content_toggle_listeners()
 })
