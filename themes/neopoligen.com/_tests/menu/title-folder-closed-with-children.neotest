@@ -70,22 +70,22 @@ EXPECTED_OUTPUT
 ##################################################################################
 
 
-    <nav id="nav_menu">
-      <ol>
-        <li id="nav_menu_aabbcc02" class="title_folder_closed">
-          <button
-            class="collection_menu_button"
-            data-menu="nav_menu"
-            data-id="aabbcc02"
-            data-status="closed"
-          >
-            Closed Title Folder With Children
-          </button>
-          <ol id="nav_menu_children_aabbcc02">
-            <li id="nav_menu_aabbcc03" class="page_inactive">
-              <a href="/en/aabbcc03/?secondary-page">Secondary Page</a>
-            </li>
-          </ol>
+<nav id="nav_menu">
+  <ol>
+    <li id="nav_menu_aabbcc02" class="title_folder_closed">
+      <button
+        class="nav_menu_button"
+        data-menu="nav_menu"
+        data-id="aabbcc02"
+        data-status="closed"
+      >
+        Closed Title Folder With Children
+      </button>
+      <ol id="nav_menu_children_aabbcc02">
+        <li id="nav_menu_aabbcc03" class="page_inactive">
+          <a href="/en/aabbcc03/?secondary-page">Secondary Page</a>
         </li>
       </ol>
-    </nav>
+    </li>
+  </ol>
+</nav>

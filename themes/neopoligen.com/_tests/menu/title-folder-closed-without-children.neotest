@@ -55,17 +55,17 @@ File Under Test
 EXPECTED_OUTPUT
 ##################################################################################
 
-    <nav id="nav_menu">
-      <ol>
-        <li id="nav_menu_0002" class="title_folder_closed">
-          <button
-            class="collection_menu_button"
-            data-menu="nav_menu"
-            data-id="0002"
-            data-status="closed"
-          >
-            Closed Title Folder
-          </button>
-        </li>
-      </ol>
-    </nav>
+<nav id="nav_menu">
+  <ol>
+    <li id="nav_menu_0002" class="title_folder_closed">
+      <button
+        class="nav_menu_button"
+        data-menu="nav_menu"
+        data-id="0002"
+        data-status="closed"
+      >
+        Closed Title Folder
+      </button>
+    </li>
+  </ol>
+</nav>

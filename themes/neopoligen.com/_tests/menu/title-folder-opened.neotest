@@ -54,22 +54,23 @@ File Under Test
 EXPECTED_OUTPUT
 ##################################################################################
 
-    <nav id="nav_menu">
-      <ol>
-        <li id="nav_menu_aabbcc02" class="title_folder_opened active_path">
-          <button
-            class="collection_menu_button"
-            data-menu="nav_menu"
-            data-id="aabbcc02"
-            data-status="opened"
-          >
-            Opened Title Folder
-          </button>
-          <ol id="nav_menu_children_aabbcc02">
-            <li id="nav_menu_aabbcc01" class="page_active active_path">
-              File Under Test
-            </li>
-          </ol>
+
+<nav id="nav_menu">
+  <ol>
+    <li id="nav_menu_aabbcc02" class="title_folder_opened active_path">
+      <button
+        class="nav_menu_button"
+        data-menu="nav_menu"
+        data-id="aabbcc02"
+        data-status="opened"
+      >
+        Opened Title Folder
+      </button>
+      <ol id="nav_menu_children_aabbcc02">
+        <li id="nav_menu_aabbcc01" class="page_active active_path">
+          File Under Test
         </li>
       </ol>
-    </nav>
+    </li>
+  </ol>
+</nav>
