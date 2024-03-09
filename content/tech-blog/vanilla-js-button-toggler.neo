@@ -2,17 +2,6 @@
 
 Vanilla JavaScript Button Toggler
 
-
--- html/
-
-<h1>HTML EXMPLE</h1>
-
--- /html
-
-this is after the example
-
-
-
 -- h2
 
 Introduction
@@ -66,7 +55,7 @@ Here's the HTML code and demo buttons
 
 -- h2
 
-The Code
+Initial Functions
 
 The first step is to set up the on/off functions
 
@@ -74,8 +63,10 @@ The first step is to set up the on/off functions
 -- template: show
 
 function on_demo_function(element) {
-    const status_element = document.querySelector(".demo_status")
-    status_element.innerHTML = `${element.dataset.name} clicked on`
+    const status_elements = document.querySelectorAll(".demo_status")
+    status_elements.forEach((status_element) => {
+        status_element.innerHTML = `${element.dataset.name} clicked on`
+    })
 }
 
 
@@ -83,26 +74,20 @@ function on_demo_function(element) {
 -- template: show
 
 function off_demo_function(element) {
-    const status_element = document.querySelector(".demo_status")
-    status_element.innerHTML = `${element.dataset.name} clicked off`
+    const status_elements = document.querySelectorAll(".demo_status")
+    status_elements.forEach((status_element) => {
+        status_element.innerHTML = `${element.dataset.name} clicked off`
+    })
 }
 
+-- h2
 
--- css
+The Main Adder
 
-.demo_area {
-    border: var(--border-4);
-    padding: var(--padding-4);
-}
-
-.demo_area button {
-    margin-bottom: var(--padding-4);
-}
-
+Here's the function that does all the work
 
 -- script
 -- template: show
-
 
 function add_toggle_function_to_button_selector_demo(on_function, off_function, selector) {
   let elements = document.querySelectorAll(selector)
@@ -125,6 +110,16 @@ function add_toggle_function_to_button_selector_demo(on_function, off_function, 
   })
 }
 
+-- h2
+
+Putting It In Place
+
+With those three functions in place adding the on/off
+functions to a button (or collection of buttons
+with the same selector) is done like this:
+
+-- script
+-- template: show
 
 document.addEventListener("DOMContentLoaded", () => {
   add_toggle_function_to_button_selector_demo(
@@ -133,6 +128,57 @@ document.addEventListener("DOMContentLoaded", () => {
     ".demo_button"
   )
 })
+
+
+-- h2
+
+Another Look
+
+And here's another batch of buttons that's
+wired up and working
+
+-- html
+-- template: show
+
+<div class="demo_area">
+
+    <button 
+        class="demo_button" 
+        data-name="Charlie"
+        data-toggle_text="Charlie On"
+        >Charlie Off</button>
+
+    <button 
+        class="demo_button" 
+        data-name="Delta"
+        data-toggle_text="Delta On"
+        >Delta Off</button>
+
+    <div class="demo_status">No button clicks yet</div>
+
+</div>
+
+-- h2
+
+Outro
+
+This is working as expected on a mac in safar, chrome,
+and firefox. Still need to do a little more testing,
+but so far so good.
+
+
+
+-- css
+
+.demo_area {
+    border: var(--border-4);
+    padding: var(--padding-4);
+}
+
+.demo_area button {
+    margin-bottom: var(--padding-4);
+}
+
 
 
 -- metadata
