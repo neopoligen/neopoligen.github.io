@@ -16,7 +16,7 @@ PATH: pages/testing/published.jinja
     page_id, 
     [["active-folder"]]
 ) -!]
-[@- macros.collection_menu(links) -@]
+[@- macros.nav_menu(links) -@]
 
 
 ##################################################################################

@@ -17,7 +17,7 @@ PATH: pages/testing/published.jinja
 [!- set nav_links = site.collection_from_files_and_folders(page_id, [
     ["test-folder"]
 ]) -!]
-[@- macros.collection_menu(nav_links) -@]
+[@- macros.nav_menu(nav_links) -@]
 
 
 ##################################################################################

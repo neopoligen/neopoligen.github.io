@@ -15,7 +15,7 @@ PATH: pages/testing/published.jinja
 [!- set links = site.collection_from_files_and_folders(page_id, [
     ["aabbcc01"]
 ]) -!]
-[@- macros.collection_menu(links) -@]
+[@- macros.nav_menu(links) -@]
 
 
 

@@ -34,7 +34,7 @@ repeatedly -#]
 
 
 [#############################################################################]
-[!- macro collection_menu(collection) -!]
+[!- macro nav_menu(collection) -!]
 [!- set menu_name = "nav_menu" -!]
 [#- TODO: Setup the menu_name to accept a parameter so more than
 one collection_menu can but put on a page -#]
@@ -310,33 +310,6 @@ one collection_menu can but put on a page -#]
 
 
 
-
-[#- [!- if item.base_type == "Page" -!]
-[@- collection_menu_item_page(page_id, item) -@]
-[!- elif item.base_type == "IndexFolder" -!]
-[@- collection_menu_item_index_folder(page_id, item) -@]
-[!- endif -!] -#]
-
-[#- <li>[@- page_id -@]</li> -#]
-[#- [!- if item.item_type == "FileCurrent" -!]
-[@- nav_menu_current_file(item) -@]
-[!- elif item.item_type == "FileNotCurrent" -!]
-[@- nav_menu_not_current_file(item) -@]
-[!- elif item.item_type == "IndexFolderActive"!]
-[@- nav_menu_active_index_folder(item) -@]
-[!- elif item.item_type == "IndexFolderClosed"!]
-[@- nav_menu_closed_index_folder(item) -@]
-[!- elif item.item_type == "IndexFolderOpened" -!]
-[@- nav_menu_opened_index_folder(item) -@]
-[!- elif item.item_type == "TitleFolderActive" -!]
-[@- nav_menu_active_title_folder(item) -@]
-[!- elif item.item_type == "TitleFolderClosed" -!]
-[@- nav_menu_closed_title_folder(item) -@]
-[!- elif item.item_type == "TitleFolderOpened" -!]
-[@- nav_menu_opened_title_folder(item) -@]
-[!- endif -!] -#]
-
-
 [!- macro collection_menu_item_page(page_id, item) -!]
 [!- if page_id == item.page_id -!]
 [@- collection_menu_item_page_current(page_id, item) -@]
@@ -361,21 +334,6 @@ one collection_menu can but put on a page -#]
 
 
 
-[#- [!- macro nav_menu_current_file(item) -!]
-<li id="nav_menu_item_[@item.page_id@]"  class="nav_menu_current_file">
-[@- item.title_link_or_text -@] 
-</li> 
-[!- endmacro -!]
-
-
-[!- macro nav_menu_not_current_file(item) -!]
-<li id="nav_menu_item_[@item.page_id@]"  class="nav_menu_not_current_file">
-[@- item.title_link_or_text -@] 
-</li>
-[!- endmacro -!] -#]
-
-
-
 
 
 
@@ -395,114 +353,6 @@ LINK_OR_TITLE_MACRO
 [!- endmacro -!]
 
 
-[!- macro nav_menu(nav_links, extras = {}) -!]
-<nav class="nav_menu"><ol>
-[!- for item in nav_links.tree -!]
-[@- macros.nav_menu_item(item) -@]
-[!- endfor -!]
-</ol></nav>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_item(item) -!]
-[!- if item.item_type == "FileCurrent" -!]
-[@- nav_menu_current_file(item) -@]
-[!- elif item.item_type == "FileNotCurrent" -!]
-[@- nav_menu_not_current_file(item) -@]
-[!- elif item.item_type == "IndexFolderActive"!]
-[@- nav_menu_active_index_folder(item) -@]
-[!- elif item.item_type == "IndexFolderClosed"!]
-[@- nav_menu_closed_index_folder(item) -@]
-[!- elif item.item_type == "IndexFolderOpened" -!]
-[@- nav_menu_opened_index_folder(item) -@]
-[!- elif item.item_type == "TitleFolderActive" -!]
-[@- nav_menu_active_title_folder(item) -@]
-[!- elif item.item_type == "TitleFolderClosed" -!]
-[@- nav_menu_closed_title_folder(item) -@]
-[!- elif item.item_type == "TitleFolderOpened" -!]
-[@- nav_menu_opened_title_folder(item) -@]
-[!- endif -!]
-[!- endmacro -!]
-
-[!- macro nav_menu_active_title_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_active_title_folder nav_menu_active_path">
-<button class="nav_menu_button" data-page_id="[@- item.page_id -@]" data-status="open"> 
-[@- item.title -@] 
-</button>[@- '' -@]
-[!- if item.children|length > 0 -!]
-<ol id="nav_menu_children_[@item.page_id@]">
-[!- for child in item.children -!][@- nav_menu_item(child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_active_index_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_active_index_folder nav_menu_active_path">
-[@- item.title -@] 
-[!- if item.children|length > 0 -!]
-<ol id="nav_menu_children_[@item.page_id@]">
-[!- for child in item.children -!][@- nav_menu_item(child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_closed_index_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_closed_index_folder">
-<a href="[@- item.href -@]">[@- item.title -@]</a> 
-</li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_closed_title_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_closed_title_folder">
-<button class="nav_menu_button" data-page_id="[@- item.page_id -@]" data-status="closed"> 
-[@- item.title -@] 
-</button>[@- '' -@]
-[!- if item.children|length > 0 -!]
-<ol id="nav_menu_children_[@item.page_id@]">
-[!- for child in item.children -!][@- nav_menu_item(child) -@][!- endfor -!]
-</ol>
-[!- endif -!]
-</li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_opened_title_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_opened_title_folder nav_menu_active_path">
-<button class="nav_menu_button" data-page_id="[@- item.page_id -@]" data-status="open"> 
-[@- item.title -@] 
-</button>[@- '' -@]
-<ol id="nav_menu_children_[@item.page_id@]">
-[!- for child in item.children -!][@- nav_menu_item(child) -@][!- endfor -!]
-</ol></li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_opened_index_folder(item) -!]
-<li id="nav_menu_item_[@item.page_id@]" class="nav_menu_opened_index_folder nav_menu_active_path">
-[@- item.menu_title_link_or_text -@] 
-<ol id="nav_menu_children_[@item.page_id@]">
-[!- for child in item.children -!][@- nav_menu_item(child) -@][!- endfor -!]
-</ol></li>
-[!- endmacro -!]
-
-
-[!- macro nav_menu_current_file(item) -!]
-<li id="nav_menu_item_[@item.page_id@]"  class="nav_menu_current_file">
-[@- item.title_link_or_text -@] 
-</li> 
-[!- endmacro -!]
-
-
-[!- macro nav_menu_not_current_file(item) -!]
-<li id="nav_menu_item_[@item.page_id@]"  class="nav_menu_not_current_file">
-[@- item.title_link_or_text -@] 
-</li>
-[!- endmacro -!]
 
 [!- macro nav_toc(page_id, nav_links) -!]
 TODO: NAV TOC
