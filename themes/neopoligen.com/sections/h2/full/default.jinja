@@ -1,6 +1,6 @@
 [!- import "includes/macros.jinja" as macros -!]
 
-<section [@- section_attributes(page_id, { "section": section, "classes": section.type ~ "_section flow" } ) -@]>
+<section [@- section_attributes(page_id, { "section": section, "classes": "h2_section flow" } ) -@]>
 
     [#- START_NEOPOLIGEN_SOURCE_EXAMPLE -#]
     [!- if extra.example == true -!]
@@ -25,12 +25,12 @@
 
     [!- for content in section.category.content.containers -!]
         [!- if loop.first -!]
-            <div class="[@- section.type -@]_heading_group">[@- '' -@]
-                <[@- section.type -@]>
+            <div class="h2_heading_group">[@- '' -@]
+                <h2>
                     [@- output_payload(page_id, content, extras) -@]
-                </[@- section.type -@]>
+                </h2>
                 [!- if section.key_value_attributes.subtitle -!]
-                    <div class="heading_subtitle">
+                    <div>
                         [@- section.key_value_attributes.subtitle -@]
                     </div>
                 [!- endif -!]
@@ -40,7 +40,7 @@
 
 
     [!- if section.key_value_attributes.preface -!]
-        <div class="preface">
+        <div class="preface flow">
             [@- section.key_value_attributes.preface -@]
         </div>
     [!- endif -!]
@@ -48,19 +48,17 @@
     [!- if section.category.content.containers[1] -!]
     <div class="content flow">
     [!- endif -!]
-
         [!- for content in section.category.content.containers -!]
             [!- if not loop.first -!]
                 <p>[@- output_payload(page_id, content, extras) -@]</p>
             [!- endif -!]
         [!- endfor -!]
-
     [!- if section.category.content.containers[1] -!]
     </div>
     [!- endif -!]
 
     [!- if section.key_value_attributes.afterword -!]
-        <div class="afterword">
+        <div class="afterword flow">
             [@- section.key_value_attributes.afterword -@]
         </div>
     [!- endif -!]

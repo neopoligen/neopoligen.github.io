@@ -52,9 +52,9 @@ fn copy_customized_files() {
     });
 }
 
-fn make_section_dirs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
+fn make_section_dirs(bounds: Vec<&str>, _config_dir: PathBuf, files: Vec<PathBuf>) {
     files.iter().for_each(|f| {
-        let section_type = f.file_stem().unwrap();
+        // let section_type = f.file_stem().unwrap();
         let file_data = fs::read_to_string(f).unwrap();
         let lines: Vec<&str> = file_data.lines().collect();
         lines.iter().for_each(|line| {
@@ -73,7 +73,7 @@ fn make_section_dirs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>
     })
 }
 
-fn make_stubs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
+fn make_stubs(bounds: Vec<&str>, _config_dir: PathBuf, files: Vec<PathBuf>) {
     files.iter().for_each(|f| {
         let section_category = f.file_stem().unwrap();
         let file_data = fs::read_to_string(f).unwrap();
@@ -89,7 +89,7 @@ fn make_stubs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
                     "../../sections/{}/{}/default.jinja",
                     section_type, bound
                 ));
-                let mut input_data = fs::read_to_string(&input_path).unwrap();
+                let input_data = fs::read_to_string(&input_path).unwrap();
                 // dbg!(&input_data);
                 let updated_data = input_data.replace("SECTIONTYPE", section_type);
                 let _ = fs::write(output_path, updated_data);
@@ -103,7 +103,7 @@ fn make_stubs(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
 }
 
 
-fn make_category_txt_files(bounds: Vec<&str>, config_dir: PathBuf, files: Vec<PathBuf>) {
+fn make_category_txt_files(_bounds: Vec<&str>, _config_dir: PathBuf, files: Vec<PathBuf>) {
     files.iter().for_each(|f| {
         let section_category = f.file_stem().unwrap();
         let file_data = fs::read_to_string(f).unwrap();
