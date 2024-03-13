@@ -1,19 +1,7 @@
 -- title
 -- subtitle: Websites For Everyone
 
-Neopoligen (Home Page Draft)
-
-
--- warning
--- title: Head's Up
-
-Neopoligen only works on my computer right now. I'm 
-getting close to a full release that will work on 
-yours too. You're seeing this now because I'm building 
-everything in public. Consider this a behind-the-scenes
-look at the home page for when the app is launched.
-
--- p
+Neopoligen
 
 Neopoligen is a free website builder. It's designed 
 to make it easy to get started even if you've never
@@ -159,6 +147,12 @@ You can learn how to set up your own Domain
 Name here: <<tlink|2dqn2gso>>
 
 
+
+-- h3
+
+Here's the link to download the app:
+
+<<link|download|/downloads/neopoligen_0.0.1_aarch64.dmg>>
 
 
 
