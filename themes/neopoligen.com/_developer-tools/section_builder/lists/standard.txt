@@ -29,6 +29,7 @@ section
 short
 spotify
 subtitle
+template
 title
 tldr
 vimeo

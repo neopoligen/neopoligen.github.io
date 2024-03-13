@@ -1,21 +1,6 @@
 [!- import "includes/macros.jinja" as macros -!]
 
 <section [@- section_attributes(page_id, {"section": section, "classes": "results_section section_category_raw flow" } ) -@]>
-    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE_OPEN -#]
-    [!- if extra.example == true -!]
-        <div class="neopoligen_example_header">
-            <h3>Source</h3>
-            <pre><code>
-                [!- autoescape true -!][@- section.source | trim -@][!- endautoescape -!]
-            </code></pre>
-        </div>
-        <div class="neopoligen_example_content">
-            <h3>Output</h3>
-            [!- if section_has_flag(section, "example_flag") == "true" -!]
-                <div class="example_flag_note">(Found '--example_flag' section attribute flag)</div>
-            [!- endif -!]
-    [!- endif -!]
-    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE_OPEN -#]
 
     [!- if section.key_value_attributes.forward -!]
         <div class="forward flow">
@@ -59,11 +44,3 @@
             [@- section.key_value_attributes.afterword -@]
         </div>
     [!- endif -!]
-
-
-    [#- START_NEOPOLIGEN_SOURCE_EXAMPLE_CLOSE -#]
-    [!- if extra.example == true -!]
-        </div>
-    [!- endif -!]
-    [#- END_NEOPOLIGEN_SOURCE_EXAMPLE_CLOSE -#]
-
