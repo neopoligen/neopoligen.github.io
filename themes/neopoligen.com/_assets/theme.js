@@ -1,3 +1,25 @@
+function add_toggle_to_selector(on_function, off_function, selector) {
+  let elements = document.querySelectorAll(selector)
+  elements.forEach((element) => {
+    element.addEventListener("click", (event) => { 
+        elements.forEach((update_element) => {
+            update_element.classList.toggle("on")
+            update_element.classList.toggle("off")
+            const text_buffer = update_element.innerHTML
+            update_element.innerHTML = update_element.dataset.toggle_text
+            update_element.dataset.toggle_text = text_buffer
+        })
+      const element = event.target
+      if (element.classList.contains("on")) {
+        on_function.call(undefined, element)
+      } else {
+        off_function.call(undefined, element)
+      }
+    })
+  })
+}
+
+
 function add_listener_function_to_selector(listener, func, selector) {
   let elements = document.querySelectorAll(selector)
   elements.forEach((element) => {
@@ -50,26 +72,40 @@ function toggle_nav_menu_item(event) {
   }
 }
 
-function toggle_original_content(event) {
-  let inner_el = document.getElementById(`inner_original_content_toggle`)
-  let inner_ds = inner_el.dataset
-  let outer_el = document.getElementById(`outer_original_content_toggle`)
-  let outer_ds = outer_el.dataset
+
+function show_original_source_content(event) {
   let display = document.getElementById(`original_content_display`)
-  if (event.target.dataset.status == "hidden") {
-    display.classList.remove("hidden")
-    inner_ds.status = "visible"
-    outer_ds.status = "visible"
-    inner_el.innerHTML = "Hide original content file"
-    outer_el.innerHTML = "Hide original content file"
-  } else {
-    display.classList.add("hidden")
-    inner_ds.status = "hidden"
-    outer_ds.status = "hidden"
-    inner_el.innerHTML = "Show original content file"
-    outer_el.innerHTML = "Show original content file"
-  }
+  display.classList.remove("hidden")
 }
+
+
+function hide_original_source_content(event) {
+  let display = document.getElementById(`original_content_display`)
+  display.classList.add("hidden")
+}
+
+
+
+// function toggle_original_content(event) {
+//   let inner_el = document.getElementById(`inner_original_content_toggle`)
+//   let inner_ds = inner_el.dataset
+//   let outer_el = document.getElementById(`outer_original_content_toggle`)
+//   let outer_ds = outer_el.dataset
+//   let display = document.getElementById(`original_content_display`)
+//   if (event.target.dataset.status == "hidden") {
+//     display.classList.remove("hidden")
+//     inner_ds.status = "visible"
+//     outer_ds.status = "visible"
+//     inner_el.innerHTML = "Hide original content file"
+//     outer_el.innerHTML = "Hide original content file"
+//   } else {
+//     display.classList.add("hidden")
+//     inner_ds.status = "hidden"
+//     outer_ds.status = "hidden"
+//     inner_el.innerHTML = "Show original content file"
+//     outer_el.innerHTML = "Show original content file"
+//   }
+// }
 
 function toggle_style_via_selector(style, selector) {
   let elements = document.querySelectorAll(selector)
@@ -96,36 +132,7 @@ function toggle_button(event) {
 }
 
 
-function add_toggle_function_to_button_selector(on_function, off_function, selector) {
-  let elements = document.querySelectorAll(selector)
-  elements.forEach((element) => {
-    element.addEventListener("click", (event) => { 
-      const element = event.target
-      element.classList.toggle("on")
-      element.classList.toggle("off")
-      const text_buffer = element.innerHTML
-      element.innerHTML = element.dataset.toggle_text
-      element.dataset.toggle_text = text_buffer
-      if (element.classList.contains("on")) {
-        on_function.call(undefined, selector, element)
-      } else {
-        off_function.call(undefined, selector, element)
-      }
-    })
-  })
-}
 
-
-
-function test_function_on(selector, element) {
-  console.log(selector)
-  console.log(element)
-}
-
-function test_function_off(selector, element) {
-  console.log(selector)
-  console.log(element)
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Content loaded")
@@ -138,9 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // )
 
-  add_toggle_function_to_button_selector(
-    test_function_on, 
-    test_function_off, 
+  add_toggle_to_selector(
     ".original_content_toggle"
   )
 

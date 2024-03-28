@@ -1,9 +1,3 @@
--- comment
-
-NOTE: This file is linked to directly from
-v0.1.0 of the app. 
-
-
 -- title
 
 config.json 
@@ -12,9 +6,24 @@ config.json
 
 Overview
 
-The config.json file 
+The Neopoligen config file is located at:
 
-(This is a stub page while the documentation is being written)
+-- pre/
+
+/Users/alan/Library/Application Support/Neopoligen/config.json
+
+-- /pre
+
+The only thing that's in it right now is the active site:
+
+-- code/
+-- json
+
+{ "active_site": "neopoligen.github.io" }
+
+-- /code
+
+
 
 
 -- metadata
