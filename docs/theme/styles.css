@@ -178,7 +178,6 @@ body {
   font-size: var(--size-2);
 }
 
-
 nav ol ::marker, nav ul ::marker {
   color: var(--color-5);
 }
