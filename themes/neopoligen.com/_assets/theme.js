@@ -1,6 +1,8 @@
-function add_toggle_to_selector(on_function, off_function, selector) {
+function add_selector_toggle_functions(selector, on_function, off_function) {
+  console.log(`- Adding toggle functions to: ${selector}`)
   let elements = document.querySelectorAll(selector)
   elements.forEach((element) => {
+    console.log(`- Updating element`)
     element.addEventListener("click", (event) => { 
         elements.forEach((update_element) => {
             update_element.classList.toggle("on")
@@ -20,7 +22,8 @@ function add_toggle_to_selector(on_function, off_function, selector) {
 }
 
 
-function add_listener_function_to_selector(listener, func, selector) {
+function add_selector_listener_function(selector, listener, func) {
+  console.log(`- Adding '${listener}' listener to: ${selector}`)
   let elements = document.querySelectorAll(selector)
   elements.forEach((element) => {
     element.addEventListener(listener, func)
@@ -41,36 +44,36 @@ function add_listener_function_to_selector(listener, func, selector) {
 //   }
 // }
 
-function add_style_to_selector(style, selector) {
-  let elements = document.querySelectorAll(selector)
-  elements.forEach((element) => {
-    element.classList.add(style)
-  })
-}
+// function add_style_to_selector(style, selector) {
+//   let elements = document.querySelectorAll(selector)
+//   elements.forEach((element) => {
+//     element.classList.add(style)
+//   })
+// }
 
-function remove_style_from_selector(style, selector) {
-  let elements = document.querySelectorAll(selector)
-  elements.forEach((element) => {
-    element.classList.remove(style)
-  })
-}
+// function remove_style_from_selector(style, selector) {
+//   let elements = document.querySelectorAll(selector)
+//   elements.forEach((element) => {
+//     element.classList.remove(style)
+//   })
+// }
 
-function toggle_nav_menu_item(event) {
-  console.log("hit toggle_nav_menu_item")
-  let el = event.target
-  let ds = el.dataset
-  let li = document.getElementById(`${ds.menu}_${ds.id}`)
-  if (ds.status == "closed") {
-    li.classList.remove("title_folder_closed")
-    li.classList.add("title_folder_opened")
-    ds.status = "open"
-  } else {
-    li.classList.remove("title_folder_active")
-    li.classList.remove("title_folder_opened")
-    li.classList.add("title_folder_closed")
-    ds.status = "closed"
-  }
-}
+// function toggle_nav_menu_item(event) {
+//   console.log("hit toggle_nav_menu_item")
+//   let el = event.target
+//   let ds = el.dataset
+//   let li = document.getElementById(`${ds.menu}_${ds.id}`)
+//   if (ds.status == "closed") {
+//     li.classList.remove("title_folder_closed")
+//     li.classList.add("title_folder_opened")
+//     ds.status = "open"
+//   } else {
+//     li.classList.remove("title_folder_active")
+//     li.classList.remove("title_folder_opened")
+//     li.classList.add("title_folder_closed")
+//     ds.status = "closed"
+//   }
+// }
 
 
 function show_original_source_content(event) {
@@ -107,35 +110,39 @@ function hide_original_source_content(event) {
 //   }
 // }
 
-function toggle_style_via_selector(style, selector) {
-  let elements = document.querySelectorAll(selector)
-  elements.forEach((element) => {
-    element.classList.toggle(style)
-  })
-}
+// function toggle_style_via_selector(style, selector) {
+//   let elements = document.querySelectorAll(selector)
+//   elements.forEach((element) => {
+//     element.classList.toggle(style)
+//   })
+// }
 
-function toggle_switch_via_selector(selector) {
-  let elements = document.querySelectorAll(selector)
-  elements.forEach((element) => {
-    element.classList.toggle("on")
-    element.classList.toggle("off")
-  })
-}
+// function toggle_switch_via_selector(selector) {
+//   let elements = document.querySelectorAll(selector)
+//   elements.forEach((element) => {
+//     element.classList.toggle("on")
+//     element.classList.toggle("off")
+//   })
+// }
 
-function toggle_button(event) {
-  const element = event.target
-  element.classList.toggle("on")
-  element.classList.toggle("off")
-  const text_buffer = element.innerHTML
-  element.innerHTML = element.dataset.toggle_text
-  element.dataset.toggle_text = text_buffer
-}
+// function toggle_button(event) {
+//   const element = event.target
+//   element.classList.toggle("on")
+//   element.classList.toggle("off")
+//   const text_buffer = element.innerHTML
+//   element.innerHTML = element.dataset.toggle_text
+//   element.dataset.toggle_text = text_buffer
+// }
 
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Content loaded")
+  
+  add_selector_toggle_functions(
+    ".original_content_toggle", show_original_source_content, hide_original_source_content
+  )
   // add_listener_function_to_selector(
   //   "click", toggle_nav_menu_item, ".nav_menu_button"
   // )
@@ -145,9 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // )
 
-  add_toggle_to_selector(
-    ".original_content_toggle"
-  )
 
 })
 
