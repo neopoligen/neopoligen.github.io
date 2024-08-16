@@ -293,21 +293,6 @@ service called GitHub Pages by default.
 
 Details on using GitHub and other free services are a work in progress.
 
--- h2
-
-Next Steps
-
-That's the basics of how Neopoligen works. There's more advanced
-stuff like being able to nest sections, embedding JavaScript and 
-CSS, syntax highlighting,  and outputting collections of links 
-of pages. I'm in the process of writing up how the other parts work 
-and will post them as they're finished. 
-
-I'll be posting about progress on my <<link|Mastodon account|https://hachyderm.io/@TheIdOfAlan>>
-if you're interested. You can also checkout my personal site (which is
-built from Neopoligen) at: <<link|alanwsmith.com|https://www.alanwsmith.com/>>
-
-
 -- css
 
 .book-grid {
@@ -471,6 +456,21 @@ each site in its config file. This is done to  support internationalization/loca
 I'm not planning to add that any time soon but want to make sure the app and, more 
 importantly, the URLs are prepped for it.
 
+
+
+-- h2
+
+Next Steps
+
+That's the basics of how Neopoligen works. There's more advanced
+stuff like being able to nest sections, embedding JavaScript and 
+CSS, syntax highlighting,  and outputting collections of links 
+of pages. I'm in the process of writing up how the other parts work 
+and will post them as they're finished. 
+
+I'll be posting about progress on my <<link|Mastodon account|https://hachyderm.io/@TheIdOfAlan>>
+if you're interested. You can also checkout my personal site (which is
+built from Neopoligen) at: <<link|alanwsmith.com|https://www.alanwsmith.com/>>
 
 
 
