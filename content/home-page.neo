@@ -2,15 +2,301 @@
 
 Welcome To Neopoligen
 
-Neopoligen is a website building app. It's
-designed to make it easy for anyone to create
-their own website for free. 
+-- p
 
-The app needs a little more work before it's
-ready for the general public. You can 
-<<link|check out the GitHub Page|
-https://github.com/neopoligen/neopoligen>>
-if you want to follow along. 
+Neopoligen is a website building app. It's designed to make 
+free websites you can tinker with.
+
+The app needs a little more work before it's ready, but you 
+can read more about how it'll work below. You can also
+<<link|check out GitHub|https://github.com/neopoligen/neopoligen>> 
+if you want to follow along with the development. 
+
+-- h2
+
+How It Works
+
+-- h3
+
+Files
+
+Neopoligen sites are made from files that look like this:
+
+-- pre/
+-- class: neo-example
+
+-- title
+
+Welcome To Neopoligen
+
+-- p
+
+Neopoligen is a website building app. It's designed to make 
+it easy to create a website you can tinker with for free.
+
+The app needs a little more work before it's ready, but you 
+can read more about how it'll work below. You can also
+<<link|check out GitHub|https://github.com/neopoligen/neopoligen>> 
+if you want to follow along with the development. 
+
+-- /pre
+
+-- h3
+
+Sections
+
+Neopoligen files are made from sections that start with two dashes
+like <<code|-- title>> and <<code|-- p>>. The name for each section
+determines what happens to the content in it. For example, outputting 
+a title or a set of paragraphs like above. 
+
+Another type of section is <<code|-- list>> which looks like this:
+
+-- pre/
+-- class: neo-example
+
+-- list
+
+- the quick brown fox
+
+- jumps over the lazy dog
+
+-- /pre
+
+The output from that section looks like this:
+
+-- list
+-- class: neo-example
+
+- the quick brown fox
+
+- jumps over the lazy dog
+
+
+-- p
+
+Some of the other default section types include: 
+
+-- list
+
+- Blockquotes
+
+- Checklists
+
+- Code Samples
+
+- Footnotes
+
+- Images
+
+-- p
+
+Details about them and how they work is on the way. 
+
+-- h3
+
+Section Attributes
+
+Each section can have "attributes". They can do things like 
+change a section's appearance. Attributes are made by adding extra
+lines start with two dashes after a section. For example, 
+here's a <<code|-- class>> attribute that's used to make the
+text in the section green.
+
+-- pre/
+-- class: neo-example
+
+-- p 
+-- class: green 
+
+The quick brown fox jumps over the lazy dog
+
+-- /pre
+
+This is what that looks like:
+
+-- p 
+-- class: green neo-example
+
+The quick brown fox jumps over the lazy dog
+
+
+-- h3
+
+Custom Sections
+
+Neopoligen works by using templates to control the
+output of each type of section. It comes with several default 
+sections, but you can make as many more as you want. 
+As far as the app is concerned there's no difference
+between a section/template combination you make and
+one that comes with it. 
+
+For example, here's a new type of section called <<code|book-to-read-example>> 
+with some attributes for the title, author, and cover image. 
+
+
+-- pre/
+-- class: neo-example
+
+-- book-to-read-example
+-- title: The Peripheral
+-- author: William Gibson
+-- image: the-peripheral-cover.jpg
+
+I've read a bunch of other William Gibson stuff and can't
+wait to get to this one!
+
+-- /pre
+
+And here's an example of what it could look like:
+
+-- book-to-read-example
+-- class: neo-example
+-- title: The Peripheral
+-- author: William Gibson
+-- image: /neo-images/the-peripheral-cover/100w.jpg
+
+I've read a bunch of other William Gibson stuff and can't
+wait to get to this one!
+
+-- p
+
+
+More details about how to make new sections are on the way
+soon. 
+
+-- h3
+
+Spans
+
+Neopoligen supports adding different "spans" to text inside
+sections. A span start with two less than signs and ends with 
+two greater than signs. For example, here's an "em" span
+that makes the text inside it italics:
+
+-- pre/
+-- class: neo-example
+
+The <<em|quick brown>> fox
+
+-- /pre
+
+The output looks like this:
+
+-- p
+-- class: neo-example
+
+The <<em|quick brown>> fox
+
+
+-- h3
+
+Span Attributes
+
+Spans can have attributes as well. Attributes are separated 
+by a pipe character like this:
+
+-- pre/
+-- class: neo-example
+
+The <<em|quick brown|class: green>> fox
+
+-- /pre
+
+The output looks like this:
+
+-- p
+-- class: neo-example
+
+The <<em|quick brown|class: green>> fox
+
+
+-- h3
+
+Custom Spans
+
+Spans work of templates the same way sections to. You can make your 
+own that have extra functionality as well. The <<code|tlink>> span 
+is a good example. It takes the ID of another page on the site
+and turns into into a link to that page using the page's title. 
+
+
+-- pre/
+-- class: neo-example
+
+<<tlink|2kiw8tvv>>
+
+-- /pre
+
+-- p
+
+Which outputs this:
+
+
+-- p
+-- class: neo-example
+
+
+<<tlink|2kiw8tvv>>
+
+-- p
+
+More details on how to create span template is on the way. 
+
+-- h2
+
+Hosting
+
+Neopoligen uses files directly on your computer to create 
+websites. You own them and maintain control of them. 
+You can preview the sites on your machine. You have to
+published them to a "hosting provider" to make them available
+to the world. Neopoligen is designed to work with a free
+service called GitHub Pages by default. 
+
+Details on using GitHub
+and other free services are a work in progress.
+
+-- h2
+
+Next Steps
+
+That's the basics of how Neopoligen works. There's more advanced
+stuff like being able to nest sections and output collections 
+of links that's on the way. I'm in the process of writing
+up how the other parts work and will post them as they're finished. 
+
+I'll be posting about progress on my <<link|Mastodon account|https://hachyderm.io/@TheIdOfAlan>>
+if you're interested. You can also checkout my personal site (which is
+built from Neopoligen) at: <<link|alanwsmith.com|https://www.alanwsmith.com/>>
+
+
+
+-- css
+
+.green {
+  color: green;
+}
+
+.neo-example {
+  font-size: 0.7rem;
+  border: 1px solid #333;
+  padding: 1.2rem;
+}
+
+code {
+  background-color: #444;
+  border: 1px solid #777;
+  padding-inline: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+}
 
 
 
@@ -20,6 +306,4 @@ if you want to follow along.
 -- id: 2ikuxluk
 -- type: home-page
 -- path: /
-
-
 
