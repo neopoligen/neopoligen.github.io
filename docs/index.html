@@ -6,8 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <meta property="og:title" content="Welcome To Neopoligen" />
+<meta property="og:description" content="a post from alan w. smith" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1989/en/2ikuxluk/?welcome-to-neopoligen" />
+<meta property="og:url" content="https://www.neopoligen.com/en/2ikuxluk/?welcome-to-neopoligen" />
+<meta property="og:image" content="https://www.neopoligen.com/neo-images/default-og-image/1200w.jpg" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/theme/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicons/favicon-32x32.png">
@@ -22,14 +24,10 @@
 <link rel="stylesheet" href="/theme/styles/theme.css" />
 <link rel="stylesheet" href="/theme/styles/syntax-highlighting/code-solarized-dark.css" /><style>
 
-.green {
-  color: green;
-}
-
-.neo-example {
-  font-size: 0.7rem;
-  border: 1px solid #333;
-  padding: 1.2rem;
+.book-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
 }
 
 code {
@@ -39,10 +37,18 @@ code {
   border-radius: 0.2rem;
 }
 
-.book-grid {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 20px;
+.green {
+  color: green;
+}
+
+.neo-example {
+  font-size: 0.85rem;
+  border: 1px solid #333;
+  padding: 1.2rem;
+}
+
+u {
+  text-decoration: underline;
 }
 
 </style></head>
@@ -86,12 +92,12 @@ code {
         
 <p>
 
-Neopoligen is a website building app. It's designed to make 
+Neopoligen is a free website building app. It's designed to 
 
 
 
 
-free websites you can tinker with.
+make websites you can tinker with.
 
 </p>
 
@@ -101,12 +107,17 @@ free websites you can tinker with.
         
 <p>
 
-The app needs a little more work before it's ready, but you 
+The app built this site, but it needs a little more work 
 
 
 
 
-can read more about how it'll work below. You can also
+before it's ready for other folks to play with. Until then, 
+
+
+
+
+you can read more about how it works below. You can also
 
 
 
@@ -210,13 +221,18 @@ Welcome To Neopoligen
 
 -- p
 
-Neopoligen is a website building app. It&#x27;s designed to make 
-it easy to create a website you can tinker with for free.
+Neopoligen is a free website building app. It&#x27;s designed to 
+make websites you can tinker with.
 
-The app needs a little more work before it&#x27;s ready, but you 
-can read more about how it&#x27;ll work below. You can also
+The app built this site, but it needs a little more work 
+before it&#x27;s ready for other folks to play with. Until then, 
+you can read more about how it works below. You can also
 &lt;&lt;link|check out GitHub|https:&#x2f;&#x2f;github.com&#x2f;neopoligen&#x2f;neopoligen&gt;&gt; 
-if you want to follow along with the development.</pre>
+if you want to follow along with the development. 
+
+-- metadata
+-- created: 2024-05-31T19:20:58-04:00
+-- id: 2ikuxluk</pre>
 
 
     
@@ -227,15 +243,15 @@ if you want to follow along with the development.</pre>
 
 
 
-<section class="h3-section flow">
+<section class="h2-section flow">
 <hgroup>
 
   
-    <h3 class="section-heading">
+    <h2 class="section-heading">
     
       Sections
     
-    </h3>
+    </h2>
     
   
 
@@ -258,27 +274,46 @@ Neopoligen files are made from sections that start with two dashes
 
 
 
-like 
+and a name like
+
+:
+
+ 
 
 
 <code class="">-- title</code>
 
- and 
+, 
 
 
 <code class="">-- p</code>
 
-. The name for each section
+ and 
+
+
+<code class="">-- metadata</code>
+
+. 
 
 
 
 
-determines what happens to the content in it. For example, outputting 
+The name for each section determines what happens to the content in it. 
 
 
 
 
-a title or a set of paragraphs like above. 
+For example, outputting a title or a set of paragraphs like above. Some
+
+
+
+
+sections, like "metadata", don't do anything directly. They're used
+
+
+
+
+for things like storing the IDs of a pages which are used for linking.
 
 </p>
 
@@ -333,7 +368,12 @@ Another type of section is
         
 <p>
 
-The output from that section looks like this
+Each line that starts with a single dash becomes a new list
+
+
+
+
+item which turns into this output
 
 :
 
@@ -392,7 +432,7 @@ jumps over the lazy dog
         
 <p>
 
-Some of the other default section types include
+Some of the other default sections include
 
 :
 
@@ -462,6 +502,26 @@ Code Samples
 
 Footnotes
 
+<sup><a 
+    href="#fnref-1-text"
+    id="fnref-1-link"
+    >1</a></sup>
+
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+HTML, CSS, and JavaScript Embeds 
+
 </p>
 
 
@@ -489,29 +549,6 @@ Images
 </ul>
 
 
-<section class="p-section flow">
-
-
-
-    
-        
-<p>
-
-Details about them and how they work is on the way. 
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-
-
 <section class="h3-section flow">
 <hgroup>
 
@@ -526,6 +563,8 @@ Details about them and how they work is on the way.
 
   
 
+  
+
 </hgroup>
 
 
@@ -536,17 +575,37 @@ Details about them and how they work is on the way.
     
 <p>
 
-Each section can have "attributes". They can do things like 
+Each section can have addition details called "attributes". 
 
 
 
 
-change a section's appearance. Attributes are made by adding extra
+They can do things like change a section's appearance, add 
 
 
 
 
-lines start with two dashes after a section. For example, 
+alt text to images, or provide more content that can be formatted 
+
+
+
+
+independently. 
+
+</p>
+
+
+
+
+    
+<p>
+
+Attributes are made by adding extra lines start 
+
+
+
+
+with two dashes after a section. For example, 
 
 
 
@@ -568,6 +627,8 @@ text in the section green.
 
 
 
+
+    
 
     
 
@@ -670,12 +731,12 @@ output of each type of section. It comes with several default
 
 
 
-sections, but you can make as many more as you want. 
+sections, but you can make as many as you want. 
 
 
 
 
-As far as the app is concerned there's no difference
+As far as the app is concerned, there's no difference
 
 
 
@@ -685,7 +746,11 @@ between a section/template combination you make and
 
 
 
-one that comes with it. 
+one the ones the come built
+
+-
+
+in. 
 
 </p>
 
@@ -766,7 +831,9 @@ And here's an example of what it could look like
 
 <div class="book-grid">
   <div class="book-image">
-  <img src="/neo-images/the-peripheral-cover/100w.jpg" />
+  <img src="/neo-images/the-peripheral-cover/100w.jpg" 
+    alt="Book cover for The Peripheral by William Gibson"
+    />
   </div> 
   <div>
     <h4>
@@ -803,44 +870,18 @@ wait to get to this one!
 
 </section>
 
-<section class="p-section flow">
-
-
-
-    
-        
-<p>
-
-More details about how to make new sections are on the way
-
-
-
-
-soon. 
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-
-
-<section class="h3-section flow">
+<section class="h2-section flow">
 <hgroup>
 
   
-    <h3 class="section-heading">
+    <h2 class="section-heading">
     
       Spans
     
-    </h3>
+    </h2>
     
+  
+
   
 
   
@@ -860,17 +901,32 @@ Neopoligen supports adding different "spans" to text inside
 
 
 
-sections. A span start with two less than signs and ends with 
+sections. A span starts with two less than signs and ends 
 
 
 
 
-two greater than signs. For example, here's an "em" span
+followed by the name for the type of span then a pipe character
 
 
 
 
-that makes the text inside it italics
+and the contents. A closing pair of two greater than signs ends
+
+
+
+
+the span. 
+
+</p>
+
+
+
+
+    
+<p>
+
+For example, here's an "em" span that makes the text inside it italics
 
 :
 
@@ -879,6 +935,8 @@ that makes the text inside it italics
 
 
 
+
+    
 
     
 
@@ -931,6 +989,123 @@ The
 
 
 <em class="">quick brown</em>
+
+ fox
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="h3-section flow">
+<hgroup>
+
+  
+    <h3 class="section-heading">
+    
+      Nested Spans
+    
+    </h3>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Spans can be nested inside each other. For example, here's
+
+
+
+
+how to make text that's bold (via "strong")
+
+
+
+
+and underlined (via "u"). 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="neo-example pre-section">
+
+
+
+<pre>The &lt;&lt;strong|&lt;&lt;u|quick brown&gt;&gt;&gt;&gt; fox</pre>
+
+
+    
+</section>
+
+
+
+
+
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="neo-example p-section flow">
+
+
+
+    
+        
+<p>
+
+The 
+
+
+<strong class="">
+<u class="">quick brown</u></strong>
 
  fox
 
@@ -1059,7 +1234,7 @@ The
   
     <h3 class="section-heading">
     
-      Custom Spans
+      Custom Span Functionality
     
     </h3>
     
@@ -1077,12 +1252,12 @@ The
     
 <p>
 
-Spans work of templates the same way sections to. You can make your 
+Spans work off templates the same way sections do. You can make your 
 
 
 
 
-own that have extra functionality as well. The 
+own with whatever functionality you want. The 
 
 
 <code class="">tlink</code>
@@ -1115,7 +1290,7 @@ and turns into into a link to that page using the page's title.
 
 
 
-<pre>&lt;&lt;tlink|2kiw8tvv&gt;&gt;</pre>
+<pre>Next Page: &lt;&lt;tlink|2kiw8tvv&gt;&gt;</pre>
 
 
     
@@ -1159,32 +1334,15 @@ Which outputs this
         
 <p>
 
+Next Page
+
+:
+
+ 
+
 <a href="/en/2kiw8tvv/?todo-list">
   TODO List
 </a>
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-
-
-<section class="p-section flow">
-
-
-
-    
-        
-<p>
-
-More details on how to create span template is on the way. 
 
 </p>
 
@@ -1230,12 +1388,7 @@ Neopoligen uses files directly on your computer to create
 
 
 
-websites. You own them and maintain control of them. 
-
-
-
-
-You can preview the sites on your machine. You have to
+websites. You can preview the sites on your machine. You have to
 
 
 
@@ -1260,12 +1413,7 @@ service called GitHub Pages by default.
     
 <p>
 
-Details on using GitHub
-
-
-
-
-and other free services are a work in progress.
+Details on using GitHub and other free services are a work in progress.
 
 </p>
 
@@ -1312,17 +1460,22 @@ That's the basics of how Neopoligen works. There's more advanced
 
 
 
-stuff like being able to nest sections and output collections 
+stuff like being able to nest sections, embedding JavaScript and 
 
 
 
 
-of links that's on the way. I'm in the process of writing
+CSS, syntax highlighting,  and outputting collections of links 
 
 
 
 
-up how the other parts work and will post them as they're finished. 
+of pages. I'm in the process of writing up how the other parts work 
+
+
+
+
+and will post them as they're finished. 
 
 </p>
 
@@ -1366,7 +1519,948 @@ built from Neopoligen) at
 
     
 
-</section></main>
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Tech Stuff
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+A few details for those interested in the more technical side
+
+
+
+
+of things
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+<ul class="flow">
+
+
+<li class="flow">
+
+
+<p>
+
+Neopoligen is a 
+
+
+<a href="https://en.wikipedia.org/wiki/Static_site_generator">Static Site Generator</a>
+
+ 
+
+
+
+
+written in 
+
+
+<a href="https://www.rust-lang.org/">Rust</a>
+
+ that uses the 
+
+
+<a href="https://docs.rs/nom/latest/nom/">nom</a>
+
+ parser 
+
+
+
+
+combinator for parsing and 
+
+
+<a href="https://docs.rs/minijinja/latest/minijinja/syntax/index.html">MiniJinja</a>
+
+ for
+
+
+
+
+templates
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Sites generated by the app can be hosted pretty much anywhere that offers
+
+
+
+
+static site hosting. The only real requirement is that the server automatically serve "index.html"
+
+
+
+
+files when a directory is called e.g. calling "
+
+
+<em class="">/en/abcd1234/</em>
+
+" returns the file
+
+
+
+
+stored at "
+
+
+<em class="">/en/abcd1234/index.html</em>
+
+"). Every service I'm aware of has this option.
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The original content files are stored locally on your machine. You maintain ownership and 
+
+
+
+
+control of them. You can change hosting providers at any time without losing your content. 
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+You can also keep your site name when changing hosting providers if you buy your own
+
+
+
+
+domain name (I'll write more about, but it's something I highly recommend if you can
+
+
+
+
+afford it)
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Neopoligen is not built off from on any JavaScript frameworks and learning 
+
+
+
+
+JavaScript is not required to create new templates or modify existing ones. (I'm building
+
+
+
+
+Neopoligen with the explicit goal that it's what powers my site for the next twenty years
+
+
+
+
+and part of the means not constantly jumping to new frameworks)
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The name of the content file format is "Neopolitan" which uses the ".neo" file extension
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Templates are stored in ".neoj" files. They're just like regular MiniJinja files with the 
+
+
+
+
+exception that the delimiters have been changed from {% %}, {{ }}, and {# #} to [! !], 
+
+
+
+
+[@ @], and [# #] because I find those easier to type and read
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Templates are grouped together into themes. The theme for a site is determined via a
+
+
+
+
+config file. The default theme can be copied to a new folder and used as the starting
+
+
+
+
+point for making a new one
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Each content page has a "type" which defaults to "post" and a "status" that defaults
+
+
+
+
+to "published". Those values can be changed for any page by setting attributes in the
+
+
+
+
+
+<code class="">-- metadata</code>
+
+ section. The "type" and "status" are then used to determine which
+
+
+
+
+base template to use from the theme. (e.g. you can make templates for "post/draft", 
+
+
+
+
+"homepage/published", etc...)
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+All sections have a default template. Additional templates can be added for each section 
+
+
+
+
+type and then used by adding a 
+
+
+<code class="">-- template</code>
+
+ attribute
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Custom CSS and JavaScript can be added to pages via 
+
+
+<code class="">-- css</code>
+
+ and 
+
+
+<code class="">-- javascript</code>
+
+ 
+
+
+
+
+sections. The output from those sections is added to the 
+
+<
+
+head
+
+>
+
+ of the document in
+
+
+
+
+their appropriate tags
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The default theme contains custom templates for CSS and JavaScript that show them as
+
+
+
+
+inline code blocks as well as adding them to the 
+
+<
+
+head
+
+>
+
+ of the document. This effectively 
+
+
+
+
+provides live code for examples so you can verify your samples actually work
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The default theme includes an HTML section that drops raw HTML directly into the output. 
+
+
+
+
+Similar to the CSS and JavaScript sections there's a custom template to show the code
+
+
+
+
+in a code block as well as output it to verify code samples do what they're supposed to
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The default theme provides for 
+
+
+<code class="">-- head</code>
+
+ sections. The content of those sections
+
+
+
+
+is inserted directly in the html 
+
+<
+
+head
+
+>
+
+ element of the output for things like adding 
+
+
+
+
+script libraries
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Syntax highlighting is built
+
+-
+
+in. Highlighting can be applied to sections similar to how
+
+
+
+
+code blocks are used in Markdown. Highlights can also be added to inline text via spans
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The syntax highlighting is done via classes (instead of via inline styles) so things
+
+
+
+
+can be controlled via stylesheets
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The syntax highlighter adds an empty span with a specific class at the start of each 
+
+
+
+
+line that can be used to add line number in CSS
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+A test engine for verifying the output of templates is built
+
+-
+
+in
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Basic image optimization is built
+
+-
+
+in
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Basic Open Graph images with the title of the page are built
+
+-
+
+in
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Right now, the app is a command line app, but a front end built with 
+
+
+
+
+
+<a href="https://tauri.app/">Tauri</a>
+
+ is in progress. The goal is to make it so 
+
+
+
+
+folks can build sites without having to learn to use the command line
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Basic error handling and messaging is built into the app. It's not great yet, 
+
+
+
+
+but improving it is an explicit goal. (This is based off my experience with
+
+
+
+
+the Rust compiler where the general vibe is if you can't figure out what
+
+
+
+
+you need to do based on an error message they consider that a bug)
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+I've built a basic syntax highlighter for Neopolitan via 
+
+
+
+
+
+<a href="https://tree-sitter.github.io/tree-sitter/">Tree-sitter</a>
+
+
+
+
+for 
+
+
+<a href="https://neovim.io/">Neovim</a>
+
+. My longer term goal is to make
+
+
+
+
+an LSP for both ".neo" and ".neoj" files that can be used with 
+
+
+
+
+Neovim, VSCode, or any other app that works with LSPs
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Pages are output to URLs based off their IDs be default. (e.g. "
+
+
+<em class="">/en/2kiw8tvv/</em>
+
+"). 
+
+
+
+
+This is done in an effort to prevent link rot by keeping the URLs the same regardless of
+
+
+
+
+if the content on the page changes or it's moved in the source file directory structure. 
+
+</p>
+
+
+
+<p>
+
+My plan is to use Neopoligen for my sites from this point forward, but if I ever do move 
+
+
+
+
+again it will be easier to duplicate that exact structure than trying to match something
+
+
+
+
+with text slugs or redirects. (Over the past few decades I've used both those techniques 
+
+
+
+
+repeatedly and I'm not interested in doing it ever again)
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+Another reason for the use of IDs is for automatic linking. You can always just link
+
+
+
+
+directly to the ID for a given page. 
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The default theme provides "ilink" and "tlink" spans for automatic linking to pages. 
+
+
+
+
+The links these spans generate contain the title of the destination page in a URL friendly query
+
+
+
+
+string (e.g. "
+
+
+<em class="">/en/2kiw8tvv/?todo-list</em>
+
+"). While that's not nearly as pretty as 
+
+
+
+
+"
+
+
+<em class="">/todo-list</em>
+
+" it does provide a human readable slug. 
+
+</p>
+
+
+
+<p>
+
+It's unclear from my research what impact using the slug in a query string has on SEO, but, 
+
+
+
+
+frankly, I don't really care. My goal is not to make sites that most pleases the search engines. It's
+
+
+
+
+to make an app that makes it as easy as possible to create content. Not having to
+
+
+
+
+fiddle with URLs supports that goal. 
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+All that said, Neopoligen supports setting up specific custom URLs by adding
+
+
+
+
+a 
+
+
+<code class="">-- path</code>
+
+ attribute to the 
+
+
+<code class="">-- metadata</code>
+
+ section of a file. 
+
+</p>
+
+
+
+<p>
+
+Personally, I rarely do this. I want to avoid link rot as much as possible and adding a custom URL
+
+
+
+
+means having to maintain it. Over the past few decades I've moved my sites enough that
+
+
+
+
+I've spent days worth of effort dealing with changing URLs. I've decided to opt out
+
+
+
+
+of that. Even for things like my "about" page. Sure, "/about" looks better than
+
+
+
+
+"/en/abcd1234/?about", but I doubt that's going to keep most people from clicking
+
+
+
+
+the link if they even think about it at all. I'd rather put my effort elsewhere.
+
+</p>
+
+
+
+</li>
+
+
+<li class="flow">
+
+
+<p>
+
+The "en" in the default URL paths comes from the default language that's defined for
+
+
+
+
+each site in its config file. This is done to  support internationalization/localization. 
+
+
+
+
+I'm not planning to add that any time soon but want to make sure the app and, more 
+
+
+
+
+importantly, the URLs are prepped for it.
+
+</p>
+
+
+
+</li>
+
+
+
+
+
+</ul>
+
+        <section>
+          <h2>Footnotes And References</h2>
+          <ul class="flow">
+      
+      <li class="footnote-ref"><div id="fnref-1-text">
+    <a href="#fnref-1-link">1</a>
+  </div><div class="flow">
+
+    
+        
+<p>
+
+The default set of templates for Neopoligen provide for
+
+
+
+
+automatic linking of footnote numbers in the text and
+
+
+
+
+the footnote itself at the bottom of the page. 
+
+</p>
+
+    
+
+</div><div>
+    <a href="#fnref-1-link">&#x2934;</a>
+  </div>
+</li>
+      </ul>
+      </section>
+    </main>
 <footer></footer>
 
 

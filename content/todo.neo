@@ -8,17 +8,17 @@ TODO List
 
 [x] Make Basic Sections Work
 
-[In-progress] Make Checklist Sections Work
-
-[] Make Comment Sections Work
+[In-progress] Make Checklist Sections Work (needs start/end parser)
 
 [x] Make List Sections Work
 
-[] Make Ordered List Section 
+[] Make Ordered List Sections Work
+
+[] Make Detailed List Section Work
 
 [x] Make Raw Sections Work
 
-[In-progress] Make YAML Sections Work 
+[In-progress] Make YAML Sections Work (needs start/end parser)
 
 [] Alt text for images
 
@@ -29,6 +29,8 @@ TODO List
 [] Override Output Paths
 
 [] Output collections of page links
+
+[] Auto generate page Table Of Contents from headers
 
 
 

@@ -11,7 +11,9 @@
   <img src="
     [!- for span in section.attr_spans.image -!]
       [@- theme.output_span(site, page_id, span) -@]
-    [!- endfor -!]" />
+    [!- endfor -!]" 
+    alt="Book cover for [! for span in section.attr_spans.title!][@- theme.output_span(site, page_id, span) -@][! endfor !] by [! for span in section.attr_spans.author!][@- theme.output_span(site, page_id, span) -@][! endfor !]"
+    />
   </div> 
   <div>
     <h4>
