@@ -301,11 +301,12 @@ Details on using GitHub and other free services are a work in progress.
   gap: 20px;
 }
 
+
 code {
-  background-color: #444;
   border: 1px solid #777;
   padding-inline: 0.2rem;
   border-radius: 0.2rem;
+  font-family: monospace;
 }
 
 .green {
@@ -473,14 +474,12 @@ if you're interested. You can also checkout my personal site (which is
 built from Neopoligen) at: <<link|alanwsmith.com|https://www.alanwsmith.com/>>
 
 
-
-
 -- footnote
 -- id: 1
 
 The default set of templates for Neopoligen provide for
 automatic linking of footnote numbers in the text and
-the footnote itself at the bottom of the page. 
+the footnote itself at the bottom of the page.
 
 
 -- metadata
