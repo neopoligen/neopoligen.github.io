@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Welcome To Neopoligen</title>
+<title>Neopoligen</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta property="og:title" content="Welcome To Neopoligen" />
+<meta property="og:title" content="Neopoligen" />
 <meta property="og:description" content="a post from alan w. smith" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.neopoligen.com/en/2ikuxluk/?welcome-to-neopoligen" />
+<meta property="og:url" content="https://www.neopoligen.com/en/2ikuxluk/?neopoligen" />
 <meta property="og:image" content="https://www.neopoligen.com/neo-images/default-og-image/1200w.jpg" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/theme/favicons/apple-touch-icon.png">
@@ -24,12 +24,18 @@
 <link rel="stylesheet" href="/theme/styles/theme.css" />
 <link rel="stylesheet" href="/theme/styles/syntax-highlighting/code-solarized-dark.css" /><style>
 
+.book-to-read-example-section {
+  font-size: 0.85rem;
+  border: 1px solid #333;
+  padding: 1.2rem;
+  border-radius: 0.3rem;
+}
+
 .book-grid {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 20px;
 }
-
 
 code {
   border: 1px solid #777;
@@ -66,7 +72,7 @@ u {
   
     <h1 class="page-title">
     
-      Welcome To Neopoligen
+      Neopoligen
     
     </h1>
     
@@ -98,7 +104,21 @@ Neopoligen is a free website building app. It's designed to
 
 
 
-make websites you can tinker with.
+make websites you can tinker with. It's largely a personal
+
+
+
+
+project, but I'm open
+
+-
+
+sourcing it for anyone else who likes
+
+
+
+
+to play around with different tools.
 
 </p>
 
@@ -137,9 +157,32 @@ if you want to follow along with the development.
 
     
 
+    
+        
+<p>
+
+(If you're wondering why I decided to make my own app
 
 
 
+
+you can check out 
+
+<a href="/en/2kn3czfj/?why-i-built-neopoligen">
+  Why I Built Neopoligen
+</a>
+
+)
+
+</p>
+
+    
+
+
+
+
+
+    
 
     
 
@@ -281,16 +324,13 @@ and a name like
 
  
 
-
 <code class="">-- title</code>
 
 , 
 
-
 <code class="">-- p</code>
 
  and 
-
 
 <code class="">-- metadata</code>
 
@@ -325,7 +365,6 @@ for things like storing the IDs of a pages which are used for linking.
 <p>
 
 Another type of section is 
-
 
 <code class="">-- list</code>
 
@@ -613,7 +652,6 @@ with two dashes after a section. For example,
 
 here's a 
 
-
 <code class="">-- class</code>
 
  attribute that's used to make the
@@ -763,7 +801,6 @@ in.
 
 For example, here's a new type of section called 
 
-
 <code class="">book-to-read-example</code>
 
  
@@ -794,7 +831,7 @@ with some attributes for the title, author, and cover image.
 <pre>-- book-to-read-example
 -- title: The Peripheral
 -- author: William Gibson
--- image: the-peripheral-cover.jpg
+-- image: &#x2f;neo-images&#x2f;the-peripheral-cover&#x2f;100w.jpg
 
 I&#x27;ve read a bunch of other William Gibson stuff and can&#x27;t
 wait to get to this one!</pre>
@@ -826,9 +863,7 @@ And here's an example of what it could look like
 
 
 
-<section class="neo-example p-section flow">
-
-<div>Book To Read</div>
+<section class="book-to-read-example-section flow">
 
 <div class="book-grid">
   <div class="book-image">
@@ -988,7 +1023,6 @@ The output looks like this
 
 The 
 
-
 <em class="">quick brown</em>
 
  fox
@@ -1104,9 +1138,7 @@ Which outputs
 
 The 
 
-
-<strong class="">
-<u class="">quick brown</u></strong>
+<strong class=""><u class="">quick brown</u></strong>
 
  fox
 
@@ -1211,7 +1243,6 @@ The output looks like this
 
 The 
 
-
 <em class="green">quick brown</em>
 
  fox
@@ -1259,7 +1290,6 @@ Spans work off templates the same way sections do. You can make your
 
 
 own with whatever functionality you want. The 
-
 
 <code class="">tlink</code>
 
@@ -1543,7 +1573,6 @@ static site hosting. The only real requirement is that the server automatically 
 
 files when a directory is called e.g. calling "
 
-
 <em class="">/en/abcd1234/</em>
 
 " returns the file
@@ -1552,7 +1581,6 @@ files when a directory is called e.g. calling "
 
 
 stored at "
-
 
 <em class="">/en/abcd1234/index.html</em>
 
@@ -1714,7 +1742,6 @@ to "published". Those values can be changed for any page by setting attributes i
 
 
 
-
 <code class="">-- metadata</code>
 
  section. The "type" and "status" are then used to determine which
@@ -1748,7 +1775,6 @@ All sections have a default template. Additional templates can be added for each
 
 type and then used by adding a 
 
-
 <code class="">-- template</code>
 
  attribute
@@ -1767,11 +1793,9 @@ type and then used by adding a
 
 Custom CSS and JavaScript can be added to pages via 
 
-
 <code class="">-- css</code>
 
  and 
-
 
 <code class="">-- javascript</code>
 
@@ -1864,7 +1888,6 @@ in a code block as well as output it to verify code samples do what they're supp
 <p>
 
 The default theme provides for 
-
 
 <code class="">-- head</code>
 
@@ -2113,7 +2136,6 @@ Neovim, VSCode, or any other app that works with LSPs
 
 Pages are output to URLs based off their IDs be default. (e.g. "
 
-
 <em class="">/en/2kiw8tvv/</em>
 
 "). 
@@ -2194,7 +2216,6 @@ The links these spans generate contain the title of the destination page in a UR
 
 string (e.g. "
 
-
 <em class="">/en/2kiw8tvv/?todo-list</em>
 
 "). While that's not nearly as pretty as 
@@ -2203,7 +2224,6 @@ string (e.g. "
 
 
 "
-
 
 <em class="">/todo-list</em>
 
@@ -2251,11 +2271,9 @@ All that said, Neopoligen supports setting up specific custom URLs by adding
 
 a 
 
-
 <code class="">-- path</code>
 
  attribute to the 
-
 
 <code class="">-- metadata</code>
 
@@ -2433,6 +2451,7 @@ built from Neopoligen) at
       
       <li class="footnote-ref"><div id="fnref-1-text">
     <a href="#fnref-1-link">1</a>
+    |
   </div><div class="flow">
 
     
@@ -2456,6 +2475,7 @@ the footnote itself at the bottom of the page.
     
 
 </div><div>
+  |
     <a href="#fnref-1-link">&#x2934;</a>
   </div>
 </li>
