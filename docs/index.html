@@ -8,7 +8,7 @@
 <meta property="og:title" content="Neopoligen" />
 <meta property="og:description" content="a post from alan w. smith" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.neopoligen.com/en/2ikuxluk/?neopoligen" />
+<meta property="og:url" content="https://www.neopoligen.com/en/2ikuxluk/?page=neopoligen" />
 <meta property="og:image" content="https://www.neopoligen.com/neo-images/default-og-image/1200w.jpg" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/theme/favicons/apple-touch-icon.png">
@@ -157,34 +157,48 @@ if you want to follow along with the development.
 
     
 
+
+
+
+
+    
+
+    
+
+</section>
+
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
     
         
 <p>
 
-(If you're wondering why I decided to make my own app
+If you're wondering why I decided to make my own app
 
 
 
 
 you can check out 
 
-<a href="/en/2kn3czfj/?why-i-built-neopoligen">
+<a href="/en/2kn3czfj/?page=why-i-built-neopoligen">
   Why I Built Neopoligen
 </a>
-
-)
 
 </p>
 
     
 
 
+</div>
 
 
-
-    
-
-    
 
     
 
@@ -253,9 +267,7 @@ Neopoligen sites are made from files that look like this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -324,15 +336,15 @@ and a name like
 
  
 
-<code class="">-- title</code>
+<code class=""><span class="text plain">-- title</span></code>
 
 , 
 
-<code class="">-- p</code>
+<code class=""><span class="text plain">-- p</span></code>
 
  and 
 
-<code class="">-- metadata</code>
+<code class=""><span class="text plain">-- metadata</span></code>
 
 . 
 
@@ -366,7 +378,7 @@ for things like storing the IDs of a pages which are used for linking.
 
 Another type of section is 
 
-<code class="">-- list</code>
+<code class=""><span class="text plain">-- list</span></code>
 
  which looks like this
 
@@ -384,9 +396,7 @@ Another type of section is
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -652,7 +662,7 @@ with two dashes after a section. For example,
 
 here's a 
 
-<code class="">-- class</code>
+<code class=""><span class="text plain">-- class</span></code>
 
  attribute that's used to make the
 
@@ -673,9 +683,7 @@ text in the section green.
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -801,7 +809,7 @@ in.
 
 For example, here's a new type of section called 
 
-<code class="">book-to-read-example</code>
+<code class=""><span class="text plain">book-to-read-example</span></code>
 
  
 
@@ -822,9 +830,7 @@ with some attributes for the title, author, and cover image.
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -978,9 +984,7 @@ For example, here's an "em" span that makes the text inside it italics
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1086,9 +1090,7 @@ and underlined (via "u").
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1198,9 +1200,7 @@ by a pipe character like this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1291,7 +1291,7 @@ Spans work off templates the same way sections do. You can make your
 
 own with whatever functionality you want. The 
 
-<code class="">tlink</code>
+<code class=""><span class="text plain">tlink</span></code>
 
  span 
 
@@ -1315,9 +1315,7 @@ and turns into into a link to that page using the page's title.
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1371,7 +1369,7 @@ Next Page
 
  
 
-<a href="/en/2kiw8tvv/?todo-list">
+<a href="/en/2kiw8tvv/?page=todo-list">
   TODO List
 </a>
 
@@ -1742,7 +1740,7 @@ to "published". Those values can be changed for any page by setting attributes i
 
 
 
-<code class="">-- metadata</code>
+<code class=""><span class="text plain">-- metadata</span></code>
 
  section. The "type" and "status" are then used to determine which
 
@@ -1775,7 +1773,7 @@ All sections have a default template. Additional templates can be added for each
 
 type and then used by adding a 
 
-<code class="">-- template</code>
+<code class=""><span class="text plain">-- template</span></code>
 
  attribute
 
@@ -1793,11 +1791,11 @@ type and then used by adding a
 
 Custom CSS and JavaScript can be added to pages via 
 
-<code class="">-- css</code>
+<code class=""><span class="text plain">-- css</span></code>
 
  and 
 
-<code class="">-- javascript</code>
+<code class=""><span class="text plain">-- javascript</span></code>
 
  
 
@@ -1889,7 +1887,7 @@ in a code block as well as output it to verify code samples do what they're supp
 
 The default theme provides for 
 
-<code class="">-- head</code>
+<code class=""><span class="text plain">-- head</span></code>
 
  sections. The content of those sections
 
@@ -2271,11 +2269,11 @@ All that said, Neopoligen supports setting up specific custom URLs by adding
 
 a 
 
-<code class="">-- path</code>
+<code class=""><span class="text plain">-- path</span></code>
 
  attribute to the 
 
-<code class="">-- metadata</code>
+<code class=""><span class="text plain">-- metadata</span></code>
 
  section of a file. 
 
@@ -2444,15 +2442,16 @@ built from Neopoligen) at
 
     
 
-</section>
-        <section>
-          <h2>Footnotes And References</h2>
-          <ul class="flow">
-      
-      <li class="footnote-ref"><div id="fnref-1-text">
+</section><div class="fin-token">~ fin ~</div>
+
+
+      <section>
+        <h2>Footnotes</h2>
+        <ul class="flow">
+    
+    <li class="footnote-ref"><div id="fnref-1-text" class="footnote-number">
     <a href="#fnref-1-link">1</a>
-    |
-  </div><div class="flow">
+  </div><div class="footnote-text"><div class="flow">
 
     
         
@@ -2474,14 +2473,14 @@ the footnote itself at the bottom of the page.
 
     
 
-</div><div>
-  |
+</div>
+</div><div class="footnote-return-arrow">
     <a href="#fnref-1-link">&#x2934;</a>
   </div>
 </li>
-      </ul>
-      </section>
-    </main>
+    </ul>
+    </section>
+  </main>
 <footer></footer>
 
 

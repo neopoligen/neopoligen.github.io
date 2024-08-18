@@ -8,7 +8,7 @@
 <meta property="og:title" content="Why I Built Neopoligen" />
 <meta property="og:description" content="a post from alan w. smith" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.neopoligen.com/en/2kn3czfj/?why-i-built-neopoligen" />
+<meta property="og:url" content="https://www.neopoligen.com/en/2kn3czfj/?page=why-i-built-neopoligen" />
 <meta property="og:image" content="https://www.neopoligen.com/neo-images/default-og-image/1200w.jpg" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/theme/favicons/apple-touch-icon.png">
@@ -23,6 +23,13 @@
 <link rel="stylesheet" href="/theme/styles/variables.css" />
 <link rel="stylesheet" href="/theme/styles/theme.css" />
 <link rel="stylesheet" href="/theme/styles/syntax-highlighting/code-solarized-dark.css" /><style>
+
+button {
+    color: red;
+    font-weight: bold;
+}
+
+</style><style>
 
 .book-grid {
   display: grid;
@@ -43,13 +50,6 @@
   border-radius: 0.3rem;
 }
 
-p > code {
-  border: 1px solid #777;
-  padding-inline: 0.2rem;
-  border-radius: 0.2rem;
-  font-family: monospace;
-}
-
 .green {
     color: green;
 }
@@ -65,7 +65,8 @@ p > code {
 
 function addToCounter() {
     const btn = document.querySelector("#count_btn")
-    btn.dataset.count = parseInt(btn.dataset.count, 10) + 1
+    const count = parseInt(btn.dataset.count, 10)
+    btn.dataset.count = count + 1
     btn.innerHTML = `Counter: ${btn.dataset.count}`
 }
 
@@ -675,7 +676,7 @@ You can read more details about how the format works on
 
 
 
-<a href="/en/2ikuxluk/?neopoligen">the home page</a>
+<a href="/en/2ikuxluk/?page=neopoligen">the home page</a>
 
 
 , but it mainly breaks down
@@ -862,6 +863,113 @@ possible.
   
     <h2 class="section-heading">
     
+      Templates Not JavaScript
+    
+    </h2>
+    
+  
+
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I'm tired of jumping JavaScript frameworks. One of the 
+
+
+
+
+final straws that sent me down the path of making my
+
+
+
+
+own site generator was  when I went fix a spelling 
+
+
+
+
+error on a site I hadn't touched in a few months and
+
+
+
+
+everything broke because some dependency in the 
+
+
+
+
+framework changed. 
+
+</p>
+
+
+
+
+    
+<p>
+
+Neopoligen is pretty basic at it's core. It parses
+
+
+
+
+Neopolitan files to create ASTs that are sent
+
+
+
+
+to the template engine for rendering. There's still
+
+
+
+
+some things to add to the AST, but the goal is to
+
+
+
+
+get the point where any changes are additive so that 
+
+
+
+
+existing templates will always continue to work with 
+
+
+
+
+future updates.
+
+</p>
+
+
+
+
+
+    
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
       Section Templates
     
     </h2>
@@ -937,9 +1045,7 @@ example"
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1079,9 +1185,7 @@ a template called "alt"
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1241,9 +1345,7 @@ Spans are sections of content that look like this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1331,24 +1433,60 @@ their text inside the corresponding HTML tag (e.g.
 
 
 
-"strong", "em", etc...). They also take attributes
-
-
-
-
-which can be used for things like setting a CSS 
-
-
-
-
-class on them. 
+"strong", "em", etc...). 
 
 </p>
 
     
 
+
+
+
+
     
-        
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Span Attributes
+    
+    </h2>
+    
+  
+
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Spans can take optional attributes. They can be
+
+
+
+
+used for things like setting a CSS class on them. 
+
+</p>
+
+
+
+
+    
 <p>
 
 For example, this
@@ -1357,20 +1495,17 @@ For example, this
 
 </p>
 
-    
 
 
 
-
-
-    
 
     
 
-</section>
+    
 
+    
 
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1452,7 +1587,7 @@ This is
   
     <h2 class="section-heading">
     
-      More On Span Templates
+      Advanced Span Templates
     
     </h2>
     
@@ -1494,9 +1629,7 @@ output. Take this "tablink" for example
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1609,6 +1742,190 @@ to identify that it's going to a new tab.
   
     <h2 class="section-heading">
     
+      Footnotes
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I love footnotes. They make it easier for me to write
+
+
+
+
+at a higher level then point to more detail later 
+
+
+
+
+which makes for better prose. There's a shorthand
+
+
+
+
+built into Neopoligen for adding the footnote numbers
+
+
+
+
+in the content that looks like this
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>This is a footnote^^6^^</pre>
+
+
+    
+</section>
+
+
+
+
+
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="neo-example p-section flow">
+
+
+
+    
+        
+<p>
+
+This is a footnote
+
+<sup><a 
+    href="#fnref-6-text"
+    id="fnref-6-link"
+    >6</a></sup>
+
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+These correspond to a footnote section that has
+
+
+
+
+an id attribute with the same number. For example,
+
+
+
+
+this is the section that produces the footnote
+
+
+
+
+that's at the bottom of the page
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+<section class="neo-example pre-section">
+
+
+
+<pre>-- footnote
+-- id: 6
+
+This is the target footnote for the example in
+the main content.</pre>
+
+
+    
+</section>
+
+
+
+
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
       Adding CSS
     
     </h2>
@@ -1639,7 +1956,7 @@ have little pieces of CSS. To help accommodate this I use a
 
 
 
-<code class="">-- css</code>
+<code class=""><span class="text plain">-- css</span></code>
 
  section type. The default template 
 
@@ -1693,12 +2010,21 @@ that
 
 
 
-to show the code on the page too. For example, 
+to show the code on the page too. For example, this
 
 
 
 
-this is the custom CSS that I've added to this page
+adds css for the 
+
+<code class=""><span class="source css"><span class="meta selector css"><span class="entity other attribute-name id css"><span class="punctuation definition entity css">#</span>count_btn</span></span></span></code>
+
+ to the
+
+
+
+
+page
 
 :
 
@@ -1714,52 +2040,65 @@ this is the custom CSS that I've added to this page
 
     
 
+</section><section class="neo-example pre-section">
+
+
+
+<pre>-- css
+-- template: show
+
+button {
+    color: red;
+    font-weight: bold;
+}</pre>
+
+
+    
 </section>
 
-<section class="code-section">
-
-
-<h3>CSS</h3>
 
 
 
 
-<pre class="code-pre"><code><span class="line-marker"></span><span class="source css"><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>book-grid</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">display</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant property-value css">grid</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">grid-template-columns</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">100<span class="keyword other unit css">px</span></span> <span class="constant numeric css">1<span class="keyword other unit css">fr</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css">gap</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">20<span class="keyword other unit css">px</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>book-grid-alt</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">display</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant property-value css">grid</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">grid-template-columns</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1<span class="keyword other unit css">fr</span></span> <span class="constant numeric css">100<span class="keyword other unit css">px</span></span> <span class="constant numeric css">1<span class="keyword other unit css">fr</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css">gap</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">20<span class="keyword other unit css">px</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>book-to-read-example-section</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.85<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1<span class="keyword other unit css">px</span></span> <span class="support constant property-value css">solid</span> <span class="constant other color rgb-value css"><span class="punctuation definition constant css">#</span>333</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">padding</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1.2<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border-radius</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.3<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity name tag css">p</span> <span class="punctuation separator combinator css">&gt;</span> <span class="entity name tag css">code</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1<span class="keyword other unit css">px</span></span> <span class="support constant property-value css">solid</span> <span class="constant other color rgb-value css"><span class="punctuation definition constant css">#</span>777</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">padding</span>-inline</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.2<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border-radius</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.2<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant font-name css">monospace</span></span><span class="punctuation terminator rule css">;</span></span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>green</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">color</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant color w3c-standard-color-name css">green</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span></span><span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta selector css"><span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>neo-example</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.85<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1<span class="keyword other unit css">px</span></span> <span class="support constant property-value css">solid</span> <span class="constant other color rgb-value css"><span class="punctuation definition constant css">#</span>333</span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">padding</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">1.2<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>  <span class="meta property-name css"><span class="support type property-name css">border-radius</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">0.3<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+And, it outputs this on the page
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="neo-example css-section">
+
+
+<h4>CSS</h4>
+
+
+<div class="pad-top-1">
+<pre class="code-pre"><code><span class="line-marker"></span><span class="source css"><span class="meta selector css"><span class="entity name tag css">button</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">color</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant color w3c-standard-color-name css">red</span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-weight</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="support constant property-value css">bold</span></span><span class="punctuation terminator rule css">;</span>
 <span class="line-marker"></span></span><span class="punctuation section property-list css">}</span></span></code></pre>
+</div>
+
 
 </section>
 
@@ -1880,9 +2219,7 @@ document. So, this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -1922,9 +2259,48 @@ Outputs
     
 
 </section>
+<section class="neo-example html-section">
 
 <button>This button does nothing</button>
 
+</section>
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+    
+        
+<p>
+
+The red/bold font in the button is from the 
+
+
+
+
+CSS that was added to the page in the 
+
+
+
+
+example above. 
+
+</p>
+
+    
+
+
+</div>
+
+
+
+    
+
+</section>
 
 
 <section class="h2-section flow">
@@ -1989,18 +2365,16 @@ For example, this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
 <pre>-- html
 -- template: show-above
 
-&lt;button 
-    id=&quot;count_btn&quot; 
-    data-count=&quot;0&quot;&gt;Counter: 0&lt;&#x2f;button&gt;</pre>
+&lt;button id=&quot;count_btn&quot; data-count=&quot;0&quot;&gt;
+    Counter: 0
+&lt;&#x2f;button&gt;</pre>
 
 
     
@@ -2034,16 +2408,60 @@ Outputs this
     
 
 </section>
-<h3>HTML</h3>
-<pre class="code-pre"><code><span class="line-marker"></span><span class="text html basic"><span class="meta tag inline form html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline form html">button</span> 
-<span class="line-marker"></span>    <span class="meta attribute-with-value id html"><span class="entity other attribute-name id html">id</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value id html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value id html"><span class="string quoted double html"><span class="meta toc-list id html">count_btn</span><span class="punctuation definition string end html">&quot;</span></span></span> 
-<span class="line-marker"></span>    <span class="meta attribute-with-value html"><span class="entity other attribute-name html">data-count</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span>0<span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>Counter: 0<span class="meta tag inline form html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline form html">button</span><span class="punctuation definition tag end html">&gt;</span></span></span></code></pre>
+<section class="neo-example html-section">
+<h4>HTML</h4>
+<div class="pad-top-1">
+<pre class="code-pre"><code><span class="line-marker"></span><span class="text html basic"><span class="meta tag inline form html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline form html">button</span> <span class="meta attribute-with-value id html"><span class="entity other attribute-name id html">id</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value id html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value id html"><span class="string quoted double html"><span class="meta toc-list id html">count_btn</span><span class="punctuation definition string end html">&quot;</span></span></span> <span class="meta attribute-with-value html"><span class="entity other attribute-name html">data-count</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span>0<span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span>    Counter: 0
+<span class="line-marker"></span><span class="meta tag inline form html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline form html">button</span><span class="punctuation definition tag end html">&gt;</span></span></span></code></pre>
+</div>
+
+<h4 class="pad-top-1">Output</h4>
+<div class="pad-top-1">
+
+<button id="count_btn" data-count="0">
+    Counter: 0
+</button>
+
+</div>
+</section>
+
+<section class="p-section flow">
 
 
-<button 
-    id="count_btn" 
-    data-count="0">Counter: 0</button>
 
+    
+        
+<p>
+
+This helps make sure that any HTML samples in 
+
+
+
+
+blog posts and tutorials actually work because
+
+
+
+
+the same code that's used for the DOM is what's
+
+
+
+
+actually displayed. 
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
 
 
 <section class="h2-section flow">
@@ -2121,9 +2539,7 @@ For example
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
@@ -2132,7 +2548,8 @@ For example
 
 function addToCounter() {
     const btn = document.querySelector(&quot;#count_btn&quot;)
-    btn.dataset.count = parseInt(btn.dataset.count, 10) + 1
+    const count = parseInt(btn.dataset.count, 10)
+    btn.dataset.count = count + 1
     btn.innerHTML = `Counter: ${btn.dataset.count}`
 }
 
@@ -2179,11 +2596,19 @@ outputs this on the page
 
 
 
-<h3>JavaScript</h3>
 
+
+<section class="neo-example javascript-section">
+
+
+<h4>JavaScript</h4>
+
+
+<div class="pad-top-1">
 <pre class="code-pre"><code><span class="line-marker"></span><span class="source js"><span class="meta function declaration js"><span class="storage type function js">function</span> <span class="entity name function js">addToCounter</span><span class="punctuation section group begin js">(</span><span class="punctuation section group end js">)</span><span class="meta function declaration js"> </span></span><span class="meta block js"><span class="punctuation section block js">{</span>
 <span class="line-marker"></span>    <span class="storage type js">const</span> <span class="variable other readwrite js">btn</span> <span class="keyword operator assignment js">=</span> <span class="support type object dom js">document</span><span class="punctuation accessor js">.</span><span class="meta function-call method js"><span class="variable function js">querySelector</span><span class="meta group js"><span class="punctuation section group js">(</span><span class="string quoted double js"><span class="punctuation definition string begin js">&quot;</span>#count_btn<span class="punctuation definition string end js">&quot;</span></span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span>
-<span class="line-marker"></span>    <span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">dataset</span><span class="punctuation accessor js">.</span><span class="meta property object js">count</span> <span class="keyword operator assignment js">=</span> <span class="meta function-call js"><span class="support function js">parseInt</span><span class="meta group js"><span class="punctuation section group js">(</span><span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">dataset</span><span class="punctuation accessor js">.</span><span class="meta property object js">count</span><span class="punctuation separator comma js">,</span> <span class="constant numeric js">10</span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span> <span class="keyword operator arithmetic js">+</span> <span class="constant numeric js">1</span>
+<span class="line-marker"></span>    <span class="storage type js">const</span> <span class="variable other readwrite js">count</span> <span class="keyword operator assignment js">=</span> <span class="meta function-call js"><span class="support function js">parseInt</span><span class="meta group js"><span class="punctuation section group js">(</span><span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">dataset</span><span class="punctuation accessor js">.</span><span class="meta property object js">count</span><span class="punctuation separator comma js">,</span> <span class="constant numeric js">10</span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span>
+<span class="line-marker"></span>    <span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">dataset</span><span class="punctuation accessor js">.</span><span class="meta property object js">count</span> <span class="keyword operator assignment js">=</span> <span class="variable other readwrite js">count</span> <span class="keyword operator arithmetic js">+</span> <span class="constant numeric js">1</span>
 <span class="line-marker"></span>    <span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">innerHTML</span> <span class="keyword operator assignment js">=</span> <span class="string template js"><span class="punctuation definition string template begin js">`</span>Counter: </span><span class="meta template expression js"><span class="punctuation definition template-expression begin js">${</span></span><span class="meta template expression js"><span class="source js embedded expression"><span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta property object js">dataset</span><span class="punctuation accessor js">.</span><span class="meta property object js">count</span></span><span class="punctuation definition template-expression end js">}</span></span><span class="string template js"><span class="punctuation definition string template end js">`</span></span>
 <span class="line-marker"></span><span class="punctuation section block js">}</span></span>
 <span class="line-marker"></span>
@@ -2191,6 +2616,7 @@ outputs this on the page
 <span class="line-marker"></span>    <span class="storage type js">const</span> <span class="variable other readwrite js">btn</span> <span class="keyword operator assignment js">=</span> <span class="support type object dom js">document</span><span class="punctuation accessor js">.</span><span class="meta function-call method js"><span class="variable function js">querySelector</span><span class="meta group js"><span class="punctuation section group js">(</span><span class="string quoted double js"><span class="punctuation definition string begin js">&quot;</span>#count_btn<span class="punctuation definition string end js">&quot;</span></span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span>
 <span class="line-marker"></span>    <span class="variable other object js">btn</span><span class="punctuation accessor js">.</span><span class="meta function-call method js"><span class="variable function js">addEventListener</span><span class="meta group js"><span class="punctuation section group js">(</span><span class="string quoted double js"><span class="punctuation definition string begin js">&quot;</span>click<span class="punctuation definition string end js">&quot;</span></span><span class="punctuation separator comma js">,</span> <span class="variable other readwrite js">addToCounter</span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span>
 <span class="line-marker"></span><span class="punctuation section block js">}</span></span></span><span class="meta group js"><span class="punctuation section group js">)</span></span></span></span></code></pre>
+</div></section>
 
 
 <section class="p-section flow">
@@ -2237,7 +2663,80 @@ actually work)
   
     <h2 class="section-heading">
     
-      Syntax Highlighting
+      External Scripts And 
+    
+      <
+    
+      head
+    
+      >
+    
+       Content
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+The 
+
+<code class=""><span class="text plain">-- head</span></code>
+
+ section is used to add things
+
+
+
+
+directly to the 
+
+<
+
+head
+
+>
+
+ of a page. This can be used to call
+
+
+
+
+external JS libraries like P5, D3, etc... or anything
+
+
+
+
+else that you need to load onto the page. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Section Syntax Highlighting
     
     </h2>
     
@@ -2262,7 +2761,7 @@ Neopoligen includes a built in syntax highlighter. I use
 
 it in 
 
-<code class="">-- code</code>
+<code class=""><span class="text plain">-- code</span></code>
 
  sections by passing the name of
 
@@ -2283,16 +2782,16 @@ the language like this
 
     
 
-</section>
-
-<section class="neo-example pre-section">
+</section><section class="neo-example pre-section">
 
 
 
 <pre>-- code
 -- rust
 
-println!(&quot;Hello, world&quot;);</pre>
+fn main() {
+    println!(&quot;Hello, world&quot;);
+}</pre>
 
 
     
@@ -2321,13 +2820,15 @@ Which outputs
 
 
 
-<section class="code-section">
+<section class="neo-example code-section">
 
 
 
 
 
-<pre class="code-pre"><code><span class="line-marker"></span><span class="source rust"><span class="support macro rust">println!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>Hello, world<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span></span></code></pre>
+<pre class="code-pre"><code><span class="line-marker"></span><span class="source rust"><span class="meta function rust"><span class="meta function rust"><span class="storage type function rust">fn</span> </span><span class="entity name function rust">main</span></span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters begin rust">(</span></span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters end rust">)</span></span></span></span><span class="meta function rust"> </span><span class="meta function rust"><span class="meta block rust"><span class="punctuation section block begin rust">{</span>
+<span class="line-marker"></span>    <span class="support macro rust">println!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>Hello, world<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
+<span class="line-marker"></span></span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span></span></span></code></pre>
 
 </section>
 
@@ -2376,13 +2877,749 @@ can be used as a target for adding CSS line numbers as seen above.
 </section>
 
 
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+    
+        
+<p>
+
+Eventually, this will be a web component that has a copy button, 
+
+
+
+
+displays the language, and has the ability to turn wrapping on 
+
+
+
+
+and off. It's just a matter of updating the template to make
+
+
+
+
+that happen. 
+
+</p>
+
+    
+
+
+</div>
+
+
+
+    
+
+</section>
+
+
 <section class="h2-section flow">
 <hgroup>
 
   
     <h2 class="section-heading">
     
-      No JavaScript Required
+      Span Syntax Highlighting
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Language specific syntax highlighting can be done one inline
+
+
+
+
+code too. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>Rust code: &lt;&lt;code|println!(&quot;hello&quot;);|rust&gt;&gt;</pre>
+
+
+    
+</section>
+
+
+<section class="p-section flow">
+
+
+    
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+    
+
+
+</section>
+
+
+
+
+
+<section class="neo-example p-section flow">
+
+
+
+    
+        
+<p>
+
+Rust code
+
+:
+
+ 
+
+<code class=""><span class="source rust"><span class="support macro rust">println!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>hello, world<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span></span></code>
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Responsive Image Optimization
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I used to be a professional photographer. I don't shoot
+
+
+
+
+as much these days, but I still want it to be easy to 
+
+
+
+
+work with photos. Neopoligen is set up so I can throw
+
+
+
+
+my full size images into a directory and it'll automatically
+
+
+
+
+make multiple sizes of them that can be used with 
+
+<code class=""><span class="text plain">srcset</span></code>
+
+.
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Calling Images By Name
+    
+    </h2>
+    
+  
+
+  
+
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Another image related thing I always found a pain was dealing
+
+
+
+
+with the paths for the images. Neopoligen deals with this
+
+
+
+
+by calling images by name regardless of where they are stored
+
+
+
+
+in the source images directory. The data returns to the 
+
+
+
+
+template includes all the available responsive sizes for
+
+
+
+
+building a 
+
+<code class=""><span class="text html basic">srcset</span></code>
+
+ attribute. 
+
+</p>
+
+
+
+
+    
+<p>
+
+You can also skip the extension. This means if you ever decide 
+
+
+
+
+to to something like upgrading all your .jpg files to .webp, 
+
+
+
+
+they'll continue to work without having to go back and re
+
+-
+
+name 
+
+
+
+
+everything. 
+
+</p>
+
+
+
+
+    
+<p>
+
+The default way to call an image looks like this
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>-- image
+-- large-test-image
+-- alt: The words &#x27;Large Test jpg&#x27; are in dark blue
+-- alt: text on a black background in the upper right.
+-- alt: Most of a red circle shows up in the upper left,
+-- alt: and most of the bottom is covered by a curved
+-- alt: blue shape that just gives some shape for
+-- alt: this test image.</pre>
+
+
+    
+</section>
+
+
+
+
+
+
+<img 
+src="/neo-images/large-test-image/4000w.jpg" />
+
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+The example also shows how alt text can be added to
+
+
+
+
+image including extended alt text that would otherwise
+
+
+
+
+end up in a single very long line in the content file. 
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+    
+        
+<p>
+
+I'm refactoring the way images handling. The srcset and alt
+
+
+
+
+text might not show depending on when you see this. 
+
+</p>
+
+    
+
+
+</div>
+
+
+
+    
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Automatic Image Alt Text Ingestion
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+The International Press Telecommunications Council
+
+<sup><a 
+    href="#fnref-7-text"
+    id="fnref-7-link"
+    >7</a></sup>
+
+
+ (which
+
+
+
+
+is responsible for setting standards for the new media) added
+
+
+
+
+Alt Text fields to their spec
+
+<sup><a 
+    href="#fnref-8-text"
+    id="fnref-8-link"
+    >8</a></sup>
+
+
+. These have been included in
+
+
+
+
+Photo Mechanic, Photoshop, Brdige, and Lightroom (the tools I use
+
+
+
+
+for editing my photographs). This means you can store alt
+
+
+
+
+text directly in your images. Neopoligen pulls that metadata
+
+
+
+
+if it's available and uses it for image alt text. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="aside-section">
+    <div class="aside-title">Aside</div>
+<aside class="flow">
+
+
+    
+        
+<p>
+
+I love only having to edit image metadata once per image and
+
+
+
+
+doing it when I make the image instead of when I'm trying
+
+
+
+
+to include it. With luck, everything will work this way eventually.
+
+</p>
+
+    
+
+
+</aside>
+
+
+
+    
+
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Open Graph Image Generation
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Neopoligen is set up to automatically generate Open Graph images
+
+
+
+
+that include the title of the page for use in previewing
+
+
+
+
+on other sites. You can also create custom ones for individual
+
+
+
+
+posts as well. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      RSS Feeds
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I love RSS Feeds. There's been a bit of a resurgence of them
+
+
+
+
+recently and I want to participate. I'm still figuring out
+
+
+
+
+the exact approach I want to use but Neopoligen will be able
+
+
+
+
+to provide multiple feeds that can be filtered based off
+
+
+
+
+different criteria (e.g. just posts, just photos, or everything)  
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      RSS Timeline
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I'm still working on this, but the basic idea is to create
+
+
+
+
+a list of other RSS feeds and then include links to the 
+
+
+
+
+individual posts as a form of timeline. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Microblog
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Microblog style posts can be made without having to worry 
+
+
+
+
+about making a title. 
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      DB Style Collections
     
     </h2>
     
@@ -2402,32 +3639,41 @@ can be used as a target for adding CSS line numbers as seen above.
     
 <p>
 
-I'm tired of jumping JavaScript frameworks. One of the 
+This is still a work in progress, but the goal is to be able 
 
 
 
 
-final straws that sent me down the path of making my
+to query across all my content files to make collections out
 
 
 
 
-own site generator was  when I went fix a spelling 
+of them. For example, I'm making a book section type. By adding
 
 
 
 
-error on a site I hadn't touched in a few months and
+and 
+
+<code class=""><span class="text plain">-- read</span></code>
+
+ attribute to it I can create pages
 
 
 
 
-everything broke because some dependency in the 
+showing what I want to read and what I've read independently. 
 
 
 
 
-framework changed. 
+When I read a book, I'll update the attribute for it and it'll
+
+
+
+
+move automatically. 
 
 </p>
 
@@ -2437,37 +3683,17 @@ framework changed.
     
 <p>
 
-Neopoligen is pretty basic at it's core. It parses
+This is actually one of the most exciting things for me. The idea
 
 
 
 
-Neopolitan files to create ASTs that are sent
+that I can use flat files to store content and then query things
 
 
 
 
-to the template engine for rendering. There's still
-
-
-
-
-some things to add to the AST, but the goal is to
-
-
-
-
-get the point where any changes are additive so that 
-
-
-
-
-existing templates will always continue to work with 
-
-
-
-
-future updates.
+like a database opens the door for so many possibilities. 
 
 </p>
 
@@ -2482,6 +3708,360 @@ future updates.
     
 
 </section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Permanent URLs
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I don't want to have to think about URLs. And, if I 
+
+
+
+
+ever migrate to new software I want to make it as easy
+
+
+
+
+as possible to match the existing URls so I don't have to
+
+
+
+
+do a bunch of redirects. To address this I set up 
+
+
+
+
+Neopoligen so that every page must have an ID and that
+
+
+
+
+ID is what's used by default for the URL. The base 
+
+
+
+
+URL for any post is
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section>
+
+<section class="neo-example pre-section">
+
+
+<pre>/LANGUAGE/ID</pre>
+
+</section>
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+For example, this page is always available at
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="neo-example pre-section">
+
+
+<pre>/en/2kn3czfj</pre>
+
+</section>
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+URLs are made more human readable to appending the
+
+
+
+
+title in a "query parameter" like this
+
+:
+
+</p>
+
+    
+
+
+
+
+
+    
+
+</section>
+
+
+<section class="neo-example pre-section">
+
+
+<pre>/en/2kn3czfj/?page=why-i-built-neopoligen</pre>
+
+</section>
+
+<section class="p-section flow">
+
+
+
+    
+        
+<p>
+
+Because of the way the site is served the title
+
+
+
+
+can change and both the old and new URLs 
+
+
+
+
+will continue to work without having to build
+
+
+
+
+a redirects setup.
+
+</p>
+
+    
+
+    
+        
+<p>
+
+They aren't the prettiest URLs. I'm also unsure
+
+
+
+
+of what the SEO impact of moving the titles to 
+
+
+
+
+query strings is. But, I don't care. This is 
+
+
+
+
+very much a case where I prefer function (designed
+
+
+
+
+to prevent link rot) over form. 
+
+</p>
+
+    
+
+
+
+
+
+    
+
+    
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Automatic Linking
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+Because URLs are ID based it's trivial to use them
+
+
+
+
+to create links between pages. Two built
+
+-
+
+in templates
+
+
+
+
+provide links with either custom text or the 
+
+
+
+
+title of the page being linked to. For example
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>This is a &lt;&lt;ilink|custom text link|2kiw8tvv&gt;&gt;
+
+Link with title: &lt;&lt;tlink|2kiw8tvv&gt;&gt;</pre>
+
+
+    
+</section>
+
+
+<section class="p-section flow">
+
+
+    
+        
+<p>
+
+Outputs
+
+:
+
+</p>
+
+    
+
+
+</section>
+
+
+
+
+
+<section class="neo-example p-section flow">
+
+
+
+    
+        
+<p>
+
+This is a 
+
+<a href="/en/2kiw8tvv/?page=todo-list">custom text link</a>
+
+
+</p>
+
+    
+
+    
+        
+<p>
+
+Link with title
+
+:
+
+ 
+
+<a href="/en/2kiw8tvv/?page=todo-list">
+  TODO List
+</a>
+
+</p>
+
+    
+
+
+
+
+
+    
+
+    
+
+</section>
+
 
 <section class="h2-section flow">
 <hgroup>
@@ -2499,6 +4079,8 @@ future updates.
 
   
 
+  
+
 </hgroup>
 
 
@@ -2509,41 +4091,37 @@ future updates.
     
 <p>
 
-Those are some of the highlights of why I went
+I've been working on Neopolitan and Neopoligen 
 
 
 
 
-down this path. It's been a couple of years work
+for a couple years at this point. The idea above
 
 
 
 
-at this point. I'm already using Neopoligen on
+are the refinement of all that time. My goal is
 
 
 
 
-this site and 
-
-
-<a href="https://www.alanwsmith.com/">my personal site</a>
-
-.
+to be able to use the format and the engine for 
 
 
 
 
-There's still some stuff left to implement, but
+the next twenty years. But, even if the engine
 
 
 
 
-the design is pretty well locked
+doesn't last, I'm pretty confident at this point
 
--
 
-in. 
+
+
+that the format will stick with me. 
 
 </p>
 
@@ -2558,7 +4136,28 @@ It's been a lot of work, but I couldn't be
 
 
 
-happier with the result. 
+happier with the results. 
+
+</p>
+
+
+
+
+    
+<p>
+
+If you've got any questions or just want to reach
+
+
+
+
+out, you can hit me up on 
+
+
+
+
+
+<a href="https://hachyderm.io/@TheIdOfAlan">Mastodon</a>
 
 </p>
 
@@ -2572,15 +4171,18 @@ happier with the result.
 
     
 
-</section>
-        <section>
-          <h2>Footnotes And References</h2>
-          <ul class="flow">
-      
-      <li class="footnote-ref"><div id="fnref-1-text">
+    
+
+</section><div class="fin-token">~ fin ~</div>
+
+
+      <section>
+        <h2>Footnotes</h2>
+        <ul class="flow">
+    
+    <li class="footnote-ref"><div id="fnref-1-text" class="footnote-number">
     <a href="#fnref-1-link">1</a>
-    |
-  </div><div><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a><div class="flow">
+  </div><div class="footnote-text"><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a><div class="flow">
 
     
         
@@ -2598,14 +4200,12 @@ over the place in the tech world.
     
 
 </div>
-</div><div>
-  |
+</div><div class="footnote-return-arrow">
     <a href="#fnref-1-link">&#x2934;</a>
   </div>
-</li><li class="footnote-ref"><div id="fnref-2-text">
+</li><li class="footnote-ref"><div id="fnref-2-text" class="footnote-number">
     <a href="#fnref-2-link">2</a>
-    |
-  </div><div><a href="https://mdxjs.com/">MDX</a><div class="flow">
+  </div><div class="footnote-text"><a href="https://mdxjs.com/">MDX</a><div class="flow">
 
     
         
@@ -2618,14 +4218,12 @@ A way to add JSX to Markdown
     
 
 </div>
-</div><div>
-  |
+</div><div class="footnote-return-arrow">
     <a href="#fnref-2-link">&#x2934;</a>
   </div>
-</li><li class="footnote-ref"><div id="fnref-3-text">
+</li><li class="footnote-ref"><div id="fnref-3-text" class="footnote-number">
     <a href="#fnref-3-link">3</a>
-    |
-  </div><div class="flow">
+  </div><div class="footnote-text"><div class="flow">
 
     
         
@@ -2642,14 +4240,13 @@ using more complicated data structures
 
     
 
-</div><div>
-  |
+</div>
+</div><div class="footnote-return-arrow">
     <a href="#fnref-3-link">&#x2934;</a>
   </div>
-</li><li class="footnote-ref"><div id="fnref-4-text">
+</li><li class="footnote-ref"><div id="fnref-4-text" class="footnote-number">
     <a href="#fnref-4-link">4</a>
-    |
-  </div><div><a href="https://docs.rs/minijinja/latest/minijinja/">MiniJinja</a><div class="flow">
+  </div><div class="footnote-text"><a href="https://docs.rs/minijinja/latest/minijinja/">MiniJinja</a><div class="flow">
 
     
         
@@ -2667,14 +4264,12 @@ engine from Python
     
 
 </div>
-</div><div>
-  |
+</div><div class="footnote-return-arrow">
     <a href="#fnref-4-link">&#x2934;</a>
   </div>
-</li><li class="footnote-ref"><div id="fnref-5-text">
+</li><li class="footnote-ref"><div id="fnref-5-text" class="footnote-number">
     <a href="#fnref-5-link">5</a>
-    |
-  </div><div class="flow">
+  </div><div class="footnote-text"><div class="flow">
 
     
         
@@ -2691,14 +4286,78 @@ or span type a generic replacement is used
 
     
 
-</div><div>
-  |
+</div>
+</div><div class="footnote-return-arrow">
     <a href="#fnref-5-link">&#x2934;</a>
   </div>
+</li><li class="footnote-ref"><div id="fnref-6-text" class="footnote-number">
+    <a href="#fnref-6-link">6</a>
+  </div><div class="footnote-text"><div class="flow">
+
+    
+        
+<p>
+
+This is the target footnote for the example in
+
+
+
+
+the main content. Note that there's nothing magical 
+
+
+
+
+about them. They are built from section and span
+
+
+
+
+templates just like everything else.
+
+</p>
+
+    
+
+</div>
+</div><div class="footnote-return-arrow">
+    <a href="#fnref-6-link">&#x2934;</a>
+  </div>
+</li><li class="footnote-ref"><div id="fnref-7-text" class="footnote-number">
+    <a href="#fnref-7-link">7</a>
+  </div><div class="footnote-text"><a href="https://iptc.org/">International Press Telecommunications Council</a><div class="flow">
+
+    
+        
+<p>
+
+The global standards body of the news media. Responsible
+
+
+
+
+for making the IPTC metadata spec.
+
+</p>
+
+    
+
+</div>
+</div><div class="footnote-return-arrow">
+    <a href="#fnref-7-link">&#x2934;</a>
+  </div>
+</li><li class="footnote-ref"><div id="fnref-8-text" class="footnote-number">
+    <a href="#fnref-8-link">8</a>
+  </div><div class="footnote-text"><a href="https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/">IPTC Announces New Properties in Photo Metadata to Make Images More Accessible</a><div class="flow">
+
+</div>
+</div><div class="footnote-return-arrow">
+    <a href="#fnref-8-link">&#x2934;</a>
+  </div>
 </li>
-      </ul>
-      </section>
-    </main>
+    </ul>
+    </section>
+  </main>
 <footer></footer>
 
 

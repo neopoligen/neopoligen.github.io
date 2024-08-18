@@ -46,15 +46,17 @@ body { background-color: #111; color: #aaa; }
 <h4>Got:</h4>
 <pre>
 &lt;li class=&quot;footnote-ref&quot;&gt;
-  &lt;div id=&quot;fnref-1-text&quot;&gt;
+  &lt;div id=&quot;fnref-1-text&quot; class=&quot;footnote-number&quot;&gt;
     &lt;a href=&quot;#fnref-1-link&quot;&gt;1
-    &lt;&#x2f;a&gt;|
+    &lt;&#x2f;a&gt;
   &lt;&#x2f;div&gt;
-  &lt;div class=&quot;flow&quot;&gt;
-    &lt;p&gt;Some Text
-    &lt;&#x2f;p&gt;
+  &lt;div class=&quot;footnote-text&quot;&gt;
+    &lt;div class=&quot;flow&quot;&gt;
+      &lt;p&gt;Some Text
+      &lt;&#x2f;p&gt;
+    &lt;&#x2f;div&gt;
   &lt;&#x2f;div&gt;
-  &lt;div&gt;|
+  &lt;div class=&quot;footnote-return-arrow&quot;&gt;
     &lt;a href=&quot;#fnref-1-link&quot;&gt;&amp;#x2934;
     &lt;&#x2f;a&gt;
   &lt;&#x2f;div&gt;
@@ -82,18 +84,14 @@ body { background-color: #111; color: #aaa; }
 </pre>
 <h4>Got:</h4>
 <pre>
-&lt;li class=&quot;footnote-ref&quot;&gt;
-  &lt;div&gt;&amp;bullet; |
-  &lt;&#x2f;div&gt;
+&lt;li class=&quot;ref-item&quot;&gt;
   &lt;div&gt;
     &lt;a href=&quot;https:&#x2f;&#x2f;www.example.com&#x2f;&quot;&gt;Some Reference
     &lt;&#x2f;a&gt;
-    &lt;div class=&quot;flow&quot;&gt;
-      &lt;p&gt;Some Text
-      &lt;&#x2f;p&gt;
-    &lt;&#x2f;div&gt;
   &lt;&#x2f;div&gt;
-  &lt;div&gt;
+  &lt;div class=&quot;flow&quot;&gt;
+    &lt;p&gt;Some Text
+    &lt;&#x2f;p&gt;
   &lt;&#x2f;div&gt;
 &lt;&#x2f;li&gt;
 
