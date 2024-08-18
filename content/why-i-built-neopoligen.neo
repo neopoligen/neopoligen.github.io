@@ -717,7 +717,12 @@ end up in a single very long line in the content file.
 -- note
 
 I'm refactoring the way images handling. The srcset and alt
-text might not show depending on when you see this. 
+text might not show depending on when you see this. And, yes,
+if you have two files with the same name it creates a "race
+condition" where you don't know which image will show up. 
+I'm adding a feature to warn you about that, but either way
+it's a minor issue compared to the convenience of not 
+having to mess with file paths. 
 
 
 
