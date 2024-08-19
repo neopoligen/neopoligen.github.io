@@ -50,6 +50,19 @@ button {
   border-radius: 0.3rem;
 }
 
+.example-grid {
+  --min: 15ch;
+  --gap: 1rem;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(
+    auto-fit, 
+    minmax(
+      min(100%, var(--min)), 1fr
+    )
+  );
+}
+
 .green {
     color: green;
 }
@@ -96,8 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 </hgroup>
-
-
 
 
 
@@ -192,7 +203,7 @@ about the websites. It was about replacing markdown.
 <div class="flow">
 
 
-    
+      
         
 <p>
 
@@ -207,7 +218,8 @@ If you want to see what my format looks like you can
 
 </p>
 
-    
+      
+
 
 
 </div>
@@ -386,16 +398,13 @@ in way to apply attributes to inline text
 
 
 
-
-
 </ul>
 
 
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -408,13 +417,14 @@ me on the search for something else.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -424,7 +434,7 @@ me on the search for something else.
 <aside class="flow">
 
 
-    
+      
         
 <p>
 
@@ -442,7 +452,8 @@ things natively.
 
 </p>
 
-    
+      
+
 
 
 </aside>
@@ -653,6 +664,113 @@ keep it as simple as possible.
   
     <h2 class="section-heading">
     
+      Templates Not JavaScript
+    
+    </h2>
+    
+  
+
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I'm tired of jumping JavaScript frameworks. One of the 
+
+
+
+
+final straws that sent me down the path of making my
+
+
+
+
+own site generator was  when I went fix a spelling 
+
+
+
+
+error on a site I hadn't touched in a few months and
+
+
+
+
+everything broke because some dependency in the 
+
+
+
+
+framework changed. 
+
+</p>
+
+
+
+
+    
+<p>
+
+Neopoligen is pretty basic at it's core. It parses
+
+
+
+
+Neopolitan files to create ASTs that are sent
+
+
+
+
+to the template engine for rendering. There's still
+
+
+
+
+some things to add to the AST, but the goal is to
+
+
+
+
+get the point where any changes are additive so that 
+
+
+
+
+existing templates will always continue to work with 
+
+
+
+
+future updates.
+
+</p>
+
+
+
+
+
+    
+
+    
+
+    
+
+</section>
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
       Neopolitan Sections And Spans
     
     </h2>
@@ -787,16 +905,13 @@ Each span can have attributes
 
 
 
-
-
 </ul>
 
 
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -819,9 +934,9 @@ new ones on the fly.
 
 </p>
 
-    
+      
 
-    
+      
         
 <p>
 
@@ -844,7 +959,7 @@ possible.
 
 </p>
 
-    
+      
 
 
 
@@ -853,6 +968,7 @@ possible.
     
 
     
+
 
 </section>
 
@@ -863,12 +979,10 @@ possible.
   
     <h2 class="section-heading">
     
-      Templates Not JavaScript
+      Sections
     
     </h2>
     
-  
-
   
 
   
@@ -883,34 +997,167 @@ possible.
     
 <p>
 
-I'm tired of jumping JavaScript frameworks. One of the 
+Neopolitan sections open with a line that has two 
 
 
 
 
-final straws that sent me down the path of making my
+dashes followed by the kind of section. For example
 
-
-
-
-own site generator was  when I went fix a spelling 
-
-
-
-
-error on a site I hadn't touched in a few months and
-
-
-
-
-everything broke because some dependency in the 
-
-
-
-
-framework changed. 
+:
 
 </p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>-- note
+
+This is a note
+
+-- aside
+
+This is an aside
+
+-- warning
+
+This is a warning</pre>
+
+
+    
+</section>
+
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+      
+
+
+
+</section>
+
+
+
+
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+      
+        
+<p>
+
+This is a note
+
+</p>
+
+      
+
+
+
+</div>
+
+
+
+    
+
+</section>
+
+
+<section class="aside-section">
+    <div class="aside-title">Aside</div>
+<aside class="flow">
+
+
+      
+        
+<p>
+
+This is an aside
+
+</p>
+
+      
+
+
+
+</aside>
+
+
+
+    
+
+
+</section>
+<section class="warning-section">
+
+<div class="note-title">
+Warning</div>
+
+<div class="flow">
+
+
+      
+        
+<p>
+
+This is a warning
+
+</p>
+
+      
+
+
+
+</div>
+
+
+
+</section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Section Attributes
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
 
 
 
@@ -918,37 +1165,29 @@ framework changed.
     
 <p>
 
-Neopoligen is pretty basic at it's core. It parses
+Section attributes are created by adding lines
 
 
 
 
-Neopolitan files to create ASTs that are sent
+started with two dashes directly below the opening 
 
 
 
 
-to the template engine for rendering. There's still
+section line. For example, here's a "class" attribute
 
 
 
 
-some things to add to the AST, but the goal is to
+added to a "p" section to apply a CSS style to 
 
 
 
 
-get the point where any changes are additive so that 
+the section to change the of the text
 
-
-
-
-existing templates will always continue to work with 
-
-
-
-
-future updates.
+:
 
 </p>
 
@@ -960,9 +1199,79 @@ future updates.
 
     
 
+</section><section class="neo-example pre-section">
+
+
+
+<pre>-- p
+-- class: green
+
+Pour the stew from the pot into the plate
+
+Raise the sail and steer the ship northward</pre>
+
+
     
+</section>
+
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+      
+
+
 
 </section>
+
+
+
+
+
+<section class="neo-example green p-section flow">
+
+
+      
+        
+<p>
+
+Pour the stew from the pot into the plate
+
+</p>
+
+      
+
+      
+        
+<p>
+
+Raise the sail and steer the ship northward
+
+</p>
+
+      
+
+
+
+
+
+    
+
+    
+
+
+</section>
+
 
 <section class="h2-section flow">
 <hgroup>
@@ -1014,12 +1323,17 @@ sections to corresponding MiniJinja
 
 
 
-Each type of section has a default template. For example,
+There are several templates built into the app, but you 
 
 
 
 
-here's a section type I made called "book
+can also make your own. For example, here's a section type
+
+
+
+
+ I made called "book
 
 -
 
@@ -1065,7 +1379,7 @@ wait to get to this one!</pre>
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -1075,7 +1389,8 @@ Which looks like this
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -1102,7 +1417,7 @@ Which looks like this
     </div>
     
 
-    
+      
         
 <p>
 
@@ -1115,7 +1430,8 @@ wait to get to this one!
 
 </p>
 
-    
+      
+
 
 
   </div>
@@ -1126,6 +1442,44 @@ wait to get to this one!
     
 
 </section>
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+It's important to point out that there's no difference
+
+
+
+
+between the templates that ship with Neopoligen and the
+
+
+
+
+ones you make. You can make as many arbitrary sections
+
+
+
+
+as you want. They are all treated the same way.
+
+</p>
+
+      
+
+
+
+
+
+    
+
+
+</section>
+
 
 <section class="h2-section flow">
 <hgroup>
@@ -1141,6 +1495,8 @@ wait to get to this one!
 
   
 
+  
+
 </hgroup>
 
 
@@ -1151,20 +1507,30 @@ wait to get to this one!
     
 <p>
 
-Additional templates can be built for any section 
+Each section has a default template. Additional 
 
 
 
 
-type. Switching to one of the alternates is done
+templates can be built for them as well. Switching 
 
 
 
 
-by adding a "template" attribute to the section. 
+to one of the alternates is done by adding a 
 
 
 
+
+"template" attribute to the section. 
+
+</p>
+
+
+
+
+    
+<p>
 
 Here's the same example as above but calling
 
@@ -1180,6 +1546,8 @@ a template called "alt"
 
 
 
+
+    
 
     
 
@@ -1206,7 +1574,7 @@ wait to get to this one!</pre>
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -1216,7 +1584,8 @@ Which looks like this
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -1242,7 +1611,7 @@ Which looks like this
   <div>
     
 
-    
+      
         
 <p>
 
@@ -1255,7 +1624,8 @@ wait to get to this one!
 
 </p>
 
-    
+      
+
 
 
   </div>
@@ -1282,12 +1652,11 @@ wait to get to this one!
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
-The biggest point here is there's a clean separation between
+There's a clean separation of concerns between
 
 
 
@@ -1296,13 +1665,14 @@ the content and the layout.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1313,7 +1683,239 @@ the content and the layout.
   
     <h2 class="section-heading">
     
-      Span Templates
+      Nesting Sections
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+One of the biggest differences between Neopolitan and
+
+
+
+
+markdown is that sections can be nested. This is done
+
+
+
+
+by adding a "/" to the end of a section name where
+
+
+
+
+you want the nesting to start and then closing the
+
+
+
+
+nesting with a corresponding section that starts with 
+
+
+
+
+a "/". For example
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>-- div&#x2f;
+-- class: example-grid
+
+    -- note
+
+    Fly by night, and you waste little time
+
+    -- note
+
+    Pull the dart from the cork target
+
+    -- note
+
+    Pick a card and slip it under the pack
+
+-- &#x2f;div</pre>
+
+
+    
+</section>
+
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+Outputs
+
+:
+
+</p>
+
+      
+
+
+
+</section>
+
+
+
+<section class="example-grid unknown-section flow">
+
+      
+        
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+      
+        
+<p>
+
+Fly by night, and you waste little time
+
+</p>
+
+      
+
+
+
+</div>
+
+
+
+    
+
+</section>
+
+      
+
+      
+        
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+      
+        
+<p>
+
+Pull the dart from the cork target
+
+</p>
+
+      
+
+
+
+</div>
+
+
+
+    
+
+</section>
+
+      
+
+      
+        
+
+<section class="note-section">
+
+<div class="note-title">
+Note</div>
+
+<div class="flow">
+
+
+      
+        
+<p>
+
+Pick a card and slip it under the pack
+
+</p>
+
+      
+
+
+
+</div>
+
+
+
+    
+
+</section>
+
+      
+
+      
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+
+</section>
+
+
+
+    
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Spans
     
     </h2>
     
@@ -1363,8 +1965,7 @@ Spans are sections of content that look like this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1374,13 +1975,14 @@ Which outputs
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1388,24 +1990,26 @@ Which outputs
 <section class="neo-example p-section flow">
 
 
-
-    
+      
         
 <p>
 
 This is 
 
-<strong class="">bold text</strong>
+<strong 
+
+>bold text</strong>
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1413,8 +2017,7 @@ This is
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1437,13 +2040,14 @@ their text inside the corresponding HTML tag (e.g.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1523,8 +2127,7 @@ For example, this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1534,13 +2137,14 @@ Turns into this
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1548,24 +2152,27 @@ Turns into this
 <section class="neo-example p-section flow">
 
 
-
-    
+      
         
 <p>
 
 This is 
 
-<strong class="green">green bold text</strong>
+<strong 
+ class="green"
+
+>green bold text</strong>
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1587,7 +2194,7 @@ This is
   
     <h2 class="section-heading">
     
-      Advanced Span Templates
+      Span Templates
     
     </h2>
     
@@ -1647,8 +2254,7 @@ output. Take this "tablink" for example
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1663,13 +2269,14 @@ opens in a different tab like this
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1677,8 +2284,7 @@ opens in a different tab like this
 <section class="neo-example p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1688,13 +2294,14 @@ opens in a different tab like this
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1702,8 +2309,7 @@ opens in a different tab like this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -1725,13 +2331,14 @@ to identify that it's going to a new tab.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -1742,10 +2349,16 @@ to identify that it's going to a new tab.
   
     <h2 class="section-heading">
     
-      Footnotes
+      Built
+    
+      -
+    
+      In Test Suite
     
     </h2>
     
+  
+
   
 
   
@@ -1760,27 +2373,37 @@ to identify that it's going to a new tab.
     
 <p>
 
-I love footnotes. They make it easier for me to write
+Each template can have a set of tests associated with it
 
 
 
 
-at a higher level then point to more detail later 
+to make sure it's doing the right thing. All the tests
 
 
 
 
-which makes for better prose. There's a shorthand
+are run each time a site is generated and a report shows
 
 
 
 
-built into Neopoligen for adding the footnote numbers
+any errors. 
+
+</p>
 
 
 
 
-in the content that looks like this
+    
+<p>
+
+The tests themselves are done in Neopolitan files that
+
+
+
+
+look like this
 
 :
 
@@ -1789,6 +2412,8 @@ in the content that looks like this
 
 
 
+
+    
 
     
 
@@ -1798,118 +2423,22 @@ in the content that looks like this
 
 
 
-<pre>This is a footnote^^6^^</pre>
+<pre>-- start-theme-test
 
+-- p
 
-    
-</section>
+Alfa bravo charlie 
 
+Delta echo foxtrot
 
+-- expected-output&#x2f;
 
+&lt;section class=&quot;p-section flow&quot;&gt;
+&lt;p&gt;Alfa bravo charlie&lt;&#x2f;p&gt;
+&lt;p&gt;Delta echo foxtrot&lt;&#x2f;p&gt;
+&lt;&#x2f;section&gt;
 
-
-
-<section class="p-section flow">
-
-
-
-    
-        
-<p>
-
-Which outputs
-
-:
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-
-
-<section class="neo-example p-section flow">
-
-
-
-    
-        
-<p>
-
-This is a footnote
-
-<sup><a 
-    href="#fnref-6-text"
-    id="fnref-6-link"
-    >6</a></sup>
-
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-
-
-<section class="p-section flow">
-
-
-
-    
-        
-<p>
-
-These correspond to a footnote section that has
-
-
-
-
-an id attribute with the same number. For example,
-
-
-
-
-this is the section that produces the footnote
-
-
-
-
-that's at the bottom of the page
-
-:
-
-</p>
-
-    
-
-
-
-
-
-    
-
-</section>
-<section class="neo-example pre-section">
-
-
-
-<pre>-- footnote
--- id: 6
-
-This is the target footnote for the example in
-the main content.</pre>
+-- &#x2f;expected-output</pre>
 
 
     
@@ -2003,7 +2532,9 @@ Of course, since it's a section, we can create a new template
 
 that 
 
-<em class="">does</em>
+<em 
+
+>does</em>
 
  output its contents and call it
 
@@ -2064,8 +2595,7 @@ button {
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2075,13 +2605,14 @@ And, it outputs this on the page
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -2105,8 +2636,7 @@ And, it outputs this on the page
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2147,13 +2677,14 @@ head
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -2239,8 +2770,7 @@ document. So, this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2250,13 +2780,14 @@ Outputs
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 <section class="neo-example html-section">
@@ -2273,7 +2804,7 @@ Note</div>
 <div class="flow">
 
 
-    
+      
         
 <p>
 
@@ -2291,7 +2822,8 @@ example above.
 
 </p>
 
-    
+      
+
 
 
 </div>
@@ -2388,8 +2920,7 @@ For example, this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2399,13 +2930,14 @@ Outputs this
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 <section class="neo-example html-section">
@@ -2429,8 +2961,7 @@ Outputs this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2453,13 +2984,14 @@ actually displayed.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -2566,7 +3098,7 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -2589,7 +3121,8 @@ outputs this on the page
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -2622,8 +3155,7 @@ outputs this on the page
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2646,13 +3178,14 @@ actually work)
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -2801,7 +3334,7 @@ fn main() {
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -2811,7 +3344,8 @@ Which outputs
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -2835,8 +3369,7 @@ Which outputs
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -2849,9 +3382,9 @@ styles so things can be controlled from style sheets.
 
 </p>
 
-    
+      
 
-    
+      
         
 <p>
 
@@ -2864,7 +3397,7 @@ can be used as a target for adding CSS line numbers as seen above.
 
 </p>
 
-    
+      
 
 
 
@@ -2873,6 +3406,7 @@ can be used as a target for adding CSS line numbers as seen above.
     
 
     
+
 
 </section>
 
@@ -2885,7 +3419,7 @@ Note</div>
 <div class="flow">
 
 
-    
+      
         
 <p>
 
@@ -2908,7 +3442,8 @@ that happen.
 
 </p>
 
-    
+      
+
 
 
 </div>
@@ -2975,7 +3510,7 @@ code too.
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -2985,7 +3520,8 @@ Which outputs
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -2997,8 +3533,7 @@ Which outputs
 <section class="neo-example p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -3012,15 +3547,200 @@ Rust code
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
+
+
+<section class="h2-section flow">
+<hgroup>
+
+  
+    <h2 class="section-heading">
+    
+      Footnotes
+    
+    </h2>
+    
+  
+
+  
+
+</hgroup>
+
+
+
+
+
+
+    
+<p>
+
+I love footnotes. They make it easier for me to write
+
+
+
+
+at a higher level then point to more detail later 
+
+
+
+
+which makes for better prose. There's a shorthand
+
+
+
+
+built into Neopoligen for adding the footnote numbers
+
+
+
+
+in the content that looks like this
+
+:
+
+</p>
+
+
+
+
+
+    
+
+    
+
+</section><section class="neo-example pre-section">
+
+
+
+<pre>This is a footnote^^6^^</pre>
+
+
+    
+</section>
+
+
+
+
+
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+Which outputs
+
+:
+
+</p>
+
+      
+
+
+
+
+
+    
+
+
+</section>
+
+
+<section class="neo-example p-section flow">
+
+
+      
+        
+<p>
+
+This is a footnote
+
+<sup><a 
+    href="#fnref-6-text"
+    id="fnref-6-link"
+    >6</a></sup>
+
+
+</p>
+
+      
+
+
+
+
+
+    
+
+
+</section>
+
+
+<section class="p-section flow">
+
+
+      
+        
+<p>
+
+These correspond to a footnote section that has
+
+
+
+
+an id attribute with the same number. For example,
+
+
+
+
+this is the section that produces the footnote
+
+
+
+
+that's at the bottom of the page
+
+:
+
+</p>
+
+      
+
+
+
+
+
+    
+
+
+</section>
+<section class="neo-example pre-section">
+
+
+
+<pre>-- footnote
+-- id: 6
+
+This is the target footnote for the example in
+the main content.</pre>
+
+
+    
+</section>
+
+
+
+
 
 
 <section class="h2-section flow">
@@ -3228,8 +3948,7 @@ src="/neo-images/large-test-image/4000w.jpg" />
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -3247,13 +3966,14 @@ end up in a single very long line in the content file.
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -3266,7 +3986,7 @@ Note</div>
 <div class="flow">
 
 
-    
+      
         
 <p>
 
@@ -3304,7 +4024,8 @@ having to mess with file paths.
 
 </p>
 
-    
+      
+
 
 
 </div>
@@ -3405,7 +4126,7 @@ if it's available and uses it for image alt text.
 <aside class="flow">
 
 
-    
+      
         
 <p>
 
@@ -3423,7 +4144,8 @@ to include it. With luck, everything will work this way eventually.
 
 </p>
 
-    
+      
+
 
 
 </aside>
@@ -3814,8 +4536,7 @@ URL for any post is
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -3825,13 +4546,14 @@ For example, this page is always available at
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -3846,8 +4568,7 @@ For example, this page is always available at
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -3862,13 +4583,14 @@ title in a "query parameter" like this
 
 </p>
 
-    
+      
 
 
 
 
 
     
+
 
 </section>
 
@@ -3883,8 +4605,7 @@ title in a "query parameter" like this
 <section class="p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -3907,9 +4628,9 @@ a redirects setup.
 
 </p>
 
-    
+      
 
-    
+      
         
 <p>
 
@@ -3937,7 +4658,7 @@ to prevent link rot) over form.
 
 </p>
 
-    
+      
 
 
 
@@ -3946,6 +4667,7 @@ to prevent link rot) over form.
     
 
     
+
 
 </section>
 
@@ -4023,7 +4745,7 @@ Link with title: &lt;&lt;tlink|2kiw8tvv&gt;&gt;</pre>
 <section class="p-section flow">
 
 
-    
+      
         
 <p>
 
@@ -4033,7 +4755,8 @@ Outputs
 
 </p>
 
-    
+      
+
 
 
 </section>
@@ -4045,8 +4768,7 @@ Outputs
 <section class="neo-example p-section flow">
 
 
-
-    
+      
         
 <p>
 
@@ -4057,9 +4779,9 @@ This is a
 
 </p>
 
-    
+      
 
-    
+      
         
 <p>
 
@@ -4075,7 +4797,7 @@ Link with title
 
 </p>
 
-    
+      
 
 
 
@@ -4084,6 +4806,7 @@ Link with title
     
 
     
+
 
 </section>
 
@@ -4209,7 +4932,7 @@ out, you can hit me up on
     <a href="#fnref-1-link">1</a>
   </div><div class="footnote-text"><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4222,7 +4945,8 @@ over the place in the tech world.
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4232,7 +4956,7 @@ over the place in the tech world.
     <a href="#fnref-2-link">2</a>
   </div><div class="footnote-text"><a href="https://mdxjs.com/">MDX</a><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4240,7 +4964,8 @@ A way to add JSX to Markdown
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4250,7 +4975,7 @@ A way to add JSX to Markdown
     <a href="#fnref-3-link">3</a>
   </div><div class="footnote-text"><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4263,7 +4988,8 @@ using more complicated data structures
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4273,7 +4999,7 @@ using more complicated data structures
     <a href="#fnref-4-link">4</a>
   </div><div class="footnote-text"><a href="https://docs.rs/minijinja/latest/minijinja/">MiniJinja</a><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4286,7 +5012,8 @@ engine from Python
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4296,7 +5023,7 @@ engine from Python
     <a href="#fnref-5-link">5</a>
   </div><div class="footnote-text"><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4309,7 +5036,8 @@ or span type a generic replacement is used
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4319,7 +5047,7 @@ or span type a generic replacement is used
     <a href="#fnref-6-link">6</a>
   </div><div class="footnote-text"><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4342,7 +5070,8 @@ templates just like everything else.
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4352,7 +5081,7 @@ templates just like everything else.
     <a href="#fnref-7-link">7</a>
   </div><div class="footnote-text"><a href="https://iptc.org/">International Press Telecommunications Council</a><div class="flow">
 
-    
+      
         
 <p>
 
@@ -4365,7 +5094,8 @@ for making the IPTC metadata spec.
 
 </p>
 
-    
+      
+
 
 </div>
 </div><div class="footnote-return-arrow">
@@ -4374,6 +5104,7 @@ for making the IPTC metadata spec.
 </li><li class="footnote-ref"><div id="fnref-8-text" class="footnote-number">
     <a href="#fnref-8-link">8</a>
   </div><div class="footnote-text"><a href="https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/">IPTC Announces New Properties in Photo Metadata to Make Images More Accessible</a><div class="flow">
+
 
 </div>
 </div><div class="footnote-return-arrow">
